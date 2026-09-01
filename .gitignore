@@ -1,0 +1,10 @@
+node_modules/
+.cookies/
+data/weibo-cookies.json
+*.log
+.DS_Store
+fg_fengge_500_raw.json
+fg_fengge_500_hotcomments.json
+fg_fengge_500_enriched.jsonl
+fg_fengge_500_corpus.md
+fg_fengge_500_comments.md
