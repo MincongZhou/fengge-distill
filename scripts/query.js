@@ -1,14 +1,9 @@
 "use strict";
-// 从 fg_fengge_500_enriched.jsonl 按 move/topic/hot/日期 筛选，可选附高赞热评、落盘。
-// 用法：
-//   node fg_query.js --move 自问自答 --limit 5
-//   node fg_query.js --topic A股/科技 --limit 5
-//   node fg_query.js --hot 1 --move 抽奖运营 --comments --limit 5
-//   node fg_query.js --date-from 2026-08-01 --date-to 2026-08-30 --limit 10
-//   node fg_query.js --move 随手 --out 随手甩.md
+// 离线筛选：读仓库内 data/sample.jsonl，无需登录态。可独立跑 / 跑 CI。
+// 用法：node scripts/query.js --move 自问自答 --limit 5 --hot 1 --comments --out out.md
 const fs = require("fs");
-const base = "C:/Users/ASUS/Documents/dsh Project/dsh-chact/";
-
+const path = require("path");
+const DATA = path.join(__dirname, "..", "data");
 function argValue(n) { const i = process.argv.indexOf(n); return i >= 0 ? process.argv[i + 1] : undefined; }
 const has = (n) => process.argv.includes(n);
 const move = argValue("--move");
@@ -20,12 +15,12 @@ const limit = parseInt(argValue("--limit") || "20", 10);
 const wantComments = has("--comments");
 const out = argValue("--out");
 
-const rows = fs.readFileSync(base + "fg_fengge_500_enriched.jsonl", "utf8").trim().split("\n").map((l) => JSON.parse(l));
-const hotMap = {};
+const rows = fs.readFileSync(path.join(DATA, "sample.jsonl"), "utf8").trim().split("\n").map((l) => JSON.parse(l));
+let hotMap = {};
 try {
-  const hj = JSON.parse(fs.readFileSync(base + "fg_fengge_500_hotcomments.json", "utf8"));
+  const hj = JSON.parse(fs.readFileSync(path.join(DATA, "hotcomments.json"), "utf8"));
   for (const p of hj) if (p.hotComments) hotMap[p.id] = p.hotComments;
-} catch (e) { /* no comments */ }
+} catch (e) { /* 仓库无 hotcomments.json 时跳过 */ }
 
 let r = rows.filter((x) => {
   if (move && !x.move.includes(move)) return false;
@@ -37,7 +32,6 @@ let r = rows.filter((x) => {
 });
 const total = r.length;
 if (r.length > limit) r = r.slice(0, limit);
-
 let md = "";
 const print = (s) => { console.log(s); md += s + "\n"; };
 const cond = [move && "move=" + move, topic && "topic=" + topic, hotS && "hot=" + hotS, df && "from=" + df, dt && "to=" + dt].filter(Boolean).join(", ");
@@ -50,4 +44,4 @@ for (const x of r) {
     if (hs.length) print("  热评(≥30赞): " + hs.slice(0, 4).map((h) => "+" + h.like + " " + h.u + "：" + h.t).join(" / "));
   }
 }
-if (out) { fs.writeFileSync(base + out, md, "utf8"); print("\n✅ 已写入 " + out); }
+if (out) { fs.writeFileSync(path.resolve(out), md, "utf8"); print("\n✅ 已写入 " + out); }

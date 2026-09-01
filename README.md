@@ -10,6 +10,7 @@
 <img alt="n" src="https://img.shields.io/badge/语料-559条-ff69b4">
 <img alt="hot" src="https://img.shields.io/badge/高赞热评-2440条-9cf">
 <img alt="iron" src="https://img.shields.io/badge/铁律-模仿不质疑-black">
+<img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
 <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
 
 </div>
@@ -60,6 +61,18 @@ node scripts/query.js --move 抽奖运营 --comments --limit 5
 ```
 
 > 实跑：`--move 自问自答` 第一条 = 「网上很多路人说我持仓是假的，是P图，我微微一笑，丝毫不慌。为什么呢？……液冷，磷化铟，HBM。」
+
+### 今日峰哥味（demo，无需登录态）
+
+```bash
+node scripts/quote.js
+```
+
+> 今日峰哥味 · 2026-09-01
+> 宋亚东差点给对手打死！ 峰哥亡命天涯的微博视频
+> — move: 体育格斗蹭 | topics: 体育 | hot=true
+
+每天跑一次按当天日期稳定换一条；CI 也会跑一遍，亮上面的徽章。
 
 ## 目录结构
 

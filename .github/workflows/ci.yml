@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  distill-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # 离线无 cookie：用仓库内 sample.jsonl 验证「筛选 + 今日峰哥味」管道可跑
+      - name: query check
+        run: node scripts/query.js --move 自问自答 --limit 3
+      - name: daily quote
+        run: node scripts/quote.js
