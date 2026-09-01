@@ -1,0 +1,31 @@
+name: daily-quote
+
+on:
+  schedule:
+    - cron: "30 0 * * *"   # 每天 00:30 UTC = 08:30 北京
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: 生成今日峰哥味
+        run: node scripts/quote.js > daily.md
+      - name: 提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily.md
+          if git diff --cached --quiet; then
+            echo "no change today"
+            exit 0
+          fi
+          git commit -m "daily quote: $(date -u +%F)"
+          git push

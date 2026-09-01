@@ -11,6 +11,9 @@
 <img alt="hot" src="https://img.shields.io/badge/高赞热评-2440条-9cf">
 <img alt="iron" src="https://img.shields.io/badge/铁律-模仿不质疑-black">
 <img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
+<img alt="stars" src="https://img.shields.io/github/stars/MincongZhou/fengge-distill">
+<img alt="forks" src="https://img.shields.io/github/forks/MincongZhou/fengge-distill">
+<img alt="last-commit" src="https://img.shields.io/github/last-commit/MincongZhou/fengge-distill">
 <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
 
 </div>
