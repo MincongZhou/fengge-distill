@@ -7,7 +7,8 @@ $topics = @(
   "weibo", "chinese", "nlp", "llm", "style-transfer",
   "text-generation", "text-analysis", "corpus", "dataset",
   "distillation", "prompt-engineering", "copywriting", "nodejs",
-  "cli", "social-media"
+  "cli", "social-media", "dsh", "deepseek-harness",
+  "agent-skills", "agent", "skills"
 )
 if (-not $Token) { Write-Error "需要 token：先设置 `$env:GITHUB_TOKEN（GitHub → Settings → Developer settings → Personal access token，勾 repo 作用域）"; exit 1 }
 $h = @{ Authorization = "Bearer $Token"; "Accept" = "application/vnd.github+json"; "User-Agent" = "fengge-distill" }
