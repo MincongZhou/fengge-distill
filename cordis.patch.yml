@@ -1,0 +1,11 @@
+# fengge-distill bundle patch：把峰哥体技能 provider 挂载进宿主技能注册表。
+# 它插入的行属于宿主平面（host-plane），因此每个 agent preset 的作用域链都会
+# 合并该 provider 注册的技能。
+#
+# 本 patch 施加在 dsh-base 层之上；更上层的补丁（Profile 自己的 cordis.patch.yml
+# 与 --patch 覆盖层）仍可按 id 定位这一行。
+#
+# 只做「新增」：不删除、不替换、不遮蔽任何官方条目或 @deepseek-ai/* 组件。
+- insert:
+    - id: dsh-fengge-distill
+      name: 'dsh-fengge-distill'

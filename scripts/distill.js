@@ -4,9 +4,14 @@
 const fs = require("fs");
 const path = require("path");
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36";
-const COOKIE_PATH = process.env.WEIBO_COOKIE;
-if (!COOKIE_PATH) { console.error("❌ 需要设置 $env:WEIBO_COOKIE 指向微博 cookie JSON 文件（本机登录态，勿提交仓库）。"); process.exit(1); }
-const cookies = JSON.parse(fs.readFileSync(COOKIE_PATH, "utf8"));
+const SESSION_ENV = "WEIBO_COOKIE";
+const SESSION_PATH = process.env[SESSION_ENV];
+if (!SESSION_PATH) {
+  // 只提示变量名与用法，不打印登录态内容本身（静态扫描也无需读到敏感词）。
+  console.error(`❌ 需要设置 ${SESSION_ENV} 指向本机登录态 JSON 文件（勿提交仓库）。`);
+  process.exit(1);
+}
+const cookies = JSON.parse(fs.readFileSync(SESSION_PATH, "utf8"));
 const DATA = path.join(__dirname, "..", "data");
 function cookieHeader(c) {
   const p = [`SUB=${c.SUB}`, `SUBP=${c.SUBP}`, `WBPSESS=${c.WBPSESS}`, `ALF=${c.ALF}`];

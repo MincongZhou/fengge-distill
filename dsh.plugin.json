@@ -1,0 +1,15 @@
+{
+  "id": "MincongZhou/fengge-distill",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "description": "DSH skill provider for the FengGe (峰哥亡命天涯) style-distillation engine: writes sharp takes in the distilled 峰哥体 voice from 559 public posts plus 2,440 high-liked comments, as a style register — never an impersonation.",
+  "engines": {
+    "dsh": ">=0.1.0-rc.6"
+  },
+  "contributes": {
+    "tools": [],
+    "skills": [
+      "fengge-wangming-tianya"
+    ]
+  }
+}

@@ -19,3 +19,8 @@ jobs:
         run: node scripts/query.js --move 自问自答 --limit 3
       - name: daily quote
         run: node scripts/quote.js
+      # DSH Bundle 打包契约 + provider 边界（离线、只读，不需要登录态）
+      - name: dsh bundle contract tests
+        run: node --test
+      - name: dsh bundle contract verify
+        run: node scripts/verify-provider.mjs

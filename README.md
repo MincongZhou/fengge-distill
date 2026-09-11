@@ -80,11 +80,85 @@ node scripts/quote.js
 ```
 fengge-distill/
 ├── README.md
-├── style-engine.md          ← 峰哥语体引擎规则（产出的「蒸馏」核心）
-├── corpus.md                ← 语料参考（签名动作/接招对照/高赞实锤/装颓/案例）
-├── scripts/                 ← 蒸馏管道
-└── data/                    ← 统计口径 + 抽样
+├── style-engine.md              ← 峰哥语体引擎规则（产出的「蒸馏」核心）
+├── corpus.md                    ← 语料参考（签名动作/接招对照/高赞实锤/装颓/案例）
+├── scripts/                     ← 蒸馏管道（CommonJS）
+├── data/                        ← 统计口径 + 抽样
+└── package.json                 ← DSH Bundle 清单（插件入口）
+    cordis.patch.yml             ← Bundle Patch（只新增插件自有条目）
+    dsh.plugin.json              ← 插件元数据（声明贡献的技能）
+    lib/index.js                 ← 技能 provider（ESM，注册进 ctx.skills）
+    skills/fengge-wangming-tianya/
+        SKILL.md                 ← 打包进插件的技能本体
+        references/corpus.md     ← 技能相对引用
+        evals/evals.json         ← 行为验收用例
+    test/provider.test.mjs       ← 打包契约与 provider 边界测试
+    scripts/verify-provider.mjs  ← 打包契约自检
 ```
+
+## 作为 DSH 插件安装（Bundle）
+
+仓库根同时是一个标准 **DSH Bundle**：装上之后，`fengge-wangming-tianya` 这个技能会出现在 DSH 的技能列表里，无需手动往 `~/.dsh/skills/` 里拷文件。
+
+**它做什么**：把仓库里蒸馏好的峰哥语体规则，通过插件的技能 provider 注册进宿主技能注册表（host-plane），于是每个 agent preset 的作用域链都能拿到这个技能。技能正文按需加载，`list()` 阶段只读元数据、不读正文。
+
+**安装（推荐先用一次性 Profile 验证，别直接写真实 Profile）**：
+
+```bash
+export DSH_HOME="$(mktemp -d)"          # Windows: $env:DSH_HOME = "$env:TEMP\dsh-test"
+dsh plugin --profile fengge-test add /absolute/path/to/fengge-distill
+dsh --profile fengge-test --dump-config  # 预期看到唯一新条目 dsh-fengge-distill
+```
+
+真实 Profile 安装时不要手动改 Profile 清单，交给官方 CLI：
+
+```bash
+dsh plugin --profile <profile> add <package-or-git-spec>
+dsh plugin --profile <profile> remove <package>
+```
+
+**外部依赖**：无。插件不联网、不起子进程、不写任何 Profile 或用户目录，也不声明任何运行期依赖。`scripts/distill*.js` 那两条**需要登录态**的抓取脚本属于仓库自带的离线蒸馏管道，**不在插件运行路径上**——插件只读包内 `skills/` 下的 Markdown。
+
+**权限**：只读。唯一的文件访问是读取本包内的 `skills/<name>/SKILL.md`（路径由 `import.meta.url` 推导，属于本包装配事实，不读用户配置）；无网络、无 Shell、无凭据。
+
+**已知风险**：
+- 技能产出的是**风格模仿文本**。风格本体是「蹭流量 + 表演式吹牛」，请自行判断使用场景；仓库边界见下方「声明」。
+- 技能里的 `evals/evals.json` 是行为验收用例，不是安全审计；它只描述「写成什么样算对味」。
+- 打包进插件的 `skills/fengge-wangming-tianya/` 与仓库根 `style-engine.md` / `corpus.md` 是同一份内容的两种形态（技能形态 / 源档）。改了一处请同步另一处。
+
+**验证状态（分清层级，别把低层证据当高层验收）**：
+
+| 层级 | 状态 |
+|---|---|
+| 打包契约（清单字段、Patch 唯一性、无生命周期脚本、无符号链接） | **已验证**：`npm run verify` |
+| provider 行为（发现技能、按需加载正文、对畸形/缺失输入 fail closed） | **已验证**：`npm test` |
+| 上游契约静态审计（官方 `build-dsh-plugin` 的 `audit-plugin.mjs`） | **已验证**：见下一节 |
+| 一次性 Profile 的安装 / 启动 / 卸载 / 回滚 | **未验证**：需要真实 DSH 运行时与隔离 Profile 的实测记录 |
+| DSH STORE 收录状态 | **未验证**：由商城固定 Commit 自动复检决定 |
+
+**下一道门**：在一次性 Profile 里跑完安装 → 配置合成 → 冷启动 → 技能可见 → 卸载，把每一步的证据记下来；静态审计通过**不等于**真实 Profile 已安装或已完成运行时验收。
+
+## 上游契约静态审计
+
+```bash
+npm test                           # 打包契约 + provider 边界（本包自带）
+npm run verify                     # 打包契约自检（本包自带）
+# 上游只读审计（需另取 build-dsh-plugin 仓库）
+node <build-dsh-plugin>/build-dsh-plugin/scripts/audit-plugin.mjs .
+```
+
+读法：**Hard blockers 必须为空**。分数里的 `Runtime evidence` 在没有一次性 Profile 证据前恒为 0——那是「证据还没给」，不是「跑不通」，不要靠填分把它糊过去。
+
+上架契约逐条自查（对应 DSH STORE 固定 Commit 门禁）：
+
+- [x] 公开 GitHub 仓库，目标包可固定到 40 位 Commit
+- [x] `package.json` 声明 `dsh.bundle.patch`，且 Patch 文件位于包内
+- [x] Bundle Patch 只新增；entry ID 唯一且为插件自有（`dsh-fengge-distill`）
+- [x] manifest / LICENSE / 生命周期脚本 / Node 与 DSH 兼容声明相互一致
+- [x] 无生命周期脚本（`preinstall`/`install`/`postinstall`/`prepare`）、无运行期依赖
+- [x] 不使用 `@deepseek-ai/*` 命名空间，不禁用、替换或冒充官方组件
+- [x] README 说明用途、安装启用方式、外部依赖、权限与已知风险
+- [ ] 一次性 Profile 的安装 / 启动 / 卸载证据（**下一道门**）
 
 ## 声明
 

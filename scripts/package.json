@@ -1,0 +1,4 @@
+{
+  "//": "本目录是蒸馏管道的 CommonJS 脚本，独立于包根的 ESM 约定。",
+  "type": "commonjs"
+}
