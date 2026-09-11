@@ -4,11 +4,11 @@
 
 **峰哥 · 语言蒸馏引擎**
 
-Distill **559 posts** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
+Distill **1,921 posts spanning 18 months** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
 
 <img alt="vibe" src="https://img.shields.io/badge/project-distill-brown">
-<img alt="n" src="https://img.shields.io/badge/corpus-559posts-ff69b4">
-<img alt="hot" src="https://img.shields.io/badge/hot_comments-2440-9cf">
+<img alt="n" src="https://img.shields.io/badge/corpus-1921posts-ff69b4">
+<img alt="hot" src="https://img.shields.io/badge/hot_comments-4163-9cf">
 <img alt="iron" src="https://img.shields.io/badge/iron_rule-imitate_not_judge-black">
 <img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
 <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
@@ -19,7 +19,9 @@ Distill **559 posts** by the Chinese blogger 「峰哥亡命天涯」 into a reu
 
 ## It's distillation, not copying
 
-From **559 public posts + 2,440 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
+From **1,921 public posts (2025-02 ~ 2026-08) + 4,163 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
+
+**The timeline is distilled too:** he was **banned platform-wide on 2025-11-14** and unbanned on 2026-05-21. That gap splits the corpus into two eras whose voices differ enough that you should **pick an era before writing** — see [`evolution.md`](evolution.md).
 
 **Iron rule:** write in FengGe's worldview faithfully — no moralizing of your own.
 
@@ -29,14 +31,28 @@ From **559 public posts + 2,440 high-like comments (≥30 likes)**, this project
 2. **Self-praise you know is seen through.** The signature move is "commenting on others = praising myself"; knowing the audience sees through it, keep doubling down anyway.
 3. **Feigned weariness.** Sadness/tiredness is the hook; self-praise is the landing — "I'm down, but still better than you."
 
-## Corpus stats (n = 559 · 105 days)
+## Corpus stats
+
+**Overall**: n = **1,921** public posts · 2025-02-04 ~ 2026-08-30 (**572 days** · ~3.4 posts/day)
 
 | Metric | Value |
 |---|---|
-| Length | median **41** · mean **54** · **0 posts >160 chars** · ≤30 chars = 41% |
-| Cadence | ~5 posts/day |
-| Topics | A-share/tech(94) > sports(24) > life(23) > lottery(17) > robots/AI(13) > gold(9) |
-| Hot comments | **546/559** posts have ≥30-like comments, **2,440** total; 126 are 1000+ |
+| Length | median **47** chars · mean **61** · only 3 posts >160 chars |
+| Mix | mostly short originals · 90 reposts (4.7%) · 258 long-form (13.4%) |
+| Hot comments | **785/1,921** posts have ≥30-like comments, **4,163** total; 257 are 1000+ |
+
+**Split by era** (the ban splits the data; this is not a hand-drawn line)
+
+| Metric | Pre-ban 2025-02~11 (1,360) | Post-unban 2026-05~08 (561) |
+|---|---|---|
+| Median length | 50 | **40** |
+| Posts with image | 66.3% | **43.9%** |
+| Opens with "我…" (I…) | 6.9% | **11.1%** |
+| Opens with "峰哥…" (third person) | 7.9% | 4.5% |
+| Disclaimer rate | 0.1% | 1.6% |
+| Median likes | 2207 | **3367** |
+
+> Topic migration, catchphrase rise/fall, the comment-section shift (from "arena" to "shareholders' club"), and an 18-event timeline: see [`evolution.md`](evolution.md).
 
 > Top hot comments are rarely "attacking him" — they're **"play along + expose + one-up"**.
 > (report → "+6146 nuclear strike"; self-pity → "+4035 keep acting"; flex → "+4615 ad slot for rent"; investing gold quote → "+3688 translation: I won't sell").
@@ -69,6 +85,7 @@ fengge-distill/
 ├── README.md · README.en.md
 ├── style-engine.md          ← the distilled style rules
 ├── corpus.md                ← corpus reference
+├── evolution.md             ← voice evolution (pre/post-ban, comment ecology, event timeline)
 ├── scripts/                 ← distillation pipeline (CommonJS)
 ├── data/                    ← sample + stats
 ├── .github/workflows/       ← CI + daily quote
@@ -81,7 +98,8 @@ DSH Bundle (plugin entry):
 ├── lib/index.js                 ← skill provider, registers into ctx.skills
 ├── skills/fengge-wangming-tianya/
 │   ├── SKILL.md                 ← the packaged skill
-│   ├── references/corpus.md     ← skill-relative reference
+│   ├── references/corpus.md     ← skill-relative reference (examples)
+│   ├── references/evolution.md  ← skill-relative reference (era evolution)
 │   └── evals/evals.json         ← behavioural acceptance cases
 ├── test/provider.test.mjs       ← packaging contract + provider boundary tests
 └── scripts/verify-provider.mjs  ← packaging contract self-check
@@ -106,7 +124,7 @@ dsh plugin --profile <profile> remove <package>
 
 - **External dependencies:** none. The plugin does not reach the network, spawn subprocesses, or write any Profile or user directory. The two `distill*.js` scripts that need a login are the offline corpus pipeline and are **not** on the plugin's runtime path — the plugin only reads the markdown under its own `skills/`.
 - **Permissions:** read-only. The only file access is reading this package's `skills/<name>/SKILL.md`, resolved from `import.meta.url` (a packaging fact, never user config). No network, no shell, no credentials.
-- **Known risks:** the skill produces style-imitation text whose underlying register is "farm the trend, perform the flex". Judge your own use case; boundaries are in the Disclaimer. `evals/evals.json` describes "what reads right" — it is not a security audit. Note that `skills/fengge-wangming-tianya/` and the root `style-engine.md` / `corpus.md` carry the same content in two forms; keep them in sync.
+- **Known risks:** the skill produces style-imitation text whose underlying register is "farm the trend, perform the flex". Judge your own use case; boundaries are in the Disclaimer. `evals/evals.json` describes "what reads right" — it is not a security audit. Note that `skills/fengge-wangming-tianya/` and the root `style-engine.md` / `corpus.md` / `evolution.md` carry the same content in two forms; keep them in sync.
 - **Verification status:** packaging contract (`npm run verify`) and provider behaviour (`npm test`) are **verified**. A disposable-Profile install / start / uninstall and the DSH STORE listing are **unverified** — that is the next gate. The upstream static audit (`build-dsh-plugin`'s `audit-plugin.mjs`) passes with zero hard blockers, but static audit passing does **not** mean a real Profile is installed or runtime-accepted.
 
 ## Disclaimer

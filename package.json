@@ -1,6 +1,6 @@
 {
   "name": "dsh-fengge-distill",
-  "description": "DSH skill provider for the FengGe (峰哥亡命天涯) style-distillation engine: writes sharp takes in the distilled 峰哥体 voice from 559 public posts plus 2,440 high-liked comments, as a style register — never an impersonation.",
+  "description": "DSH skill provider for the FengGe (峰哥亡命天涯) style-distillation engine: writes sharp takes in the distilled 峰哥体 voice from 1,921 public posts spanning 18 months (with a pre/post-ban era-evolution reference) plus 4,163 high-liked comments, as a style register — never an impersonation.",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -18,6 +18,7 @@
     "dsh.plugin.json",
     "style-engine.md",
     "corpus.md",
+    "evolution.md",
     "data",
     "README.md",
     "README.en.md",
