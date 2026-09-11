@@ -149,6 +149,12 @@ node <build-dsh-plugin>/build-dsh-plugin/scripts/audit-plugin.mjs .
 
 读法：**Hard blockers 必须为空**。分数里的 `Runtime evidence` 在没有一次性 Profile 证据前恒为 0——那是「证据还没给」，不是「跑不通」，不要靠填分把它糊过去。
 
+静态审计基线（固定来源）：
+
+- Commit：`566367a06bb05ef4121499ece3f84ad8e30ed4c9`
+- 结果：零硬阻断，`status=isolated-acceptance-ready`，static `77/80`（Tests 12/12、Documentation 8/8；未取满的 3 分是「一次性 Profile 的运行时证据尚未提供」）
+- 说明：该 Commit 只是**静态契约**的审计基线，不代表已完成运行验收；后续提交会使基线前移，需重新审计。
+
 上架契约逐条自查（对应 DSH STORE 固定 Commit 门禁）：
 
 - [x] 公开 GitHub 仓库，目标包可固定到 40 位 Commit
