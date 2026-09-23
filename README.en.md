@@ -57,6 +57,28 @@ From **1,921 public posts (2025-02 ~ 2026-08) + 4,163 high-like comments (≥30 
 > Top hot comments are rarely "attacking him" — they're **"play along + expose + one-up"**.
 > (report → "+6146 nuclear strike"; self-pity → "+4035 keep acting"; flex → "+4615 ad slot for rent"; investing gold quote → "+3688 translation: I won't sell").
 
+**Second corpus: Bilibili livestream clips (added 2026-09-24)**
+
+Weibo is what he **writes**; Bilibili is what he **says** — two registers, **never mix them**.
+
+| Metric | Value |
+|---|---|
+| Videos found | 237 (116 clipping channels + official account) |
+| With AI subtitles | 154 → **53 unique videos** after video-level dedup |
+| **Net chars after dedup + denoise** | **460,464** (≈ **3.9×** the 118k chars of all 1,921 Weibo posts) |
+| Danmaku collected | **50,884** across 45 clips |
+
+**Two platform gaps you must know before writing:**
+
+- On Bilibili, **relationship/matchmaking clips are 15.8%** of titles (2nd largest topic, ahead of money/stocks) — while on Weibo that category has **collapsed** (61→7). **Same person, two different topic menus.**
+- On Bilibili danmaku, **tech terms are only 0.6%**, while Weibo hot comments show tech words **up 7×**. **Same "AI/tech" angle: sparks discussion on Weibo, not on Bilibili.**
+
+> Three subtitle pitfalls (rolling-window **1.8× char inflation** / **foreign audio tracks** mixed into long compilations / **the same subtitle asset reused across videos**), their fixes, API channel status, and the spoken-vs-written marker table: see [`bilibili.md`](bilibili.md) (Chinese).
+
+**Real-person gossip, re-verified (2026-09-24)**: 12.6% of posts involve real people, flat across both eras (12.9%→12.4%) —
+but the mix changed: **relationship content 61→7 (−89%)**, while **named public figures doubled (1.6%→3.5%)**.
+`@`-mentions only **4.0%**, reposts only **4.7%** (a purely original, single-player account). See [`evolution.md`](evolution.md) §8.
+
 ## Distillation pipeline
 
 ```
