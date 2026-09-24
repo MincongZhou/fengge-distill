@@ -62,4 +62,5 @@ console.log(`样本 ${texts.length} 条 ｜ 语料基准 ${base.length} 条（�
 console.log('特征'.padEnd(16) + '语料'.padEnd(10) + '本批'.padEnd(10) + '差'.padEnd(10) + '像');
 for (const r of rows) console.log(r.特征.padEnd(14) + String(r.语料).padEnd(10) + String(r.本批).padEnd(10) + String(r.差).padEnd(10) + r.像);
 console.log(`\n总对齐分：${(total * 100).toFixed(1)}%（100% = 每个特征都与语料一致）`);
+if (texts.length < 20) console.log(`⚠️ 样本只有 ${texts.length} 条：每一条就占 ${(100 / texts.length).toFixed(0)}%，比例类特征的波动很大，别拿单批小样本当结论（建议 ≥20 条再比对）。`);
 console.log(total >= 0.85 ? '→ 分布上已经很接近' : total >= 0.7 ? '→ 大体像，仍有几个特征偏' : '→ 仍有明显系统性偏差，看"像"最低的几行');
