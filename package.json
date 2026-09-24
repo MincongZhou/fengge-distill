@@ -1,7 +1,7 @@
 {
   "name": "dsh-fengge-distill",
   "description": "DSH skill provider for the FengGe (峰哥亡命天涯) style-distillation engine: writes sharp takes in the distilled 峰哥体 voice from 1,921 public posts spanning 18 months (with a pre/post-ban era-evolution reference) plus 4,163 high-liked comments, as a style register — never an impersonation.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": false,
   "type": "module",
   "main": "lib/index.js",
@@ -45,7 +45,10 @@
   "scripts": {
     "test": "node --test",
     "verify": "node scripts/verify-provider.mjs",
-    "check": "node --test && node scripts/verify-provider.mjs"
+    "check": "node --test && node scripts/verify-provider.mjs",
+    "lint": "node skills/fengge-wangming-tianya/scripts/fengge-lint.mjs",
+    "regress": "node skills/fengge-wangming-tianya/scripts/fengge-lint.mjs --regress",
+    "eval": "node skills/fengge-wangming-tianya/evals/run-evals.mjs --selftest"
   },
   "keywords": [
     "dsh",

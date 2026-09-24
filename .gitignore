@@ -8,3 +8,7 @@ fg_fengge_500_hotcomments.json
 fg_fengge_500_enriched.jsonl
 fg_fengge_500_corpus.md
 fg_fengge_500_comments.md
+
+# 运行产物：每次跑 lint / evals 都会追加，不入库
+evals/results.json
+skills/*/evals/results.json
