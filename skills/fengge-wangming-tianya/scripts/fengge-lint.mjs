@@ -120,6 +120,7 @@ function format(rep) {
   }
   if (rep.fails === 0 && rep.warns === 0) lines.push('✓ 全部通过');
   lines.push('', '人工自检 6 道（脚本测不了）：①像不像随手打 ②有没有替社会抱不平 ③有没有"又被看穿" ④丧完有没有转 ⑤落点是否绕回"峰哥牛" ⑥先过选题器了吗');
+  if (rep.ignored && rep.ignored.length) lines.push(`（按 --ignore 豁免了：${rep.ignored.join(' / ')}）`);
   return lines.join('\n');
 }
 
@@ -173,6 +174,16 @@ if (invokedDirectly) {
     process.exit(2);
   }
   const rep = check(text, version);
+  // --ignore 选题器[,长度]: 靶子由人指定时，允许豁免某些规则（默认不豁免）
+  const ignore = (arg('--ignore', '') || '').split(',').map(s => s.trim()).filter(Boolean);
+  if (ignore.length) {
+    const hit = r => ignore.some(i => r.rule.includes(i));
+    const dropped = rep.results.filter(r => r.level !== 'PASS' && hit(r)).map(r => r.rule);
+    rep.results = rep.results.filter(r => !hit(r));
+    rep.fails = rep.results.filter(r => r.level === 'FAIL').length;
+    rep.warns = rep.results.filter(r => r.level === 'WARN').length;
+    rep.ignored = [...new Set(dropped)];
+  }
   if (argv.includes('--json')) console.log(JSON.stringify(rep, null, 2));
   else console.log(format(rep));
   appendRun({ at: new Date().toISOString(), kind: 'lint', version, len: rep.len, fails: rep.fails, warns: rep.warns, rule: rep.results.filter(r => r.level !== 'PASS').map(r => r.rule) });
