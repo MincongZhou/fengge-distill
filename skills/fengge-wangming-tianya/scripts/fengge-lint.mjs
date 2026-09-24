@@ -24,10 +24,12 @@ import { fileURLToPath } from 'node:url';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
 
-// softMax = 官方默认写作区间（超了只警告）；max = 语料实际硬墙（超了判 FAIL）
+// 形态取自语料分层（见 references/style-profile.md）：
+//   short = 原创非长文 1568 条：p10=13 / p50=41 / p75=68 / p90=103 / max=151；<14 字的极短帖占 12%
+//   long  = isLong 长微博 257 条：中位 147、p90=153、max=187
 const LEN = {
-  2026: { min: 15, softMax: 50, max: 120, note: '解封后 p50=37 / p75=70 / p90=120' },
-  2025: { min: 15, softMax: 100, max: 150, note: '封禁前 p50=51 / p75=102 / p95=149' },
+  short: { floor: 2, softMin: 14, softMax: 68, warnMax: 103, hardMax: 151, note: '原创非长文 p50=41 / p75=68 / p90=103 / max=151；他另有 12% 的 3–14 字一行帖（最短 3 字「太帅了」）' },
+  long: { floor: 120, softMin: 140, softMax: 155, warnMax: 165, hardMax: 200, note: 'isLong 长微博 257 条：中位 147 / p90=153 / max=187' },
 };
 
 const DISCLAIMER = /个人观点|个人看法|个人判断|个人猜测|不构成[^。！？]{0,8}建议|风险自担/;
@@ -37,7 +39,7 @@ const WATCH_ONLY = /国乒|乒乓|孙颖莎|王楚钦|樊振东|张本智和|网
 const LIVE_REGISTER = /对吧|对不对|我跟你说/;
 const DUIZHANG = /你们[^。！？\n]{0,30}我/;
 
-function check(text, version = '2026') {
+function check(text, version = '2026', form = 'short') {
   const t = String(text ?? '').trim();
   const body = t.replace(/[\u200b\ufeff]/g, '');
   const len = [...body].length;
@@ -49,12 +51,13 @@ function check(text, version = '2026') {
   if (nl > 0) add('FAIL', '换行', `出现 ${nl} 处换行`, '他 1914 条里 0 条换行——LLM 最易露馅的一条');
   else add('PASS', '换行', '单段无换行', '');
 
-  // 长度
-  const L = LEN[version] || LEN['2026'];
-  if (len < L.min) add('FAIL', '长度', `${len} 字 < 下限 ${L.min}`, '');
-  else if (len > L.max) add('FAIL', '长度', `${len} 字 > 语料硬墙 ${L.max}`, L.note);
-  else if (len > L.softMax) add('WARN', '长度', `${len} 字超出 ${version} 默认区间 ${L.min}–${L.softMax}`, L.note);
-  else add('PASS', '长度', `${len} 字（${version} 默认 ${L.min}–${L.softMax}）`, '');
+  // 长度（按形态：短帖 / 长文）
+  const L = LEN[form] || LEN.short;
+  if (len < L.floor) add('FAIL', '长度', `${len} 字 < 下限 ${L.floor}`, L.note);
+  else if (len > L.hardMax) add('FAIL', '长度', `${len} 字 > 语料硬墙 ${L.hardMax}`, L.note);
+  else if (len > L.warnMax) add('WARN', '长度', `${len} 字超出 p90=${L.warnMax}`, L.note);
+  else if (form === 'short' && len < L.softMin) add('WARN', '长度·极短帖', `${len} 字（他 12% 的帖子就是这么短）`, '确认是故意甩一句就发；要写完整观点就补到 14 字以上');
+  else add('PASS', '长度', `${len} 字（${form === 'short' ? '短帖' : '长文'} ${L.softMin}–${L.softMax} 为默认区）`, '');
 
   // 对仗
   const dz = body.match(DUIZHANG);
@@ -105,15 +108,15 @@ function check(text, version = '2026') {
   if (w) add('FAIL', '选题器', `以纯围观热点「${w[0]}」起手`, '国乒 0 条 / 网球 1 条 / 华为系车 2 条——他从不写纯围观的比赛和别人的车');
   else if (WATCH_ONLY.test(body)) add('WARN', '选题器', '正文提到围观类热点', '若它只是陪衬可以，当主靶子不行');
 
-  // 人称
-  if (!/我/.test(body)) add('WARN', '人称', '没有出现「我」', '他 41% 的帖子含「我」，落点必须绕回自己');
+  // 人称：他用「我」（短帖 41%）或第三人称自称「峰哥」（长文里更多）
+  if (!/我|峰哥/.test(body)) add('WARN', '人称', '既没有「我」也没有「峰哥」', '他 41% 的短帖含「我」，落点必须绕回自己');
 
-  return { len, version, results: out, fails: out.filter(r => r.level === 'FAIL').length, warns: out.filter(r => r.level === 'WARN').length };
+  return { len, version, form, results: out, fails: out.filter(r => r.level === 'FAIL').length, warns: out.filter(r => r.level === 'WARN').length };
 }
 
 function format(rep) {
   const icon = { FAIL: '✗ FAIL', WARN: '! WARN', PASS: '✓ pass' };
-  const lines = [`峰哥体自检 · ${rep.version} 版 · ${rep.len} 字 · FAIL ${rep.fails} / WARN ${rep.warns}`, ''];
+  const lines = [`峰哥体自检 · ${rep.form === 'long' ? '长文' : `短帖·${rep.version}`} · ${rep.len} 字 · FAIL ${rep.fails} / WARN ${rep.warns}`, ''];
   for (const r of rep.results) {
     if (r.level === 'PASS') continue;
     lines.push(`${icon[r.level]}  [${r.rule}] ${r.msg}${r.evidence ? `\n         ↳ ${r.evidence}` : ''}`);
@@ -167,13 +170,14 @@ if (invokedDirectly) {
   if (argv.includes('--regress')) regress();
 
   const version = arg('--version', '2026');
+  const form = arg('--form', 'short');
   const file = arg('--file', null);
   const text = arg('--text', null) ?? (file ? fs.readFileSync(file, 'utf8') : null);
   if (text == null) {
-    console.error('用法：node fengge-lint.mjs --text "文案" | --file post.txt | --regress [--version 2025] [--json]');
+    console.error('用法：node fengge-lint.mjs --text "文案" | --file post.txt | --regress [--form short|long] [--ignore 规则] [--json]');
     process.exit(2);
   }
-  const rep = check(text, version);
+  const rep = check(text, version, form);
   // --ignore 选题器[,长度]: 靶子由人指定时，允许豁免某些规则（默认不豁免）
   const ignore = (arg('--ignore', '') || '').split(',').map(s => s.trim()).filter(Boolean);
   if (ignore.length) {
