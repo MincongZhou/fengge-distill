@@ -37,6 +37,8 @@ const JUDGEMENT = /点位|价位|预测|剑指|看到\d|突破\d|回不到\d|赛
 const AI_FORMAL = /然而|因此|综上|总的来说|总而言之|值得注意的是|众所周知|不可否认|从某种程度上|首先[，,].{0,40}其次|赋能|抓手|生态位|闭环/;
 const WATCH_ONLY = /国乒|乒乓|孙颖莎|王楚钦|樊振东|张本智和|网球|郑钦文|篮球|NBA|理想汽车|蔚来|奕境|问界|乾崑|比亚迪/;
 const LIVE_REGISTER = /对吧|对不对|我跟你说/;
+// 假口头禅：这些说法在 1914 条全量里是 0 条，全是账号/AI 自己造的（见 references/style-profile.md）
+const FAKE_PHRASE = /我算了|算了算|算下来|这账|算账|算一算|盘算|换算成|建议大家|建议你们|够我买|别急|评论区见|谁蹭谁|白赚|茶叶蛋|性价比|本质上|综上所述/;
 const DUIZHANG = /你们[^。！？\n]{0,30}我/;
 
 function check(text, version = '2026', form = 'short') {
@@ -76,6 +78,11 @@ function check(text, version = '2026', form = 'short') {
   else add('PASS', '方括号表情', '无', '');
   const emo = body.match(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu) || [];
   if (emo.length > 1) add('WARN', '图形 emoji', `${emo.length} 个`, '他只有 3.7% 的帖子带，且基本 1 个');
+
+  // 假口头禅（语料里 0 条的说法）
+  const fake = body.match(new RegExp(FAKE_PHRASE.source, 'g'));
+  if (fake) add('FAIL', '假口头禅', `命中 ${[...new Set(fake)].join(' / ')}`, '这些说法在 1914 条全量里 0 条——不是他的词，是账号/AI 造的');
+  else add('PASS', '假口头禅', '无', '');
 
   // AI 书面词
   const formal = body.match(new RegExp(AI_FORMAL.source, 'g'));
