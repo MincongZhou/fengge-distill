@@ -48,7 +48,10 @@
     "check": "node --test && node scripts/verify-provider.mjs",
     "lint": "node skills/fengge-wangming-tianya/scripts/fengge-lint.mjs",
     "regress": "node skills/fengge-wangming-tianya/scripts/fengge-lint.mjs --regress",
-    "eval": "node skills/fengge-wangming-tianya/evals/run-evals.mjs --selftest"
+    "eval": "node skills/fengge-wangming-tianya/evals/run-evals.mjs --selftest",
+    "profile": "node skills/fengge-wangming-tianya/scripts/fengge-profile.mjs",
+    "align": "node skills/fengge-wangming-tianya/scripts/fengge-align.mjs --file skills/fengge-wangming-tianya/evals/samples/golden-batch.txt",
+    "accept": "node skills/fengge-wangming-tianya/scripts/fengge-check.mjs"
   },
   "keywords": [
     "dsh",
