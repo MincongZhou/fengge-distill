@@ -79,6 +79,13 @@ function check(text, version = '2026', form = 'short') {
   const emo = body.match(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu) || [];
   if (emo.length > 1) add('WARN', '图形 emoji', `${emo.length} 个`, '他只有 3.7% 的帖子带，且基本 1 个');
 
+  // 标点与节奏（1568 条原创短帖实测：49.9% 结尾不加标点，句号收尾仅 27.6%）
+  const ending = [...body].slice(-1)[0] || '';
+  if (ending === '。') add('WARN', '结尾标点', '以「。」收尾', '他只有 27.6% 的短帖这样收尾，49.9% 干脆不加标点——LLM 的默认动作正好是最不像他的那个');
+  if (/、/.test(body)) add('WARN', '顿号', '用了「、」', '顿号只出现在 0.7% 的帖子里');
+  if (/；/.test(body)) add('WARN', '分号', '用了「；」', '分号只出现在 1.0% 的帖子里');
+  if (/！！|？？|！？|？！|！…/.test(body)) add('WARN', '标点连用', '感叹号/问号连用', '连用感叹号 0.1%、问号连用 0.0%');
+
   // 假口头禅（语料里 0 条的说法）
   const fake = body.match(new RegExp(FAKE_PHRASE.source, 'g'));
   if (fake) add('FAIL', '假口头禅', `命中 ${[...new Set(fake)].join(' / ')}`, '这些说法在 1914 条全量里 0 条——不是他的词，是账号/AI 造的');
