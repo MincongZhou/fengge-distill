@@ -153,23 +153,27 @@ function appendRun(entry) {
   return results;
 }
 
-function regress() {
+export function regressData() {
   const f = path.join(SKILL_DIR, 'evals', 'samples', 'published.json');
-  if (!fs.existsSync(f)) { console.error('缺少回归样本：', f); process.exit(2); }
+  if (!fs.existsSync(f)) throw new Error('缺少回归样本：' + f);
   const samples = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const withDis = samples.filter(s => DISCLAIMER.test(s.text)).length;
   const rows = samples.map(s => {
     const r = check(s.text, '2026');
     return { date: s.date, reads: s.reads, len: r.len, fails: r.fails, warns: r.warns, rules: [...new Set(r.results.filter(x => x.level === 'FAIL').map(x => x.rule))] };
   });
-  const bad = rows.filter(r => r.fails > 0);
-  const withDis = samples.filter(s => DISCLAIMER.test(s.text)).length;
-  console.log(`回归基线：${rows.length} 条历史已发峰哥体（2026-08-29 ~ 09-19，账号 皮皮true）`);
-  console.log(`按新规则：${bad.length}/${rows.length} 条 FAIL，${rows.filter(r => r.warns > 0).length}/${rows.length} 条 WARN`);
-  console.log(`其中挂免责声明的：${withDis}/${rows.length}（他本人全量 0.5%，上限应为每 5 条 1 条）\n`);
+  return { rows, withDis, total: rows.length, failed: rows.filter(r => r.fails > 0).length };
+}
+
+function regress() {
+  const { rows, withDis, total, failed } = regressData();
+  console.log(`回归基线：${total} 条历史已发峰哥体（2026-08-29 ~ 09-19，账号 皮皮true）`);
+  console.log(`按新规则：${failed}/${total} 条 FAIL，${rows.filter(r => r.warns > 0).length}/${total} 条 WARN`);
+  console.log(`其中挂免责声明的：${withDis}/${total}（他本人全量 0.5%，上限应为每 5 条 1 条）\n`);
   for (const r of rows) console.log(`${r.fails ? '✗' : '✓'} ${r.date}  ${String(r.len).padStart(3)} 字  reads=${String(r.reads).padStart(6)}  FAIL=${r.fails} WARN=${r.warns}  ${r.rules.join(' + ')}`);
-  const p = appendRun({ at: new Date().toISOString(), kind: 'regress', total: rows.length, failed: bad.length, rows });
+  const p = appendRun({ at: new Date().toISOString(), kind: 'regress', total, failed, rows });
   console.log(`\n结果已追加到 ${path.relative(process.cwd(), p)}`);
-  process.exit(bad.length ? 1 : 0);
+  process.exit(failed ? 1 : 0);
 }
 
 const argv = process.argv.slice(2);

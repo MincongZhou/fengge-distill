@@ -48,48 +48,59 @@ const RE = {
   '中帖(51-103)': (t) => [...t].length >= 51 && [...t].length <= 103, '长帖(>103)': (t) => [...t].length > 103,
 };
 
-let texts = [];
-const dir = arg('--dir', null);
-if (dir) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.txt'))) texts.push(...fs.readFileSync(path.join(dir, f), 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
-for (let i = 0; i < process.argv.length; i++) if (process.argv[i] === '--file') texts.push(...fs.readFileSync(process.argv[i + 1], 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
-if (process.argv.includes('--stdin')) texts.push(...fs.readFileSync(0, 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
-if (!texts.length) { console.error('用法：--dir <文件夹> | --file x.txt | --stdin'); process.exit(2); }
-const m = texts.length;
-
-const rows = [];
-let inBand = 0, judged = 0;
-for (const name of PROPS) {
-  const f = byName[name]; if (!f) continue;
-  const re = RE[name];
-  const k = texts.filter(t => (typeof re === 'function' ? re(t) : re.test(t))).length;
-  const q = k / m;
-  const p = f.p;
-  const se = Math.sqrt(p * (1 - p) / N + p * (1 - p) / m);
-  const lo = Math.max(0, p - 1.96 * se), hi = Math.min(1, p + 1.96 * se);
-  const ok = q >= lo && q <= hi;
-  judged++; if (ok) inBand++;
-  rows.push({ 特征: name, 语料: (p * 100).toFixed(1) + '%', 允许带: `${(lo * 100).toFixed(1)}–${(hi * 100).toFixed(1)}%`, 本批: (q * 100).toFixed(1) + `% (${k}/${m})`, 判定: ok ? '✓' : (q > hi ? '↑偏高' : '↓偏低') });
+export function alignTexts(texts) {
+  const m = texts.length;
+  const rows = [];
+  let inBand = 0, judged = 0;
+  for (const name of PROPS) {
+    const f = byName[name]; if (!f) continue;
+    const re = RE[name];
+    const k = texts.filter(t => (typeof re === 'function' ? re(t) : re.test(t))).length;
+    const q = k / m;
+    const p = f.p;
+    const se = Math.sqrt(p * (1 - p) / N + p * (1 - p) / m);
+    const lo = Math.max(0, p - 1.96 * se), hi = Math.min(1, p + 1.96 * se);
+    const ok = q >= lo && q <= hi;
+    judged++; if (ok) inBand++;
+    rows.push({ 特征: name, 语料: (p * 100).toFixed(1) + '%', 允许带: `${(lo * 100).toFixed(1)}–${(hi * 100).toFixed(1)}%`, 本批: (q * 100).toFixed(1) + `% (${k}/${m})`, 判定: ok ? '✓' : (q > hi ? '↑偏高' : '↓偏低') });
+  }
+  const meds = [
+    { 特征: '长度中位', 语料: R.length.p50, 带: `${R.length.p25}–${R.length.p75}`, 值: median(texts.map(t => [...t].length)) },
+    { 特征: '逗号中位', 语料: median(commaCounts), 带: `${commaBand[0]}–${commaBand[1]}`, 值: median(texts.map(t => (t.match(/，/g) || []).length)) },
+  ];
+  const medRows = meds.map(x => {
+    const ok = x.值 >= Number(x.带.split('–')[0]) && x.值 <= Number(x.带.split('–')[1]);
+    judged++; if (ok) inBand++;
+    return { 特征: x.特征, 语料: String(x.语料), 允许带: x.带, 本批: String(x.值), 判定: ok ? '✓' : (x.值 > Number(x.带.split('–')[1]) ? '↑偏高' : '↓偏低') };
+  });
+  return { n: m, rows: [...medRows, ...rows], judged, inBand, score: inBand / judged };
 }
 
-// 中位数类
-const meds = [
-  { 特征: '长度中位', 语料: R.length.p50, 带: `${R.length.p25}–${R.length.p75}`, 值: median(texts.map(t => [...t].length)) },
-  { 特征: '逗号中位', 语料: median(commaCounts), 带: `${commaBand[0]}–${commaBand[1]}`, 值: median(texts.map(t => (t.match(/，/g) || []).length)) },
-];
-const medRows = meds.map(x => {
-  const ok = x.值 >= Number(x.带.split('–')[0]) && x.值 <= Number(x.带.split('–')[1]);
-  judged++; if (ok) inBand++;
-  return { 特征: x.特征, 语料: String(x.语料), 允许带: x.带, 本批: String(x.值), 判定: ok ? '✓' : (x.值 > Number(x.带.split('–')[1]) ? '↑偏高' : '↓偏低') };
-});
+function readInputs() {
+  const texts = [];
+  const dir = arg('--dir', null);
+  if (dir) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.txt'))) texts.push(...fs.readFileSync(path.join(dir, f), 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
+  for (let i = 0; i < process.argv.length; i++) if (process.argv[i] === '--file') texts.push(...fs.readFileSync(process.argv[i + 1], 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
+  if (process.argv.includes('--stdin')) texts.push(...fs.readFileSync(0, 'utf8').split('\n').map(s => s.trim()).filter(Boolean));
+  return texts;
+}
 
-if (process.argv.includes('--json')) {
-  console.log(JSON.stringify({ n: m, inBand, judged, score: inBand / judged, rows: [...medRows, ...rows] }, null, 2));
-} else {
-  console.log(`样本 ${m} 条 ｜ 语料基准 ${N} 条（原创非长文）｜ 判据：合成 95% 区间 + p25–p75\n`);
-  console.log('特征'.padEnd(18) + '语料'.padEnd(9) + '允许带'.padEnd(15) + '本批'.padEnd(14) + '判定');
-  for (const r of [...medRows, ...rows]) console.log(String(r.特征).padEnd(16) + r.语料.padEnd(9) + r.允许带.padEnd(15) + r.本批.padEnd(14) + r.判定);
-  const score = inBand / judged;
-  console.log(`\n带内比例：${inBand}/${judged} = ${(score * 100).toFixed(0)}%`);
-  if (m < 20) console.log(`⚠️ 样本 ${m} 条偏小：允许带已按样本量放宽，但结论仍不如 30+ 条稳。`);
-  console.log(score >= 0.85 ? '→ 统计上已与语料同期分布' : score >= 0.7 ? '→ 大体同分布，个别特征偏' : '→ 明显偏离，看 ↑↓ 那几行');
+const invokedDirectly = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (invokedDirectly) {
+  const texts = readInputs();
+  if (!texts.length) { console.error('用法：--dir <文件夹> | --file x.txt | --stdin'); process.exit(2); }
+  const rep = alignTexts(texts);
+  const { n: m, rows, judged, inBand, score } = rep;
+
+  if (process.argv.includes('--json')) {
+    console.log(JSON.stringify(rep, null, 2));
+  } else {
+    console.log(`样本 ${m} 条 ｜ 语料基准 ${N} 条（原创非长文）｜ 判据：合成 95% 区间 + p25–p75\n`);
+    console.log('特征'.padEnd(18) + '语料'.padEnd(9) + '允许带'.padEnd(15) + '本批'.padEnd(14) + '判定');
+    for (const r of rows) console.log(String(r.特征).padEnd(16) + r.语料.padEnd(9) + r.允许带.padEnd(15) + r.本批.padEnd(14) + r.判定);
+    console.log(`\n带内比例：${inBand}/${judged} = ${(score * 100).toFixed(0)}%`);
+    if (m < 20) console.log(`⚠️ 样本 ${m} 条偏小：允许带已按样本量放宽，但结论仍不如 30+ 条稳。`);
+    console.log(score >= 0.85 ? '→ 统计上已与语料同期分布' : score >= 0.7 ? '→ 大体同分布，个别特征偏' : '→ 明显偏离，看 ↑↓ 那几行');
+  }
 }

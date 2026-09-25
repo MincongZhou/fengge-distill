@@ -2,6 +2,18 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)，变更按 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 风格记录。
 
+## [1.3.2] - 2026-09-25
+
+**主题：消掉包内唯一的安全扫描警告 —— 把验收脚本从"spawn 子进程"改成"直接 import"。**
+
+### 变更
+
+- **`scripts/fengge-check.mjs` 不再使用子进程**：改为直接 `import` 三个模块（`fengge-lint.mjs` 的 `regressData()`、`fengge-align.mjs` 的 `alignTexts()`、`evals/run-evals.mjs` 的 `runSelftest()`）并调用其导出函数。
+  - 起因：DSH STORE 提交预检（issue #1126，run `36085499001`）报出 `warning/shell/child-process`，指向 `fengge-check.mjs` ——包内唯一的安全警告，而商店的目录门禁对未知信号是 fail-closed。
+  - 顺带是更好的实现：验收脚本本来就不需要进程隔离，直接调用导出函数更快、无引号/路径转义坑（本轮就踩过两次）。
+- **`fengge-lint.mjs` 导出 `regressData()`**、**`fengge-align.mjs` 导出 `alignTexts()`**、**`run-evals.mjs` 导出 `judge()` 与 `runSelftest()` 并加 CLI 守卫**（作为模块被 import 时不再执行命令行分支）。
+- 回归验证：`fengge-check` / `fengge-lint --regress` / `fengge-align` / `fengge-ratio` / `fengge-profile` / `run-evals --list|--selftest` 六个入口全部照常工作；黄金批次仍是 **30/30 = 100%**，evals 自检 **5/5**。
+
 ## [1.3.1] - 2026-09-25
 
 **主题：把 `dshReleases` 逐版本声明补齐到 npm 上的全部官方版本 —— 这是 DSH STORE 复检一直判"候选未保留"的真因。**
