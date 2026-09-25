@@ -58,6 +58,7 @@ function check(text, version = '2026', form = 'short') {
   if (len < L.floor) add('FAIL', '长度', `${len} 字 < 下限 ${L.floor}`, L.note);
   else if (len > L.hardMax) add('FAIL', '长度', `${len} 字 > 语料硬墙 ${L.hardMax}`, L.note);
   else if (len > L.warnMax) add('WARN', '长度', `${len} 字超出 p90=${L.warnMax}`, L.note);
+  else if (len > L.softMax) add('WARN', '长度', `${len} 字超出默认区间 ${L.softMin}–${L.softMax}`, `他 ${form === 'short' ? '短帖' : '长文'} p75=${L.softMax}；写这么长要有理由`);
   else if (form === 'short' && len < L.softMin) add('WARN', '长度·极短帖', `${len} 字（他 12% 的帖子就是这么短）`, '确认是故意甩一句就发；要写完整观点就补到 14 字以上');
   else add('PASS', '长度', `${len} 字（${form === 'short' ? '短帖' : '长文'} ${L.softMin}–${L.softMax} 为默认区）`, '');
 
