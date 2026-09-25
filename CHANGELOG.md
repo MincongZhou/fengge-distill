@@ -2,6 +2,19 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)，变更按 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 风格记录。
 
+## [1.3.1] - 2026-09-25
+
+**主题：把 `dshReleases` 逐版本声明补齐到 npm 上的全部官方版本 —— 这是 DSH STORE 复检一直判"候选未保留"的真因。**
+
+### 修正
+
+- **`dsh.compatibility.dshReleases` 从 20 条补到 27 条**：旧清单止于 `0.1.5-rc.2`，而 npm 上 `@deepseek-ai/dsh` 已经发到 `0.1.7-rc.2`；缺 `0.1.5-rc.3` 与整个 `0.1.6-alpha.1/2`、`0.1.7-alpha.1/2`、`0.1.7-rc.1/2` 共 7 条 ⇒ 复检时"没有对列出的官方版本逐项声明"，候选被剔除（DSH STORE issue #715，2026-09-10 起 `candidate-rejected`）。
+- 新增 7 条的判定口径：**`0.1.5-rc.3`、`0.1.7-rc.2` = `compatible`**（前者与已声明兼容的 `0.1.5-rc.2` 同线；后者是本机实际运行本 skill 的版本，属实测）；**`0.1.6-alpha.1/2`、`0.1.7-alpha.1/2`、`0.1.7-rc.1` = `unknown`**（未实测，不替上游背书）。
+
+### 说明
+
+- 本插件是**纯 skill provider**（只声明一个自有 entry id、`inject: ['skills']`、按需加载 Markdown），不触碰 DSH 核心；但"没测过就不写 compatible"这条不放松。
+
 ## [1.3.0] - 2026-09-25
 
 **主题：用盲评做回归，回源三份语料重算参数，把「AI 写的峰哥体」的两个成因写死；新增选题器、发稿前自检脚本，并把从未跑过的 evals 修活。**
