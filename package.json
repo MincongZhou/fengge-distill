@@ -51,7 +51,8 @@
     "eval": "node skills/fengge-wangming-tianya/evals/run-evals.mjs --selftest",
     "profile": "node skills/fengge-wangming-tianya/scripts/fengge-profile.mjs",
     "align": "node skills/fengge-wangming-tianya/scripts/fengge-align.mjs --file skills/fengge-wangming-tianya/evals/samples/golden-batch.txt",
-    "accept": "node skills/fengge-wangming-tianya/scripts/fengge-check.mjs"
+    "accept": "node skills/fengge-wangming-tianya/scripts/fengge-check.mjs",
+    "ratio": "node skills/fengge-wangming-tianya/scripts/fengge-ratio.mjs"
   },
   "keywords": [
     "dsh",
