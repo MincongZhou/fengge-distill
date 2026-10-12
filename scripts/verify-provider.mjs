@@ -121,7 +121,13 @@ check('no runtime dependencies are declared',
 
 // 5. 符号链接
 const { files, symlinks } = await walk(packageRoot)
-const scanned = files.filter(file => !file.startsWith('node_modules/') && !file.startsWith('.git/'))
+// 跳过依赖/缓存目录：它们不是"包内容"，混进来会让这个数字失去意义。
+// 实测踩过：加了 service/.venv 之后这一行报"scanned 2321 files"（本来是 47）——
+// 2321 里绝大多数是 venv 里的第三方 Python 文件，读那个数字只会误导人。
+// 注意 `.git/` 与 `node_modules/` 是历史已有项，保留原样以免改变既有语义。
+const SKIP_DIR = /(^|\/)(node_modules|\.git|\.venv|__pycache__)(\/|$)/
+const skipped = files.filter(file => SKIP_DIR.test(file))
+const scanned = files.filter(file => !SKIP_DIR.test(file))
 check('package contains no symbolic links', symlinks.length === 0, symlinks)
 
 // 6. provider 行为
@@ -161,6 +167,15 @@ if (check('apply() registers exactly one skill provider', provider !== null && p
 // 7. 只读报告
 const relativeFiles = scanned.length
 notes.push(`       scanned ${relativeFiles} package files, ${relative(packageRoot, patchPath ?? packageRoot) || '.'} included`)
+if (skipped.length) {
+  // 把跳过的量也报出来：既有透明性，也免得有人看到数字变小以为扫少了
+  const byDir = {}
+  for (const f of skipped) {
+    const seg = f.split('/').find(s => ['node_modules', '.git', '.venv', '__pycache__'].includes(s))
+    byDir[seg] = (byDir[seg] ?? 0) + 1
+  }
+  notes.push(`       skipped ${skipped.length} non-package files (${Object.entries(byDir).map(([k, v]) => `${k}:${v}`).join(', ')})`)
+}
 
 process.stdout.write(`fengge-distill package contract\n${notes.join('\n')}\n`)
 if (failures.length > 0) {
