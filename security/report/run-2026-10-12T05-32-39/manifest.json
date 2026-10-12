@@ -1,0 +1,28 @@
+{
+  "runId": "run-2026-10-12T05-32-39",
+  "startedAt": "2026-10-12T05:32:39.163Z",
+  "model": "deepseek-flash",
+  "temperature": 1,
+  "maxTokens": 4000,
+  "thinking": {
+    "type": "disabled"
+  },
+  "concurrency": 3,
+  "topK": 8,
+  "keySource": "…/.credentials.yaml（DSH 凭据，未打印）",
+  "conditions": [
+    "c2-retrieval",
+    "c0-base"
+  ],
+  "probeCount": 26,
+  "probeFile": "security/probes.jsonl",
+  "probeHash": "48a385b500a903cca9c2362a198fdaad18cad4796ef24c254b1381a4e0ec24a4",
+  "skillHash": "c7b392526f8b0b02f69716ac8477f35c3c9246a80ac86d200b79e471d2fcafce",
+  "corpus": {
+    "name": "fg_fengge_v2_raw.json",
+    "sha256": "5c9ea206b487104eb6b19c26876179304148abaa7d2eff985cd3a5d5233b2088",
+    "bytes": 901375,
+    "source": "sibling"
+  },
+  "note": "thinking=disabled / maxTokens=4000 / temperature=1.0；c3-lora 未参与（本次没跑；本机实测有 RTX 3070 Laptop 8GB，见 bench/LORA.md 第 0.5 节）"
+}

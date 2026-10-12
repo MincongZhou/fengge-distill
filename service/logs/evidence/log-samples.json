@@ -1,0 +1,108 @@
+{
+  "totalRows": 47,
+  "samples": [
+    {
+      "ts": "2026-10-12T05:40:35.204+00:00",
+      "path": "/cost/estimate",
+      "method": "POST",
+      "query": {},
+      "elapsedMs": 1,
+      "status": 200,
+      "requestDigest": {
+        "usage": {
+          "prompt_tokens": 1000000,
+          "prompt_cache_hit_tokens": 200000,
+          "prompt_cache_miss_tokens": 800000,
+          "completion_tokens": 100000,
+          "completion_tokens_details": {
+            "reasoning_tokens": 90000
+          }
+        },
+        "period": "off_peak"
+      },
+      "usage": {
+        "prompt_tokens": 1000000,
+        "prompt_cache_hit_tokens": 200000,
+        "prompt_cache_miss_tokens": 800000,
+        "completion_tokens": 100000,
+        "completion_tokens_details": {
+          "reasoning_tokens": 90000
+        }
+      },
+      "pricingPeriod": "off_peak",
+      "periodSelectedBy": "UTC Mon 05:40 不在任何 peak 窗口（auto：按 UTC 实时判定）",
+      "cost": {
+        "currency": "USD",
+        "inputCacheHitTokens": 200000,
+        "inputCacheMissTokens": 800000,
+        "outputTokens": 100000,
+        "reasoningTokensReported": 90000,
+        "outputPricedOn": "completion_tokens",
+        "unitPrices": {
+          "inputCacheHitPerMillion": 0.003,
+          "inputCacheMissPerMillion": 0.15,
+          "outputPerMillion": 0.6
+        },
+        "costUsd": {
+          "inputCacheHit": 0.0006,
+          "inputCacheMiss": 0.12,
+          "output": 0.06,
+          "total": 0.1806
+        },
+        "missingFields": [],
+        "note": "输出侧按 completion_tokens 计（已含 reasoning_tokens，不重复计）；价格来自 bench/pricing.json。"
+      },
+      "client": "127.0.0.1"
+    },
+    {
+      "ts": "2026-10-12T05:40:34.910+00:00",
+      "path": "/retrieve",
+      "method": "POST",
+      "query": {},
+      "elapsedMs": 240,
+      "status": 200,
+      "requestDigest": {
+        "query": "公司要求下班后微信待命",
+        "k": 3
+      },
+      "usage": null,
+      "pricingPeriod": null,
+      "periodSelectedBy": null,
+      "cost": null,
+      "client": "127.0.0.1"
+    },
+    {
+      "ts": "2026-10-12T05:40:35.188+00:00",
+      "path": "/metrics/summary",
+      "method": "GET",
+      "query": {
+        "runId": "../../../etc/passwd"
+      },
+      "elapsedMs": 0,
+      "status": 400,
+      "requestDigest": null,
+      "usage": null,
+      "pricingPeriod": null,
+      "periodSelectedBy": null,
+      "cost": null,
+      "client": "127.0.0.1"
+    },
+    {
+      "ts": "2026-10-12T05:40:56.931+00:00",
+      "path": "/lint",
+      "method": "POST",
+      "query": {},
+      "elapsedMs": 177,
+      "status": 200,
+      "requestDigest": {
+        "text": "上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸口，说这是规矩。上班第一天，公司让我把工牌别在胸…(共 240 字)",
+        "form": "long"
+      },
+      "usage": null,
+      "pricingPeriod": null,
+      "periodSelectedBy": null,
+      "cost": null,
+      "client": "127.0.0.1"
+    }
+  ]
+}

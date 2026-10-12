@@ -134,18 +134,9 @@ export async function listModels({ key, baseUrl = DEFAULT_BASE_URL, fetchImpl = 
   return (json.data || []).map((m) => m.id);
 }
 
-/** 单次调用的成本估算（分）。价格表必须显式传入——不替上游编价格。 */
-export function costOf(usage, pricing) {
-  if (!pricing) return null;
-  const inTok = (usage.prompt_tokens ?? 0) - (usage.prompt_cache_hit_tokens ?? 0);
-  const cacheTok = usage.prompt_cache_hit_tokens ?? 0;
-  const outTok = usage.completion_tokens ?? 0;
-  const cny =
-    (inTok / 1e6) * pricing.inputPerMillion +
-    (cacheTok / 1e6) * (pricing.cachedInputPerMillion ?? pricing.inputPerMillion) +
-    (outTok / 1e6) * pricing.outputPerMillion;
-  return { cny: +cny.toFixed(6), inTok, cacheTok, outTok, currency: pricing.currency || 'CNY' };
-}
+// 这里原本还有一个 costOf()。它已删除：成本算法只允许有一份（bench/pricing.mjs），
+// 而它用的是另一套字段名（pricing.inputPerMillion），等于给"两份价格表各算各的"留了后门，
+// 而且全仓库没有任何调用点——留着就是等着别人误用。
 
 const invokedDirectly = process.argv[1]
   && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));

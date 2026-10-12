@@ -1,0 +1,22 @@
+# service/.gitignore —— 这一层自己的忽略规则。
+#
+# 注意：仓库根还需要补几行才能让服务化层的运行期产物不进版本库
+#（见 service/README.md 第 7 节第 13 条；本次交付不允许改仓库根文件）。
+# 这个文件是给"service/ 被单独归档/单独 init 仓库"时用的，内容与根建议保持一致。
+
+# venv 是本机产物：路径写死、平台绑死、几百 MB，绝不入库
+.venv/
+
+# 运行期调用日志：一行一请求，会一直长。evidence/ 里是 README 引用的证据，要留
+logs/calls.jsonl
+logs/*.log
+
+# Python 字节码
+__pycache__/
+*.pyc
+
+# 临时安装日志
+pip-install.log
+
+# 价格自检的临时输出
+selftest.log

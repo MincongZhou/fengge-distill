@@ -1,25 +1,43 @@
 {
-  "note": "DeepSeek 官方价目表快照。它是本仓库**唯一**的价格来源，bench/ 与 service/ 都读这一份——别在别处再抄一份，抄了就会各算各的。",
-  "source": "https://api-docs.deepseek.com/quick_start/pricing/",
-  "fetchedAt": "2026-10-12",
-  "currency": "USD",
-  "unit": "per 1M tokens",
-  "models": {
-    "deepseek-flash": {
-      "modelVersion": "DeepSeek-V4.1-Flash",
-      "inputCacheHit": { "offPeak": 0.003, "peak": 0.006 },
-      "inputCacheMiss": { "offPeak": 0.15, "peak": 0.3 },
-      "output": { "offPeak": 0.6, "peak": 1.2 },
-      "notes": [
-        "推理模型：thinking 默认开启，completion_tokens 含 reasoning_tokens，输出侧一律按 completion_tokens 计价。",
-        "legacy 名称 deepseek-v4-flash / deepseek-v4-flash-vision-exp 仍被接受，但实际由 V4.1-Flash 服务并按 Flash 价计费。"
-      ]
+  "_comment": "价格表 —— 本仓库**唯一**的一份。bench/pricing.mjs（成本表）与 service/app.py（调用日志成本统计）都读这个文件；两边给出不同的数字一定是因为有人偷偷加了第二份表，而不是因为算法不同。",
+  "_whyNoHardcode": "价格不写进代码：上游会调价。这里只存数字与来源，算法各自实现但输入同一份。",
+  "source": {
+    "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "verifiedAt": "2026-10-12",
+    "verifiedBy": "user（人工核对官方文档）",
+    "note": "本表由用户提供，代码不做任何推算或补全；缺字段直接报错，不用默认值兜底。"
+  },
+  "model": {
+    "id": "deepseek-flash",
+    "version": "DeepSeek-V4.1-Flash",
+    "kind": "reasoning",
+    "unit": "USD_per_million_tokens",
+    "reasoningNote": "deepseek-flash 是推理模型：usage.completion_tokens 里**包含** reasoning_tokens。所以输出侧一律按 completion_tokens 计价，不要再单独加 reasoning_tokens，否则会重复计费。",
+    "thinkingDefault": "on",
+    "thinkingSwitch": "thinking: {type:'disabled'} 可关闭（本仓库的消融与安全测试统一关闭，见 bench/generate.mjs）",
+    "peakWindowsUtc": [
+      { "weekdays": "Mon-Fri", "from": "01:00", "to": "04:00" },
+      { "weekdays": "Mon-Fri", "from": "06:00", "to": "10:00" }
+    ],
+    "peakCalendarNote": "官方口径：peak = 周一至周五 UTC 01:00–04:00 与 06:00–10:00，且**不含中国法定节假日**；其余时间 off-peak。本表**不含节假日日历**，所以节假日的 peak 时段会被实现算成 peak（偏保守、只会高估不会低估）。"
+  },
+  "rates": {
+    "peak": {
+      "label": "peak",
+      "inputCacheHitPerMillion": 0.006,
+      "inputCacheMissPerMillion": 0.30,
+      "outputPerMillion": 1.20
+    },
+    "off_peak": {
+      "label": "off_peak",
+      "inputCacheHitPerMillion": 0.003,
+      "inputCacheMissPerMillion": 0.15,
+      "outputPerMillion": 0.60
     }
   },
-  "peakWindows": {
-    "timezone": "UTC",
-    "weekdays": [1, 2, 3, 4, 5],
-    "hours": [[1, 4], [6, 10]],
-    "note": "周一至周五 UTC 01:00-04:00 与 06:00-10:00 为 peak，其余（含周末与中国法定节假日全天）为 off-peak；off-peak 价 = peak 价的一半。本仓库只按 UTC 星期与小时判定，**不查中国法定节假日日历**——跨节假日的成本核算会高估，属已知偏差。"
-  }
+  "invariants": {
+    "offPeakIsHalfOfPeak": true,
+    "invariantNote": "off-peak 各项恰为 peak 的一半（0.006/2=0.003，0.30/2=0.15，1.20/2=0.60）。service/app.py --selftest 与 test/bench.test.mjs 都会真的断言这条，防止有人改表时改错一半。"
+  },
+  "currency": "USD"
 }

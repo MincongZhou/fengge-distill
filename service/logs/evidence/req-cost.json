@@ -1,0 +1,1 @@
+{"usage":{"prompt_tokens":1000000,"prompt_cache_hit_tokens":200000,"prompt_cache_miss_tokens":800000,"completion_tokens":100000,"completion_tokens_details":{"reasoning_tokens":90000}}}

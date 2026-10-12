@@ -30,5 +30,5 @@
     "eligible": 1511,
     "topK": 8
   },
-  "note": "c3-lora 未运行（无 GPU／训练资源），见 bench/README.md"
+  "note": "c3-lora 未运行（本次没跑：训练依赖未装，且公平对比要求同一开源基座），见 bench/LORA.md"
 }

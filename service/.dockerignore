@@ -1,0 +1,30 @@
+# 构建镜像时排除的东西。
+#
+# ⚠️ 注意：Dockerfile 的构建上下文是**仓库根**（`docker build -f service/Dockerfile .`），
+#    所以这个文件放在 service/ 下**不生效** —— Docker 只认上下文根目录的 .dockerignore。
+#    它放在这里是**给人照抄的模板**：要真正生效，需要把下面几行加到仓库根的 .dockerignore，
+#    或者后续把构建脚本改成先复制一份到临时上下文。
+#    这件事没有替用户改仓库根文件（任务边界：只允许动 service/），所以在 README 里说明。
+
+# venv 是宿主机的东西，绝不能进镜像（路径写死、平台绑死，而且几百 MB）
+.venv/
+service/.venv/
+
+# 调用日志是运行期数据，进镜像没意义（compose 会把它挂出来）
+service/logs/
+**/__pycache__/
+*.pyc
+
+# 源控制与编辑器垃圾
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# 包外数据/大文件：语料由 compose 以只读卷挂载，不进镜像
+fg_fengge_*.json
+fg_*.jsonl
+bench/runs/
+
+# 临时安装日志
+service/pip-install.log

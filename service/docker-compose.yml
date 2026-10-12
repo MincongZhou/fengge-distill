@@ -1,0 +1,51 @@
+# service/docker-compose.yml
+#
+# ⚠️ 构建上下文是**仓库根**（..），不是 service/ —— 见 Dockerfile 顶部注释。
+#
+# 用法（首次会拉 node:24-bookworm-slim，需要网络）：
+#     cd <repo root>
+#     docker compose -f service/docker-compose.yml up --build
+#     curl http://127.0.0.1:8000/health
+#
+# 为什么 compose 里要挂载语料：
+#   /retrieve 依赖 fg_fengge_v2_raw.json，而它是**包外数据**，仓库的 .gitignore 也没有它，
+#   按 corpus-path.mjs 的解析顺序，它位于仓库的**相邻目录**（作者工作区布局）：
+#     <repo>/../fg_fengge_v2_raw.json
+#   镜像里没有这个文件，所以 compose 把它以只读方式挂进去，路径对齐脚本的 "sibling" 规则。
+#   如果本机没有这个文件，/retrieve 会返回 503（而不是假装检索成功返回空结果）——
+#   其余端点不受影响。
+
+services:
+  fengge-service:
+    build:
+      context: ..
+      dockerfile: service/Dockerfile
+    image: fengge-distill-service:local
+    container_name: fengge-service
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      # auto = 按 UTC 实时判定 peak/off_peak；要锁死时段做对账就改成 peak 或 off_peak
+      FG_PRICING_PERIOD: auto
+      FG_NODE: node
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: "1"
+    volumes:
+      # 语料（包外数据）只读挂载，对齐 corpus-path.mjs 的 sibling 解析规则。
+      # 容器内 REPO_ROOT=/app，所以 sibling = /app/../fg_fengge_v2_raw.json = /fg_fengge_v2_raw.json。
+      # 挂到具体文件（不是目录）——这样本机缺文件时 compose 会直接报错，不会静默建一个目录
+      # 让脚本读到 "EISDIR" 这种看不懂的报错。
+      - ../fg_fengge_v2_raw.json:/fg_fengge_v2_raw.json:ro
+      # 调用日志落宿主机，容器重建也不丢账
+      - ./logs:/app/service/logs
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status==200 else 1)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

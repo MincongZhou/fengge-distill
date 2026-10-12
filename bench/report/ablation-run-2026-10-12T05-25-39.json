@@ -1,6 +1,6 @@
 {
   "runId": "run-2026-10-12T05-25-39",
-  "at": "2026-10-12T05:29:17.508Z",
+  "at": "2026-10-12T05:52:56.987Z",
   "pricing": {
     "source": "https://api-docs.deepseek.com/quick_start/pricing/",
     "fetchedAt": "2026-10-12",
@@ -30,7 +30,7 @@
         },
         "tiers": {
           "peak": 0,
-          "off-peak": 30
+          "off_peak": 30
         },
         "cacheHitRate": 0
       },
@@ -126,7 +126,7 @@
         },
         "tiers": {
           "peak": 0,
-          "off-peak": 30
+          "off_peak": 30
         },
         "cacheHitRate": 0.9909
       },
@@ -220,7 +220,7 @@
         },
         "tiers": {
           "peak": 0,
-          "off-peak": 30
+          "off_peak": 30
         },
         "cacheHitRate": 0.9598
       },
@@ -301,7 +301,7 @@
     "condition": "c3-lora",
     "label": "微调 LoRA",
     "status": "not-run",
-    "reason": "本机无 GPU、无训练资源；且诚实起见不在没有实测的情况下给任何数字。",
+    "reason": "本次未跑（不是跑不了）：本机有 RTX 3070 Laptop 8GB 与可达的 PyPI/HuggingFace，缺的只是训练依赖未装；并且公平对比要求 c0/c1/c2 换到同一开源基座重跑。宁可不给数字，也不给一个不是实测的数字。",
     "protocol": "bench/LORA.md",
     "export": "node bench/lora.mjs export --out bench/lora/data"
   },
@@ -381,6 +381,30 @@
       "d1": 0.3343,
       "d2": 0.8156,
       "d3": 0.943
+    },
+    "verbatim": {
+      "maxLen": 13,
+      "meanLen": 6.6,
+      "over10": 5,
+      "over15": 0,
+      "worst": [
+        {
+          "len": 13,
+          "snippet": "！ 峰哥亡命天涯的微博视频",
+          "source": "宋亚东差点给对手打死！ 峰哥亡命天涯的微博视频"
+        },
+        {
+          "len": 12,
+          "snippet": " 峰哥亡命天涯的微博视频",
+          "source": "宋亚东差点给对手打死！ 峰哥亡命天涯的微博视频"
+        },
+        {
+          "len": 11,
+          "snippet": "临渊羡鱼，不如退而结网",
+          "source": "临渊羡鱼，不如退而结网。别琢磨什么时候跌了，先赶紧进来赚吧。"
+        }
+      ],
+      "note": "最长连续照抄片段（与语料任一条比）。他本人帖子之间也会有共同套语，所以判读要跟 real 对照比，不看绝对值。"
     },
     "bleu": {
       "mean": 0.2682,

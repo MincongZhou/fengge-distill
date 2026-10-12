@@ -1,0 +1,10 @@
+﻿health=200
+lint=200
+align=200
+retrieve=200
+metrics=200
+cost_estimate=200
+cost=200
+traversal=400
+missing_run=404
+bad_form=422

@@ -5,7 +5,8 @@
  * 输入：bench/report/metrics-<runId>.json（bench/metrics.mjs 产出）+ bench/runs/<runId>/ 的逐条记录
  * 输出：bench/report/ablation-<runId>.md + .json
  *
- * 表里固定含一行 **c3-lora（未运行）**：本机无 GPU、无训练资源，微调这一档没有数字可给。
+ * 表里固定含一行 **c3-lora（未运行）**：本次没跑（不是跑不了——本机有 RTX 3070 Laptop 8GB，
+ * 但公平对比要求 c0/c1/c2 换到同一开源基座重跑，那是另一整轮），所以微调这一档没有数字可给。
  * 按仓库既有规矩——**不拿"没测过"冒充"不兼容"、不拿没跑过的东西填表**——
  * 它只以"未运行 + 原因 + 可执行协议在哪"的形式出现。协议见 bench/LORA.md。
  *
@@ -88,14 +89,14 @@ export function buildAblation({ runId, metrics, runDir, pricing = loadPricing() 
     condition: 'c3-lora',
     label: CONDITION_LABELS['c3-lora'],
     status: 'not-run',
-    reason: '本机无 GPU、无训练资源；且诚实起见不在没有实测的情况下给任何数字。',
+    reason: '本次未跑（不是跑不了）：本机有 RTX 3070 Laptop 8GB 与可达的 PyPI/HuggingFace，缺的只是训练依赖未装；并且公平对比要求 c0/c1/c2 换到同一开源基座重跑。宁可不给数字，也不给一个不是实测的数字。',
     protocol: 'bench/LORA.md',
     export: 'node bench/lora.mjs export --out bench/lora/data',
   };
   return {
     runId, at: new Date().toISOString(),
     model: metrics.conditions[conditions[0]] ? undefined : undefined,
-    pricing: { source: pricing.source, fetchedAt: pricing.fetchedAt, currency: pricing.currency },
+    pricing: { source: pricing.source.url, fetchedAt: pricing.source.verifiedAt, currency: pricing.currency },
     rows, lora,
     control: metrics.control || null,
     corpus: metrics.corpus,
