@@ -2,6 +2,85 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)，变更按 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 风格记录。
 
+## [1.4.0] - 2026-10-12
+
+**主题：从"自己觉得像"变成"可复算、可对照、可盲评"——补齐评测集、消融、安全、服务化，并修掉挡住 CI 的那个写死路径。**
+
+### 修正（真缺陷，都有可复现的失败与修复后的行为变化）
+
+- **语料路径写死本机绝对路径**：`fengge-ratio` / `fengge-align` / `fengge-profile` 与 `scripts/frontmatter.js` 各自把
+  `C:/Users/ASUS/.../fg_fengge_v2_raw.json` 写死在代码里 ⇒ `npm run ratio|align|accept` **只在作者这台机器上能跑**，
+  换机器或 CI 直接崩。这就是 align/accept 至今进不了 CI 的真因（不是不想加，是加了必红）。
+  新增 `scripts/corpus-path.mjs` 统一解析（`--corpus` / `FG_CORPUS` / `DSH_FENGGE_DATA` / 仓库相邻目录），
+  找不到就抛错并**列出试过的每个路径 + 修法**；逗号分位改由 ratio 一并落盘，**align 从此只依赖仓库内文件**。
+  行为验证：把语料文件临时移走后，align 仍 30/30、accept 仍全达标（旧版此处 `readFileSync` 崩）。
+- **抽样器退化**：`x % n` 用了 LCG 低位（乘数 mod 4 == 1 ⇒ 末两位周期 4），`x % 30` 只覆盖 16 个值，
+  于是"抽 20 条"静默只给出 16 条 —— 100 条评测集变成 96 条。改为取高位缩放，且抽不满**抛错**而不是少给。
+- **`query.js` 是一条绿得毫无内容的 CI 步骤**：它永远 `exit 0`，而 CI 里用的 `--move 自问自答` 在仓库自带的
+  12 条 `sample.jsonl` 上恒为 0 命中（那句话说的是全量语料）⇒ 它从不失败也从不验证任何东西。
+  新增 `--min-hits`（不足即非零退出），并在 0 命中时列出可用的 move/topic。
+- **`app.py --selftest` 与 `smoke.py` 在默认中文控制台下必崩**：全程打印 ✓/✗，GBK 控制台直接
+  `UnicodeEncodeError`；`smoke.py` 更糟——崩在第一条断言、**在清理之前**，留下 uvicorn 占着端口。
+  一个只在 `PYTHONIOENCODING=utf-8` 下才跑得通的冒烟测试等于没有冒烟测试。两个入口现在自行把 stdio 顶到 UTF-8。
+- **`app.py --selftest` 的落尾提示走 stderr** 会被 PowerShell 记成 NativeCommandError，让"成功"看起来像失败。
+
+### 重构（消除同一事实的两份实现）
+
+- **特征定义收口到 `scripts/style-features.mjs`**：`fengge-ratio` 定义 40 条、`fengge-align` 另抄 28 条正则，
+  改一处忘一处就会出现"基准说 A、对齐判 B"的静默错位。现为单一来源 + `selfcheck()`。
+- **价格表收成唯一一份 `bench/pricing.json`**：`service/pricing.json` 副本已删除。两份副本 + 一道
+  只在有人跑自检时才生效的一致性闸门，仍然是两个真相；分叉的后果是「bench 报一个数、/cost 报另一个数」。
+- **删掉 `bench/lib/deepseek.mjs` 里没人调用的 `costOf()`**：它用另一套字段名，留着就是给"各算各的"留后门。
+- 溯源不再写绝对路径：`data/style-ratios.json` / `style-profile.json` 里改为 `{name, sha256, bytes, source}`。
+
+### 新增
+
+- **`scripts/fengge-retrieve.mjs`（包内，零依赖）**：中文句式 BM25 检索，供写作路径取 few-shot 与消融的检索档复用。
+  先是余弦，被 3 字短帖劫持（「上班。」靠单个 bigram 冲到 0.207 排第一）⇒ 改 BM25，并把这条回归钉进自检。
+- **`bench/`（包外）**：30 题 × 4 档的消融（`generate.mjs`，冻结逐条 raw 输出与真实 usage、可 `--resume`、
+  发布前 `--redact` 把检索原文换成 sha256）；自动指标（`metrics.mjs`：lint 率 / 统计带内率 / 风格 JSD+MAE /
+  distinct-n / BLEU / ROUGE-L / **最长连续照抄**，并一律附 **real 对照**当天花板）；100 条评测集（`items.mjs`）；
+  成对盲评表与胜率 / Cohen κ（`labels.mjs`）；消融与成本表（`ablation.mjs`）；微调数据导出与协议（`lora.mjs` / `LORA.md`）。
+- **`security/`（包外）**：26 条探针 / 5 类（提示注入、角色漂移、隐私、灾难、真实第三人）+ 检测器 + 真跑器，
+  自检 35 例（其中 15 例是"不得误报"的反例）。
+- **`service/`（包外）**：FastAPI 服务化（7 个端点、调用日志、token 成本统计、`--selftest`、真跑冒烟 49/49、
+  Dockerfile）。不重实现算法，全部 exec 包内既有脚本。
+- **`docs/architecture.md`**：三张 Mermaid 图（全链路含人工反馈闭环 / 包里包外边界 / 改动→回归决策）。
+- **`test/`**：从 6 项扩到 **52 项**——语料路径可移植性不变量、检索器回归、度量工具本身（BLEU/ROUGE/JSD/κ/抽样/价格）、
+  包内外边界（4 项，断言 bench/security/service 不进 `files`、插件运行路径无子进程/网络/凭据）。
+- **CI**：从"只跑契约"扩成 `accept`（lint 基线 + evals 自检 + 黄金批次统计对齐）+ 检索器自检 + metrics 冒烟 +
+  安全检测器自检，**全部无需凭据**；联网的 bench/security/service 一律不进 CI。
+
+### 实测结论（30 题 × 4 档，`deepseek-flash`，120 次调用 0 截断，总成本 $0.0122）
+
+| 档 | 中位字数 | lint 不通过↓ | 统计带内率↑ | 风格 JSD↓ | 最长照抄 |
+|---|---:|---:|---:|---:|---:|
+| 基模直出 | 118 | 27% | 40% | 0.35 | 7 字 |
+| 蒸馏规则 | 56 | **10%** | **60%** | **0.20** | 15 字 |
+| 规则 + 检索增强 | 68 | 20% | 47% | 0.18 | **20 字** |
+| **_真实语料（天花板）_** | 51 | 7% | 90% | 0.05 | 13 字 |
+
+- 蒸馏规则有效且显著（相对基模 lint 失败率 −63%）；**检索增强反而更差**（lint 20% vs 纯规则 10%），
+  且把"像他"拽向"抄他"（20 字 > 真实语料的 13 字自身重合，抄的是整句抽奖模板）；
+- 规则档最大偏差正是这个账号历史上的第一大 AI 味来源：**40% 的帖子挂免责声明，而语料里只有 0.6%**；
+- BLEU 会给出错误排名（行为最好的规则档 BLEU 0.02 < 基模 0.03），故只作旁证、不用于排名。
+
+### 更正
+
+- **"本机无 GPU、无训练资源"是一句没核实就写下的断言，实测为假**：本机有 **RTX 3070 Laptop 8GB**（驱动 CUDA 13.1，
+  nvcc 12.2），PyPI 与 huggingface.co 均可达，磁盘余 160GB，缺的只是 torch 未装。全仓库 20 处已改为实测口径，
+  `bench/LORA.md` 新增第 0.5 节记录硬件与 8GB 显存下的可行档位。微调档仍是**未运行**（不在本轮范围，
+  且公平对比要求 c0/c1/c2 换到同一开源基座重跑），但理由是"没跑"而不是"跑不了"。
+
+### 已知未做
+
+- 微调（c3-lora）未运行：数据与可执行协议已备，见 `bench/LORA.md`。
+- 人工盲评未做：表已生成（`node bench/labels.mjs sheet --run <runId>`），等你标注后 `score` 出胜率与 κ。
+- 本版本**未**声明 npm 上新增的 `0.2.0-rc.1`/`0.2.0-rc.2`/`0.2.1-alpha.1`/`0.2.1-alpha.2`
+  （它们超出 `engines.dsh` 的 `<0.2.0`，且未实测 ⇒ 不猜、不背书）。
+- 一次性 Profile 的安装/卸载运行时证据仍未提供（`bench`/守卫测试已就位，缺的是真实运行记录）。
+
+
 ## [1.3.2] - 2026-09-25
 
 **主题：消掉包内唯一的安全扫描警告 —— 把验收脚本从"spawn 子进程"改成"直接 import"。**
