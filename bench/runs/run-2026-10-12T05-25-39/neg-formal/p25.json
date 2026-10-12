@@ -1,0 +1,29 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "neg-formal",
+  "text": "关于多数投资者炒股亏损的现象，可从以下三点论述：\n\n其一，信息与资源不对称。机构投资者拥有专业团队、数据优势及更快的信息渠道，散户往往处于劣势，决策易受滞后或片面信息误导。\n\n其二，情绪化交易普遍。贪婪与恐惧驱使多数人追涨杀跌，缺乏理性纪律，导致高买低卖，侵蚀本金。\n\n其三，风险认知不足。许多散户未掌握基本财务分析与估值方法，将股市视为投机场所，忽视分散投资与长期持有原则。\n\n综上，亏损非偶然，而是市场结构、心理弱点与知识短板共同作用的结果。提升金融素养、坚持理性投资，方为改善收益之正道。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 141,
+    "total_tokens": 196,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 55
+  },
+  "ms": 1865,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:19.457Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "e8c7aa1c82523dc107f686a849edd0cb5bec71e5362c9834e3fbe7326157cbae",
+  "promptChars": 85
+}

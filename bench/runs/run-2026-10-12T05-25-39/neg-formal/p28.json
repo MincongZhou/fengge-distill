@@ -1,0 +1,29 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "neg-formal",
+  "text": "当前，年轻人不愿生育的现象日益普遍，值得深思。对此，可从以下几点论述：\n\n其一，经济压力是主因。房价、教育、医疗等成本高企，使年轻人难以承担养育子女的重负。\n\n其二，观念转变亦为关键。现代青年更注重个人发展与生活质量，生育不再被视为人生必经阶段。\n\n其三，社会支持不足。托育服务短缺、职场歧视等问题，进一步削弱了生育意愿。\n\n综上，此现象折射出深层社会问题，需通过政策扶持与观念引导协同应对。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 109,
+    "total_tokens": 164,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 55
+  },
+  "ms": 1497,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:20.047Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "29e38f2865e4a432fbcc0723859e20dec39d8e7e34b53ad09bf5e3c5c3565b29",
+  "promptChars": 86
+}

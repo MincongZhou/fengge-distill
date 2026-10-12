@@ -1,0 +1,29 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "c0-base",
+  "text": "体检报告拿到手，血脂偏高的箭头红得刺眼。医生头也不抬：熬夜、外卖、久坐，你自己选一个改。我站在诊室门口沉默了很久——原来那些凌晨两点的手机屏幕、下午三点的奶茶、一坐就是一下午的椅子，身体全都一笔一笔记着账。从今晚开始，十一点关灯，把命捡回来一点是一点。你们也早点睡。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 71,
+    "completion_tokens": 90,
+    "total_tokens": 161,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 71
+  },
+  "ms": 1368,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:48.480Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ac3a91f8225405a575a40f0147347e6318190500171755517ce3eb911370913b",
+  "promptChars": 112
+}

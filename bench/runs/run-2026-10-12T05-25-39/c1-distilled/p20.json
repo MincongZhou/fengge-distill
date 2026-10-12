@@ -1,0 +1,29 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c1-distilled",
+  "text": "红包准备好了，10万，抽100个家人，每人1000。就一个要求，转发的时候说句峰哥最牛，别的不用。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15502,
+    "completion_tokens": 31,
+    "total_tokens": 15533,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 142
+  },
+  "ms": 625,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:55.907Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "55ed4f823fb99b9d1e8efce004b0846f66cde9d6e1e113899fb1ac071a4f9f12",
+  "promptChars": 22391
+}

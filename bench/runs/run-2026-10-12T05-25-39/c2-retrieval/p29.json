@@ -1,0 +1,79 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c2-retrieval",
+  "text": "直播到一半被警告了，原因是聊得太真实。家人们，这种事拦不住我，明天接着聊。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15865,
+    "completion_tokens": 24,
+    "total_tokens": 15889,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 633
+  },
+  "ms": 726,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:06.437Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "cf2cbd9f4db1144d6577d814f0292de0e7a5fc5a7ddf5c0c45aedacc9b8d7879",
+  "promptChars": 22959,
+  "retrieved": [
+    {
+      "score": 11.6642,
+      "iso": "2026-06-27T11:12:22.000Z",
+      "sha256": "c48e9aec11712cea81a3894a3f3fdc2860fe4e0b5327c88e6759357dac66ad23",
+      "chars": 138
+    },
+    {
+      "score": 9.418,
+      "iso": "2025-07-13T11:31:13.000Z",
+      "sha256": "a9369a1c69caa01a4ed3f08c6d005a1e5faf20d228f6b24490c31b19f5767074",
+      "chars": 46
+    },
+    {
+      "score": 8.7443,
+      "iso": "2025-09-01T10:36:52.000Z",
+      "sha256": "200ef2918f356ef6ab24d955f220e21edeeeb5b82ce32f418e5f6e83eff04873",
+      "chars": 46
+    },
+    {
+      "score": 8.1082,
+      "iso": "2025-09-12T15:03:04.000Z",
+      "sha256": "4fc680736246f0024b4aa931e8b8e85e5e23560a6d9face50be8403d61f3a425",
+      "chars": 54
+    },
+    {
+      "score": 7.7592,
+      "iso": "2026-08-09T07:54:56.000Z",
+      "sha256": "16ad030f1730ed3c07c03aa7b54b39f097896c91d55a551e871cf9a10372e1df",
+      "chars": 42
+    },
+    {
+      "score": 7.1548,
+      "iso": "2026-06-13T15:03:39.000Z",
+      "sha256": "3b14557e8bb67c30a7aa4c7b4c06436a3481d08821d7868da6cc66525bd12e43",
+      "chars": 29
+    },
+    {
+      "score": 6.9742,
+      "iso": "2025-03-30T15:38:45.000Z",
+      "sha256": "2d6b8597522d23e43038ebf40f29fab0909efec4628cbc1ae9123521975ac0bb",
+      "chars": 95
+    },
+    {
+      "score": 6.2289,
+      "iso": "2026-08-05T04:46:10.000Z",
+      "sha256": "e1bc479b12b35f1e2b501ffa2b7e47889c039d6ea982c334a29312ccac2409df",
+      "chars": 24
+    }
+  ]
+}

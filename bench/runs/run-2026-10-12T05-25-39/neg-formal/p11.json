@@ -1,0 +1,29 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "neg-formal",
+  "text": "近日，某明星被曝涉嫌偷税漏税，其工作室随即发表声明予以否认。对此现象，可从以下三方面评述：\n\n一、依法纳税是公民基本义务。明星作为高收入公众人物，更应模范遵守税法，若存在违法行为，必须承担相应法律责任。\n\n二、声明否认不能替代事实核查。工作室的单方声明缺乏公信力，唯有税务部门依法调查并公布结论，方能定分止争。\n\n三、公众应理性看待，不轻信、不传谣，静待权威部门调查结果，维护健康有序的舆论环境。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 123,
+    "total_tokens": 186,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 63
+  },
+  "ms": 1556,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:12.117Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c64a422472ca9377dd64ecb8f095103c6ff2b21155e7fb225c7a5a217cf54e36",
+  "promptChars": 91
+}

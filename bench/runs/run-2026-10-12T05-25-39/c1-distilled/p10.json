@@ -1,0 +1,29 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "c1-distilled",
+  "text": "两千万，家人们，这钱罚得我都替他心疼，但虚假宣传这事吧，我早就说了，带货这行水太深，能全身而退的没几个，我要是他，当初那两千万就该拿来买黄金，现在好歹还能赚点回来，个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15502,
+    "completion_tokens": 66,
+    "total_tokens": 15568,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 142
+  },
+  "ms": 1495,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:53.657Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "cac2ba714c46d3862806932cd8ea368e3807a5576db4d6b698e6e5c0de26c46b",
+  "promptChars": 22396
+}

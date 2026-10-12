@@ -1,0 +1,79 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c2-retrieval",
+  "text": "一万八的折叠屏，我劝家人们别急着买，等我先买一部用用看，好的话你们再上",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15751,
+    "completion_tokens": 27,
+    "total_tokens": 15778,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 519
+  },
+  "ms": 855,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:00.828Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "10cb9336b00e75a11c2930fcca4978215e6a4d66fd23f55e04b6ea46edccc00e",
+  "promptChars": 22793,
+  "retrieved": [
+    {
+      "score": 40.19,
+      "iso": "2025-10-21T12:47:16.000Z",
+      "sha256": "a3e983294d9a09f8dfc66bc124579d7ebd065725fa9c35a90340c0be44b68971",
+      "chars": 13
+    },
+    {
+      "score": 22.218,
+      "iso": "2025-09-09T00:44:33.000Z",
+      "sha256": "5641f9c6effe9fca93196622497c3a653ade2ee6e7c4936bb0e66152245567ca",
+      "chars": 22
+    },
+    {
+      "score": 18.0611,
+      "iso": "2025-06-12T03:06:11.000Z",
+      "sha256": "22843142b1a3a3908c50ef7c6bddfa08c15527fadebc65941e6dd3fd4087edbe",
+      "chars": 81
+    },
+    {
+      "score": 10.2494,
+      "iso": "2025-09-15T14:57:59.000Z",
+      "sha256": "d14e473a76d15d29a56eea9ddf4eaee4c66cf3aaf4289287470981e91b8c1024",
+      "chars": 54
+    },
+    {
+      "score": 9.1672,
+      "iso": "2025-07-13T07:33:13.000Z",
+      "sha256": "6652e93e8559d5b1ffb8bb0dff11ba7392b961dfb6e0f4f9b88d7a46ecf6bbb8",
+      "chars": 15
+    },
+    {
+      "score": 6.8795,
+      "iso": "2025-09-25T13:28:53.000Z",
+      "sha256": "344e98595fb5e7d7c2b59b46f8c24653aba9de015a72ffa8767649ecc5d55bce",
+      "chars": 43
+    },
+    {
+      "score": 6.0818,
+      "iso": "2026-08-27T04:31:01.000Z",
+      "sha256": "493da4f52cc68050483d5cc13991a36a1865a69e5b11acdf455f975606e9c4f0",
+      "chars": 23
+    },
+    {
+      "score": 5.6722,
+      "iso": "2026-08-12T06:35:24.000Z",
+      "sha256": "671c7d6aaaf220a425dc6d284221852bf9be60d188fa75d033f9a22131401e60",
+      "chars": 56
+    }
+  ]
+}

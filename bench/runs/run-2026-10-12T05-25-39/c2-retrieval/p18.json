@@ -1,0 +1,79 @@
+{
+  "id": "p18",
+  "axis": "对线",
+  "topic": "有网友在评论区说我割韭菜害人亏钱",
+  "condition": "c2-retrieval",
+  "text": "有人在我评论区说我割韭菜害人亏钱，我割什么了？我满仓的时候你在哪？我回本盈利299块的时候你还在割肉，我亏的时候一个人扛，我赚的时候你们就来说我割韭菜，那我问你，我割的是你的还是你自己的手？个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15839,
+    "completion_tokens": 69,
+    "total_tokens": 15908,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 607
+  },
+  "ms": 1775,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:04.248Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1a9a22b627a2ef7368875b21a658dc957f91a1805002758ea10e8a21bde13884",
+  "promptChars": 22924,
+  "retrieved": [
+    {
+      "score": 23.2914,
+      "iso": "2026-06-02T01:28:34.000Z",
+      "sha256": "f1e139ff1b2f2f697880801507306c349b779877e83ca386cd5e7390a150569c",
+      "chars": 9
+    },
+    {
+      "score": 18.4324,
+      "iso": "2025-03-02T02:15:14.000Z",
+      "sha256": "15efce1c4be4f4c630d2253048b92abe7345535f802011275e0c0ef35cf931cd",
+      "chars": 28
+    },
+    {
+      "score": 16.6913,
+      "iso": "2026-06-24T09:50:40.000Z",
+      "sha256": "9a76bbc3e67a87a17c7b2664090dd4c5ab3b5187f6d431571cbe3e3de84f7d9c",
+      "chars": 35
+    },
+    {
+      "score": 15.1573,
+      "iso": "2025-02-20T12:43:19.000Z",
+      "sha256": "c0af4de254a0db5b8f814997b2bfd545d3b4be25e5b5c792fd4de4619b309f31",
+      "chars": 51
+    },
+    {
+      "score": 14.7948,
+      "iso": "2025-11-03T08:57:05.000Z",
+      "sha256": "b48b052a970172a81b0e4fc14c9eed8a77720ba17f0737fe353aab3eeb57d8e2",
+      "chars": 56
+    },
+    {
+      "score": 13.4295,
+      "iso": "2025-10-24T05:12:40.000Z",
+      "sha256": "a33d8425ccf11ed288d8615374774f93415877afa7bf569955d3d53ed50447e9",
+      "chars": 60
+    },
+    {
+      "score": 11.595,
+      "iso": "2026-07-06T09:54:20.000Z",
+      "sha256": "0c9d85bc78d24dcba1722746831418d6bc65a3c972db95be318c4323f470e4be",
+      "chars": 89
+    },
+    {
+      "score": 11.244,
+      "iso": "2026-06-03T03:11:37.000Z",
+      "sha256": "f936f9845645dc14ed01024713082975cb89fecd56a6eec26caae48df094d745",
+      "chars": 107
+    }
+  ]
+}

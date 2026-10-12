@@ -1,0 +1,29 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "neg-formal",
+  "text": "近日，某餐饮老板转行直播带货获巨额收益，引发关注。对此，可作如下评述：\n\n其一，此举体现市场敏锐与转型勇气。餐饮业竞争激烈，直播带货为新兴渠道，该老板能顺势而为，值得肯定。\n\n其二，此现象折射行业边界日益模糊。跨界发展已成常态，唯守旧业恐难适应时代。\n\n其三，成功个案不宜简单复制。直播带货依赖个人特质与时机，盲目跟风易致失败。\n\n综上，应理性看待此类转型，既鼓励创新求变，亦需审慎评估自身条件，避免一哄而上。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 128,
+    "total_tokens": 189,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 61
+  },
+  "ms": 1716,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:21.257Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "8cd8494ebbd94f1c52ed6b63f1713a502d53070a46c03498a971eef1022a322d",
+  "promptChars": 90
+}

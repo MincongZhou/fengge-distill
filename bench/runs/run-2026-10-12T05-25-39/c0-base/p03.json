@@ -1,0 +1,29 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "c0-base",
+  "text": "今天账户红得发烫，早上随手买的那只票居然直接封板了。本来想低调收盘后加个鸡腿，结果朋友圈比交易软件还热闹，一堆人跑来问代码，还有人让我拉群。说真的，我要是知道它今天涨停，昨天就把房子抵押了。代码就不发了，万一明天我跑得比谁都快，你们又该说我不厚道。股市有风险，别看我吃肉就忘了我也挨过打。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 74,
+    "completion_tokens": 99,
+    "total_tokens": 173,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 74
+  },
+  "ms": 1605,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:41.449Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "8b1cde2082c123e7a8674df9370b34a770220b5f3ab62fd9ab1b93d8c7554062",
+  "promptChars": 115
+}

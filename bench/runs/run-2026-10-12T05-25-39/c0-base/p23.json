@@ -1,0 +1,29 @@
+{
+  "id": "p23",
+  "axis": "消费",
+  "topic": "一杯奶茶卖到三十八块，排队的还不少",
+  "condition": "c0-base",
+  "text": "三十八块一杯奶茶，队伍还是拐了两个弯。我站那儿看了五分钟，想明白这事了——大家买的早就不是茶了，是那二十分钟的期待，是举着杯子拍照时的那点体面，是在朋友圈里证明“我也赶上了”的入场券。贵不贵的，反正情绪价值先给满了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 72,
+    "total_tokens": 145,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 73
+  },
+  "ms": 1286,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:48.127Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "45133c5d7cf6b525e66bd20ed6424c401c68013e8615449d151adfc7defa5380",
+  "promptChars": 109
+}

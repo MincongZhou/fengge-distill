@@ -1,0 +1,79 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "c2-retrieval",
+  "text": "网红虚假宣传被罚两千万，这钱够我买多少碗面啊？不过话说回来，罚得好，支持国家整治直播乱象。个人观点，不构成投资建议。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15976,
+    "completion_tokens": 40,
+    "total_tokens": 16016,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 744
+  },
+  "ms": 1096,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:01.278Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "0eae46f0d7d63f90b132aa70c8d3b42c9890675cf3b873df7b942116f1cabaee",
+  "promptChars": 23132,
+  "retrieved": [
+    {
+      "score": 50.1369,
+      "iso": "2025-09-23T02:01:07.000Z",
+      "sha256": "eb5ec69f14eb090f661c666f50338d1ce315bcc5a3e848098bd7f94c2edad659",
+      "chars": 36
+    },
+    {
+      "score": 22.3292,
+      "iso": "2025-11-08T04:37:19.000Z",
+      "sha256": "67570ad4d49c9ef3ececca263f0eb26213ac973e1cd7be409099c2698361ca7c",
+      "chars": 19
+    },
+    {
+      "score": 20.5239,
+      "iso": "2025-05-13T08:38:20.000Z",
+      "sha256": "7e6c2ebf3541c90b2b9ef2302f81bb015b8e3d7ed53eb6c1a39d4c7e2859c00d",
+      "chars": 104
+    },
+    {
+      "score": 15.7485,
+      "iso": "2026-06-05T04:55:15.000Z",
+      "sha256": "32098c89d51fe7ecbdd081408517cc03a94d8c0eed237f354681f655508caab8",
+      "chars": 68
+    },
+    {
+      "score": 12.6981,
+      "iso": "2025-11-09T05:11:56.000Z",
+      "sha256": "5842c7c61c19844cc2350695025fb2f1c58344714b859eb74916fc3e070abef4",
+      "chars": 121
+    },
+    {
+      "score": 10.4197,
+      "iso": "2025-10-23T06:36:20.000Z",
+      "sha256": "abac533dee67e8d3cf48df42fa9906f372d4e6c7f72aab51fad3d77ab89bd836",
+      "chars": 126
+    },
+    {
+      "score": 10.1997,
+      "iso": "2026-06-23T14:29:39.000Z",
+      "sha256": "88bba503c0d9ec487ffed29b89ef89c0bea1feaac5d7d2976d1f1b5ed9739393",
+      "chars": 38
+    },
+    {
+      "score": 10.1252,
+      "iso": "2025-08-10T11:40:03.000Z",
+      "sha256": "13a6d535fbd933ac1255897b0ce08244a2cc434391e308e35165582ef5bdf9c9",
+      "chars": 127
+    }
+  ]
+}

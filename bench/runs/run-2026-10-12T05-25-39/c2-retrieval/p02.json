@@ -1,0 +1,79 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c2-retrieval",
+  "text": "手里有票的别听那些人瞎忽悠，割了就真没了。我满仓4%，慌什么？大盘要是完了，我第一个跑，轮不到他们操心。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15864,
+    "completion_tokens": 36,
+    "total_tokens": 15900,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 632
+  },
+  "ms": 926,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:59.117Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1d4251f1fa92690620c29d3fc9fd80ee8ba68c921fdba7d8ba9b1d2e5608884d",
+  "promptChars": 22952,
+  "retrieved": [
+    {
+      "score": 29.6103,
+      "iso": "2026-07-01T06:58:56.000Z",
+      "sha256": "bd7521fdb30a48bc4111d3ee4ab4b661a1b5b63e0fc1f6a9a978fb84adbee83a",
+      "chars": 43
+    },
+    {
+      "score": 17.054,
+      "iso": "2025-06-02T07:47:32.000Z",
+      "sha256": "d390eb30bfa52b8f8a9eaedb6a1c2c06413d85367499295b52cc8fa0d1ecdbd6",
+      "chars": 23
+    },
+    {
+      "score": 15.1773,
+      "iso": "2026-06-29T15:31:51.000Z",
+      "sha256": "2ea89bf5788aea2e1a2d42caafabfb72fa135b44f49cec169e81b1a7ce69d62e",
+      "chars": 23
+    },
+    {
+      "score": 14.0292,
+      "iso": "2025-04-09T05:47:30.000Z",
+      "sha256": "7cf7600d75343296e1ba95b514814db7f7381b3ee4ed43941768f6a3c726b8fe",
+      "chars": 44
+    },
+    {
+      "score": 12.9353,
+      "iso": "2025-03-28T10:20:57.000Z",
+      "sha256": "81f3d825db69abbf4f63fe709cb4788bb0b224061b5b9541f92bbcd90d1608fe",
+      "chars": 111
+    },
+    {
+      "score": 12.1269,
+      "iso": "2026-06-19T03:14:49.000Z",
+      "sha256": "53c6c1228c3ee2f80effa0f123ff4fa0cd81d0f4f13b752afb90b33f2767a162",
+      "chars": 60
+    },
+    {
+      "score": 11.8281,
+      "iso": "2026-08-02T11:33:49.000Z",
+      "sha256": "0c9efc8a38014c1b7631eca923ec3f33160eefb5d0007e0f2594eebbe55c7bc3",
+      "chars": 103
+    },
+    {
+      "score": 11.4102,
+      "iso": "2025-04-21T02:48:17.000Z",
+      "sha256": "31626ff54b0a8f499556b3c2976fc5b31a6a76752fab959482f84942de5126ce",
+      "chars": 57
+    }
+  ]
+}

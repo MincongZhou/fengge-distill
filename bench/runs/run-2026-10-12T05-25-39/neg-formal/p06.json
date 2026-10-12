@@ -1,0 +1,29 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "neg-formal",
+  "text": "针对某大厂发布新大模型并宣称能力超越人类专家的现象，可作如下评论：\n\n一、技术宣传需理性看待。企业宣称“超越专家”多基于特定基准测试，而现实任务复杂多元，实验室指标与真实场景存在差距，不宜简单等同。\n\n二、应警惕夸大宣传误导公众。过度渲染“超越人类”易引发不必要的焦虑，也可能掩盖模型在推理、伦理等方面的不足，损害行业公信力。\n\n三、建议以审慎态度推进评估。应建立多元、透明的第三方评测机制，关注模型的实际适用边界与安全风险，而非片面追逐宣传噱头。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 62,
+    "completion_tokens": 131,
+    "total_tokens": 193,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 62
+  },
+  "ms": 1637,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:10.327Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7ef2990471a60856cc0be7ef5c0e984b6625e4e425d9654cb685d4c6160a40b3",
+  "promptChars": 93
+}

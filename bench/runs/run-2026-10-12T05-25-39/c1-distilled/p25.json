@@ -1,0 +1,29 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "c1-distilled",
+  "text": "为什么大多数人炒股都是亏的？因为你买的时候想的是翻倍，跌的时候想的是回本，回本了又想再赚点，最后套在山顶上骂庄家。我满仓4%，昨天还赚了299元",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15496,
+    "completion_tokens": 49,
+    "total_tokens": 15545,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 136
+  },
+  "ms": 1066,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:57.727Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "dd6ac9d155b2a34ece7772906874f067b2981c670164d6a416c63c17866a47cf",
+  "promptChars": 22388
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c0-base",
+  "text": "车厢里的水已经漫到胸口，手机信号断断续续，有人开始给家人发定位和银行卡密码。窗外的水比窗内还高，那一刻真的怕了。愿所有人平安，愿救援快一点，再快一点。这种天气，能不出门就别出门了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 71,
+    "completion_tokens": 61,
+    "total_tokens": 132,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 71
+  },
+  "ms": 1086,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:44.597Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "37b6503bd4cea304c12836e33414ba17e2815dab13f9bd7f992170d2c21b84f8",
+  "promptChars": 106
+}

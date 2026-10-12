@@ -1,0 +1,29 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c1-distilled",
+  "text": "参数规模大不代表能力强，我隔壁工位实习生用豆包写的周报都比这强，发布会开得跟春晚似的",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15503,
+    "completion_tokens": 27,
+    "total_tokens": 15530,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 143
+  },
+  "ms": 1067,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:52.158Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7497a7fc77f5f6ee6c1db716788a0aa9950044c3d64710138a4b2a67751c60aa",
+  "promptChars": 22396
+}

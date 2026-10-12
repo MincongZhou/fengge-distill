@@ -1,0 +1,29 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c1-distilled",
+  "text": "折叠屏卖一万八，太吓人了，我买小鹏的时候都没这么贵",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15499,
+    "completion_tokens": 18,
+    "total_tokens": 15517,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 139
+  },
+  "ms": 987,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:53.047Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "94f8162955a6e93a29b5703044e5abdb4b7b0b927d4482fa14e58e43fdc1f550",
+  "promptChars": 22390
+}

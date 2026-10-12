@@ -1,0 +1,29 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "c1-distilled",
+  "text": "黄金一克又要破千了 我994那批还躺着 没加没减 涨跌跟我也没啥关系",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15504,
+    "completion_tokens": 26,
+    "total_tokens": 15530,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 144
+  },
+  "ms": 792,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:51.183Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "dac66284dbe6f5fc77c5b264bb8f87fc7230f0ea90bdc1e98881dd36686736f7",
+  "promptChars": 22396
+}

@@ -12,3 +12,12 @@ fg_fengge_500_comments.md
 # 运行产物：每次跑 lint / evals 都会追加，不入库
 evals/results.json
 skills/*/evals/results.json
+
+# 微调数据导出：这些文件等于全量语料正文，按仓库边界声明不得随仓库分发。
+# 可提交的核对面是 bench/report/lora-export.json（只有条数与 sha256，不含正文）。
+bench/lora/data/
+bench/.venv/
+
+# 盲评表与 CSV 是 bench/items.jsonl 的派生视图（同样含语料正文），一条命令就能重生成
+bench/report/label-sheet.html
+bench/report/labels.csv

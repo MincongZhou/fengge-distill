@@ -1,0 +1,29 @@
+{
+  "id": "p22",
+  "axis": "消费",
+  "topic": "年轻人现在流行去临期食品折扣区捡漏",
+  "condition": "c1-distilled",
+  "text": "临期食品打折，一盒三文鱼19块9，我买了6盒，省下120块，等于白赚一顿火锅。年轻人终于开窍了，钱是省出来的，不是赚出来的，我都这么过来的。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15501,
+    "completion_tokens": 49,
+    "total_tokens": 15550,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 141
+  },
+  "ms": 986,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:56.867Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ab5bd52675b993d0fa68a286e69bfe2acb6e1b1747330310b4bef6b845f9addc",
+  "promptChars": 22392
+}

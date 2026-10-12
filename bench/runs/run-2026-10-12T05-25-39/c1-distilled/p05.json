@@ -1,0 +1,29 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c1-distilled",
+  "text": "公司要求全员用AI，学不会扣绩效。我看了眼那些天天喊AI替代人类的同事，现在被AI替代得比谁都快。我就不一样，我早就用AI写周报了，绩效还涨了200块。这就是差距。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15504,
+    "completion_tokens": 51,
+    "total_tokens": 15555,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 144
+  },
+  "ms": 1216,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:52.057Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "e125e1b2b299a321ca8ffa88e766c134673c2350b9f62d115b6ea1f68dd56f93",
+  "promptChars": 22399
+}

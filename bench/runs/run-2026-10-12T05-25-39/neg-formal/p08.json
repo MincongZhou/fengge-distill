@@ -1,0 +1,29 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "neg-formal",
+  "text": "国产芯片产业近期在制程节点上实现新突破，值得肯定，亦需理性看待。\n\n其一，此举标志着我国在半导体制造领域自主创新能力的持续提升，有助于缓解高端芯片长期依赖进口的被动局面。\n\n其二，制程突破仅是产业链自主可控的一环，设备、材料、设计工具等环节仍需协同攻关，不可因单点进展而盲目乐观。\n\n其三，国际技术竞争日趋激烈，唯有坚持长期投入、开放合作与人才培养并重，方能将阶段性成果转化为系统性优势。\n\n总之，突破可喜，但前路仍艰，宜以务实态度推进全产业链高质量发展。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 57,
+    "completion_tokens": 128,
+    "total_tokens": 185,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 57
+  },
+  "ms": 1856,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:11.477Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "cc4ed0e0cb8ac3e3774cc2d093432f2f3f777515371738d53289246b6ef340f1",
+  "promptChars": 86
+}

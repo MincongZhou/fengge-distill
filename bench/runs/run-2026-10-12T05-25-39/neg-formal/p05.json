@@ -1,0 +1,29 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "neg-formal",
+  "text": "针对部分公司强制全员掌握AI工具，并将学习成效与绩效挂钩的现象，我认为需理性看待，但简单粗暴的强制手段值得商榷。\n\n其一，AI工具的应用确为趋势，企业推动员工技能升级有其合理性。其二，以扣绩效相威胁，易引发抵触情绪，且忽视岗位差异——并非所有职位都需深度使用AI。其三，强制统一标准可能催生形式主义，员工为保绩效而敷衍应付，反损效率。其四，企业应提供培训与过渡期，以激励替代惩罚，尊重个体学习节奏。\n\n总之，拥抱技术值得肯定，但管理方式应更具温度与科学性。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 137,
+    "total_tokens": 200,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 63
+  },
+  "ms": 1866,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:10.197Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "fe59f17890d1110b6874beec29fe2128b8fd326197851676b7033b709863bec6",
+  "promptChars": 96
+}

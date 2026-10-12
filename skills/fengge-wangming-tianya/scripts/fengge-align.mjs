@@ -16,6 +16,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ALIGN_FEATURES, matcherFor } from './style-features.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
@@ -36,18 +37,9 @@ const median = (a) => { const s = a.slice().sort((x, y) => x - y); return s[Math
 const commaBand = R.comma ? [R.comma.p25, R.comma.p75] : null;
 const commaBase = R.comma ? R.comma.p50 : null;
 
-const PROPS = ['含「我」', '含「你」', '含「你们」', '含问号', '含数字', '含话题标签', '免责句', '你们…我…对仗', '假口头禅', '顿号/分号', '换行', '方括号表情', '结尾不加标点', '句号收尾', '感叹号收尾', '问号收尾', '以「我」开头', '以「峰哥」开头', '含「为什么」', '含「太吓人了」', '含「家人们」', '含「满仓」', '含「割肉」', '含「抽奖」', '极短帖(≤14字)', '短帖(15-50)', '中帖(51-103)', '长帖(>103)'];
-const RE = {
-  '含「我」': /我/, '含「你」': /你/, '含「你们」': /你们/, '含问号': /？/, '含数字': /\d/, '含话题标签': /#[^#\n]{2,}#/,
-  '免责句': /个人观点|不构成[^。！？]{0,8}建议|个人看法|个人判断|个人猜测/, '你们…我…对仗': /你们[^。！？\n]{0,30}我/,
-  '假口头禅': /我算了|算了算|算下来|这账|算账|换算成|建议大家|建议你们|够我买|白赚|茶叶蛋|性价比|本质上/,
-  '顿号/分号': /[、；]/, '换行': /\n/, '方括号表情': /\[[^\]\s]{1,6}\]/, '结尾不加标点': /[^。！？]$/,
-  '句号收尾': /。$/, '感叹号收尾': /！$/, '问号收尾': /？$/, '以「我」开头': /^我/, '以「峰哥」开头': /^峰哥/,
-  '含「为什么」': /为什么/, '含「太吓人了」': /太吓人了/, '含「家人们」': /家人们/, '含「满仓」': /满仓/,
-  '含「割肉」': /割肉/, '含「抽奖」': /抽奖/,
-  '极短帖(≤14字)': (t) => [...t].length <= 14, '短帖(15-50)': (t) => [...t].length >= 15 && [...t].length <= 50,
-  '中帖(51-103)': (t) => [...t].length >= 51 && [...t].length <= 103, '长帖(>103)': (t) => [...t].length > 103,
-};
+// 特征名与判定器都来自 style-features.mjs 的单一来源（这里以前各自抄了一份 28 条正则，
+// 和 ratio 的 40 条对不上——改一处忘一处就会"基准说 A、对齐判 B"）。
+const PROPS = ALIGN_FEATURES;
 
 export function alignTexts(texts) {
   const m = texts.length;
@@ -55,7 +47,7 @@ export function alignTexts(texts) {
   let inBand = 0, judged = 0;
   for (const name of PROPS) {
     const f = byName[name]; if (!f) continue;
-    const re = RE[name];
+    const re = matcherFor(name);
     const k = texts.filter(t => (typeof re === 'function' ? re(t) : re.test(t))).length;
     const q = k / m;
     const p = f.p;

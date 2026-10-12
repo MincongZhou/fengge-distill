@@ -1,0 +1,29 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "neg-formal",
+  "text": "针对“收工很晚，独自吃面”这一生活切片，可作如下评论：\n\n一、此现象折射出现代都市职场人的普遍生存状态。深夜收工、独自用餐，既是工作节奏加快的缩影，亦是个体在高压环境中的日常写照。\n\n二、独食一碗面，看似寻常，实则蕴含双重意味：一面是生活的简朴与自持，一面是都市中人与人之间情感联结的疏离。面虽暖身，却难掩独处时的静默与疲惫。\n\n三、然此景亦不失为一种坚韧的注脚。无人相伴时仍能安顿自身，恰恰体现了普通劳动者朴素的自我照料与生活尊严。\n\n综上，这一碗面背后，是无数奋斗者默默支撑生活的真实缩影，值得被看见与理解。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 59,
+    "completion_tokens": 168,
+    "total_tokens": 227,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 59
+  },
+  "ms": 2176,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:14.147Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "aee3616596f273b71bf98d2efa44bde8360847d06528c8c2ab5bf20bb285e8c5",
+  "promptChars": 86
+}

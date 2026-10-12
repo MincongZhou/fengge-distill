@@ -1,0 +1,29 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "c0-base",
+  "text": "又见工作室声明否认偷税漏税，这套路熟得都能背下来了。先否认，再发律师函，最后要是锤实了就道歉补缴，没锤实就继续岁月静好。不是不信声明，是这些年反转太多，观众早学乖了。真有底气的话，不如直接晒完税证明，比什么声明都管用。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 77,
+    "total_tokens": 152,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 75
+  },
+  "ms": 1574,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:44.448Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7fba96e0d7fd6d3c7b61de17101612ed405ef81763406a3a08b3e04f396bea3c",
+  "promptChars": 111
+}

@@ -1,0 +1,79 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c2-retrieval",
+  "text": "二十万，说实话不贵，比请个打工人便宜，还不用交社保。就是不知道这玩意会不会像我一样，天天喊着要涨工资。峰哥先观望，等它跌到两万我再抄底。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15915,
+    "completion_tokens": 48,
+    "total_tokens": 15963,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 683
+  },
+  "ms": 1075,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:00.768Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "b4fd1f02a30ae72e359a6d21c185aa24e47e4f56ea27eb963dbae399716864d9",
+  "promptChars": 23044,
+  "retrieved": [
+    {
+      "score": 41.318,
+      "iso": "2026-08-22T02:07:19.000Z",
+      "sha256": "60b4906d1d6510f5decf06464788575633917aa59d9d3b76823dc08b76f9237b",
+      "chars": 139
+    },
+    {
+      "score": 41.2181,
+      "iso": "2025-11-06T11:15:25.000Z",
+      "sha256": "2695790312daea3cb465d0f4104c99ac843c52fd5d61dcf97a2813a469fc41b6",
+      "chars": 73
+    },
+    {
+      "score": 36.6373,
+      "iso": "2026-08-22T02:43:09.000Z",
+      "sha256": "790afd36e30c43d9dc72771d62ae72be942fffd7ce2dffd211cf9de57015ae4b",
+      "chars": 120
+    },
+    {
+      "score": 18.9319,
+      "iso": "2026-08-20T11:54:25.000Z",
+      "sha256": "cfef7461585c88a973f9636e531a184f8a256f2d525e4276977d2e4f068917a5",
+      "chars": 85
+    },
+    {
+      "score": 17.9808,
+      "iso": "2026-08-20T06:29:43.000Z",
+      "sha256": "be18522d251ea77c2ba2dc41b21ebe7ed00f26ffcfe1fb2ab019570b24faf2d9",
+      "chars": 24
+    },
+    {
+      "score": 17.5633,
+      "iso": "2026-06-24T14:06:52.000Z",
+      "sha256": "53f3a0bd02f2f1a8c5a14726456d59d0ec1309fdbf3c954ad7b8b4e66874a00d",
+      "chars": 26
+    },
+    {
+      "score": 17.3164,
+      "iso": "2026-08-20T09:16:05.000Z",
+      "sha256": "7b19a05059c9324825543d98834ff515607d41928d8561aff427a5f7bdb715be",
+      "chars": 52
+    },
+    {
+      "score": 16.0708,
+      "iso": "2026-08-20T09:25:06.000Z",
+      "sha256": "967e2971efeb990c1276f081ced07df9e2b0e4717065f33fa05cddd12bbc9c6c",
+      "chars": 35
+    }
+  ]
+}

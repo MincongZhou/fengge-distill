@@ -1,0 +1,29 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c0-base",
+  "text": "现在的年轻人都不愿意生孩子了，可你仔细想想，他们不是不愿意，是不敢。房价压着，工资追不上，托育贵得离谱，职场对孕产女性又那么苛刻。生一个孩子，搭进去的是两个人的自由、三个家庭的积蓄，还有妈妈可能回不去的岗位。别急着骂年轻人自私，先把生育的成本降下来，把支持落到实处。愿意生，是选择；敢生，才是底气。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 67,
+    "completion_tokens": 92,
+    "total_tokens": 159,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 67
+  },
+  "ms": 1414,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:49.897Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c128e990a06dd16bb03602d984ee27a77f9a7687f7a489fad7220acb1f1e0072",
+  "promptChars": 106
+}

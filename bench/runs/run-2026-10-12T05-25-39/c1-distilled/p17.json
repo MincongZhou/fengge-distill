@@ -1,0 +1,29 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c1-distilled",
+  "text": "老板说今年不裁员，要共渡难关。这话听着耳熟，去年我们公司也这么说的，结果年后优化了30%。不过我个人觉得，能共渡难关的老板已经是好老板了，毕竟我持仓的几家公司，年报里连难关俩字都不敢提。个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15504,
+    "completion_tokens": 67,
+    "total_tokens": 15571,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 144
+  },
+  "ms": 1315,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:55.277Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "bc530b19b2a0f3dff31ec772fdae735d9b8ded970283f305a2a9e52ae860b3e6",
+  "promptChars": 22395
+}

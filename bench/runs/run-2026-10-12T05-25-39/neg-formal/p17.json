@@ -1,0 +1,29 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "neg-formal",
+  "text": "老板在年会上承诺“不裁员，共渡难关”，此言固然体现了企业在困境中的责任担当，亦不乏稳定人心之效。然而，对此现象需理性看待，分点论之：其一，承诺不裁员值得肯定，彰显了企业家的担当与对员工的尊重，有助于凝聚团队力量。其二，口号需以实际行动支撑，若仅停留在言语层面，而无切实的薪酬保障、透明沟通或转型规划，则承诺易流于空谈，反损公信。其三，员工亦应清醒认知，共渡难关意味着双方需共同承担压力，包括可能的薪资调整或岗位优化。总之，此举应视为积极信号，但需以制度性安排确保承诺落地，方能真正实现企业与员工的同舟共济。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 157,
+    "total_tokens": 220,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 63
+  },
+  "ms": 2066,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:16.008Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ed2e610b23cb6ed09ccf43c004fd41cf0179a85234fe3e39ed3b0448c0611c54",
+  "promptChars": 92
+}

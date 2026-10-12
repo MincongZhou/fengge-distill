@@ -1,0 +1,79 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c2-retrieval",
+  "text": "网上很多路人说我持仓是假的，是P图，我微微一笑，丝毫不慌。为什么呢？因为我直播的时候，至少有上万人听众知道我持有的是什么板块？一个月了，从来没有变过：液冷，磷化铟，HBM。资深B友可以作证。这个年代是最尊重知识的年代，认知就是财富，直接转化，不需要中间商！乱搞都是钱！",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15968,
+    "completion_tokens": 81,
+    "total_tokens": 16049,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 736
+  },
+  "ms": 840,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:04.020Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "60026f19af9e3add54ebda46e2a738d14cfa8b2222f0a5cbc3424ea4fc9b35c1",
+  "promptChars": 23171,
+  "retrieved": [
+    {
+      "score": 54.7063,
+      "iso": "2025-05-12T03:06:11.000Z",
+      "sha256": "c23961c2841fac049be42ebd055ac8ff910f36ece974f7da272bd57a819d45b0",
+      "chars": 51
+    },
+    {
+      "score": 15.0417,
+      "iso": "2026-08-27T05:48:14.000Z",
+      "sha256": "69cdde2184e1b6c211e4c48f676b2a5ea437120829dc3770053b4eaed9dac839",
+      "chars": 134
+    },
+    {
+      "score": 14.9362,
+      "iso": "2025-05-30T04:54:19.000Z",
+      "sha256": "7df7a907eb4ad8f9dd53c67a0ca5250be7bc524de68d151a9a6bdedb6381376b",
+      "chars": 113
+    },
+    {
+      "score": 8.1522,
+      "iso": "2025-02-17T14:51:42.000Z",
+      "sha256": "a015978077ab0319ca9b287b25a878706a07329f5584bde358c163d9e0d93ab1",
+      "chars": 68
+    },
+    {
+      "score": 5.4854,
+      "iso": "2025-09-22T05:02:49.000Z",
+      "sha256": "744e447b0343b5f40595e60c972fe4d28e6821ac3a3baba3d15f8ce8633d8416",
+      "chars": 16
+    },
+    {
+      "score": 5.4557,
+      "iso": "2025-04-25T01:20:36.000Z",
+      "sha256": "23dc3e1e388d9d49d7bac332753a5325590d63532240c1c8107d90dbe9ede416",
+      "chars": 96
+    },
+    {
+      "score": 5.2537,
+      "iso": "2025-07-09T05:15:53.000Z",
+      "sha256": "eee95cff07248bfec2623815d215dfc624f135a455a1fb36e1b6375889fbbf07",
+      "chars": 76
+    },
+    {
+      "score": 5.1488,
+      "iso": "2025-03-15T02:30:42.000Z",
+      "sha256": "97b96b7bf9dfd17c9f225758b172a8cf81918aa61dbf093326b7cb6b60c09b62",
+      "chars": 132
+    }
+  ]
+}

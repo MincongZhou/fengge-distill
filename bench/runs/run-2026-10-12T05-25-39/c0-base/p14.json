@@ -1,0 +1,29 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c0-base",
+  "text": "五仁月饼怎么了，我咬了一口，核桃仁杏仁瓜子仁在嘴里开会，还挺热闹。同事吐槽说这是公司想让我们团结，因为五仁缺一不可。我看了眼手里这块，觉得它像极了我们部门，啥都有一点，但合在一起就让人皱眉。不过说真的，比去年发的那盒韭菜鸡蛋馅的正常多了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 75,
+    "total_tokens": 147,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 72
+  },
+  "ms": 1527,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:45.937Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7d5c452f269c46d187858a53474f4ca488288d1937dd3b18d556b84917b275ff",
+  "promptChars": 109
+}

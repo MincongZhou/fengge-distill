@@ -1,0 +1,79 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c2-retrieval",
+  "text": "超越人类专家？那是必须的，哪次发布会不是人类第一。我关心的是股价，不是参数，跑分再漂亮，能让我回本吗？",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15790,
+    "completion_tokens": 34,
+    "total_tokens": 15824,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 558
+  },
+  "ms": 816,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:59.937Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "5ef7cbbcb4d28d6d20adc123530eb1dd1d9f7e02c5c2ace905989b00c9e9015a",
+  "promptChars": 22865,
+  "retrieved": [
+    {
+      "score": 18.0611,
+      "iso": "2025-06-12T03:06:11.000Z",
+      "sha256": "22843142b1a3a3908c50ef7c6bddfa08c15527fadebc65941e6dd3fd4087edbe",
+      "chars": 81
+    },
+    {
+      "score": 8.0081,
+      "iso": "2026-08-10T16:02:07.000Z",
+      "sha256": "a1c7fb3773379de3eaf51559a894f694da1e0d14eba321c1d1ad7f4535144032",
+      "chars": 86
+    },
+    {
+      "score": 7.6237,
+      "iso": "2026-07-13T05:16:11.000Z",
+      "sha256": "d07f0f483073475e5d4e3945c39b33174de512fb2cef43a0d0c561abb95f7e0d",
+      "chars": 27
+    },
+    {
+      "score": 6.8795,
+      "iso": "2025-09-25T13:28:53.000Z",
+      "sha256": "344e98595fb5e7d7c2b59b46f8c24653aba9de015a72ffa8767649ecc5d55bce",
+      "chars": 43
+    },
+    {
+      "score": 6.8641,
+      "iso": "2025-10-21T12:47:16.000Z",
+      "sha256": "a3e983294d9a09f8dfc66bc124579d7ebd065725fa9c35a90340c0be44b68971",
+      "chars": 13
+    },
+    {
+      "score": 6.8476,
+      "iso": "2025-07-16T03:19:39.000Z",
+      "sha256": "d798b27deb4e26a6a6a7e09b8f767f6e88b5709bf3a2a27f742de3c32cf7185b",
+      "chars": 83
+    },
+    {
+      "score": 6.7522,
+      "iso": "2025-08-25T00:33:41.000Z",
+      "sha256": "f856cbdce93477218d6b7d82c4e1b3867918cbc8404c08b172b44627ec62bf41",
+      "chars": 24
+    },
+    {
+      "score": 6.6528,
+      "iso": "2025-09-24T04:53:02.000Z",
+      "sha256": "b620545999a41074949e3f5df43426866f5be80d47fe6af381d986e43dfeb46b",
+      "chars": 16
+    }
+  ]
+}

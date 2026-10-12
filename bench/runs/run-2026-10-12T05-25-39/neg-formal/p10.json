@@ -1,0 +1,29 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "neg-formal",
+  "text": "网红因虚假宣传被罚两千万元，此事引发广泛关注，具有多重警示意义。\n\n其一，法律面前无“流量特权”。无论粉丝多少、名气多大，一旦触碰虚假宣传红线，均须承担相应法律责任。此次高额罚款表明监管部门对网络营销乱象“零容忍”的态度。\n\n其二，网红经济须回归诚信本位。部分从业者为追求短期利益，夸大产品功效、伪造使用效果，不仅损害消费者权益，更透支行业公信力。\n\n其三，平台应强化审核责任。仅靠事后处罚难以根治乱象，平台须完善事前审核与实时监测机制，从源头遏制虚假营销内容传播。\n\n唯有法治监管、平台尽责、从业者自律三方合力，方能推动网红经济健康有序发展。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 156,
+    "total_tokens": 217,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 61
+  },
+  "ms": 2057,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:12.388Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c279627fdd4636e21336b6776e29e4068ac8fc6a0c9e9e3ae61bf3222583b960",
+  "promptChars": 93
+}

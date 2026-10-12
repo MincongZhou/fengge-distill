@@ -1,0 +1,29 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "c1-distilled",
+  "text": "一个人吃碗面，汤都喝完了，48块",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15500,
+    "completion_tokens": 12,
+    "total_tokens": 15512,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 140
+  },
+  "ms": 796,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:53.957Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "12e2d3f828c91aa0f8a2bfec331fcab40783815721d5e9602bcc2571b82922c9",
+  "promptChars": 22389
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "c1-distilled",
+  "text": "满仓没动，今天又跌了快一个点，账户显示-8万，难受",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15505,
+    "completion_tokens": 20,
+    "total_tokens": 15525,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 145
+  },
+  "ms": 666,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:50.087Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "09a2b4e06fcdf24b53a3dc4ab9cadac848b156fb740958cd4bf616ab82abda2e",
+  "promptChars": 22392
+}

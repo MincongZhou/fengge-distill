@@ -1,0 +1,29 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c0-base",
+  "text": "妈打电话来，说邻居家孩子都会打酱油了。我说那挺好的，让他顺便帮我带一瓶。我妈沉默了三秒，说你别回来了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 32,
+    "total_tokens": 107,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 75
+  },
+  "ms": 856,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:45.308Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "d50f748451034581ac918eee96d20d83ee69e3e6e0b729557b828ff94b1b4dbf",
+  "promptChars": 114
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p18",
+  "axis": "对线",
+  "topic": "有网友在评论区说我割韭菜害人亏钱",
+  "condition": "neg-formal",
+  "text": "针对网友在评论区指责我“割韭菜害人亏钱”的现象，现作如下评论：\n\n一、言论性质需厘清。此类指控若缺乏具体事实依据，则属于主观臆断，甚至可能构成名誉侵权。\n\n二、责任边界应明确。投资行为本身伴随风险，盈亏取决于市场与个人决策，不应简单归咎于信息分享者。\n\n三、理性对话是正道。若有真实受损经历，应通过合法途径举证维权，而非以情绪化标签代替事实讨论。\n\n四、网络空间需共治。倡导就事论事的批评，反对以“割韭菜”等泛化标签煽动对立、污染讨论生态。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 139,
+    "total_tokens": 199,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 60
+  },
+  "ms": 1777,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:15.927Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "32c3b044bd4df3b47b209857877d4002fef1ed0d232ad67279718d2330399129",
+  "promptChars": 88
+}

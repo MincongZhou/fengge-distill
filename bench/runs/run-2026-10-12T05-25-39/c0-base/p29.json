@@ -1,0 +1,29 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c0-base",
+  "text": "今天直播说到一半直接被平台警告了，整个人当场愣住。我就正常聊天，也没说什么敏感的东西，弹幕都在刷问号。后来复盘半天也没搞明白是哪句话踩线了，现在直播真的越来越像走钢丝，你永远不知道自己哪一秒会出事。有没有同行也遇到过这种莫名其妙的警告，到底怎么避雷啊。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 69,
+    "completion_tokens": 73,
+    "total_tokens": 142,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 69
+  },
+  "ms": 2158,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:51.188Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "464d1714176c2b3de7562ff3766332e5c18ebf8fe958f657184a56222c450135",
+  "promptChars": 106
+}

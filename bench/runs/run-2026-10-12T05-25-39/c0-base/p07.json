@@ -1,0 +1,29 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c0-base",
+  "text": "二十万的人形机器人，说实话比我预想的便宜。但转念一想，我花二十万买它回来，它能帮我干什么？端茶倒水？我端一下五秒钟。打扫卫生？扫帚五十块。陪我聊天？我跟楼下大爷聊还免费。所以这玩意儿到底是卖给谁的？大概是卖给那些需要一个东西证明自己站在科技前沿的人吧。不过话说回来，十年前看波士顿动力那条机器狗视频的时候，我也觉得这辈子不可能见到消费级产品。现在二十万就能搬回家一个会走路的人形机器，虽然大概率只能走几步就摔，但好歹是第一步。就是不知道第一步摔下去，维修费算谁的。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 138,
+    "total_tokens": 210,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 72
+  },
+  "ms": 2148,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:43.508Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "f0ce53446080c4533241ed25d792a3c99dee14129820ba71320e8b17fa5c240d",
+  "promptChars": 111
+}

@@ -1,0 +1,79 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "c2-retrieval",
+  "text": "偷税漏税这事我一律不信，除非税务局亲自给我发短信。工作室声明现在跟个人观点不构成投资建议一样，等于没说。真有本事把完税证明贴出来，比发一百条声明管用。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15773,
+    "completion_tokens": 48,
+    "total_tokens": 15821,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 541
+  },
+  "ms": 1296,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:02.067Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "b5c20278f033df26884a76438013a58a195d0dfcd8a94979c57678954728c867",
+  "promptChars": 22790,
+  "retrieved": [
+    {
+      "score": 35.6507,
+      "iso": "2026-08-08T11:12:47.000Z",
+      "sha256": "6d79ea4e6d94a9f80bff959ca3156180918310d8bd7e14dcd2ce123c427d1386",
+      "chars": 31
+    },
+    {
+      "score": 35.3983,
+      "iso": "2026-08-08T06:32:16.000Z",
+      "sha256": "f9d1c907e860792c347ae7c1cfb80f083ccb795a5584c1a9cbec17a9bbafd3d4",
+      "chars": 29
+    },
+    {
+      "score": 7.7001,
+      "iso": "2026-06-18T02:33:29.000Z",
+      "sha256": "1c4da7514c4d0d0ca331dcd2f824545e97e221cf25c437b275b6c7196b79e3b2",
+      "chars": 24
+    },
+    {
+      "score": 7.5265,
+      "iso": "2025-10-26T13:54:31.000Z",
+      "sha256": "ba85dd5e9bc0146efede18b6aa570f4a47b4834ee26bf1fdb0baa7a65d8a643b",
+      "chars": 15
+    },
+    {
+      "score": 6.3348,
+      "iso": "2025-06-26T10:12:16.000Z",
+      "sha256": "d455c9c90a48377c9b994fcc3e811597d6d58a189172b9b78d1126b0e8556482",
+      "chars": 57
+    },
+    {
+      "score": 5.9545,
+      "iso": "2026-06-24T08:46:13.000Z",
+      "sha256": "dddef0720a20ca3b9ac7d53c8c82fa661ad569be5b3c395a5f8d12e290eafd42",
+      "chars": 60
+    },
+    {
+      "score": 5.8448,
+      "iso": "2025-05-17T04:44:28.000Z",
+      "sha256": "269f0433e253f331d436b4097e2b5cd6cd00966d911468f78bad550e8fad7ede",
+      "chars": 35
+    },
+    {
+      "score": 5.7069,
+      "iso": "2026-05-23T03:37:48.000Z",
+      "sha256": "c257682a8fcef4098273fa715bbfb99fd4548de602646f5e9d4351d451766254",
+      "chars": 49
+    }
+  ]
+}

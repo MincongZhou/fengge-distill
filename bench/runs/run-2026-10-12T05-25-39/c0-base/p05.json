@@ -1,0 +1,29 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c0-base",
+  "text": "公司发通知了，全员必须学会用AI工具，学不会扣绩效。我就想问，扣绩效能逼出技能吗？当年逼我们学Excel的也是这套路，结果公司里真会用的不到三成。工具是好工具，但拿绩效当鞭子，最后学会的只会是糊弄。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 67,
+    "total_tokens": 142,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 75
+  },
+  "ms": 1300,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:42.519Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c48f77d1222a73027b463a4c929aee5158f27b6020c0836992c680c70bdfa4e8",
+  "promptChars": 116
+}

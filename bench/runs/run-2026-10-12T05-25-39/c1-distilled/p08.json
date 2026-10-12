@@ -1,0 +1,29 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c1-distilled",
+  "text": "国产芯片又突破了一个制程节点，太出气了，卡脖子卡了这么多年说突破就突破。我早就说半导体这波得满仓干，用了4%的仓位，剩下96%纯属谨慎，赚麻了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15498,
+    "completion_tokens": 51,
+    "total_tokens": 15549,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 138
+  },
+  "ms": 1197,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:52.388Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "0874fc0bf75f0d93c78f0c689a711777088eeda70f427fe3a2d028cf0ca0c98f",
+  "promptChars": 22389
+}

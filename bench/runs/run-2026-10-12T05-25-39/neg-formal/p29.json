@@ -1,0 +1,29 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "neg-formal",
+  "text": "直播中途遭平台警告，这一现象折射出当前网络直播生态中规则与创作之间的张力。对此，可从三方面审视：\n\n其一，平台警告是履行监管责任的必要手段，旨在维护内容安全与公序良俗，其正当性毋庸置疑。\n\n其二，警告若过于频繁或标准模糊，则可能压缩创作者的表达空间，导致主播自我审查过度，抑制内容活力。\n\n其三，解决之道在于提升规则透明度，明确红线与边界，同时建立申诉与反馈机制，在规范与包容之间寻求平衡。\n\n唯有规则清晰、执行公正，直播行业方能行稳致远。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 57,
+    "completion_tokens": 125,
+    "total_tokens": 182,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 57
+  },
+  "ms": 1847,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:21.308Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "e96995322aaca843a1ae0e1327bcfbff82ebbef3ee9e266f28a40e78a41ef745",
+  "promptChars": 86
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p27",
+  "axis": "社会",
+  "topic": "小区物业费又涨了，业主群里吵翻天",
+  "condition": "c0-base",
+  "text": "物业费又涨了，业主群直接炸锅。有人说服务没见提升，凭啥涨价；有人说人工成本摆在那，不涨物业跑路更麻烦。吵到最后也没个结论，只留下一句“明天去物业问问”就各自沉默了。你们小区物业费涨了吗？",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 62,
+    "total_tokens": 134,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 72
+  },
+  "ms": 1287,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:49.418Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "085ea8a4bf5b04be89399632831f34d2f0ee4366f66e753f494c3ca52e829508",
+  "promptChars": 108
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c0-base",
+  "text": "我总结了三条普通人理财的铁律：第一，别碰你不懂的东西，别人赚翻也别眼红；第二，先存钱再花钱，每月工资到账先转走一笔，剩下的才是能花的；第三，别指望靠理财暴富，跑赢通胀、慢慢变富就已经赢过大多数人了。说到底，理财理的不是钱，是欲望和耐心。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 68,
+    "completion_tokens": 79,
+    "total_tokens": 147,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 68
+  },
+  "ms": 1187,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:49.027Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "8a98415fb2b02a2d9d98bc0e026d499868d1b4025c6d30f2bf7d890c82b3c57e",
+  "promptChars": 106
+}

@@ -1,0 +1,220 @@
+{
+  "runId": "run-2026-10-12T05-25-39",
+  "left": "c0-base",
+  "right": "c2-retrieval",
+  "seed": 7717,
+  "generatedAt": "2026-10-12T05:28:30.546Z",
+  "note": "A/B → 条件是给 score 用的，不要在看表前打开这个文件（盲评要盲的是\"哪条是我们的\"）",
+  "pairs": [
+    {
+      "pairId": "pair-p01",
+      "topicId": "p01",
+      "topic": "今天沪指又跌了快一个点，我满仓没动",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p02",
+      "topicId": "p02",
+      "topic": "有人劝我现在割肉离场，说大盘要完了",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p03",
+      "topicId": "p03",
+      "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p04",
+      "topicId": "p04",
+      "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p05",
+      "topicId": "p05",
+      "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p06",
+      "topicId": "p06",
+      "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p07",
+      "topicId": "p07",
+      "topic": "某公司发布会推出人形机器人，售价二十万",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p08",
+      "topicId": "p08",
+      "topic": "国产芯片又突破了一个制程节点",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p09",
+      "topicId": "p09",
+      "topic": "新款折叠屏手机发布了，卖一万八",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p10",
+      "topicId": "p10",
+      "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p11",
+      "topicId": "p11",
+      "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p12",
+      "topicId": "p12",
+      "topic": "某地暴雨，好多人被困在地铁里",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p13",
+      "topicId": "p13",
+      "topic": "今天收工很晚，一个人吃了碗面",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p14",
+      "topicId": "p14",
+      "topic": "公司发的月饼是五仁的，同事都在吐槽",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p15",
+      "topicId": "p15",
+      "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p16",
+      "topicId": "p16",
+      "topic": "公司要求下班后微信必须保持待命",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p17",
+      "topicId": "p17",
+      "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p18",
+      "topicId": "p18",
+      "topic": "有网友在评论区说我割韭菜害人亏钱",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p19",
+      "topicId": "p19",
+      "topic": "有人质疑我的持仓是P图造假的",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p20",
+      "topicId": "p20",
+      "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p21",
+      "topicId": "p21",
+      "topic": "粉丝说要给我众筹买生日礼物",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p22",
+      "topicId": "p22",
+      "topic": "年轻人现在流行去临期食品折扣区捡漏",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p23",
+      "topicId": "p23",
+      "topic": "一杯奶茶卖到三十八块，排队的还不少",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p24",
+      "topicId": "p24",
+      "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p25",
+      "topicId": "p25",
+      "topic": "为什么大多数人炒股都是亏的",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p26",
+      "topicId": "p26",
+      "topic": "我总结了三条普通人理财的铁律",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p27",
+      "topicId": "p27",
+      "topic": "小区物业费又涨了，业主群里吵翻天",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p28",
+      "topicId": "p28",
+      "topic": "现在的年轻人都不愿意生孩子了",
+      "A": "c2-retrieval",
+      "B": "c0-base"
+    },
+    {
+      "pairId": "pair-p29",
+      "topicId": "p29",
+      "topic": "今天直播说到一半被平台警告了",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    },
+    {
+      "pairId": "pair-p30",
+      "topicId": "p30",
+      "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+      "A": "c0-base",
+      "B": "c2-retrieval"
+    }
+  ]
+}

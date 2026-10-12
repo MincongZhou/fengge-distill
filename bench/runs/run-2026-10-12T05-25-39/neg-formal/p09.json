@@ -1,0 +1,29 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "neg-formal",
+  "text": "新款折叠屏手机以一万八千元的价格面世，其市场定位与消费价值值得审慎审视。\n\n其一，从技术层面看，折叠屏工艺虽代表创新方向，但屏幕折痕、耐用性等核心痛点尚未根本解决，高价未必等同成熟体验。\n\n其二，从市场逻辑看，此定价更似品牌彰显技术实力的符号性策略，而非面向大众的普及型产品，易加剧消费分级。\n\n其三，从消费理性看，万元以上的尝鲜成本远高于实用收益，普通消费者应警惕被营销话术裹挟，避免为溢价过度买单。\n\n技术迭代值得鼓励，但价格应匹配真实价值。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 58,
+    "completion_tokens": 136,
+    "total_tokens": 194,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 58
+  },
+  "ms": 1767,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:11.968Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "655ec3f08c76ce2b3c8d34c0fb3d1bf0306d5b855576332fee79b7926ec82192",
+  "promptChars": 87
+}

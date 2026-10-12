@@ -1,0 +1,29 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c0-base",
+  "text": "楼下那家川菜馆去年还贴着转让，前几天刷直播看到老板在卖火锅底料，直播间三万人，一晚上顶过去炒三个月菜。他说后厨油烟熏了十年，现在对着补光灯反而自在了。这事儿真挺魔幻的，实体店熬不下去的老板，换个赛道直接起飞，有时候困住你的不是能力，是那张营业执照。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 80,
+    "total_tokens": 153,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 73
+  },
+  "ms": 1164,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:50.387Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "203d317393f3c2534a1963ef0d6f563aaa7057c31e99c79cd314952775706ac7",
+  "promptChars": 110
+}

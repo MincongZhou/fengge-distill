@@ -1,0 +1,79 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c2-retrieval",
+  "text": "郑州暴雨，地铁里都进水了，好多人困在里面，太吓人了，希望都平安",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15855,
+    "completion_tokens": 21,
+    "total_tokens": 15876,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 623
+  },
+  "ms": 698,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:01.528Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "40e36b714dea0c430983a7846a7b9ab018c0bd69a32ba836d9a57c94a982ae19",
+  "promptChars": 22929,
+  "retrieved": [
+    {
+      "score": 14.746,
+      "iso": "2025-03-04T10:26:19.000Z",
+      "sha256": "6aff0d1a873811698a8c9c54ba15d27e78477910273b5d78eb1f6aa19c04696e",
+      "chars": 68
+    },
+    {
+      "score": 10.4871,
+      "iso": "2026-07-24T07:12:24.000Z",
+      "sha256": "30d89cd482f3025c0dcce5785901d846116e63af2cca6daafa5baecc98ac32b6",
+      "chars": 134
+    },
+    {
+      "score": 8.6856,
+      "iso": "2025-03-09T07:26:47.000Z",
+      "sha256": "8d826082e637619d1621ef0f852e28e5dd63ff860a55c367fc8899813b911c25",
+      "chars": 11
+    },
+    {
+      "score": 7.5648,
+      "iso": "2025-02-14T06:29:42.000Z",
+      "sha256": "d05ac9c567eccaa8d0d77325bccca1ef463ccbc52681c271484edb65954e06a7",
+      "chars": 39
+    },
+    {
+      "score": 6.8859,
+      "iso": "2026-06-13T15:03:39.000Z",
+      "sha256": "3b14557e8bb67c30a7aa4c7b4c06436a3481d08821d7868da6cc66525bd12e43",
+      "chars": 29
+    },
+    {
+      "score": 6.7262,
+      "iso": "2025-07-13T04:09:41.000Z",
+      "sha256": "87199153e77e885b7b28cb062a06335f44e5c6f08b1222cac91600225914313c",
+      "chars": 48
+    },
+    {
+      "score": 6.346,
+      "iso": "2025-11-13T07:16:20.000Z",
+      "sha256": "0bf6f8cccc449d8a0fa80688b0cdd597f80ca3e3aa24e4a74f0dae383c074619",
+      "chars": 50
+    },
+    {
+      "score": 6.346,
+      "iso": "2025-05-08T13:49:43.000Z",
+      "sha256": "039f0de2625a59c21f6629e3c966590145367368327cdb0e4fb4aa0353264c98",
+      "chars": 65
+    }
+  ]
+}

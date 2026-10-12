@@ -1,0 +1,79 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c2-retrieval",
+  "text": "家人们，我妈刚打电话催婚，说邻居家孩子都会打酱油了。我说那孩子三岁就干活，我三十岁还在给我妈报备早餐吃的两碗面，谁更幸福真不好说。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15943,
+    "completion_tokens": 47,
+    "total_tokens": 15990,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 711
+  },
+  "ms": 2114,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:03.647Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7b58a973ad32ea14caf6075430a9c9a2890e7da02be314f61fb78dc874e91e4c",
+  "promptChars": 23047,
+  "retrieved": [
+    {
+      "score": 18.1158,
+      "iso": "2026-07-18T15:32:28.000Z",
+      "sha256": "e579a04bf649b917ca10063750343f353bf06335739e0457f6e645fd94e4dc65",
+      "chars": 78
+    },
+    {
+      "score": 10.7386,
+      "iso": "2026-06-27T11:12:22.000Z",
+      "sha256": "c48e9aec11712cea81a3894a3f3fdc2860fe4e0b5327c88e6759357dac66ad23",
+      "chars": 138
+    },
+    {
+      "score": 10.3325,
+      "iso": "2026-07-21T07:55:05.000Z",
+      "sha256": "1e1e4e06d9f198e1f1ec6c5c9c483d813b2a5e421a95c3b8e85742eb2cfce8c3",
+      "chars": 56
+    },
+    {
+      "score": 8.0683,
+      "iso": "2025-06-04T05:01:16.000Z",
+      "sha256": "58704daa4c96df708e1ac87142a587080f38807303fba98f8cad9f7da7f0e7c0",
+      "chars": 32
+    },
+    {
+      "score": 7.2059,
+      "iso": "2025-05-28T06:53:36.000Z",
+      "sha256": "941049a757716f7b5c55b82bdcfc49ae7371a1022e5fb0a8757ad0ebbd7823ef",
+      "chars": 31
+    },
+    {
+      "score": 7.1571,
+      "iso": "2026-08-22T06:24:13.000Z",
+      "sha256": "67da5b5a9c58679d10196790f00fdb518dbcde16ba6d836546e587778ee0c8ff",
+      "chars": 35
+    },
+    {
+      "score": 6.8047,
+      "iso": "2025-08-02T00:30:18.000Z",
+      "sha256": "94f6aabdd2623fd79188e127b78379721d722411fd07d79141258d4597f626ee",
+      "chars": 124
+    },
+    {
+      "score": 6.2264,
+      "iso": "2025-04-18T08:44:47.000Z",
+      "sha256": "6f68d174cbc3d13dae714f1e67000535259aa5192fef619d4b39c7b8ed18e327",
+      "chars": 60
+    }
+  ]
+}

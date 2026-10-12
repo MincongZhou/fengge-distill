@@ -1,0 +1,79 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c2-retrieval",
+  "text": "公司发五仁月饼，同事们都在骂，我一声没吭。五仁是我小时候唯一能吃到的好月饼，一块五一个，我爹舍不得吃全给我了。现在你们嫌它难吃，我嫌你们没吃过苦。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15829,
+    "completion_tokens": 51,
+    "total_tokens": 15880,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 597
+  },
+  "ms": 2466,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:03.747Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "b43d2e93b746576fe0bb0f61f189d7adbf90f55f318107a3e62250e2fbf98b11",
+  "promptChars": 22900,
+  "retrieved": [
+    {
+      "score": 8.2671,
+      "iso": "2025-09-09T00:44:33.000Z",
+      "sha256": "5641f9c6effe9fca93196622497c3a653ade2ee6e7c4936bb0e66152245567ca",
+      "chars": 22
+    },
+    {
+      "score": 7.5704,
+      "iso": "2025-02-27T09:35:27.000Z",
+      "sha256": "c4d59075beb1af36f790195105313ab283f927ef69e3bad1272f05fe0ffc0f4d",
+      "chars": 20
+    },
+    {
+      "score": 7.2133,
+      "iso": "2025-06-11T14:41:07.000Z",
+      "sha256": "b3fd93af56c99ac15254a62bf564cac72645c504c24b425396bb5856c878e4c0",
+      "chars": 24
+    },
+    {
+      "score": 5.7262,
+      "iso": "2025-10-31T08:22:43.000Z",
+      "sha256": "0f59620c498a841249b4e047ebf6f4b7b9051f1d6bd38048e46ef849f183fd1d",
+      "chars": 67
+    },
+    {
+      "score": 5.2673,
+      "iso": "2025-02-04T11:53:11.000Z",
+      "sha256": "f547b6186a750a5f67deba1f4eb4976a9a010724b21d703df6825261e7c7589e",
+      "chars": 71
+    },
+    {
+      "score": 4.7762,
+      "iso": "2026-05-25T10:07:10.000Z",
+      "sha256": "d8aef4f27995bde4b5a4b85726cd8ebc1e796e15199a41104b1686eefe24aded",
+      "chars": 53
+    },
+    {
+      "score": 4.3952,
+      "iso": "2025-07-07T11:22:49.000Z",
+      "sha256": "54ec99d83bb7b5e4aed21d27aad95c7726ff6934ef79858bf0bd8769305da52e",
+      "chars": 101
+    },
+    {
+      "score": 4.3666,
+      "iso": "2025-09-09T03:29:15.000Z",
+      "sha256": "b3caf5794dcc1701964691a652a47e42d065baeb6686d7b949691b5deedc6991",
+      "chars": 54
+    }
+  ]
+}

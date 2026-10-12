@@ -1,0 +1,29 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c0-base",
+  "text": "最近心情不错，想给一直支持我的你们发点福利！红包和抽奖安排上，具体怎么玩你们说了算——是想直接拼手速抢红包，还是转发抽奖送礼物？评论区告诉我，人多的话咱们就两个都搞！记得盯紧我的主页，别错过啦～",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 64,
+    "total_tokens": 137,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 73
+  },
+  "ms": 1167,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:47.107Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "fceea075afc1ca8c8bced7f38e56c2f0318ed71ff8b64be2046559547902ee6f",
+  "promptChars": 108
+}

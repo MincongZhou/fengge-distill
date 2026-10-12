@@ -1,0 +1,29 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "neg-formal",
+  "text": "关于公司发放五仁月饼引发同事吐槽的现象，可作如下评论：\n\n其一，福利发放应注重员工偏好。五仁月饼虽为传统品类，但近年口碑分化明显，若企业忽视多数员工口味，易使福利流于形式，甚至引发负面情绪。\n\n其二，吐槽背后折射沟通缺位。同事集中抱怨，反映出发放前缺乏意见征询，导致善意举措与实际感受脱节。\n\n其三，应理性看待节日福利。月饼本质是心意载体，员工可委婉反馈建议，企业亦宜开放渠道，使福利真正传递关怀。\n\n综上，小事亦需用心，方能实现企业与员工的双向尊重。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 135,
+    "total_tokens": 195,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 60
+  },
+  "ms": 1817,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:13.938Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "0b21850df81bc2358dfeaf5260942f9fda794155392cc6718b888b2ceb46846a",
+  "promptChars": 89
+}

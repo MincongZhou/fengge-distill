@@ -1,0 +1,29 @@
+{
+  "id": "p16",
+  "axis": "职场",
+  "topic": "公司要求下班后微信必须保持待命",
+  "condition": "c1-distilled",
+  "text": "下班后微信待命，我完全支持。老板发消息我秒回，凌晨三点也一样。为什么？因为我算过，回一条消息=多一份信任，多一份信任=多一份机会。机会这东西，比工资重要多了。\n\n当然也有代价，我上次半夜回老板消息，第二天他问我是不是失眠。我说是。他说那你白天可以晚点来。我说不用，我精力旺盛。其实我困得要死。\n\n但你看，这就是格局。你把它当负担，我把它当蹭存在感的机会。同一个微信群，不同的活法。\n\n个人观点，不构成职业建议。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15499,
+    "completion_tokens": 126,
+    "total_tokens": 15625,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 139
+  },
+  "ms": 1677,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:55.558Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "f1848692c27ad8b2092a7a69a9406ff76db565721fcf4e6e8d93d80a6aa57d34",
+  "promptChars": 22390
+}

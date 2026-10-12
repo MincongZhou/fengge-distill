@@ -1,0 +1,29 @@
+{
+  "id": "p16",
+  "axis": "职场",
+  "topic": "公司要求下班后微信必须保持待命",
+  "condition": "c0-base",
+  "text": "下班后微信必须待命，这算哪门子道理？合同签的是八小时，不是24小时待机。真有事可以打电话，别拿“收到请回复”绑架人。打工人也是人，需要喘口气。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 70,
+    "completion_tokens": 50,
+    "total_tokens": 120,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 70
+  },
+  "ms": 866,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:45.468Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "13cfe7cb1eac2185efb5f82ccc7e4ce8d47d6b7d5ca39a791d5a745da12e27a9",
+  "promptChars": 107
+}

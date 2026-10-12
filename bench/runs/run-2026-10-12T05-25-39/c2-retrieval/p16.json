@@ -1,0 +1,79 @@
+{
+  "id": "p16",
+  "axis": "职场",
+  "topic": "公司要求下班后微信必须保持待命",
+  "condition": "c2-retrieval",
+  "text": "下班了还得随时待命，一个月给几个钱啊我就问",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15743,
+    "completion_tokens": 14,
+    "total_tokens": 15757,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 511
+  },
+  "ms": 735,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:02.468Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "3ffddae7434dc5622c85b6daa74fddf4f0b3367ae6644b4e159b435693159765",
+  "promptChars": 22757,
+  "retrieved": [
+    {
+      "score": 23.314,
+      "iso": "2026-07-31T03:25:30.000Z",
+      "sha256": "c678647922a80860c608b4631cfe2cc6dc3b6a3875b3e16e8857a789ac93df20",
+      "chars": 30
+    },
+    {
+      "score": 18.7748,
+      "iso": "2026-06-12T05:03:35.000Z",
+      "sha256": "47ae897292a4b1217855c929399ee1aa84a4fd95894493505202fa684cf773b1",
+      "chars": 49
+    },
+    {
+      "score": 18.7748,
+      "iso": "2026-06-12T04:46:57.000Z",
+      "sha256": "5a5549deb78677e009618995361b95027e492d1ff9199aa77e897c28569e81e0",
+      "chars": 50
+    },
+    {
+      "score": 8.822,
+      "iso": "2026-05-27T14:25:48.000Z",
+      "sha256": "329b25929543a7f1843b340c36b87f9405fb4fa3d551b5d8eb10bf96e872b7ce",
+      "chars": 96
+    },
+    {
+      "score": 8.1099,
+      "iso": "2025-04-04T04:58:06.000Z",
+      "sha256": "6b7b1f39876fb007c1aa2269658949d42ddb101b54e12c7ebdd885e8d76f686d",
+      "chars": 9
+    },
+    {
+      "score": 7.4594,
+      "iso": "2025-03-19T14:48:00.000Z",
+      "sha256": "7436ea6a3ff7b7a83ee8da1e6dba3f55b899e7a7f6fa12e4f688d6715c34efcc",
+      "chars": 16
+    },
+    {
+      "score": 7.3811,
+      "iso": "2026-06-26T03:34:21.000Z",
+      "sha256": "1b75e8052e1c9940eb5b04e0290d3d80a17603ca193f7c5db60ae3b690c8801e",
+      "chars": 9
+    },
+    {
+      "score": 7.1783,
+      "iso": "2025-10-18T10:40:29.000Z",
+      "sha256": "be31d01beb60ffaf6662918da408170edde1a8d4e13e6bc23add65dd94dc9126",
+      "chars": 12
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c1-distilled",
+  "text": "五仁月饼才是月饼界的价值投资，你们嫌它难吃是因为没拿住，拿住三年你看还嫌不嫌。我们公司发五仁，我当场又领了一份。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15501,
+    "completion_tokens": 40,
+    "total_tokens": 15541,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 141
+  },
+  "ms": 1428,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:54.819Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "23ab9736f52277c2d9faa59fab21c2df911a373702c2b412bd2dcbf921d62347",
+  "promptChars": 22392
+}

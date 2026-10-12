@@ -1,0 +1,29 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "c0-base",
+  "text": "满仓看着沪指又跌快一个点，账户绿得我眼睛疼，但就是没动。不是不想跑，是跑不动了。每次想割肉，它就反弹一下给你希望；每次想加仓，它就继续往下砸。这行情，动也是错，不动也是错，那我选择躺着装死。你们今天都咋操作的？",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 76,
+    "completion_tokens": 76,
+    "total_tokens": 152,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 76
+  },
+  "ms": 1510,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:41.327Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "35b7ee1dc7c40d270101c18131b6ed3a68e2faa56a488565db75719d3472ec7b",
+  "promptChars": 109
+}

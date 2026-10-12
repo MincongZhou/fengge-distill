@@ -1,0 +1,29 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "neg-formal",
+  "text": "对于当前部分网络主播以“发放红包、抽奖送礼”为名吸引粉丝关注的现象，应理性看待，审慎评价：\n\n其一，此类行为本质上属于营销手段，意在短期内聚拢人气、提升流量，其商业动机不容忽视。\n\n其二，若操作不规范，易滋生虚假宣传、诱导消费等问题，甚至可能触碰法律红线，损害受众权益。\n\n其三，频繁以物质刺激维系粉丝关系，无助于优质内容创作，长远看不利于行业健康发展。\n\n因此，相关平台应加强监管，主播亦应自律，回归内容为本，方能实现良性互动与可持续发展。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 124,
+    "total_tokens": 185,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 61
+  },
+  "ms": 1877,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:16.837Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "d02233718ba3c2e45b061bb6bf89e5f47e0a8619676a6c64cec7858e15319429",
+  "promptChars": 88
+}

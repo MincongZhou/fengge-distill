@@ -1,0 +1,79 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c2-retrieval",
+  "text": "谢谢家人们的好意，众筹就真不用了，你们那点钱自己留着补仓吧。要送就送一辆多美卡1:64小车模，不能超过30元，多了我收着心里不踏实。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15876,
+    "completion_tokens": 50,
+    "total_tokens": 15926,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 644
+  },
+  "ms": 877,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:04.628Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "838f0067ce6effdee62c0f006a6341259be5dd90d05592dcfda0aa9d3d0b49f0",
+  "promptChars": 22929,
+  "retrieved": [
+    {
+      "score": 14.4194,
+      "iso": "2025-04-11T03:04:56.000Z",
+      "sha256": "2e8bec6c206c87ebec01abad5f9c7c08bd28e71c6f7ab15dac2eee7e3a69c687",
+      "chars": 80
+    },
+    {
+      "score": 13.3312,
+      "iso": "2025-08-16T04:28:57.000Z",
+      "sha256": "b01f6d33398c74ccf5dd4457e5c55e8df96c8e6f873d2603aad451fb00a2a5a7",
+      "chars": 17
+    },
+    {
+      "score": 12.2608,
+      "iso": "2025-02-27T15:03:52.000Z",
+      "sha256": "24ab7e57685248bf06bf6ef25a5cd5753d2feb6d8bf6afc05cf2b4c11c907c43",
+      "chars": 122
+    },
+    {
+      "score": 7.7295,
+      "iso": "2025-06-06T11:46:34.000Z",
+      "sha256": "dc07dd9031e23a321a93ece8a883855e7f1f49b063bb3bf9b04326835f2b0eb0",
+      "chars": 19
+    },
+    {
+      "score": 7.4085,
+      "iso": "2026-08-11T13:21:01.000Z",
+      "sha256": "af9a563251fa0c356ea502732944277fdee962ed6a26f1ef20fcf8b26495c1d7",
+      "chars": 23
+    },
+    {
+      "score": 7.2527,
+      "iso": "2025-03-13T16:44:42.000Z",
+      "sha256": "f06663c58b1e2e6b007f1e551345a1df3f5a82169ea811cc5d7a3324af1bcb17",
+      "chars": 100
+    },
+    {
+      "score": 6.5514,
+      "iso": "2026-08-05T04:46:10.000Z",
+      "sha256": "e1bc479b12b35f1e2b501ffa2b7e47889c039d6ea982c334a29312ccac2409df",
+      "chars": 24
+    },
+    {
+      "score": 6.128,
+      "iso": "2025-09-01T07:25:28.000Z",
+      "sha256": "d7fbca2e8c9313a07064d0e0acc92bacf8cf1af2ffe959b6d5450e9e2bf42e07",
+      "chars": 58
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "neg-formal",
+  "text": "针对“普通人理财三条铁律”的总结，需以审慎态度加以审视。其一，理财铁律若过度简化复杂市场逻辑，易使公众忽视个体差异与风险承受能力，导致盲目跟风。其二，所谓“铁律”往往隐含事后归因偏差，将偶然成功经验绝对化，缺乏普适性与可验证性。其三，普通人理财更应依赖系统性的金融素养教育、合规信息披露及多元资产配置，而非机械套用若干教条。因此，公众宜保持理性批判，避免将经验之谈奉为圭臬。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 56,
+    "completion_tokens": 123,
+    "total_tokens": 179,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 56
+  },
+  "ms": 1969,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:19.779Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1d6e9365978fe1d1bde89962cfb0f783bd6ba70cc51e3d730c702cc8f4398327",
+  "promptChars": 86
+}

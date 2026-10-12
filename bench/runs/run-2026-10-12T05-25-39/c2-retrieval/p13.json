@@ -1,0 +1,79 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "c2-retrieval",
+  "text": "收工太晚了，一个人吃了碗面，加了个蛋，一共38。跟家人们报备一下，别问为啥不吃菜，问就是太累了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15798,
+    "completion_tokens": 35,
+    "total_tokens": 15833,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 566
+  },
+  "ms": 849,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:01.729Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "612e1e6fd722dc7b24ef1195512ddf2b38935677c12efeaac2628f159cf51a53",
+  "promptChars": 22855,
+  "retrieved": [
+    {
+      "score": 26.2317,
+      "iso": "2026-08-20T12:19:23.000Z",
+      "sha256": "988e7bda56f0800c6e786e7df14a359dbfbb8aa0fd95d9f1fb74fd40f45c49e0",
+      "chars": 29
+    },
+    {
+      "score": 22.1757,
+      "iso": "2025-03-28T14:35:09.000Z",
+      "sha256": "aa67297210964580cb979d93dcf9544f05ff670c5909cd010f33bb297881fb0e",
+      "chars": 41
+    },
+    {
+      "score": 19.5778,
+      "iso": "2025-06-04T12:32:50.000Z",
+      "sha256": "ba1835353873936f4d7b4905cd506a9260489faab493194fdc749e21dc5bc14b",
+      "chars": 32
+    },
+    {
+      "score": 14.0453,
+      "iso": "2026-06-24T10:03:15.000Z",
+      "sha256": "7cae9d9b34d9eb42b5c2bf5431a5277111ed2fb9f18bd77ed234b74142d6deca",
+      "chars": 72
+    },
+    {
+      "score": 12.2795,
+      "iso": "2026-06-28T07:55:30.000Z",
+      "sha256": "c190d477dd3a0d7fa2595b54c0613895f9f80ce964064d9da90ae51a1d268eb7",
+      "chars": 34
+    },
+    {
+      "score": 12.2027,
+      "iso": "2026-06-25T04:51:38.000Z",
+      "sha256": "b24e48cf4ca2045d6fc600a8874dc0046177befe1bea44e35daec64e93a0a6aa",
+      "chars": 64
+    },
+    {
+      "score": 12.1906,
+      "iso": "2025-02-13T06:33:43.000Z",
+      "sha256": "d947a0b7b821f37549d9b6e2b2d29b1d834482beb9ed15993886031ec025ecf0",
+      "chars": 35
+    },
+    {
+      "score": 11.3416,
+      "iso": "2025-02-08T02:39:57.000Z",
+      "sha256": "fac9bb7450cf5e205f369dd5a294393e8b38f6a5f04373d175e0b951bb270d76",
+      "chars": 63
+    }
+  ]
+}

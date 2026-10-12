@@ -1,0 +1,29 @@
+{
+  "id": "p23",
+  "axis": "消费",
+  "topic": "一杯奶茶卖到三十八块，排队的还不少",
+  "condition": "neg-formal",
+  "text": "面对“一杯奶茶三十八元仍排长队”的现象，可作如下评论：\n\n一、此为市场行为，价格由供需决定。高价仍有人购买，说明部分消费者愿意为品牌、口感或社交体验支付溢价。\n\n二、这反映消费分层与符号消费的兴起。奶茶已不仅是饮品，更成为社交资本与身份认同的载体，排队本身亦构成一种体验消费。\n\n三、需警惕非理性跟风。若排队源于从众心理或营销炒作，则可能造成资源浪费与消费异化。消费者应量力而行，理性判断价格与价值的匹配度。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 127,
+    "total_tokens": 188,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 61
+  },
+  "ms": 1656,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:17.807Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "85972856fd312e346081a2b3083852dd4a2b3e97bf4a481e9d5a3a8d584e2473",
+  "promptChars": 89
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "neg-formal",
+  "text": "**关于沪指下跌中坚持满仓不动的评论**\n\n今日沪指再度下挫近一个百分点，市场情绪趋于谨慎。面对此番调整，投资者选择满仓不动，其行为可从以下角度审视：\n\n其一，从投资纪律看，坚持既定策略、不因短期波动频繁调仓，体现了对自身判断的尊重，有助于规避情绪化交易带来的额外损耗。\n\n其二，从风险管控看，满仓不动意味着未对下行风险作出主动应对，若市场持续走弱，账户回撤将完全暴露，缺乏缓冲余地。\n\n其三，从市场规律看，短期涨跌难以预测，长期持有亦是一种理性选择，但需以标的质地与自身风险承受能力为前提。\n\n综上，满仓不动并非普适策略，投资者应结合自身情况审慎权衡，切勿以僵化姿态替代冷静判断。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 64,
+    "completion_tokens": 176,
+    "total_tokens": 240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 64
+  },
+  "ms": 1885,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:08.327Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "faab065066d809177d39dc500446d8f5cceca155b7f4692d0c9c6a3d65f1bdfb",
+  "promptChars": 89
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c1-distilled",
+  "text": "赚翻了跟我有什么关系 我又没让他转行 为什么我每天盯盘六个小时还没有他一场直播赚得多 这合理吗",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15502,
+    "completion_tokens": 28,
+    "total_tokens": 15530,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 142
+  },
+  "ms": 1152,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:58.883Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "8a6d0130e6b32eda67bc1816782caf80cb952f94b5a6dc6bc5daa965d965e371",
+  "promptChars": 22393
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c1-distilled",
+  "text": "为什么年轻人不愿意生孩子？因为生孩子不赚钱啊 养一个孩子到18岁平均要花50万 有这钱满仓半导体不香吗 个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15496,
+    "completion_tokens": 40,
+    "total_tokens": 15536,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 136
+  },
+  "ms": 957,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:57.828Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "709b8c6090f067bcee36022c48e62caa3de9833fa89c5da3f1418f4e6c6666fd",
+  "promptChars": 22389
+}

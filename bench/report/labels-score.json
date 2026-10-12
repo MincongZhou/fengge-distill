@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-12T05:28:41.602Z",
+  "answers": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\fake-answers.json",
+  "items": {
+    "model-pipeline": {
+      "n": 20,
+      "likeRate": 1,
+      "likeCI": [
+        0.8389,
+        1
+      ],
+      "chuanziRate": 1
+    },
+    "human-short": {
+      "n": 30,
+      "likeRate": 1,
+      "likeCI": [
+        0.8865,
+        1
+      ],
+      "chuanziRate": 1
+    },
+    "human-bili": {
+      "n": 12,
+      "likeRate": 0,
+      "likeCI": [
+        0,
+        0.2425
+      ],
+      "chuanziRate": 0
+    },
+    "model-formal": {
+      "n": 15,
+      "likeRate": 0,
+      "likeCI": [
+        0,
+        0.2039
+      ],
+      "chuanziRate": 0
+    },
+    "model-base": {
+      "n": 15,
+      "likeRate": 0,
+      "likeCI": [
+        0,
+        0.2039
+      ],
+      "chuanziRate": 0
+    },
+    "human-long": {
+      "n": 8,
+      "likeRate": 0,
+      "likeCI": [
+        0,
+        0.3244
+      ],
+      "chuanziRate": 0
+    }
+  },
+  "pairs": {
+    "left": "c0-base",
+    "right": "c2-retrieval",
+    "win": 24,
+    "loss": 3,
+    "tie": 3,
+    "missing": 0,
+    "decided": 27,
+    "winRate": 0.8889,
+    "winRateCI": [
+      0.7194,
+      0.9615
+    ],
+    "tieRate": 0.1
+  },
+  "kappa": {
+    "like_fengge": {
+      "n": 45,
+      "po": 1,
+      "pe": 0.5556,
+      "kappa": 1,
+      "band": "几乎一致"
+    },
+    "chuanzi": {
+      "n": 45,
+      "po": 1,
+      "pe": 0.5556,
+      "kappa": 1,
+      "band": "几乎一致"
+    }
+  }
+}

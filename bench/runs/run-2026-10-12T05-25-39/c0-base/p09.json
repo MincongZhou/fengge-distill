@@ -1,0 +1,29 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c0-base",
+  "text": "新款折叠屏手机发布了，卖一万八。看到价格的时候我沉默了三秒，然后默默打开计算器：一万八，够我买三台旗舰直板机加一副耳机再加一年话费。但转头一想，折叠屏展开那一瞬间的仪式感，确实有点上头。问题来了，是买一台折叠屏，还是买三台直板机换着用？评论区告诉我。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 70,
+    "completion_tokens": 84,
+    "total_tokens": 154,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 70
+  },
+  "ms": 1364,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:43.888Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "166a0fd6406dcf9243bf58c119de7a486ed86781e35391787bd54cc18ec5e183",
+  "promptChars": 107
+}

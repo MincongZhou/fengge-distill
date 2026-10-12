@@ -1,0 +1,79 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c2-retrieval",
+  "text": "#国产芯片又突破一个制程节点# 说实话跟我关系不大，我又不买芯片股，我持仓的票今天还是绿的。突破就突破吧，反正我账户里的钱是不会跟着突破的。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15898,
+    "completion_tokens": 45,
+    "total_tokens": 15943,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 666
+  },
+  "ms": 937,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:00.877Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1a2d28caeaba944a53de7240d340842f1abb922579a2cdb6bb9fe53e0bf878e5",
+  "promptChars": 23002,
+  "retrieved": [
+    {
+      "score": 10.8509,
+      "iso": "2025-07-06T12:28:32.000Z",
+      "sha256": "1fce3c95795708f1b9bd1eb894942952a6a639c22276e88c84db798f37c20a8f",
+      "chars": 103
+    },
+    {
+      "score": 10.5497,
+      "iso": "2025-09-28T12:39:37.000Z",
+      "sha256": "2dd8ab960bb2adaa3c2e4a3022182ed2ed05f7bd4a6ef50b3291202a471329d9",
+      "chars": 45
+    },
+    {
+      "score": 10.479,
+      "iso": "2025-10-20T08:03:43.000Z",
+      "sha256": "525fe6c0eecfcb0d2a819c2494bd52a7783588a560a1cda59ae1953a107b56b3",
+      "chars": 39
+    },
+    {
+      "score": 9.9528,
+      "iso": "2026-07-23T06:17:52.000Z",
+      "sha256": "99fb07b2e1fdde6f1f7b42de3fe57136e557ab1b95fca9088b87a32c14dfa914",
+      "chars": 57
+    },
+    {
+      "score": 9.8829,
+      "iso": "2025-09-19T01:27:43.000Z",
+      "sha256": "52736164bcc686cd755d18bf72b79f918043ac7c46a1346f9e4410fc4dcebbf7",
+      "chars": 60
+    },
+    {
+      "score": 9.6594,
+      "iso": "2025-06-05T03:39:59.000Z",
+      "sha256": "a396bce367d47177cd2630149a1e0114ff383c2586bd77e172c32caf83df41a8",
+      "chars": 85
+    },
+    {
+      "score": 9.6392,
+      "iso": "2025-04-27T08:44:23.000Z",
+      "sha256": "0907bc0f10197eabaacdee495edc10882b2713acfee815f1d1d3672c04d2d77d",
+      "chars": 69
+    },
+    {
+      "score": 9.1861,
+      "iso": "2025-06-20T04:29:47.000Z",
+      "sha256": "29db736a6692decc2382d22115a29d7247c4c55b566d09e9d1b12033b9c13ab4",
+      "chars": 58
+    }
+  ]
+}

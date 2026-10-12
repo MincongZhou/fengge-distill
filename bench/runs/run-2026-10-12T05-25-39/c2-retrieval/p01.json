@@ -1,0 +1,79 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "c2-retrieval",
+  "text": "沪指又跌快一个点了，我满仓没动。家人们今天如何？",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15809,
+    "completion_tokens": 19,
+    "total_tokens": 15828,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 577
+  },
+  "ms": 1036,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:58.868Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "e456768bc9c1d87f0e719cc5b630ab44bd4e3e4046db0aa64f3f0cd7b1d73e90",
+  "promptChars": 22848,
+  "retrieved": [
+    {
+      "score": 25.5157,
+      "iso": "2025-02-28T06:19:29.000Z",
+      "sha256": "d13aae6f194f097a8b95c7b8d611c00bbf22a461aca9dc72e5a5eefe1b23c279",
+      "chars": 29
+    },
+    {
+      "score": 13.7235,
+      "iso": "2025-10-24T09:08:22.000Z",
+      "sha256": "238406e8f19dae5afecdf250888e81830ad37a1fed9c233aad795717a4aa737d",
+      "chars": 69
+    },
+    {
+      "score": 12.3876,
+      "iso": "2025-11-09T05:11:56.000Z",
+      "sha256": "5842c7c61c19844cc2350695025fb2f1c58344714b859eb74916fc3e070abef4",
+      "chars": 121
+    },
+    {
+      "score": 11.7823,
+      "iso": "2025-10-30T07:12:05.000Z",
+      "sha256": "538264a6e2f115c3213ceb633f958211a10fa65000e56db9230dfe688b64025f",
+      "chars": 51
+    },
+    {
+      "score": 10.7139,
+      "iso": "2026-07-03T00:01:58.000Z",
+      "sha256": "fee561414f3b1416a7b4b7bb911b364ad9449bda3af69912b2884c702fcb8658",
+      "chars": 12
+    },
+    {
+      "score": 10.0897,
+      "iso": "2026-06-22T02:13:20.000Z",
+      "sha256": "e122ffa19c72807e793d0b28fec71b43c861008603ffc106222fc83078fc1172",
+      "chars": 31
+    },
+    {
+      "score": 9.8722,
+      "iso": "2025-10-17T07:59:04.000Z",
+      "sha256": "3d244c81e57a4d7b728238e6cf23bf25b9389400d3703036eecf56c4e0ee0eb0",
+      "chars": 26
+    },
+    {
+      "score": 9.399,
+      "iso": "2026-07-02T03:30:43.000Z",
+      "sha256": "632aac73842252cf3375b095818e4088c47e0aef0be88d67b19c4c44b099ab17",
+      "chars": 21
+    }
+  ]
+}

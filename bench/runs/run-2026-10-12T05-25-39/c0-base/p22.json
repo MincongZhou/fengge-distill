@@ -1,0 +1,29 @@
+{
+  "id": "p22",
+  "axis": "消费",
+  "topic": "年轻人现在流行去临期食品折扣区捡漏",
+  "condition": "c0-base",
+  "text": "以前逛超市直奔新品区，现在年轻人一头扎进临期折扣区，保质期还剩仨月的进口饼干打三折，原价二十的酸奶十块钱抱走一排，算下来一个月伙食费能省出一顿火锅。不是买不起，是不想当冤大头，临期又不是过期，省下的钱干点啥不好。精打细算过日子，一点都不丢人。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 84,
+    "total_tokens": 156,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 72
+  },
+  "ms": 1117,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:47.837Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "4fbb34ad714d405bf583d181a03fc289cb0cd75cc16473cf767303ce3a9722d8",
+  "promptChars": 109
+}

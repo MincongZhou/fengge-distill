@@ -1,0 +1,29 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c0-base",
+  "text": "刚刷到一条评论说粉丝要给我众筹买生日礼物，我直接笑出声。你们是不是忘了我连生日在哪天都没告诉过你们啊？不过说实话，看到这句话的时候心里还挺暖的，就是那种被人惦记着的感觉。但咱说好了啊，别整这些，你们能来评论区跟我唠嗑、看我发的碎碎念，就已经是最好的礼物了。真要花钱，给自己买杯奶茶，然后拍照发给我看，就当是我喝过了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 69,
+    "completion_tokens": 101,
+    "total_tokens": 170,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 69
+  },
+  "ms": 1438,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:47.679Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "51c63c0cc02fd9424769c6048b686630371fe61c774b645933496a77df5c6267",
+  "promptChars": 105
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "c0-base",
+  "text": "当年金价三百多一克的时候我嫌贵，只买了条细链子，现在金店挂牌快破千了，翻了两倍多。后悔没把当年想买金镯子的钱全砸进去。不过话说回来，涨成这样我也不敢卖，怕卖了再也买不回来。你们当年买黄金是多少一克？",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 72,
+    "total_tokens": 147,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 75
+  },
+  "ms": 1509,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:41.357Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "404627ae06920542be3c4f1e648cf183899d6c9fc2c741c22ccc5a720e1c3568",
+  "promptChars": 113
+}

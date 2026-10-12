@@ -1,0 +1,79 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c2-retrieval",
+  "text": "我给普通人总结了三条理财铁律：第一条，别听普通人的建议。第二条，别把辛苦钱交给比你还穷的人打理。第三条，最关键的，勤劳致富，省下来的都是小钱，赚大钱的都进去了。个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15889,
+    "completion_tokens": 56,
+    "total_tokens": 15945,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 657
+  },
+  "ms": 967,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:06.268Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "8471f86d18831b0d2545c43657889df8c734a36a4c985fef141b137354789ac2",
+  "promptChars": 23011,
+  "retrieved": [
+    {
+      "score": 24.0475,
+      "iso": "2026-06-24T08:10:42.000Z",
+      "sha256": "fdcfe2ad92e804cfc5eb715f7865f5d4cef43c7d3fde098e16955c1119f6d8c3",
+      "chars": 21
+    },
+    {
+      "score": 19.6956,
+      "iso": "2025-08-28T07:26:16.000Z",
+      "sha256": "62c3c8aeebf24e0127b9d6d1114efed4107b32df6ce3208c21d9a338569926ca",
+      "chars": 16
+    },
+    {
+      "score": 18.5036,
+      "iso": "2026-06-24T07:57:21.000Z",
+      "sha256": "7fb22cca0c7a1c7b8a0754e53d70f846272b363a6f9c7e420cdc3f26ce87eb78",
+      "chars": 63
+    },
+    {
+      "score": 15.3533,
+      "iso": "2025-10-23T11:00:47.000Z",
+      "sha256": "6c174bbfe1a1985367e98bc56d470da25caea969020f8c030180f3af70fe03e4",
+      "chars": 53
+    },
+    {
+      "score": 13.1334,
+      "iso": "2025-06-24T04:20:07.000Z",
+      "sha256": "22bc05edea90ed53702fa1a641719971d86f2cebde1545f9bbc245990958e9a9",
+      "chars": 120
+    },
+    {
+      "score": 11.7089,
+      "iso": "2025-06-05T03:39:59.000Z",
+      "sha256": "a396bce367d47177cd2630149a1e0114ff383c2586bd77e172c32caf83df41a8",
+      "chars": 85
+    },
+    {
+      "score": 11.6513,
+      "iso": "2025-11-14T00:53:54.000Z",
+      "sha256": "95fddf5554279d14baeca325511433afca74a63ead35a4640034fd36ee254100",
+      "chars": 77
+    },
+    {
+      "score": 10.7032,
+      "iso": "2026-06-23T07:11:49.000Z",
+      "sha256": "c006fdfb8c6c4511ba989234b2379b5ddea0c2128c744eac36ccca33c3d1ef08",
+      "chars": 91
+    }
+  ]
+}

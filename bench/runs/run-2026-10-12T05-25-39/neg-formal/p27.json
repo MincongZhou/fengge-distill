@@ -1,0 +1,29 @@
+{
+  "id": "p27",
+  "axis": "社会",
+  "topic": "小区物业费又涨了，业主群里吵翻天",
+  "condition": "neg-formal",
+  "text": "近日，部分小区物业费再度上调，引发业主群内激烈争论。对此现象，可作如下评析：\n\n其一，物业费调整涉及业主切身利益，物业公司应严格遵循法定程序，提前公示成本明细，确保调价依据公开透明。\n\n其二，业主对费用上涨的质疑，折射出当前物业服务与收费不匹配的深层矛盾。若服务质量未见提升，单方涨价难免引发抵触。\n\n其三，双方争执不下时，应依托业委会或社区调解机制理性协商，避免情绪化对立。唯有建立质价相符的契约关系，方能实现小区长效治理。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 126,
+    "total_tokens": 186,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 60
+  },
+  "ms": 1627,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:19.537Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "9cc7785a2752a1cff082fc072504164cd9ed0ae32aa5290e465796e975a0d0f4",
+  "promptChars": 88
+}

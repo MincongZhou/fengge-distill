@@ -1,0 +1,29 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "c1-distilled",
+  "text": "偷税漏税这事，工作室一发声明我就放心了，上一个这么发声明的工作室，现在还在补税呢，我炒股这么多年就学会一件事，真没问题的人，从来不急着喊自己没问题，个人观点。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15504,
+    "completion_tokens": 46,
+    "total_tokens": 15550,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 144
+  },
+  "ms": 995,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:53.387Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ce9cf6a389b1bb09b6249be779559599ee0db38b8cd76f8f6a4a2076319bbd31",
+  "promptChars": 22394
+}

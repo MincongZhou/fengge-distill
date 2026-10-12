@@ -1,0 +1,29 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "c0-base",
+  "text": "大多数人炒股亏损的核心原因，并非市场不公，而是认知与行为偏差。散户常在高点追涨、低点割肉，交易频繁导致成本累积；同时缺乏专业分析，依赖小道消息和情绪决策。更关键的是，机构拥有信息、资金和工具优势，而普通人往往用短期要用的钱去博弈，心态易崩。股市本质是零和博弈，扣除税费后甚至是负和游戏，长期看七亏二平一赚是常态。承认自己普通，或许才是避免成为韭菜的第一步。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 67,
+    "completion_tokens": 112,
+    "total_tokens": 179,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 67
+  },
+  "ms": 1537,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:49.220Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "bf3a4be0687e8bd8c83ca7c0a5a6b5c55f144a9ba180ac34cd0cf9c4d27a77c9",
+  "promptChars": 105
+}

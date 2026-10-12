@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-12T05:26:51.915Z",
+  "runId": "run-2026-10-12T05-25-39",
+  "seed": 20261012,
+  "corpus": {
+    "name": "fg_fengge_v2_raw.json",
+    "sha256": "5c9ea206b487104eb6b19c26876179304148abaa7d2eff985cd3a5d5233b2088",
+    "bytes": 901375,
+    "source": "sibling"
+  },
+  "bilibili": {
+    "name": "fg_bili_corpus.json",
+    "sha256": "11ab064fd7a8f90992f122768c63fec6a8e8e675511bd96b78ba5a7048d2ebae",
+    "bytes": 5951353,
+    "source": "sibling"
+  },
+  "total": 100,
+  "byClass": {
+    "human-short": 30,
+    "human-bili": 12,
+    "human-long": 8,
+    "model-formal": 15,
+    "model-base": 15,
+    "model-pipeline": 20
+  },
+  "lengths": {
+    "human-short": {
+      "min": 15,
+      "p50": 37,
+      "max": 136
+    },
+    "human-bili": {
+      "min": 12,
+      "p50": 33,
+      "max": 61
+    },
+    "human-long": {
+      "min": 145,
+      "p50": 148,
+      "max": 153
+    },
+    "model-formal": {
+      "min": 177,
+      "p50": 205,
+      "max": 272
+    },
+    "model-base": {
+      "min": 55,
+      "p50": 118,
+      "max": 149
+    },
+    "model-pipeline": {
+      "min": 21,
+      "p50": 73,
+      "max": 134
+    }
+  }
+}

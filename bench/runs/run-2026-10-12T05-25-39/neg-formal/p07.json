@@ -1,0 +1,29 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "neg-formal",
+  "text": "针对某公司发布售价二十万元人形机器人的现象，可作如下评论：\n\n一、技术突破值得肯定。人形机器人量产上市，标志着人工智能与机械工程融合迈出关键一步，展现了我国科技企业的创新活力。\n\n二、市场定位尚需检验。二十万元售价对普通家庭而言仍属高昂，短期内难以大规模普及，其目标客户或集中于企业展示、科研教育等商用场景。\n\n三、社会影响亟待关注。人形机器人逐步进入生活，将引发就业结构、伦理规范等深层议题，需未雨绸缪，完善相关法律法规。\n\n综上，此举既是科技进步的缩影，也提醒我们理性看待技术落地与现实需求之间的差距。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 142,
+    "total_tokens": 202,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 60
+  },
+  "ms": 1835,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:10.557Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c5416cec144feaf1524b84d71b240d9908c56e3a6489152660436c92fd711201",
+  "promptChars": 91
+}

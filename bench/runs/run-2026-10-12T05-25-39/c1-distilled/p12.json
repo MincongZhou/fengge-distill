@@ -1,0 +1,29 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c1-distilled",
+  "text": "地铁都变水帘洞了，家人们，这天气出门得看黄历",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15500,
+    "completion_tokens": 18,
+    "total_tokens": 15518,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 140
+  },
+  "ms": 826,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:53.878Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "46d61d65c75050af41801b4adf2bd30942a462e246a0611ccac4d33570770cbe",
+  "promptChars": 22389
+}

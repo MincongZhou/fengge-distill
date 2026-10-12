@@ -1,0 +1,79 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c2-retrieval",
+  "text": "为什么年轻人不生？不是不想，是算不过来。我去过西藏陈塘沟，家家户户3到7个，人家消费也低啊，生得起。现在一个孩子从奶粉到大学，少说50万，你受得了吗",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15983,
+    "completion_tokens": 51,
+    "total_tokens": 16034,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 751
+  },
+  "ms": 1120,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:06.662Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "aa5970402594fe46843fe978b8235b9784e7236d8c17ce5fb0a51b9ebf1ea8e5",
+  "promptChars": 23163,
+  "retrieved": [
+    {
+      "score": 28.3617,
+      "iso": "2025-02-20T04:27:39.000Z",
+      "sha256": "da239e8f5797f8269e52e2c6ce98479b2115c7fd2acaac292705d57de593c064",
+      "chars": 107
+    },
+    {
+      "score": 23.4388,
+      "iso": "2025-04-30T06:42:11.000Z",
+      "sha256": "1c4173560753a4408105cf918dbe6340e8359eee97ce3a8170148d1031ff052e",
+      "chars": 62
+    },
+    {
+      "score": 20.7389,
+      "iso": "2025-08-02T00:30:18.000Z",
+      "sha256": "94f6aabdd2623fd79188e127b78379721d722411fd07d79141258d4597f626ee",
+      "chars": 124
+    },
+    {
+      "score": 16.1064,
+      "iso": "2025-05-30T04:54:19.000Z",
+      "sha256": "7df7a907eb4ad8f9dd53c67a0ca5250be7bc524de68d151a9a6bdedb6381376b",
+      "chars": 113
+    },
+    {
+      "score": 15.8349,
+      "iso": "2025-02-16T04:58:43.000Z",
+      "sha256": "ebd805477cbca404f2acf94689a4f7b8d3d10e004732b4cf60ec381f96406b36",
+      "chars": 38
+    },
+    {
+      "score": 15.5942,
+      "iso": "2025-09-01T10:21:55.000Z",
+      "sha256": "e3c8a5c6fa0d0b0c3c6589b612b620f702163c031379c3e05bdf3551e0119525",
+      "chars": 50
+    },
+    {
+      "score": 14.6832,
+      "iso": "2026-06-21T03:53:59.000Z",
+      "sha256": "b77fbbe613e7a1b403340178469d9ef0645be85d72c4ccd6971a22e0c393393c",
+      "chars": 111
+    },
+    {
+      "score": 14.6821,
+      "iso": "2025-02-07T15:02:52.000Z",
+      "sha256": "0c286f0366f028e26702ee1dca8ab252eaa925908c27949d171c392aa235dc04",
+      "chars": 73
+    }
+  ]
+}

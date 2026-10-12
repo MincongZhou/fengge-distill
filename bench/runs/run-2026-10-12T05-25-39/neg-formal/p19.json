@@ -1,0 +1,29 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "neg-formal",
+  "text": "面对有人质疑持仓系P图造假的现象，我认为应理性看待，分点论述如下：\n\n其一，质疑者往往缺乏确凿证据，仅凭主观臆断便妄下结论，此举有失公允。其二，持仓截图作为个人投资记录，其真实性可由交易流水、账户明细等多方印证，非一张图片所能定论。其三，随意指控他人造假，不仅损害他人名誉，亦暴露自身浮躁心态，无益于理性交流。其四，面对质疑，当事人可坦然出示更多佐证，以正视听；而质疑者亦应秉持审慎态度，避免无端揣测。总之，投资交流贵在真诚与理性，莫让无端猜忌遮蔽了探讨的本意。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 58,
+    "completion_tokens": 153,
+    "total_tokens": 211,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 58
+  },
+  "ms": 1993,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:16.147Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "44ef5066197904a14d42999666552843fb3a8119a13331b44a0b98ecc40f0d14",
+  "promptChars": 86
+}

@@ -1,0 +1,29 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c1-distilled",
+  "text": "普通人理财的三条铁律：第一，别亏钱，第二，用闲钱，第三，看懂再买。做到这三条，你已经赢了 90% 的人，个人观点",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15497,
+    "completion_tokens": 39,
+    "total_tokens": 15536,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 137
+  },
+  "ms": 915,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:57.677Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "6b19fb348e06cd6fa885b9afa20256452483d0a80ef747e1be69af8aa689b8dd",
+  "promptChars": 22389
+}

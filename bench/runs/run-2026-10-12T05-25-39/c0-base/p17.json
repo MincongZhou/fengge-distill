@@ -1,0 +1,29 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c0-base",
+  "text": "老板在年会上举着酒杯说今年不裁员，大家要共渡难关，台下掌声雷动。我差点就信了，直到想起去年年会他也说不强制加班，前年说不搞末位淘汰。散场时同事小声问我感动吗，我说不敢动，怕一动就发现自己原来坐在裁员名单上。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 69,
+    "total_tokens": 144,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 75
+  },
+  "ms": 1176,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:46.237Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "c31196cf7b3bec9be2c199740a5a9f7865a4647872190b8e33651008add116d9",
+  "promptChars": 112
+}

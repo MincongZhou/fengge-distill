@@ -1,0 +1,29 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "neg-formal",
+  "text": "针对黄金价格再度逼近每克千元关口、投资者回顾当年购入如今大幅增值的现象，可作如下评论：\n\n一、金价持续攀升，反映全球避险情绪升温与货币环境变化，具有一定合理性。二、对早年购入者而言，账面浮盈固然可喜，但须清醒认识黄金价格波动剧烈，切勿将阶段性上涨误判为长期趋势。三、投资应立足自身风险承受能力，避免盲目追高或过度集中持有单一资产。四、应理性看待“翻倍”收益，兼顾变现成本与机会成本，方能实现资产的稳健保值增值。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 124,
+    "total_tokens": 187,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 63
+  },
+  "ms": 1954,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:09.617Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "bb1431d5af9d64dae97ebe9b4a89717d463fd03835a337c99639b87690c66317",
+  "promptChars": 93
+}

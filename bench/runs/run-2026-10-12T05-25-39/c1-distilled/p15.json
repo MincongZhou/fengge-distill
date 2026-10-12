@@ -1,0 +1,29 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c1-distilled",
+  "text": "催吧，催完我就去把打酱油那家的酱油全买了，让邻居孩子没得打。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15504,
+    "completion_tokens": 23,
+    "total_tokens": 15527,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 144
+  },
+  "ms": 1089,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:54.750Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ccd1b9b258110523c00a762a2ed1e4899a47d2541c42737081d9604636e8e3d8",
+  "promptChars": 22397
+}

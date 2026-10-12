@@ -1,0 +1,29 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "neg-formal",
+  "text": "体检报告中血脂偏高一事，绝非小事，值得引起重视。其一，血脂异常是心脑血管疾病的重要诱因，若放任不管，极易引发严重后果。其二，医生嘱咐“注意作息”，说明生活方式与血脂水平密切相关，熬夜、缺乏运动、饮食不当等不良习惯均为重要因素。其三，此举亦是对现代人健康观念的一次警醒：切莫因年轻而透支身体，亦不可因忙碌而忽视体检后的警示信号。建议当事人遵医嘱调整作息，合理膳食，适度运动，定期复查，方能防患于未然。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 59,
+    "completion_tokens": 118,
+    "total_tokens": 177,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 59
+  },
+  "ms": 1706,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:18.547Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "7016f6169dd92e7dafba798dded166cfc01ddd31182a814fb3a5bc06b34b162d",
+  "promptChars": 92
+}

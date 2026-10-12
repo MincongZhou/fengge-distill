@@ -1,0 +1,29 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "neg-formal",
+  "text": "近日，某地遭遇暴雨，导致多名乘客被困地铁，暴露出城市应急管理的短板。对此，笔者认为：\n\n一、预警机制亟待完善。气象预警与交通调度未能有效联动，致使乘客在极端天气下仍冒险出行。\n\n二、应急响应能力不足。疏散通道不畅、救援设备匮乏，反映出日常演练与物资储备的缺失。\n\n三、信息发布滞后。被困人员难以获取实时救援信息，加剧了恐慌情绪。\n\n四、责任意识有待加强。相关部门应以此为鉴，建立常态化防灾体系，确保公众生命安全。城市治理须以预防为先，切勿让悲剧重演。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 59,
+    "completion_tokens": 127,
+    "total_tokens": 186,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 59
+  },
+  "ms": 1707,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:13.188Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1f1706a67e7b45470b28dda9d7aa22b6ae68bdc31c7b0ea8276497c32f4d900a",
+  "promptChars": 86
+}

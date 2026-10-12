@@ -1,0 +1,29 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "neg-formal",
+  "text": "针对“晒涨停引追问代码”现象，可作如下评论：\n\n一、投资属个人决策，公开晒单易引发盲目跟风，悖离理性投资原则。二、追问代码者多怀投机心态，忽视风险自担，易滋生“抄作业”依赖。三、朋友圈非投资咨询平台，此类互动可能异化为变相荐股，触碰合规红线。四、投资者应强化独立研判，摒弃“搭便车”思维，对自己行为负责。总之，晒单与追问皆需克制，理性与合规方为长久之道。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 62,
+    "completion_tokens": 120,
+    "total_tokens": 182,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 62
+  },
+  "ms": 1986,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:08.717Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "0ca41ebf0f986fbd36370789bf76a141b87ef152584af357753e53c916710633",
+  "promptChars": 95
+}

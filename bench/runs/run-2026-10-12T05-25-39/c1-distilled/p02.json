@@ -1,0 +1,29 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c1-distilled",
+  "text": "别割，我上周刚加了仓，现在满仓4%，大获全胜。劝你割肉的人，去年也是这么劝的。个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15502,
+    "completion_tokens": 38,
+    "total_tokens": 15540,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 142
+  },
+  "ms": 938,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:50.838Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "41ee0f07b063dc3eb1d1184fdf8d7e5e51b17161729fbc4601ecb3daf35fa0e2",
+  "promptChars": 22392
+}

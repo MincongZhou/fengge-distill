@@ -1,0 +1,29 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c1-distilled",
+  "text": "刚直播说到一半被警告了，吓得我当场改口。个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15498,
+    "completion_tokens": 21,
+    "total_tokens": 15519,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 138
+  },
+  "ms": 710,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:58.390Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "edfe29f2e21b568904c56fe9878daa47b939ec02c1ca2a55c62eb0ed3f738e18",
+  "promptChars": 22389
+}

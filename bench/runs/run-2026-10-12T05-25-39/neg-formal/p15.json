@@ -1,0 +1,29 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "neg-formal",
+  "text": "针对“母亲以邻居家孩子会打酱油为由催婚”这一现象，可作如下评论：\n\n一、此言论折射出传统婚育观与现代个体选择的冲突。长辈常以“他人进度”作为参照，忽视子女的情感节奏与人生规划。\n\n二、将“打酱油”这类生活琐事与婚姻价值挂钩，本质是代际间评价标准的错位。婚姻不应沦为攀比工具，幸福更无统一时间表。\n\n三、子女宜以温和方式沟通，既理解长辈关切，也坚守自我边界。社会亦需包容多元生活路径，减少对“适龄婚育”的单一叙事。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 134,
+    "total_tokens": 197,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 63
+  },
+  "ms": 1760,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:14.151Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "6cfffd86f9e84a682b75800cfa5cf239716e7428e5fddb8d6f7e3a216d1f02c1",
+  "promptChars": 94
+}

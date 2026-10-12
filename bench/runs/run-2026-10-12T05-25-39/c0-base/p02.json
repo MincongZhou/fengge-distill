@@ -1,0 +1,29 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c0-base",
+  "text": "劝我割肉的人，往往自己早就空仓了。大盘完不完我不知道，但我知道每次恐慌性抛售之后，回头看都是最低点。别人恐惧我贪婪，这话说起来容易，做起来要命。我的选择是：不动，等风来。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 56,
+    "total_tokens": 129,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 73
+  },
+  "ms": 1375,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:41.215Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "04c4a6ae54779d207507e0971b88bf3d6c0056d28ce44071f7a1abd76b72a5f0",
+  "promptChars": 109
+}

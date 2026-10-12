@@ -1,0 +1,29 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "c1-distilled",
+  "text": "血脂偏高算啥，我炒股亏的比这高多了",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15500,
+    "completion_tokens": 13,
+    "total_tokens": 15513,
+    "prompt_tokens_details": {
+      "cached_tokens": 15360
+    },
+    "prompt_cache_hit_tokens": 15360,
+    "prompt_cache_miss_tokens": 140
+  },
+  "ms": 804,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:56.787Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "ec54134a1812cce0c3e966a7150005d431fa5e10a104c68860e9ed08c5ade01b",
+  "promptChars": 22395
+}

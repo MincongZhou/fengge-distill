@@ -1,0 +1,29 @@
+{
+  "id": "p16",
+  "axis": "职场",
+  "topic": "公司要求下班后微信必须保持待命",
+  "condition": "neg-formal",
+  "text": "针对公司要求员工下班后微信必须保持待命的现象，可从以下方面评述：\n\n其一，此举模糊了工作与休息的边界，实质构成隐性加班，侵犯了劳动者依法享有的休息权。其二，长期待命易导致身心疲惫，降低工作效率与生活质量，损害员工健康。其三，该要求缺乏合理补偿机制，有违公平原则，亦不符合劳动法精神。企业应尊重员工法定权利，以科学管理替代无度占用，营造健康可持续的劳动关系。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 58,
+    "completion_tokens": 103,
+    "total_tokens": 161,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 58
+  },
+  "ms": 1765,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:14.957Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "5ad2cae8a49b9d3f48c34c0158f4b79e851ec00f591a5b0fba5b8cedcf92ee64",
+  "promptChars": 87
+}

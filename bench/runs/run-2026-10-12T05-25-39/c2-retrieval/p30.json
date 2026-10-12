@@ -1,0 +1,79 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c2-retrieval",
+  "text": "做了十几年餐饮的老老板，转行直播带货，三个月赚的比过去三年还多。这说明啥？不是他会卖货，是他终于想明白了，饭店里一盘菜赚你20块还得陪笑脸，直播间里一句家人们就能赚200。我早就说过，实体店是给房东打工，带货是给自己印钱。个人观点，不构成投资建议",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15933,
+    "completion_tokens": 78,
+    "total_tokens": 16011,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 701
+  },
+  "ms": 1386,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:07.658Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "40283c4d074c892baa4deafbad61a434e9df542a59fc2f03b24b7282f72d4dd4",
+  "promptChars": 23036,
+  "retrieved": [
+    {
+      "score": 24.0314,
+      "iso": "2025-05-13T08:38:20.000Z",
+      "sha256": "7e6c2ebf3541c90b2b9ef2302f81bb015b8e3d7ed53eb6c1a39d4c7e2859c00d",
+      "chars": 104
+    },
+    {
+      "score": 18.5173,
+      "iso": "2025-09-17T12:09:09.000Z",
+      "sha256": "2871cd6b4d0c395bb145bd34a4057f35dee0f532aac0c2626b82b646cc36de40",
+      "chars": 128
+    },
+    {
+      "score": 16.6539,
+      "iso": "2025-02-08T02:39:57.000Z",
+      "sha256": "fac9bb7450cf5e205f369dd5a294393e8b38f6a5f04373d175e0b951bb270d76",
+      "chars": 63
+    },
+    {
+      "score": 15.1106,
+      "iso": "2025-08-29T10:04:44.000Z",
+      "sha256": "6f2288d4bfec8ec160631e95b28e7fe58bdcc448dbb6f14551cae1220559ae38",
+      "chars": 57
+    },
+    {
+      "score": 7.6949,
+      "iso": "2025-02-08T15:14:25.000Z",
+      "sha256": "30e7d80e82657f620f35b41da433a53b73e155576b3eaa12f79632283dd06e8b",
+      "chars": 9
+    },
+    {
+      "score": 7.2565,
+      "iso": "2025-09-02T05:08:23.000Z",
+      "sha256": "f9373f40e4c41a28bbc69c89d8596ce23cb9770aa4e7e1f001ab4f3ce6683e87",
+      "chars": 11
+    },
+    {
+      "score": 6.9261,
+      "iso": "2025-05-13T10:19:55.000Z",
+      "sha256": "3b4e39f7bc4997bddd151dcd236730cb701b2ab5a28ad3d17e7cf35f66662a0a",
+      "chars": 38
+    },
+    {
+      "score": 6.8925,
+      "iso": "2025-07-11T04:51:32.000Z",
+      "sha256": "f1d27b87596de4f809eccfb86b06e3f15a52d78f942f888d3975b715d0d7c673",
+      "chars": 136
+    }
+  ]
+}

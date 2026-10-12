@@ -1,0 +1,29 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c0-base",
+  "text": "又一个“超越人类专家”的大模型发布了，听着是不是很耳熟？每隔几个月就有人来一遍。我只想问一句：既然都超越专家了，那贵司先把自己裁掉的专家请回来呗？让他们跟模型比划比划，谁强谁留下，多公平。技术我信，营销话术我也信，但两个放一起，我就只信工资条了。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 74,
+    "completion_tokens": 83,
+    "total_tokens": 157,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 74
+  },
+  "ms": 1539,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:42.870Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "dee53689cdf85e1d0316d87050fbdebe5aac36f477aa3123bd5d01836a099552",
+  "promptChars": 113
+}

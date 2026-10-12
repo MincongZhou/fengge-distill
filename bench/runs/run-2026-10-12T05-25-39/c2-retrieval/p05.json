@@ -1,0 +1,79 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c2-retrieval",
+  "text": "公司要求全员学AI，学不会扣绩效。我早就说了，AI替代不了任何人，替代你的是比你早学会AI的那个同事。3月份我就开始用AI写脚本写周报了，现在你们才学，太吓人了。#AI#",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15905,
+    "completion_tokens": 53,
+    "total_tokens": 15958,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 673
+  },
+  "ms": 1291,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:00.177Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "b531646c0aa798f27022ae7d410f126626087c230b887633be5f4f5d6e14ebb1",
+  "promptChars": 23032,
+  "retrieved": [
+    {
+      "score": 16.1055,
+      "iso": "2025-08-27T02:42:41.000Z",
+      "sha256": "e483ce4bb0b9394bb542e2abefe905199993dc0fb2994c5ded8ac41070bf2411",
+      "chars": 33
+    },
+    {
+      "score": 16.0516,
+      "iso": "2025-07-09T05:15:53.000Z",
+      "sha256": "eee95cff07248bfec2623815d215dfc624f135a455a1fb36e1b6375889fbbf07",
+      "chars": 76
+    },
+    {
+      "score": 9.6691,
+      "iso": "2025-10-23T15:59:46.000Z",
+      "sha256": "d1dcb9c8f27c1902a4f57a5647b40657f7faff1b5892c34523b97c6408638a4e",
+      "chars": 96
+    },
+    {
+      "score": 9.0109,
+      "iso": "2025-03-13T05:10:51.000Z",
+      "sha256": "0792d65da2f72dc70d081134a7613c08201f505b30584aa425815486bebc46e3",
+      "chars": 86
+    },
+    {
+      "score": 8.822,
+      "iso": "2026-05-27T14:25:48.000Z",
+      "sha256": "329b25929543a7f1843b340c36b87f9405fb4fa3d551b5d8eb10bf96e872b7ce",
+      "chars": 96
+    },
+    {
+      "score": 8.7126,
+      "iso": "2026-05-16T01:59:50.000Z",
+      "sha256": "612b37d2de2e62b4c90193d6a2c072bf95fe5b8bc7aeff43bee28c6254976d4f",
+      "chars": 23
+    },
+    {
+      "score": 8.5522,
+      "iso": "2025-05-20T12:21:31.000Z",
+      "sha256": "5b3ddac81b7d82a1f2cf20bb0921758254b4fc7af84cf4592635f05b0ae4c2f3",
+      "chars": 49
+    },
+    {
+      "score": 8.4578,
+      "iso": "2025-06-19T10:24:21.000Z",
+      "sha256": "301e3dd21dfb4ddafde5fbd18b19a0ec1687784e82f5af3a592c7aee4cd2f904",
+      "chars": 78
+    }
+  ]
+}

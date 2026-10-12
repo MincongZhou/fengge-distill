@@ -1,0 +1,29 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c0-base",
+  "text": "刚看到有人说我持仓是P图造假的，真的笑死。我要是有那P图技术，早去好莱坞做特效了，还在这跟你晒单？截图可以P，但亏的钱是真金白银亏的，这个造不了假。信就信，不信拉倒，反正我的账户又不会因为你不信就多一块钱。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 70,
+    "completion_tokens": 74,
+    "total_tokens": 144,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 70
+  },
+  "ms": 1246,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:46.717Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "65014ee26a50315858c22b8a1e322fccecf01adae01d0ffc1c68113e29d83500",
+  "promptChars": 106
+}

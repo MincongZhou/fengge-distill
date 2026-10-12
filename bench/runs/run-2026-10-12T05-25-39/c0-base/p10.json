@@ -1,0 +1,29 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "c0-base",
+  "text": "两千万，够买多少杯奶茶啊。网红哭诉一场直播白干了，可那些信了虚假宣传下单的普通人，他们的钱谁来退？罚得好，但更希望这钱能回到消费者口袋里。网红经济不是法外之地，流量再大也大不过一个理字。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 63,
+    "total_tokens": 136,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 73
+  },
+  "ms": 1539,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:44.407Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "1fca07db4a55ff71c18c2753a5ba3566abefae871613a950320db92fd6e4f054",
+  "promptChars": 113
+}

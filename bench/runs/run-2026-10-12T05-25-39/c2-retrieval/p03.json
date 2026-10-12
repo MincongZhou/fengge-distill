@@ -1,0 +1,79 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "c2-retrieval",
+  "text": "涨了10%就都来问代码了，好像我欠他们似的。要是亏了准没人理我，这帮人我算是看透了，人性就是这么现实。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15997,
+    "completion_tokens": 36,
+    "total_tokens": 16033,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 765
+  },
+  "ms": 1295,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:59.689Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "6848038a338e534514f98ad5d79a338323e67b5cb17e9e0262d27ca29b3bc3d3",
+  "promptChars": 23172,
+  "retrieved": [
+    {
+      "score": 24.9691,
+      "iso": "2026-07-23T06:17:52.000Z",
+      "sha256": "99fb07b2e1fdde6f1f7b42de3fe57136e557ab1b95fca9088b87a32c14dfa914",
+      "chars": 57
+    },
+    {
+      "score": 22.2521,
+      "iso": "2026-07-09T06:53:34.000Z",
+      "sha256": "990fb2ed9eee126285733ab86d10c413fbf4ab34c216b959fadf7fbe7a207e56",
+      "chars": 51
+    },
+    {
+      "score": 19.8789,
+      "iso": "2026-07-24T07:12:24.000Z",
+      "sha256": "30d89cd482f3025c0dcce5785901d846116e63af2cca6daafa5baecc98ac32b6",
+      "chars": 134
+    },
+    {
+      "score": 13.1524,
+      "iso": "2026-06-24T10:15:44.000Z",
+      "sha256": "0b5c6ff2b2ddd9159b4d9e6e8c53a9e68505b90b3de93b6d6d64ac0b7fb4e81c",
+      "chars": 127
+    },
+    {
+      "score": 13.1455,
+      "iso": "2026-07-11T09:41:32.000Z",
+      "sha256": "8617473ad3358547bcd677a32e96874d5369e69e81bef50bd516ea4e239b0e7c",
+      "chars": 70
+    },
+    {
+      "score": 12.7703,
+      "iso": "2025-03-13T05:10:51.000Z",
+      "sha256": "0792d65da2f72dc70d081134a7613c08201f505b30584aa425815486bebc46e3",
+      "chars": 86
+    },
+    {
+      "score": 11.0995,
+      "iso": "2025-06-04T05:01:16.000Z",
+      "sha256": "58704daa4c96df708e1ac87142a587080f38807303fba98f8cad9f7da7f0e7c0",
+      "chars": 32
+    },
+    {
+      "score": 10.3921,
+      "iso": "2025-03-17T04:06:18.000Z",
+      "sha256": "e0848b2461ccde3b474acecaa5b26d1d24826b9355d878e14f69331e336777cb",
+      "chars": 121
+    }
+  ]
+}

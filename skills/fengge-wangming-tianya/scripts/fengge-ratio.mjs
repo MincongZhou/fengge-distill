@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCorpusFromArgv, provenance, provenanceLine } from './corpus-path.mjs';
+import { FEATURES } from './style-features.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
@@ -22,22 +23,6 @@ const arr = info.data;
 const posts = arr.filter(x => !x.retweeted && !x.rtText && !x.isLong).map(x => String(x.text_raw || x.text || '').trim()).filter(Boolean);
 const n = posts.length;
 
-const FEATS = [
-  ['含「我」', /我/], ['含「你」', /你/], ['含「你们」', /你们/], ['含「大家」', /大家/], ['含「家人们」', /家人们/],
-  ['含问号', /？/], ['含数字', /\d/], ['含话题标签', /#[^#\n]{2,}#/],
-  ['免责句', /个人观点|不构成[^。！？]{0,8}建议|个人看法|个人判断|个人猜测/],
-  ['你们…我…对仗', /你们[^。！？\n]{0,30}我/],
-  ['假口头禅', /我算了|算了算|算下来|这账|算账|换算成|建议大家|建议你们|够我买|白赚|茶叶蛋|性价比|本质上/],
-  ['顿号/分号', /[、；]/], ['换行', /\n/], ['方括号表情', /\[[^\]\s]{1,6}\]/], ['图形 emoji', /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u],
-  ['结尾不加标点', /[^。！？]$/], ['句号收尾', /。$/], ['感叹号收尾', /！$/], ['问号收尾', /？$/],
-  ['以「我」开头', /^我/], ['以「峰哥」开头', /^峰哥/], ['以话题标签开头', /^#/],
-  ['含「为什么」', /为什么/], ['含「其实」', /其实/], ['含「啥」', /啥/], ['含「赚」', /赚/], ['含「亏」', /亏/], ['含「回本」', /回本/],
-  ['含「割肉」', /割肉/], ['含「满仓」', /满仓/], ['含「抽奖」', /抽奖/], ['含「红包」', /红包/], ['含「流量」', /流量/],
-  ['含「太吓人了」', /太吓人了/], ['含「报备」', /报备/], ['含「牛」', /牛/],
-  ['极短帖(≤14字)', (t) => [...t].length <= 14], ['短帖(15-50)', (t) => [...t].length >= 15 && [...t].length <= 50],
-  ['中帖(51-103)', (t) => [...t].length >= 51 && [...t].length <= 103], ['长帖(>103)', (t) => [...t].length > 103],
-];
-
 // Wilson 95% 区间（比正态近似稳，小样本比例也适用）
 function wilson(k, m, z = 1.96) {
   if (!m) return [0, 0];
@@ -47,7 +32,7 @@ function wilson(k, m, z = 1.96) {
 }
 
 const out = [];
-for (const [name, re] of FEATS) {
+for (const [name, re] of FEATURES) {
   const hits = posts.filter(t => (typeof re === 'function' ? re(t) : re.test(t))).length;
   const p = hits / n;
   const [lo, hi] = wilson(hits, n);

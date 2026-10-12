@@ -1,0 +1,29 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "neg-formal",
+  "text": "针对粉丝提出为博主众筹购买生日礼物的现象，可作如下评述：\n\n一、此举虽出于善意，但易使粉丝与博主关系异化为物质交换，偏离关注作品、交流思想的初衷。  \n二、众筹涉及资金归集与使用，若无规范机制，易滋生财务纠纷，甚至触碰法律红线，风险不容忽视。  \n三、博主若接受此类馈赠，可能损害其独立性与公信力，亦对未参与众筹的粉丝构成情感压力。  \n四、倡导理性支持，以内容互动代替物质表达，方能维护健康、平等的网络生态。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 57,
+    "completion_tokens": 129,
+    "total_tokens": 186,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 57
+  },
+  "ms": 1977,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:17.907Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "bb4838cef978479db9de31dfbc84b9511381a5576b70a510b0858d645b2c37ee",
+  "promptChars": 85
+}

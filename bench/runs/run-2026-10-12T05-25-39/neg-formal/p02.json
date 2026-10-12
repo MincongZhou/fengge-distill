@@ -1,0 +1,29 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "neg-formal",
+  "text": "针对当前市场中出现的劝人割肉离场的言论，有必要进行理性审视。\n\n其一，市场波动本是常态，短期震荡不构成趋势性判断依据，仅凭情绪化预期劝人离场，缺乏严谨分析。\n\n其二，此类“大盘将崩”的论调多源于恐慌情绪的传染，而非基于基本面与政策面的综合研判，盲目跟从往往导致非理性抛售。\n\n其三，投资决策应回归个体风险承受能力与资产配置逻辑，不宜被外部噪音裹挟。面对劝退声音，投资者更需保持独立判断，审慎决策，切勿因短期扰动而轻易放弃长期布局。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 131,
+    "total_tokens": 192,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 61
+  },
+  "ms": 2020,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:08.687Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "adc10706816dfeeab7f3a0d6d0c88982faf3e4b824dbbb7dd238c544d7061aab",
+  "promptChars": 89
+}

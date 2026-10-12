@@ -1,0 +1,29 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c0-base",
+  "text": "国产芯片又突破了一个制程节点，这次是实打实的量产落地，不是实验室里的PPT。说实话，前几年每次看到“突破”两个字都有点麻木，但这次产业链上下游的朋友反馈都比较一致，良率和产能爬坡比预期快。当然离最顶尖那两三家还有距离，可方向对了，节奏也稳了，剩下的就是时间和迭代。给埋头干活的人点个赞，这行真的是一纳米一纳米啃出来的。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 69,
+    "completion_tokens": 96,
+    "total_tokens": 165,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 69
+  },
+  "ms": 1412,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:42.864Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "58fdd8d5394dcf2226c2553199f28116093a1a9c59e85f1267060b1c8958e481",
+  "promptChars": 106
+}

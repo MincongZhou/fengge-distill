@@ -1,0 +1,79 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "c2-retrieval",
+  "text": "黄金又奔着一千去了，我当年八百块满仓的时候，评论区全是劝我割肉的，说峰哥买在历史大顶了。现在呢？没别的意思，就是想问问当初那些喊我反指的，你们还好吗。#黄金#",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 16026,
+    "completion_tokens": 54,
+    "total_tokens": 16080,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 794
+  },
+  "ms": 1096,
+  "attempts": 1,
+  "at": "2026-10-12T05:25:59.969Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "2741d468bb047ea77342e9f7d7d99970d3f9aa8f1abbcd46ce874389c25515d4",
+  "promptChars": 23213,
+  "retrieved": [
+    {
+      "score": 15.2956,
+      "iso": "2025-02-10T05:15:17.000Z",
+      "sha256": "5713e63dd14bc92492a81ba025f075d71b48d6d9d9ea1713ac733f495a2157f5",
+      "chars": 147
+    },
+    {
+      "score": 13.7523,
+      "iso": "2026-05-30T05:21:20.000Z",
+      "sha256": "098721bf836ea9b13ac7a7cf99a3eeb6d87d351d26d7e35e9663e925fd29b6f4",
+      "chars": 145
+    },
+    {
+      "score": 11.1134,
+      "iso": "2026-06-12T03:22:18.000Z",
+      "sha256": "43c87d9842968443300a6f4029c3eb3e2f67ed897c4a3ce79307b59e6c24d10e",
+      "chars": 120
+    },
+    {
+      "score": 8.8315,
+      "iso": "2025-04-21T02:48:17.000Z",
+      "sha256": "31626ff54b0a8f499556b3c2976fc5b31a6a76752fab959482f84942de5126ce",
+      "chars": 57
+    },
+    {
+      "score": 8.712,
+      "iso": "2025-05-22T10:05:23.000Z",
+      "sha256": "c14863fe507bc9d0fae123dcfb7a939550ea0b2b5ebdafa80c97575697a8542a",
+      "chars": 50
+    },
+    {
+      "score": 7.7814,
+      "iso": "2026-05-18T01:51:03.000Z",
+      "sha256": "40eedefd85b252b0e4be15f8c0a4e06615bbc57f77e6240492b0ca22c1ccdc04",
+      "chars": 47
+    },
+    {
+      "score": 7.0448,
+      "iso": "2026-08-27T04:46:59.000Z",
+      "sha256": "27dd09e0761fa765e409a00fa81fbe3278224fc2e108415785e4fd07f2430d24",
+      "chars": 75
+    },
+    {
+      "score": 6.7983,
+      "iso": "2026-06-12T00:36:30.000Z",
+      "sha256": "18e36914fa9495ee028703370420b11762b77ff509a70e6d341302794662ce14",
+      "chars": 80
+    }
+  ]
+}

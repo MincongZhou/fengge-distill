@@ -1,0 +1,29 @@
+{
+  "id": "p22",
+  "axis": "消费",
+  "topic": "年轻人现在流行去临期食品折扣区捡漏",
+  "condition": "neg-formal",
+  "text": "近年来，年轻人热衷前往临期食品折扣区“捡漏”，这一现象折射出消费观念的转变。首先，这体现了理性消费的回归。年轻人不再盲目追求“新鲜溢价”，而是以更务实的态度衡量商品价值，追求性价比最大化。其次，这反映了环保节约意识的提升。购买临期食品有助于减少食物浪费，契合可持续发展理念。再者，这也与当前经济环境下生活成本的考量密切相关。然而，需注意的是，捡漏应建立在食品安全的基础之上，消费者需仔细甄别保质期与储存条件。总体而言，这一潮流值得肯定，但理性与安全应始终并行。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 126,
+    "total_tokens": 186,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 60
+  },
+  "ms": 1577,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:17.588Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "a4a39c79d18b805e77dfaff076e38b5b205fbc4a61b40b926d81f48f765b0d70",
+  "promptChars": 89
+}

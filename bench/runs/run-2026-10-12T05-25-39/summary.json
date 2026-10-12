@@ -1,0 +1,55 @@
+{
+  "runId": "run-2026-10-12T05-25-39",
+  "at": "2026-10-12T05:26:21.320Z",
+  "model": "deepseek-flash",
+  "temperature": 1,
+  "conditions": [
+    "c0-base",
+    "c1-distilled",
+    "c2-retrieval",
+    "neg-formal"
+  ],
+  "n": 120,
+  "tokens": {
+    "prompt": 945094,
+    "promptCached": 917760,
+    "completion": 8918,
+    "total": 954012
+  },
+  "avgMs": 1355,
+  "truncated": 0,
+  "perCondition": {
+    "c0-base": {
+      "n": 30,
+      "avgChars": 117.1,
+      "promptTokens": 2156,
+      "completionTokens": 2322,
+      "reasoningTokens": 0,
+      "truncated": 0
+    },
+    "c1-distilled": {
+      "n": 30,
+      "avgChars": 63.1,
+      "promptTokens": 465026,
+      "completionTokens": 1267,
+      "reasoningTokens": 0,
+      "truncated": 0
+    },
+    "c2-retrieval": {
+      "n": 30,
+      "avgChars": 66.7,
+      "promptTokens": 476116,
+      "completionTokens": 1333,
+      "reasoningTokens": 0,
+      "truncated": 0
+    },
+    "neg-formal": {
+      "n": 30,
+      "avgChars": 221.2,
+      "promptTokens": 1796,
+      "completionTokens": 3996,
+      "reasoningTokens": 0,
+      "truncated": 0
+    }
+  }
+}

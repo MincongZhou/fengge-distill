@@ -1,0 +1,79 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c2-retrieval",
+  "text": "发红包了，一人100，说到做到，就当是给家人们的新年礼物。顺便抽一部iPhone 17，5499元这个，转发+关注就行。",
+  "finishReason": "stop",
+  "model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 15796,
+    "completion_tokens": 36,
+    "total_tokens": 15832,
+    "prompt_tokens_details": {
+      "cached_tokens": 15232
+    },
+    "prompt_cache_hit_tokens": 15232,
+    "prompt_cache_miss_tokens": 564
+  },
+  "ms": 808,
+  "attempts": 1,
+  "at": "2026-10-12T05:26:04.458Z",
+  "maxTokens": 4000,
+  "temperature": 1,
+  "thinking": {
+    "type": "disabled"
+  },
+  "promptSha256": "0e2ee1eebf9eef538e239decaf9c763f945ca8988f197824a7b29618f70cce13",
+  "promptChars": 22851,
+  "retrieved": [
+    {
+      "score": 20.4825,
+      "iso": "2026-08-09T07:51:02.000Z",
+      "sha256": "db83785082497b83595e4561c4356577f43bfc1a1f1098f7283793e53328ed0b",
+      "chars": 59
+    },
+    {
+      "score": 7.8365,
+      "iso": "2025-06-08T09:04:13.000Z",
+      "sha256": "484549fc71989cc5cbf85e9ac770b67d5a29a5ab9b3cdc3a6bacd2217823de21",
+      "chars": 40
+    },
+    {
+      "score": 7.385,
+      "iso": "2025-09-19T03:04:22.000Z",
+      "sha256": "30e5ff495aaf69e554bf00a978e240d274a0be31ec154fb8531b48d43de10491",
+      "chars": 13
+    },
+    {
+      "score": 6.1913,
+      "iso": "2026-08-24T12:04:19.000Z",
+      "sha256": "66e07e1a46c7d699d6db58ce90f2b8d4b83ee881fc6820a96992b8650e8f9166",
+      "chars": 36
+    },
+    {
+      "score": 6.0499,
+      "iso": "2026-07-20T09:23:22.000Z",
+      "sha256": "06184fe56d46ee2bd142558dc8eaf1c95708c71febe057885c3173b1fb533177",
+      "chars": 47
+    },
+    {
+      "score": 5.9105,
+      "iso": "2026-08-09T07:54:56.000Z",
+      "sha256": "16ad030f1730ed3c07c03aa7b54b39f097896c91d55a551e871cf9a10372e1df",
+      "chars": 42
+    },
+    {
+      "score": 5.5881,
+      "iso": "2025-06-12T03:06:11.000Z",
+      "sha256": "22843142b1a3a3908c50ef7c6bddfa08c15527fadebc65941e6dd3fd4087edbe",
+      "chars": 81
+    },
+    {
+      "score": 5.5684,
+      "iso": "2026-07-10T08:24:55.000Z",
+      "sha256": "209fc2f80b9193ea318ef43f6d7366c6b09c843dee47318ba3b1c16721a6b4d2",
+      "chars": 46
+    }
+  ]
+}

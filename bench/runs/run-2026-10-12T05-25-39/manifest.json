@@ -1,0 +1,34 @@
+{
+  "runId": "run-2026-10-12T05-25-39",
+  "startedAt": "2026-10-12T05:25:39.809Z",
+  "model": "deepseek-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 1,
+  "maxTokens": 4000,
+  "thinking": {
+    "type": "disabled"
+  },
+  "concurrency": 4,
+  "keySource": "C:\\Users\\ASUS\\.dsh\\.credentials.yaml（DSH 凭据，未打印）",
+  "conditions": [
+    "c0-base",
+    "c1-distilled",
+    "c2-retrieval",
+    "neg-formal"
+  ],
+  "conditionHash": "8c3505cd3279ee7c3a7e7324d6dd1f0d018185a7d61f1daf15e7ca3533ad3987",
+  "promptFile": "bench\\prompts.jsonl",
+  "promptHash": "52d10ec85ca550deefb8d03dfd1f40c95b51ea487c421b7a5bfd486dfed82a66",
+  "prompts": 30,
+  "retrieval": {
+    "corpus": {
+      "name": "fg_fengge_v2_raw.json",
+      "sha256": "5c9ea206b487104eb6b19c26876179304148abaa7d2eff985cd3a5d5233b2088",
+      "bytes": 901375,
+      "source": "sibling"
+    },
+    "eligible": 1511,
+    "topK": 8
+  },
+  "note": "c3-lora 未运行（无 GPU／训练资源），见 bench/README.md"
+}
