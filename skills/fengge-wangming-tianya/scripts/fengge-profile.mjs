@@ -16,12 +16,17 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadCorpusFromArgv, provenance, provenanceLine } from './corpus-path.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i >= 0 ? process.argv[i + 1] : d; };
-const FB = arg('--fb', 'C:/Users/ASUS/Documents/dsh Project/dsh-chact/fg_fengge_v2_raw.json');
-const BL = arg('--bl', 'C:/Users/ASUS/Documents/dsh Project/dsh-chact/fg_bili_corpus.json');
+
+// 默认语料路径不再写死本机绝对路径：--fb/--bl > FG_CORPUS/FG_BILI_CORPUS > DSH_FENGGE_DATA > 仓库相邻目录。
+const fbInfo = loadCorpusFromArgv('weibo');
+const blInfo = loadCorpusFromArgv('bilibili');
+const FB = fbInfo.path;
+const BL = blInfo.path;
 
 const PUNCT = ['。', '！', '？', '，', '、', '；', '：', '…', '—', '"', '"', '(', ')'];
 const STOP = new Set('的 了 是 在 我 你 他 她 它 我们 你们 他们 这 那 有 和 与 就 都 也 还 而 但 被 把 给 让 对 从 到 为 之 其 以 于 上 下 里 个 之 说 会 要 能 很 太 就是 一个 什么 怎么 为什么 因为 所以 如果 没有 不是 这种 这样 那么 时候 自己 知道 觉得 现在 可以 应该 已经'.split(' '));
@@ -54,7 +59,7 @@ function charBigrams(texts) {
 }
 
 // ---------- 微博 ----------
-const fbRaw = JSON.parse(fs.readFileSync(FB, 'utf8'));
+const fbRaw = fbInfo.data;
 const posts = fbRaw.map(x => String(x.text_raw || x.text || '').trim()).filter(Boolean);
 const era = { pre: [], post: [] };
 fbRaw.forEach(x => {
@@ -128,7 +133,7 @@ for (const w of ['对吧', '对不对', '我跟你说', '说白了', '家人们'
 }
 liveProfile.topBigrams = topN(charBigrams(live), 30).map(([k, v]) => `${k}(${v})`);
 
-const profile = { generatedAt: new Date().toISOString(), sources: { weibo: FB, bilibili: BL }, weibo: ctx, live: liveProfile };
+const profile = { generatedAt: new Date().toISOString(), sources: { weibo: provenance(fbInfo), bilibili: provenance(blInfo) }, weibo: ctx, live: liveProfile };
 fs.mkdirSync(path.join(SKILL_DIR, 'data'), { recursive: true });
 fs.writeFileSync(path.join(SKILL_DIR, 'data', 'style-profile.json'), JSON.stringify(profile, null, 2));
 

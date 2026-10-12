@@ -20,20 +20,21 @@ import { fileURLToPath } from 'node:url';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
 const RATIO_FILE = path.join(SKILL_DIR, 'data', 'style-ratios.json');
-const CORPUS = 'C:/Users/ASUS/Documents/dsh Project/dsh-chact/fg_fengge_v2_raw.json';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i >= 0 ? process.argv[i + 1] : d; };
 
+// 这里**不再读语料**：旧版为了算「逗号中位带」回头读 fg_fengge_v2_raw.json，
+// 而那个路径写死在本机，于是 align / accept 换台机器就崩、也进不了 CI。
+// 现在逗号分位由 fengge-ratio.mjs 在生成基准时一并落盘（style-ratios.json 的 comma 段），
+// align 变成一个**只依赖仓库内文件**的纯函数——这是它能进 CI 的前提。
 if (!fs.existsSync(RATIO_FILE)) { console.error('缺少 data/style-ratios.json，先跑：node scripts/fengge-ratio.mjs'); process.exit(2); }
 const R = JSON.parse(fs.readFileSync(RATIO_FILE, 'utf8'));
 const N = R.n;
 const byName = Object.fromEntries(R.features.map(f => [f.name, f]));
 
-// 复算语料的中位数类基准（逗号数）
-const arr = JSON.parse(fs.readFileSync(CORPUS, 'utf8'));
-const base = arr.filter(x => !x.retweeted && !x.rtText && !x.isLong).map(x => String(x.text_raw || x.text || '').trim()).filter(Boolean);
 const median = (a) => { const s = a.slice().sort((x, y) => x - y); return s[Math.floor(s.length / 2)] ?? 0; };
-const commaCounts = base.map(t => (t.match(/，/g) || []).length).sort((a, b) => a - b);
-const commaBand = [commaCounts[Math.floor(N * .25)], commaCounts[Math.floor(N * .75)]];
+// 逗号中位带来自基准文件；旧基准没有 comma 段时给 null，由调用方标注「未判」而不是拿 0 冒充。
+const commaBand = R.comma ? [R.comma.p25, R.comma.p75] : null;
+const commaBase = R.comma ? R.comma.p50 : null;
 
 const PROPS = ['含「我」', '含「你」', '含「你们」', '含问号', '含数字', '含话题标签', '免责句', '你们…我…对仗', '假口头禅', '顿号/分号', '换行', '方括号表情', '结尾不加标点', '句号收尾', '感叹号收尾', '问号收尾', '以「我」开头', '以「峰哥」开头', '含「为什么」', '含「太吓人了」', '含「家人们」', '含「满仓」', '含「割肉」', '含「抽奖」', '极短帖(≤14字)', '短帖(15-50)', '中帖(51-103)', '长帖(>103)'];
 const RE = {
@@ -66,7 +67,7 @@ export function alignTexts(texts) {
   }
   const meds = [
     { 特征: '长度中位', 语料: R.length.p50, 带: `${R.length.p25}–${R.length.p75}`, 值: median(texts.map(t => [...t].length)) },
-    { 特征: '逗号中位', 语料: median(commaCounts), 带: `${commaBand[0]}–${commaBand[1]}`, 值: median(texts.map(t => (t.match(/，/g) || []).length)) },
+    ...(commaBand ? [{ 特征: '逗号中位', 语料: commaBase, 带: `${commaBand[0]}–${commaBand[1]}`, 值: median(texts.map(t => (t.match(/，/g) || []).length)) }] : []),
   ];
   const medRows = meds.map(x => {
     const ok = x.值 >= Number(x.带.split('–')[0]) && x.值 <= Number(x.带.split('–')[1]);

@@ -1,7 +1,23 @@
 "use strict";
 // 给峰哥语料打标：move(签名动作)/topics(话题)/hot(有无≥30热评)，生成 front-matter md + JSONL
+// 语料目录不再写死本机绝对路径：--base <dir> > FG_DATA_DIR > 仓库相邻目录（离线管道，需自己准备语料）。
 const fs = require("fs");
-const base = "C:/Users/ASUS/Documents/dsh Project/dsh-chact/";
+const path = require("path");
+const argv = process.argv.slice(2);
+const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
+const base = (() => {
+  const explicit = arg("--base", null) || process.env.FG_DATA_DIR;
+  const candidates = [
+    explicit,
+    path.resolve(__dirname, "..", ".."),   // 作者工作区布局：仓库与语料同级
+    path.resolve(__dirname, "..", "data", "corpus"),
+  ].filter(Boolean);
+  for (const c of candidates) if (fs.existsSync(path.join(c, "fg_fengge_500_raw.json"))) return path.join(c, path.sep);
+  throw new Error(
+    "找不到语料 fg_fengge_500_raw.json。试过：\n  " + candidates.join("\n  ") +
+    "\n修法：--base <语料目录> 或 FG_DATA_DIR=<语料目录>"
+  );
+})();
 const posts = JSON.parse(fs.readFileSync(base + "fg_fengge_500_raw.json", "utf8"));
 const hotIds = new Set();
 try {
