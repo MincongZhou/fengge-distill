@@ -1,0 +1,25 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c1-distilled",
+  "text": "公司强制要求所有人学会用AI工具，学不会的扣绩效。（免责）",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16706,
+    "completion_tokens": 17,
+    "total_tokens": 16723,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7886,
+  "attempts": 1,
+  "at": "2026-10-12T06:22:45.558786+00:00",
+  "promptChars": 22393,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261016
+  }
+}

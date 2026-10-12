@@ -1,0 +1,25 @@
+{
+  "id": "p22",
+  "axis": "消费",
+  "topic": "年轻人现在流行去临期食品折扣区捡漏",
+  "condition": "c2-retrieval",
+  "text": "\"年轻人现在流行去临期食品折扣区捡漏，市场价格直降60%以上，我们一定要把握这个机会哦！#临期食品# #捡漏# #年轻人省钱 ​​​\"",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17266,
+    "completion_tokens": 43,
+    "total_tokens": 17309,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 11038,
+  "attempts": 1,
+  "at": "2026-10-12T06:32:19.878476+00:00",
+  "promptChars": 23208,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261033
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "c3-lora",
+  "text": "A股辛辛苦苦奋斗一天，辛苦了，祝大家炒股赚钱。#A股#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 76,
+    "completion_tokens": 20,
+    "total_tokens": 96,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3603,
+  "attempts": 1,
+  "at": "2026-10-12T07:17:51.763327+00:00",
+  "promptChars": 105,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261036
+  }
+}

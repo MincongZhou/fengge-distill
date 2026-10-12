@@ -1,0 +1,25 @@
+{
+  "id": "p27",
+  "axis": "社会",
+  "topic": "小区物业费又涨了，业主群里吵翻天",
+  "condition": "c0-base",
+  "text": "物业费涨了？业主群吵翻天！咱们小区的物业服务费即将上调了吗？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 20,
+    "total_tokens": 102,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1939,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:09.826674+00:00",
+  "promptChars": 108,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261038
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "c3-lora",
+  "text": "#A股中的V字底# 峰哥亡命天涯的微博视频 峰哥亡命天涯的微博视频 长按识别观看",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 34,
+    "total_tokens": 118,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7133,
+  "attempts": 1,
+  "at": "2026-10-12T07:07:22.556043+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261012
+  }
+}

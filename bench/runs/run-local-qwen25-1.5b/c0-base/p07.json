@@ -1,0 +1,25 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c0-base",
+  "text": "\"惊艳亮相！某公司发布会推出人形机器人，售价二十万元，科技让未来触手可及！#科技新品# #机器人革命#\"",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 32,
+    "total_tokens": 113,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3407,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:15.370294+00:00",
+  "promptChars": 111,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261018
+  }
+}

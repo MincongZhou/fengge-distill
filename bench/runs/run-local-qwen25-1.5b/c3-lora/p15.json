@@ -1,0 +1,25 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c3-lora",
+  "text": "妈妈跟你结婚，请妈妈别催了，邻居家的孩子都学会了打酱油了。太晚了，已经结婚太晚了。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 28,
+    "total_tokens": 112,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 5019,
+  "attempts": 1,
+  "at": "2026-10-12T07:13:57.826968+00:00",
+  "promptChars": 114,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261026
+  }
+}

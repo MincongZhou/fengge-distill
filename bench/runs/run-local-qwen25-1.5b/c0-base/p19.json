@@ -1,0 +1,25 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c0-base",
+  "text": "大盘指数太难算了，XXX聊体育，真相都是那句话：沪指七年价跌筹码不散，接盘侠！ under wave 7amo #stocknews",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 35,
+    "total_tokens": 114,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3735,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:46.676742+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261030
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "c3-lora",
+  "text": "## 峰哥亡命天涯的微博视频# 吹牛摄宝# 首卖依旧笑逐颜开，他的real能力还是值得称赞的。今天热搜上有个网红因为虚假宣传被罚了两千万#峰哥亡命天涯的微博视频##财经维权理性的年轻人 啥事儿》 cüm# 不怕不怕，能赔两千万，扛过就行。他们才是自己身边赚钱的模范！#微博跨域计划# 峰哥亡命天涯的微博视频",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 83,
+    "completion_tokens": 108,
+    "total_tokens": 191,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 17009,
+  "attempts": 1,
+  "at": "2026-10-12T07:12:57.689061+00:00",
+  "promptChars": 113,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261021
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "c0-base",
+  "text": "股市有风险，入市需谨慎！_buy_stock_symbol_ 成功炒股不是靠运气，而是掌握逻辑和策略。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 76,
+    "completion_tokens": 25,
+    "total_tokens": 101,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2827,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:04.394153+00:00",
+  "promptChars": 105,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261036
+  }
+}

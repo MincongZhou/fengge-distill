@@ -1,0 +1,25 @@
+{
+  "id": "p10",
+  "axis": "热点",
+  "topic": "今天热搜上有个网红因为虚假宣传被罚了两千万",
+  "condition": "c0-base",
+  "text": "今天热搜上有个网红因为虚假宣传被罚了两千万，忍不住吐槽一下这个时代！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 83,
+    "completion_tokens": 19,
+    "total_tokens": 102,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2350,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:24.245020+00:00",
+  "promptChars": 113,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261021
+  }
+}

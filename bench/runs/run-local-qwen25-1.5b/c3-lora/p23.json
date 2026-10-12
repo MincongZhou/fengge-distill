@@ -1,0 +1,25 @@
+{
+  "id": "p23",
+  "axis": "消费",
+  "topic": "一杯奶茶卖到三十八块，排队的还不少",
+  "condition": "c3-lora",
+  "text": "一杯奶茶卖到三十八块，排队的还不少。吃一堑长一智，以后自己下功夫学习，投资市场吧，涨了亏了自己有话说。我手握十多万，我从不炒股，坚决不买卖股票。.setAdapter：去买点完饭贵的吃的，不掺和进这个坑里。峰哥亡命天涯的微博视频 点亮灯牌支持吧~ #微博跨域计划# 峰哥亡命天涯的微博视频 点亮灯牌支持吧~",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 113,
+    "total_tokens": 195,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 18245,
+  "attempts": 1,
+  "at": "2026-10-12T07:17:44.074476+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261034
+  }
+}

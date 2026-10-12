@@ -1,0 +1,25 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c3-lora",
+  "text": "#人形机器人# 峰哥亡命天涯的微博视频 #AI进化史##黑猫铲屎官3周年##抖音开屏插播了5小时# 峰哥亡命天涯的微博视频他的微博视频",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 50,
+    "total_tokens": 131,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8599,
+  "attempts": 1,
+  "at": "2026-10-12T07:11:25.426078+00:00",
+  "promptChars": 111,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261018
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c2-retrieval",
+  "text": "为什么很多人分不清鹅腿鸭腿的区别呢？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17092,
+    "completion_tokens": 11,
+    "total_tokens": 17103,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7260,
+  "attempts": 1,
+  "at": "2026-10-12T06:30:40.944413+00:00",
+  "promptChars": 22923,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261023
+  }
+}

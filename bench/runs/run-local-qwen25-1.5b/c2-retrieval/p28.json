@@ -1,0 +1,25 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c2-retrieval",
+  "text": "现在的年轻人都不愿意生孩子了，他们追求的不是数量，而是质量，宁愿亲自关怀每一只婴儿。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17225,
+    "completion_tokens": 24,
+    "total_tokens": 17249,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9027,
+  "attempts": 1,
+  "at": "2026-10-12T06:33:37.315451+00:00",
+  "promptChars": 23157,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261039
+  }
+}

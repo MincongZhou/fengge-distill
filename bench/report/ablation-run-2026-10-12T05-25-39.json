@@ -1,6 +1,6 @@
 {
   "runId": "run-2026-10-12T05-25-39",
-  "at": "2026-10-12T05:52:56.987Z",
+  "at": "2026-10-12T06:06:37.545Z",
   "pricing": {
     "source": "https://api-docs.deepseek.com/quick_start/pricing/",
     "fetchedAt": "2026-10-12",
@@ -19,6 +19,8 @@
       "distinct3": 0.9609,
       "bleu": 0.0299,
       "rougeL": 0.157,
+      "billing": "api",
+      "localTokens": null,
       "cost": {
         "calls": 30,
         "usd": 0.001717,
@@ -115,6 +117,8 @@
       "distinct3": 0.8942,
       "bleu": 0.0234,
       "rougeL": 0.1682,
+      "billing": "api",
+      "localTokens": null,
       "cost": {
         "calls": 30,
         "usd": 0.002777,
@@ -209,6 +213,8 @@
       "distinct3": 0.9253,
       "bleu": 0.1179,
       "rougeL": 0.2253,
+      "billing": "api",
+      "localTokens": null,
       "cost": {
         "calls": 30,
         "usd": 0.005044,

@@ -1,0 +1,25 @@
+{
+  "id": "p01",
+  "axis": "A股",
+  "topic": "今天沪指又跌了快一个点，我满仓没动",
+  "condition": "c2-retrieval",
+  "text": "为什么今天沪指又跌了快一个点，我还想着满仓不...你们谁觉得我会亏呢？？？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17041,
+    "completion_tokens": 25,
+    "total_tokens": 17066,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8676,
+  "attempts": 1,
+  "at": "2026-10-12T06:28:18.699649+00:00",
+  "promptChars": 22842,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261012
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c1-distilled",
+  "text": "*我说一千，你说八百，抽奖活动今晚就有！*\n\n**为什么？**\n\n我不“翻车”就“挂钱”，谁相信我不会作弊？\n\n我舔过屁股的花花草草，只有这话题……",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16703,
+    "completion_tokens": 47,
+    "total_tokens": 16750,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 10669,
+  "attempts": 1,
+  "at": "2026-10-12T06:26:10.507113+00:00",
+  "promptChars": 22385,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261031
+  }
+}

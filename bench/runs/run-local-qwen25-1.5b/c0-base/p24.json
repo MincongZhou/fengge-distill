@@ -1,0 +1,25 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "c0-base",
+  "text": "体检报告出来了，医生说我血脂偏高了，我要注意作息啦！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 16,
+    "total_tokens": 97,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2100,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:01.560327+00:00",
+  "promptChars": 112,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261035
+  }
+}

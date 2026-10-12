@@ -1,0 +1,25 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c2-retrieval",
+  "text": "我听到老板在年会上传达了一个振奋人心的消息：今年公司不会裁员！我们所有员工都应该携手共度难关。我相信，通过大家的共同努力，我们一定能够克服这个困难时期！大家一起加油吧！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17028,
+    "completion_tokens": 45,
+    "total_tokens": 17073,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 11291,
+  "attempts": 1,
+  "at": "2026-10-12T06:31:29.398502+00:00",
+  "promptChars": 22838,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261028
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c3-lora",
+  "text": "AI工具现在是生产力工具，公司规定员工会用是非常重要的。（一直追求生产力的奋斗者）#AI开发者##AI#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 28,
+    "total_tokens": 112,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 4433,
+  "attempts": 1,
+  "at": "2026-10-12T07:10:12.117220+00:00",
+  "promptChars": 116,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261016
+  }
+}

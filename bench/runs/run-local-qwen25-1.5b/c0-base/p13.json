@@ -1,0 +1,25 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "c0-base",
+  "text": "今天收工很晚，一个人吃了碗面，简单一顿晚餐，满足了这一天的疲惫。希望明天又能起得早！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 80,
+    "completion_tokens": 28,
+    "total_tokens": 108,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2902,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:32.041878+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261024
+  }
+}

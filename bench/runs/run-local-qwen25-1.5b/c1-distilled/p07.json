@@ -1,0 +1,25 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c1-distilled",
+  "text": "\"为什么有人要花二十万去买一台机器人？它们有什么特殊的功能或用途吗？\"",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16703,
+    "completion_tokens": 20,
+    "total_tokens": 16723,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7683,
+  "attempts": 1,
+  "at": "2026-10-12T06:23:01.561779+00:00",
+  "promptChars": 22388,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261018
+  }
+}

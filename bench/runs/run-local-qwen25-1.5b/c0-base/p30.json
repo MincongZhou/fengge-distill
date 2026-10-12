@@ -1,0 +1,25 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c0-base",
+  "text": "🌟老板转型直播带货，生意火爆翻倍🌟 体验人生的新乐趣！#餐饮达人 #直播带货炸翻天",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 28,
+    "total_tokens": 112,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2728,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:19.337374+00:00",
+  "promptChars": 110,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261041
+  }
+}

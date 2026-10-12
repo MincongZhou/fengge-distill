@@ -1,0 +1,25 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c3-lora",
+  "text": "#微博跨域计划# 不说废话，直奔主题！#A股# 是不是能守住这个点？ 其次是要坚信A股！راء الله آمين！你有什么看法？可以关注我，做个拉拉吧！获取至真股市观！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 57,
+    "total_tokens": 141,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9786,
+  "attempts": 1,
+  "at": "2026-10-12T07:14:12.072046+00:00",
+  "promptChars": 112,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261028
+  }
+}

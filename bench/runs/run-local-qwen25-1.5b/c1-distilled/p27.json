@@ -1,0 +1,25 @@
+{
+  "id": "p27",
+  "axis": "社会",
+  "topic": "小区物业费又涨了，业主群里吵翻天",
+  "condition": "c1-distilled",
+  "text": "小区物业费又涨了，业主群里吵翻天。观点：业主抵制涨价是众怒所向，作为业主应冷静理性，同物业协商解决，才能避免不必要的纠纷。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16704,
+    "completion_tokens": 40,
+    "total_tokens": 16744,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 10669,
+  "attempts": 1,
+  "at": "2026-10-12T06:27:49.416363+00:00",
+  "promptChars": 22385,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261038
+  }
+}

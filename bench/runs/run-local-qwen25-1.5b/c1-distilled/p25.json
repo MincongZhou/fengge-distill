@@ -1,0 +1,25 @@
+{
+  "id": "p25",
+  "axis": "投资金句",
+  "topic": "为什么大多数人炒股都是亏的",
+  "condition": "c1-distilled",
+  "text": "为什么大多数人炒股都是亏的？因为风险和收益的不对等，贪小便宜的心理使他们在决策时忽略了长期收益的可能性。而市场的波动性和不稳定性更是增加了他们的亏损风险。股民的盲目跟风和一追到底的心态也加剧了这种亏损。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16698,
+    "completion_tokens": 56,
+    "total_tokens": 16754,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 11867,
+  "attempts": 1,
+  "at": "2026-10-12T06:27:19.638959+00:00",
+  "promptChars": 22382,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261036
+  }
+}

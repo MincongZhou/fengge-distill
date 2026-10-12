@@ -1,0 +1,25 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "c1-distilled",
+  "text": "我算一下，今天这个票的实际价格就是代码对应的计算结果，我认为这代码的价值和意义正是在于对其的解读和应用。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16706,
+    "completion_tokens": 29,
+    "total_tokens": 16735,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8576,
+  "attempts": 1,
+  "at": "2026-10-12T06:22:29.471268+00:00",
+  "promptChars": 22392,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261014
+  }
+}

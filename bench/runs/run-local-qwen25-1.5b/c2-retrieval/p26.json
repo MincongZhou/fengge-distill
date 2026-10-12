@@ -1,0 +1,25 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c2-retrieval",
+  "text": "一个普通人做自媒体的案例：普通人大叔只在走廊放一个单杠，一个小心心一个引体向上，就被800多人在线leveling，现在评价如潮，打赏不断。\n\n普通人炒股是很难赚到钱的，投资还是有可能的，赚钱的关键就是以被低估的价格买到优质的好公司，然后拿住！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17132,
+    "completion_tokens": 73,
+    "total_tokens": 17205,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 14385,
+  "attempts": 1,
+  "at": "2026-10-12T06:33:19.621176+00:00",
+  "promptChars": 23005,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261037
+  }
+}

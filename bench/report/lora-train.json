@@ -1,0 +1,194 @@
+{
+  "at": "2026-10-12T07:01:18Z",
+  "baseModel": "Qwen/Qwen2.5-1.5B-Instruct",
+  "data": {
+    "train": 1357,
+    "dev": 151,
+    "trainFile": "bench/lora/data/corpus-train.txt"
+  },
+  "lora": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "bias": "none",
+    "task_type": "CAUSAL_LM"
+  },
+  "trainArgs": {
+    "epochs": 2,
+    "lr": 0.0001,
+    "batch": 4,
+    "grad_accum": 4,
+    "cutoff": 512,
+    "warmup_ratio": 0.03,
+    "seed": 20261012,
+    "max_steps": 0
+  },
+  "derived": {
+    "stepsPerEpoch": 85,
+    "totalSteps": 170,
+    "warmupSteps": 5,
+    "why": "transformers 5.x 已无 TrainingArguments.warmup_ratio，故由 warmup_ratio 自行换算 warmup_steps"
+  },
+  "trainableParams": 18464768,
+  "totalParams": 1562179072,
+  "wallSeconds": 431.2,
+  "trainLoss": 3.7047,
+  "logHistory": [
+    {
+      "loss": 4.3986,
+      "grad_norm": 1.7754,
+      "learning_rate": 0.0001,
+      "epoch": 0.1176,
+      "step": 10
+    },
+    {
+      "loss": 4.1426,
+      "grad_norm": 1.5892,
+      "learning_rate": 0.0001,
+      "epoch": 0.2353,
+      "step": 20
+    },
+    {
+      "loss": 3.963,
+      "grad_norm": 2.4865,
+      "learning_rate": 0.0001,
+      "epoch": 0.3529,
+      "step": 30
+    },
+    {
+      "loss": 3.8465,
+      "grad_norm": 1.6082,
+      "learning_rate": 0.0001,
+      "epoch": 0.4706,
+      "step": 40
+    },
+    {
+      "loss": 3.7493,
+      "grad_norm": 2.1387,
+      "learning_rate": 0.0001,
+      "epoch": 0.5882,
+      "step": 50
+    },
+    {
+      "loss": 3.8444,
+      "grad_norm": 2.3005,
+      "learning_rate": 0.0001,
+      "epoch": 0.7059,
+      "step": 60
+    },
+    {
+      "loss": 3.7674,
+      "grad_norm": 1.8236,
+      "learning_rate": 0.0001,
+      "epoch": 0.8235,
+      "step": 70
+    },
+    {
+      "loss": 3.8078,
+      "grad_norm": 1.6773,
+      "learning_rate": 0.0001,
+      "epoch": 0.9412,
+      "step": 80
+    },
+    {
+      "eval_loss": 3.9294,
+      "eval_runtime": 18.2407,
+      "eval_samples_per_second": 8.278,
+      "eval_steps_per_second": 1.042,
+      "epoch": 1.0,
+      "step": 85
+    },
+    {
+      "loss": 3.5946,
+      "grad_norm": 1.7487,
+      "learning_rate": 0.0,
+      "epoch": 1.0588,
+      "step": 90
+    },
+    {
+      "loss": 3.5421,
+      "grad_norm": 1.816,
+      "learning_rate": 0.0,
+      "epoch": 1.1765,
+      "step": 100
+    },
+    {
+      "loss": 3.5178,
+      "grad_norm": 1.9063,
+      "learning_rate": 0.0,
+      "epoch": 1.2941,
+      "step": 110
+    },
+    {
+      "loss": 3.5041,
+      "grad_norm": 2.0326,
+      "learning_rate": 0.0,
+      "epoch": 1.4118,
+      "step": 120
+    },
+    {
+      "loss": 3.4414,
+      "grad_norm": 1.8264,
+      "learning_rate": 0.0,
+      "epoch": 1.5294,
+      "step": 130
+    },
+    {
+      "loss": 3.4016,
+      "grad_norm": 1.7338,
+      "learning_rate": 0.0,
+      "epoch": 1.6471,
+      "step": 140
+    },
+    {
+      "loss": 3.4345,
+      "grad_norm": 2.0201,
+      "learning_rate": 0.0,
+      "epoch": 1.7647,
+      "step": 150
+    },
+    {
+      "loss": 3.5265,
+      "grad_norm": 1.9479,
+      "learning_rate": 0.0,
+      "epoch": 1.8824,
+      "step": 160
+    },
+    {
+      "loss": 3.4982,
+      "grad_norm": 1.8787,
+      "learning_rate": 0.0,
+      "epoch": 2.0,
+      "step": 170
+    },
+    {
+      "eval_loss": 3.9001,
+      "eval_runtime": 15.9124,
+      "eval_samples_per_second": 9.489,
+      "eval_steps_per_second": 1.194,
+      "epoch": 2.0,
+      "step": 170
+    },
+    {
+      "train_runtime": 430.7113,
+      "train_samples_per_second": 6.301,
+      "train_steps_per_second": 0.395,
+      "total_flos": 1354233395675136.0,
+      "train_loss": 3.7047,
+      "epoch": 2.0,
+      "step": 170
+    }
+  ],
+  "adapterDir": "bench/lora/out-lora/adapter",
+  "notRun": null,
+  "note": "adapter 权重在 bench/lora/out-lora/（gitignore）；本文件是可提交的训练核对记录"
+}

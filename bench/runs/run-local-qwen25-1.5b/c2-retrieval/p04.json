@@ -1,0 +1,25 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "c2-retrieval",
+  "text": "黄金一克又要破千了，我当年买的现在翻了至少100倍。太吓人了。[加油]",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17291,
+    "completion_tokens": 28,
+    "total_tokens": 17319,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9061,
+  "attempts": 1,
+  "at": "2026-10-12T06:28:44.373079+00:00",
+  "promptChars": 23207,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261015
+  }
+}

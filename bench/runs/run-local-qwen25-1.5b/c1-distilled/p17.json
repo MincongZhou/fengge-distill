@@ -1,0 +1,25 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c1-distilled",
+  "text": "我算了一下，我们的团队也有未见承诺的资金周转支持，我们能坚持到年底吧？\n\n围观这个话题有什么其他看法吗？大家对未来的预算和员工安置有什么期待吗？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16706,
+    "completion_tokens": 40,
+    "total_tokens": 16746,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 10399,
+  "attempts": 1,
+  "at": "2026-10-12T06:25:43.601620+00:00",
+  "promptChars": 22389,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261028
+  }
+}

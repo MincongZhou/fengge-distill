@@ -1,0 +1,25 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c0-base",
+  "text": "🔥公司强制学AI，没学会扣绩效？ 🔥\n学到Jackalaya的奋斗，加油吧 worthy！💪",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 26,
+    "total_tokens": 110,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3029,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:07.266766+00:00",
+  "promptChars": 116,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261016
+  }
+}

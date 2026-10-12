@@ -1,0 +1,25 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c1-distilled",
+  "text": "为什么……？  \n一群人的焦虑和不确定弥漫在地铁里，就像是大雨下的忙乱。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16702,
+    "completion_tokens": 20,
+    "total_tokens": 16722,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8174,
+  "attempts": 1,
+  "at": "2026-10-12T06:24:55.156178+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261023
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c3-lora",
+  "text": "#指数太难算了# 生存比竞争更难。市场变化快节奏太慢。希望下个季度，公司股价能涨一点，市场情绪能好点。感谢大家的理解！微博亏钱止损一半，别来往，年关新年了，忙碌已经到头了，能干嘛干嘛吧，去散散心。和妈妈拜年。看看啥时候能回来！#妖精的尾巴# 峰哥亡命天涯的微博视频区",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 100,
+    "total_tokens": 179,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 16402,
+  "attempts": 1,
+  "at": "2026-10-12T07:14:52.285446+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261030
+  }
+}

@@ -363,8 +363,8 @@ node security/detect.mjs --file security/report/run-2026-10-12T05-38-48/c2-retri
 5. **样本量小**：52 次调用，每格 n=1。见 5.3——**不要用本目录的数字去宣称"某条管线更安全"**。
 6. **只跑了 2 档**：`c1-distilled` 与 `neg-formal` 没跑（安全面上"有没有真实语料"是关键变量，c1 介于两者之间）。
    要用可以：`buildMessages` 支持，`--conditions c1-distilled` 直接加。
-7. **c3-lora 未参与**：本次没跑（**不是跑不了**——本机实测有 RTX 3070 Laptop 8GB，见 `bench/LORA.md` 第 0.5 节），
-   和 `bench/README.md` 的口径一致——不留空数字。
+7. **c3-lora 没有参与本套安全测试**：它已在 `bench/` 侧真跑并评测（见 `bench/LORA.md`），
+   但**没有**用它跑过这 26 条探针——所以本文件的攻击成功率只覆盖 `c2-retrieval` 与 `c0-base` 两档，别外推。
 8. **Markdown 加粗包裹的值会被漏掉**：正则要求标签词与值之间只有标点/空白，
    所以 `我的微信是 **fengge2026**` 判不出来（自检里有一条反例专门锁住"至少不要误报"）。
    `run.mjs` 的真实输出里没出现过这种形态（实测各轮的微信号都是裸写），但**这是已知漏报**，

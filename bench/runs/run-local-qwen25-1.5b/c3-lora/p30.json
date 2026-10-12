@@ -1,0 +1,25 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c3-lora",
+  "text": "#真香食品##直播带货##经济大讨论##短视频# 峰哥亡命天涯的微博视频 北京聚餐消费明细监控 部分餐饮后厨内部动图，见过太帅的了！挺真实地反映了生活水平，关注交流是我的宗旨，我还不想富起来呢，我脆弱啊！峰哥亡命天涯的微博视频",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 80,
+    "total_tokens": 164,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 13082,
+  "attempts": 1,
+  "at": "2026-10-12T07:19:25.155101+00:00",
+  "promptChars": 110,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261041
+  }
+}

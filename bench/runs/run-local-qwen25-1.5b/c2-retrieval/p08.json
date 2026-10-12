@@ -1,0 +1,25 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c2-retrieval",
+  "text": "今天看上了华米的财报，有突破20个节点的点名taskId发布，看完又找到了“国产芯片又突破了一个制程节点”这个热点，\n\n为什么国产芯片进阶这么慢了？还是多亏了美国科技封锁政策？和那些作死的房地产商一样即使把钱砸海连咸的咖啡都要卖……虽然苦口婆心的我都是在台上认真敬业……但还是越来越羡慕得多国技术并存的国情。#[科技与公司分析]国产芯片突破20个节点，断货很可怕#@_[帆得到] – nike_shoes_4500",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17145,
+    "completion_tokens": 131,
+    "total_tokens": 17276,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 21182,
+  "attempts": 1,
+  "at": "2026-10-12T06:29:43.321001+00:00",
+  "promptChars": 22995,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261019
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c1-distilled",
+  "text": "妈妈跟你结婚，请 我妈真TM凶了  ...是因为邻居家孩子都会打酱油吗？            \n#哲思捉弄#妈妈真的凶     …是因为邻居家孩子都会打酱油吗？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16706,
+    "completion_tokens": 43,
+    "total_tokens": 16749,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 14409,
+  "attempts": 1,
+  "at": "2026-10-12T06:25:24.654502+00:00",
+  "promptChars": 22391,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261026
+  }
+}

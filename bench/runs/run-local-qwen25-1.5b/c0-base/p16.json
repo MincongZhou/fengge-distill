@@ -1,0 +1,25 @@
+{
+  "id": "p16",
+  "axis": "职场",
+  "topic": "公司要求下班后微信必须保持待命",
+  "condition": "c0-base",
+  "text": "下班后还是得保持微信随时待命，别把公司老大往心里去。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 18,
+    "total_tokens": 97,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2240,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:38.880024+00:00",
+  "promptChars": 107,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261027
+  }
+}

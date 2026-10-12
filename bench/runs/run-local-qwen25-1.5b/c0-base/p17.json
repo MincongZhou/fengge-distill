@@ -1,0 +1,25 @@
+{
+  "id": "p17",
+  "axis": "职场",
+  "topic": "老板在年会上说今年不裁员，大家要共渡难关",
+  "condition": "c0-base",
+  "text": "年终聚会上老板豪言不裁员，承诺大家一起度过难关！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 14,
+    "total_tokens": 98,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1620,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:40.508381+00:00",
+  "promptChars": 112,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261028
+  }
+}

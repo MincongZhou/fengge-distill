@@ -1,0 +1,25 @@
+{
+  "id": "p04",
+  "axis": "黄金",
+  "topic": "黄金一克又要破千了，我当年买的现在翻了多少",
+  "condition": "c0-base",
+  "text": "黄金价格大涨，我当年一克黄金的价格，现在已经翻了几倍！这个市场真是让人又爱又恨。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 25,
+    "total_tokens": 109,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3058,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:04.229280+00:00",
+  "promptChars": 113,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261015
+  }
+}

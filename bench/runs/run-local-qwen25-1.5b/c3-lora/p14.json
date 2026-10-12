@@ -1,0 +1,25 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c3-lora",
+  "text": "没人说啊同事们都说好吃了！现在市面上什么东西都是贵的不是？竞品都是好几倍，早点品尝尝呗。 #微博跨域计划#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 34,
+    "total_tokens": 116,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6430,
+  "attempts": 1,
+  "at": "2026-10-12T07:13:52.795712+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261025
+  }
+}

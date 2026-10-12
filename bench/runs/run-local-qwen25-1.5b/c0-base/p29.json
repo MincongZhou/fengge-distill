@@ -1,0 +1,25 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c0-base",
+  "text": "今天直播说到一半被平台警告了，回去好好想想怎么做好主播。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 78,
+    "completion_tokens": 16,
+    "total_tokens": 94,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1908,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:16.601025+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261040
+  }
+}

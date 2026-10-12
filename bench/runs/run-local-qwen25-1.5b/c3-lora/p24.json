@@ -1,0 +1,25 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "c3-lora",
+  "text": "#健康生活# 峰哥亡命天涯的微博视频 #微博跨域计划#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 20,
+    "total_tokens": 101,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 4072,
+  "attempts": 1,
+  "at": "2026-10-12T07:17:48.155342+00:00",
+  "promptChars": 112,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261035
+  }
+}

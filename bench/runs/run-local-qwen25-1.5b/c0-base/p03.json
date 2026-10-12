@@ -1,0 +1,25 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "c0-base",
+  "text": "今天买的电影票今天涨停了！朋友圈到处在问我电影票的代码。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 17,
+    "total_tokens": 101,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1334,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:01.164365+00:00",
+  "promptChars": 115,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261014
+  }
+}

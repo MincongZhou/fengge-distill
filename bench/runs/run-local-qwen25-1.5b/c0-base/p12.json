@@ -1,0 +1,25 @@
+{
+  "id": "p12",
+  "axis": "热点",
+  "topic": "某地暴雨，好多人被困在地铁里",
+  "condition": "c0-base",
+  "text": "暴雨无情，平安为贵！请大家注意安全，有需要帮助的请尽快联系救援！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 80,
+    "completion_tokens": 20,
+    "total_tokens": 100,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2230,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:29.131198+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261023
+  }
+}

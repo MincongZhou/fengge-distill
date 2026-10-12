@@ -1,0 +1,25 @@
+{
+  "id": "p05",
+  "axis": "AI",
+  "topic": "公司强制要求所有人学会用AI工具，学不会的扣绩效",
+  "condition": "c2-retrieval",
+  "text": "公司强制要求所有人学会用AI工具，学不会的扣绩效。（探索未知未知的成就感，无所谓对错，关键在于知道如何一步步前进。）",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17136,
+    "completion_tokens": 33,
+    "total_tokens": 17169,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9926,
+  "attempts": 1,
+  "at": "2026-10-12T06:28:54.374454+00:00",
+  "promptChars": 23026,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261016
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "runId": "run-local-qwen25-1.5b",
+  "at": "2026-10-12T06:19:56.196912+00:00",
+  "engine": "local-transformers",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "adapter": null,
+  "baseModelPolicy": "四档共用同一基座（这是本轮消融成立的前提）；c3-lora 仅多挂一个 LoRA adapter",
+  "temperature": 1.0,
+  "maxNewTokens": 400,
+  "billing": "local-gpu",
+  "conditionsFile": "bench/lora/data/conditions.json",
+  "conditionsFileWhy": "messages 逐字来自 bench/lora/export-conditions.mjs，本脚本不含任何条件模板",
+  "prompts": 30,
+  "conditions": [
+    "c0-base",
+    "c1-distilled",
+    "c2-retrieval",
+    "c3-lora"
+  ]
+}

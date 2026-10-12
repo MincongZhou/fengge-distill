@@ -1,0 +1,25 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c3-lora",
+  "text": "现在年轻人都不愿意生孩子了，全部止断。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 77,
+    "completion_tokens": 12,
+    "total_tokens": 89,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1852,
+  "attempts": 1,
+  "at": "2026-10-12T07:19:05.743315+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261039
+  }
+}

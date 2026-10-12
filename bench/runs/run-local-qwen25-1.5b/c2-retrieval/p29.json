@@ -1,0 +1,25 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c2-retrieval",
+  "text": "家庭打算去买套小独栋房子用来开直播间……零用钱不够，朋友9月直播开始前给我转账了50000呗！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17103,
+    "completion_tokens": 33,
+    "total_tokens": 17136,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9767,
+  "attempts": 1,
+  "at": "2026-10-12T06:33:47.151640+00:00",
+  "promptChars": 22953,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261040
+  }
+}

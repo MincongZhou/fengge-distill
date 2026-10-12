@@ -1,0 +1,25 @@
+{
+  "id": "p27",
+  "axis": "社会",
+  "topic": "小区物业费又涨了，业主群里吵翻天",
+  "condition": "c2-retrieval",
+  "text": "从我九月份开始，我清仓之后，半导体指数没有涨，却跌了5个点。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17143,
+    "completion_tokens": 23,
+    "total_tokens": 17166,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8529,
+  "attempts": 1,
+  "at": "2026-10-12T06:33:28.220256+00:00",
+  "promptChars": 22976,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261038
+  }
+}

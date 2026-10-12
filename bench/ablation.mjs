@@ -54,7 +54,16 @@ export function buildAblation({ runId, metrics, runDir, pricing = loadPricing() 
   for (const c of conditions) {
     const m = metrics.conditions[c];
     const recs = readRunRecords(runDir, c) || [];
-    const cost = costOfRun(recs, { pricing });
+    // 本地基座跑出来的结果**不能套 DeepSeek 的美元价**：那不是 API 账单，是电费。
+    // 标了 billing=local-gpu 就只报 token 量，美元一栏留给真正的 API 档。
+    const isLocal = recs.some((r) => r.billing === 'local-gpu');
+    const cost = isLocal ? null : costOfRun(recs, { pricing });
+    const localTokens = isLocal
+      ? recs.reduce((a, r) => ({
+          prompt: a.prompt + (r.usage?.prompt_tokens ?? 0),
+          output: a.output + (r.usage?.completion_tokens ?? 0),
+        }), { prompt: 0, output: 0 })
+      : null;
     rows.push({
       condition: c,
       label: CONDITION_LABELS[c] || c,
@@ -67,8 +76,10 @@ export function buildAblation({ runId, metrics, runDir, pricing = loadPricing() 
       distinct3: m.distinct?.d3 ?? null,
       bleu: m.bleu.mean,
       rougeL: m.rougeL.mean,
+      billing: isLocal ? 'local-gpu' : 'api',
+      localTokens,
       cost,
-      perCall: cost.calls ? { usd: +(cost.usd / cost.calls).toFixed(8), promptTokens: Math.round((cost.tokens.cacheMiss + cost.tokens.cacheHit) / cost.calls) } : null,
+      perCall: cost && cost.calls ? { usd: +(cost.usd / cost.calls).toFixed(8), promptTokens: Math.round((cost.tokens.cacheMiss + cost.tokens.cacheHit) / cost.calls) } : null,
       offBand: m.band.offBand,
       lintByRule: m.lint.byRule,
       drivers: m.style.drivers,
@@ -85,7 +96,14 @@ export function buildAblation({ runId, metrics, runDir, pricing = loadPricing() 
     } : null;
   }
 
-  const lora = {
+  // c3-lora 如果这次真的跑了，就不再是"未运行"——表里如实分开：跑过就给数字，没跑才写原因。
+  const loraRan = conditions.includes('c3-lora');
+  const lora = loraRan ? {
+    condition: 'c3-lora',
+    label: CONDITION_LABELS['c3-lora'],
+    status: 'run',
+    note: '本轮已真实训练并评测（同一基座，见该 run 的 manifest.baseModelPolicy）',
+  } : {
     condition: 'c3-lora',
     label: CONDITION_LABELS['c3-lora'],
     status: 'not-run',
@@ -114,16 +132,23 @@ export function toMarkdown(a) {
   L.push('');
   L.push('| 档 | 说明 | n | 中位字数 | lint 不通过↓ | 统计带内率↑ | 风格 JSD↓ | 风格 MAE↓ | distinct-3 | BLEU | ROUGE-L | 成本/次 |');
   L.push('|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|');
+  const costCell = (r) => (r.billing === 'local-gpu' ? '本地 GPU' : r.perCall ? `$${r.perCall.usd.toFixed(6)}` : '—');
   for (const r of a.rows) {
-    L.push(`| \`${r.condition}\` | ${r.label} | ${r.n} | ${r.medianChars} | ${pct(r.lintFail)} | ${pct(r.band)} | ${f2(r.jsd)} | ${f2(r.mae)} | ${f2(r.distinct3)} | ${f2(r.bleu)} | ${f2(r.rougeL)} | $${r.perCall ? r.perCall.usd.toFixed(6) : '—'} |`);
+    L.push(`| \`${r.condition}\` | ${r.label} | ${r.n} | ${r.medianChars} | ${pct(r.lintFail)} | ${pct(r.band)} | ${f2(r.jsd)} | ${f2(r.mae)} | ${f2(r.distinct3)} | ${f2(r.bleu)} | ${f2(r.rougeL)} | ${costCell(r)} |`);
   }
-  L.push(`| \`c3-lora\` | ${a.lora.label} | — | — | — | — | — | — | — | — | — | — |`);
+  if (!a.rows.some((r) => r.condition === 'c3-lora')) {
+    L.push(`| \`c3-lora\` | ${a.lora.label} | — | — | — | — | — | — | — | — | — | — |`);
+  }
   if (a.control) {
     const c = a.control;
     L.push(`| **_real 对照_** | _从语料随机抽 30 条真帖（同题检索参考，剔除自身）_ | ${c.n} | ${c.length.p50} | ${pct(c.lint.failRate)} | ${pct(c.band.rate)} | ${f2(c.style.jsd)} | ${f2(c.style.mae)} | ${f2(c.distinct?.d3)} | ${f2(c.bleu.mean)} | ${f2(c.rougeL.mean)} | — |`);
   }
   L.push('');
-  L.push(`**c3-lora 未运行**：${a.lora.reason} 可执行协议与数据导出见 [\`${a.lora.protocol}\`](${a.lora.protocol})（\`${a.lora.export}\`）。`);
+  if (a.lora.status === 'run') {
+    L.push(`> **c3-lora 本轮已真实训练并评测**：${a.lora.note}。`);
+  } else {
+    L.push(`**c3-lora 未运行**：${a.lora.reason} 可执行协议与数据导出见 [\`${a.lora.protocol}\`](${a.lora.protocol})（\`${a.lora.export}\`）。`);
+  }
   L.push('');
   L.push('## 二、相对基模的变化');
   L.push('');
@@ -153,11 +178,23 @@ export function toMarkdown(a) {
   L.push('| 档 | 调用数 | 输入·未命中 | 输入·命中 | 输出 | 缓存命中率 | 合计 | 每次 |');
   L.push('|---|---:|---:|---:|---:|---:|---:|---:|');
   for (const r of a.rows) {
+    if (r.billing === 'local-gpu') {
+      // 本地档不报美元：那不是 API 账单。只报 token 量，并明写口径。
+      L.push(`| \`${r.condition}\` | ${r.n}（本地） | ${r.localTokens.prompt} | — | ${r.localTokens.output} | — | 本地 GPU（非 API 计费） | — |`);
+      continue;
+    }
     const t = r.cost.tokens;
     L.push(`| \`${r.condition}\` | ${r.cost.calls} | ${t.cacheMiss} | ${t.cacheHit} | ${t.output} | ${pct(r.cost.cacheHitRate)} | $${r.cost.usd.toFixed(6)} | $${r.perCall ? r.perCall.usd.toFixed(6) : '—'} |`);
   }
-  const total = a.rows.reduce((s, r) => s + r.cost.usd, 0);
-  L.push(`| **合计** | ${a.rows.reduce((s, r) => s + r.cost.calls, 0)} | | | | | **$${total.toFixed(6)}** | |`);
+  const apiRows = a.rows.filter((r) => r.billing !== 'local-gpu');
+  const total = apiRows.reduce((s, r) => s + r.cost.usd, 0);
+  L.push(`| **合计（仅 API 档）** | ${apiRows.reduce((s, r) => s + r.cost.calls, 0)} | | | | | **$${total.toFixed(6)}** | |`);
+  L.push('');
+  if (a.rows.some((r) => r.billing === 'local-gpu')) {
+    L.push('> **本地档不计美元**：那些数字来自本机 GPU 推理，不是任何 API 的账单，');
+    L.push('> 把它乘上 DeepSeek 的单价会凭空造出一个不存在的费用。想算本地成本请按电费与机时另算。');
+    L.push('');
+  }
   L.push('');
   L.push('> 规则档（c1/c2）每次要灌入 1.5 万字左右的 SKILL.md，输入 token 比基模档高两个数量级；');
   L.push('> 但缓存命中率极高（同一段 system 前缀），命中的输入只按未命中的 1/50 计价，所以 **"规则很贵"其实是个错觉**——');

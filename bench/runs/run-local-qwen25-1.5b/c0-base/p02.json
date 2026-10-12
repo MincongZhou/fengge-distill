@@ -1,0 +1,25 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c0-base",
+  "text": "大盘跌到这个地步，忽略短期波动，大盘趋势怎么就这么硬核？！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 19,
+    "total_tokens": 101,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1558,
+  "attempts": 1,
+  "at": "2026-10-12T06:19:59.825774+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261013
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p18",
+  "axis": "对线",
+  "topic": "有网友在评论区说我割韭菜害人亏钱",
+  "condition": "c0-base",
+  "text": "网友，放过我吧，我不是割韭菜的！持币保值才是我的正确选择！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 20,
+    "total_tokens": 101,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2419,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:42.934256+00:00",
+  "promptChars": 108,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261029
+  }
+}

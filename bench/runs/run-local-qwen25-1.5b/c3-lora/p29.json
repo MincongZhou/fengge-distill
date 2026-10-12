@@ -1,0 +1,25 @@
+{
+  "id": "p29",
+  "axis": "自嘲",
+  "topic": "今天直播说到一半被平台警告了",
+  "condition": "c3-lora",
+  "text": "今天直播说到一半被平台警告了，回去好好体验下直播失联，以后不做直播了。#微博跨域计划# 峰哥亡命天涯的微博视频",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 78,
+    "completion_tokens": 38,
+    "total_tokens": 116,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6319,
+  "attempts": 1,
+  "at": "2026-10-12T07:19:12.068886+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261040
+  }
+}

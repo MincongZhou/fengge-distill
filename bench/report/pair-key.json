@@ -3,7 +3,7 @@
   "left": "c0-base",
   "right": "c2-retrieval",
   "seed": 7717,
-  "generatedAt": "2026-10-12T05:28:30.546Z",
+  "generatedAt": "2026-10-12T05:59:05.061Z",
   "note": "A/B → 条件是给 score 用的，不要在看表前打开这个文件（盲评要盲的是\"哪条是我们的\"）",
   "pairs": [
     {

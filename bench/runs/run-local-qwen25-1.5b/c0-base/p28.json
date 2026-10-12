@@ -1,0 +1,25 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c0-base",
+  "text": "#单身与生育# 在数字时代，我们总是在忙着追求自我、追求生活品质，却忘记了最基础的养育责任。我们是否在时光的洪流中迷路了？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 77,
+    "completion_tokens": 40,
+    "total_tokens": 117,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 4854,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:14.684146+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261039
+  }
+}

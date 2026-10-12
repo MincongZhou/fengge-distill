@@ -1,0 +1,25 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c0-base",
+  "text": "妈妈啊，邻居家孩子打酱油咱们结婚后会学的，咱们得提前警惕啊。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 21,
+    "total_tokens": 105,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3258,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:36.632850+00:00",
+  "promptChars": 114,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261026
+  }
+}

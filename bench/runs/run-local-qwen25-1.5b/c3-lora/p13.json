@@ -1,0 +1,25 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "c3-lora",
+  "text": "#峰哥亡命天涯的生活# 峰哥亡命天涯 峰哥亡命天涯 https://img.69xixi.com/4cffe6bdd2c1f17f80582.jpg?t=2025210003.25",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 80,
+    "completion_tokens": 66,
+    "total_tokens": 146,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 11002,
+  "attempts": 1,
+  "at": "2026-10-12T07:13:46.360177+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261024
+  }
+}

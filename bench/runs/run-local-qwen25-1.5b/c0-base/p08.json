@@ -1,0 +1,25 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c0-base",
+  "text": "今天，国产芯片再次实现突破，又迈过了一个重要的制程节点！咱们有技术，也有实力，期待更多好消息！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 78,
+    "completion_tokens": 28,
+    "total_tokens": 106,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3173,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:18.552679+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261019
+  }
+}

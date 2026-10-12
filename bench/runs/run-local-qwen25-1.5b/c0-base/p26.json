@@ -1,0 +1,25 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c0-base",
+  "text": "理财路上，新手请注意！我总结了三条普通人理财的铁律，助您稳健前行！@理财党   #理财经验#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 29,
+    "total_tokens": 108,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3480,
+  "attempts": 1,
+  "at": "2026-10-12T06:21:07.879992+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261037
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p15",
+  "axis": "生活",
+  "topic": "我妈打电话催我结婚，说邻居家孩子都会打酱油了",
+  "condition": "c2-retrieval",
+  "text": "妈妈啊，邻居家的孩子早晚真会结婚吧！时间过得真快，今天的婚礼和他喝酱油的情景仿佛就在昨天。妈妈，加油吧！宝贝儿，生活还很美好。你的选择很重要，请相信自己！加油，妈妈一直都在支持你！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17190,
+    "completion_tokens": 57,
+    "total_tokens": 17247,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 12305,
+  "attempts": 1,
+  "at": "2026-10-12T06:31:09.444963+00:00",
+  "promptChars": 23041,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261026
+  }
+}

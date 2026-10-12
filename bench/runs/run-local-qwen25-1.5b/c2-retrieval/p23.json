@@ -1,0 +1,25 @@
+{
+  "id": "p23",
+  "axis": "消费",
+  "topic": "一杯奶茶卖到三十八块，排队的还不少",
+  "condition": "c2-retrieval",
+  "text": "一杯奶茶卖到三十八块，排队的还不少。钱的逻辑真的是这么简单吗？值得吗？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17005,
+    "completion_tokens": 24,
+    "total_tokens": 17029,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8411,
+  "attempts": 1,
+  "at": "2026-10-12T06:32:28.356645+00:00",
+  "promptChars": 22797,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261034
+  }
+}

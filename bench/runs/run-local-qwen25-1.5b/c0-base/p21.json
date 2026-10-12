@@ -1,0 +1,25 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c0-base",
+  "text": "和粉丝一起，众筹做礼物，超燃！庆祝生日咯！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 78,
+    "completion_tokens": 15,
+    "total_tokens": 93,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1631,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:54.666052+00:00",
+  "promptChars": 105,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261032
+  }
+}

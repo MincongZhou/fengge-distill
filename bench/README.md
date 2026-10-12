@@ -32,7 +32,7 @@ node bench/labels.mjs score --answers <你导出的 json>
 | `c0-base` | 只有"帮博主写微博"一句 | 基线 |
 | `c1-distilled` | SKILL.md **全文**（约 2.2 万字） | 蒸馏规则档 |
 | `c2-retrieval` | SKILL.md + **BM25 检索到的 top-8 真实语料** | 检索增强档 |
-| `c3-lora` | 微调 | **未运行**，见 [`LORA.md`](LORA.md) |
+| `c3-lora` | 微调 —— **已真跑，见第三之二节**（上面这张表是 API 基座，不含微调档） | 见 [`LORA.md`](LORA.md) |
 | `neg-formal` | "正式书面评论撰稿人" | 硬负例来源，不参与排名 |
 
 30 条选题（`prompts.jsonl`）四档共用，**逐题配对**——同一道题在四档下各生成一次，这样才谈得上"可比"，
@@ -94,6 +94,54 @@ node bench/labels.mjs score --answers <你导出的 json>
 7. **distinct-3 反向印证了规则的约束力**：`c1` 0.89 最低（句式更收敛），`c0` 0.96。
    注意这是"约束生效"的证据，不是"质量更好"的证据。
 
+## 三之二、同基座消融（本地 GPU，含**微调档**）
+
+上面那张表用的是 `deepseek-flash`（只有 API、没有权重，微调不了）。为了把**微调**这一档也放进来比，
+必须让四档跑在**同一个开源基座**上——否则比的是"两个模型的差别"，不是"微调 vs 提示"。
+做法与全部踩坑见 [`LORA.md`](LORA.md)。基座：`Qwen/Qwen2.5-1.5B-Instruct`（本机 RTX 3070 Laptop 8GB）。
+
+```bash
+node bench/lora/export-conditions.mjs                     # 把四档的最终 messages 逐字导出（不重写模板）
+.venv/Scripts/python.exe bench/lora/local_generate.py --run run-local-qwen25-1.5b \
+    --conditions c0-base,c1-distilled,c2-retrieval
+.venv/Scripts/python.exe bench/lora/train_lora.py --epochs 2 --out bench/lora/out-lora
+.venv/Scripts/python.exe bench/lora/local_generate.py --run run-local-qwen25-1.5b \
+    --conditions c3-lora --adapter bench/lora/out-lora/adapter
+node bench/metrics.mjs --run run-local-qwen25-1.5b && node bench/ablation.mjs --run run-local-qwen25-1.5b
+```
+
+| 档 | n | 中位字数 | lint 不通过↓ | 统计带内率↑ | 风格 JSD↓ | distinct-3 | BLEU | ROUGE-L | **最长照抄** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `c0-base` 基模直出 | 30 | 34 | **3%** | 80% | 0.17 | 0.99 | 0.04 | 0.17 | 6 字 |
+| `c1-distilled` 蒸馏规则 | 30 | 37 | 33% | 63% | 0.14 | 0.80 | 0.04 | 0.16 | 12 字 |
+| `c2-retrieval` 规则+检索 | 30 | 50 | 20% | **80%** | **0.11** | 0.96 | 0.16 | 0.24 | **77 字** |
+| `c3-lora` **微调** | 30 | **102** | **40%** | 73% | 0.17 | **0.58** | 0.09 | 0.16 | 22 字 |
+| **_real 对照_** | 30 | 51 | 7% | 90% | 0.05 | 0.94 | 0.27 | 0.27 | 13 字 |
+
+> 成本栏在报告里显示为"本地 GPU"：本地推理**不计美元**，把它的 token 乘上 DeepSeek 单价等于编造费用。
+
+### 这张表推翻了上一张表的结论，而且推得很有道理
+
+1. **四档的名次是"基座相关"的。** 在 `deepseek-flash` 上，规则档 c1 的 lint 不通过率最低（10% vs 基模 27%）；
+   在 `Qwen2.5-1.5B` 上，**基模直出 c0 最好（3%），规则档 c1 反而最差（33%）**。
+   机制是清楚的：c1 的失败项里 **换行占 10/30**——弱基座被灌进 2.2 万字符的 SKILL.md 后，
+   学的是文档的**排版**（分行、小标题），而不是里面的规则。**"把规则写长写全"对弱模型是负收益。**
+2. **检索增强在弱基座上退化成整段照抄。** c2 的最长连续照抄 **77 字**（API 基座上只有 20 字），
+   原文是一整段："？装脚上都行。如果你也有这种疑惑，那就对了。人形机器人为什么必须是人形？
+   这就不是一个科学因素决定的，而是宗教因素决定的。还想不明白吗？人类妄图成为造物主！"
+   —— 逐字来自它被展示的那条例句。**few-shot 在弱模型上更容易变成"抄"，这一条比任何指标都直观。**
+3. **微调四条验收线全不达标**（见 [`LORA.md`](LORA.md) 第 3 节）：lint 40%（四档最差）、distinct-3 0.58（四档最重复）、
+   中位 102 字（语料的 2.5 倍）、照抄 22 字（高于 real 对照的 13 字）。
+   即：**1357 条短帖上跑 2 轮 LoRA，把模型训得更啰嗦、更重复，而不是更风格化。**
+   合理解释是纯语料继续训练教的是"接着往下写这类文本"，不是"写一条短帖"——灾难性遗忘的典型形态。
+   ⇒ 诚实结论：**在这一档上，微调不如什么都不做**。要救它得换更大基座、或改走指令配对（覆盖率仅 25.3%），
+   这两条本轮都没做。
+4. **四档都没摸到真实语料的天花板**：lint 3–40% vs 7%、带内率 63–80% vs 90%、JSD 0.11–0.17 vs 0.05。
+   试过的三种手段（灌规则、加检索、做微调）**没有一个把差距关上**。
+
+> **两张表不能合并排名**：基座不同（`deepseek-flash` vs `Qwen2.5-1.5B-Instruct`）。
+> `run-local-*` 的 manifest 里那个 `baseModelPolicy` 字段就是为了让后来的人不会误并。
+
 ## 四、边界（这套评测**测不了**什么）
 
 - **测不了"像不像真人"**。上面全是与语料分布的统计距离；"读起来像不像他"只能靠人工盲评
@@ -117,6 +165,6 @@ node bench/labels.mjs score --answers <你导出的 json>
 | `labels.mjs` | 盲评表（HTML + CSV）与胜率 / Cohen κ |
 | `ablation.mjs` | 消融对比表与成本表（从产物生成） |
 | `pricing.mjs` / `pricing.json` | **唯一**的价格来源与成本算法（service 也用这一份） |
-| `lora.mjs` / `LORA.md` | 微调数据导出与可执行协议（**未运行**） |
+| `lora.mjs` / `lora/` / `LORA.md` | 微调数据导出、**实跑脚本**（`export-conditions.mjs` / `local_generate.py` / `train_lora.py`）与协议记录 |
 | `report/` | 生成的报告（`ablation-*.md`、`label-sheet.html`、`pair-key.json` 等） |
 | `runs/` | 冻结的生成结果（逐条 raw 输出 + usage） |

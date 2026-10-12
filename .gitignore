@@ -18,6 +18,13 @@ skills/*/evals/results.json
 bench/lora/data/
 bench/.venv/
 
+# LoRA 产物：adapter 权重 + 训练 checkpoint。体积大且是二进制训练物，不入库；
+# 训练是否真跑过、超参与数据指纹是什么，看可提交的 bench/report/lora-train.json。
+bench/lora/out-lora/
+bench/lora/checkpoints/
+# 基座模型的 HF 缓存（几个 GiB）：放工作区内而不是 ~/.cache，也不入库
+bench/lora/hf-cache/
+
 # 盲评表与 CSV 是 bench/items.jsonl 的派生视图（同样含语料正文），一条命令就能重生成
 bench/report/label-sheet.html
 bench/report/labels.csv

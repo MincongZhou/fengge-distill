@@ -1,0 +1,25 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c2-retrieval",
+  "text": "#AI# #科技# 这是真的吗？#新模型# 今天#大厂发布了#新的大模型# 说能力超过#专业专家#！这会掀起一阵科技革命吗？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17010,
+    "completion_tokens": 43,
+    "total_tokens": 17053,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 11116,
+  "attempts": 1,
+  "at": "2026-10-12T06:29:05.583356+00:00",
+  "promptChars": 22859,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261017
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p23",
+  "axis": "消费",
+  "topic": "一杯奶茶卖到三十八块，排队的还不少",
+  "condition": "c0-base",
+  "text": "一杯奶茶卖到三十八块，排队的还不少，吃货们的自豪感油然而生啊！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 23,
+    "total_tokens": 105,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2370,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:59.449272+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261034
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c0-base",
+  "text": "#大厂新品#，#超级智能模型#发布，说可以媲美#人类专家#级别！🎬🚀技术人员只能笑纳，离专业距离万里！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 83,
+    "completion_tokens": 35,
+    "total_tokens": 118,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 4685,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:11.956441+00:00",
+  "promptChars": 113,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261017
+  }
+}

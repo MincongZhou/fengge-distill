@@ -1,0 +1,25 @@
+{
+  "id": "p28",
+  "axis": "社会",
+  "topic": "现在的年轻人都不愿意生孩子了",
+  "condition": "c1-distilled",
+  "text": "现在的年轻人都不愿意生孩子了。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16699,
+    "completion_tokens": 8,
+    "total_tokens": 16707,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6654,
+  "attempts": 1,
+  "at": "2026-10-12T06:27:56.134832+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261039
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c1-distilled",
+  "text": "买鸭肉！发财了！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16706,
+    "completion_tokens": 7,
+    "total_tokens": 16713,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6804,
+  "attempts": 1,
+  "at": "2026-10-12T06:28:09.941445+00:00",
+  "promptChars": 22387,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261041
+  }
+}

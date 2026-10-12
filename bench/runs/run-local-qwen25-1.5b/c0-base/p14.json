@@ -1,0 +1,25 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c0-base",
+  "text": "没人说不吃，就那么不好意思地吃一点呗！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 12,
+    "total_tokens": 94,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 1316,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:33.368592+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261025
+  }
+}

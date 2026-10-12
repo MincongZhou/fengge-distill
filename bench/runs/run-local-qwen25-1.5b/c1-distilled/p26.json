@@ -1,0 +1,25 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c1-distilled",
+  "text": "“笃信三条理财铁律，大叔笑开门，单身姐幸福多。\n优先于业绩考量，追求精神边际。\n远离时代浮躁，回归纯粹天然。”\n\n综合了《系统思维的黄金法则》\n以及《费曼讲座》\n广大财务新手必备/meta定律：\n1. 人生有三重境界，理财不是唯一；\n2. 风口论远少初心；\n3. 在喧嚣中找寻宁静，止步奢望。\n\n专门给那些满脑子007战术的圈圈们：\n你们怎么看？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16701,
+    "completion_tokens": 115,
+    "total_tokens": 16816,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 18947,
+  "attempts": 1,
+  "at": "2026-10-12T06:27:38.672818+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261037
+  }
+}

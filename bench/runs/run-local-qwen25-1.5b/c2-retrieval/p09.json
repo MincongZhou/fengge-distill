@@ -1,0 +1,25 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c2-retrieval",
+  "text": "新款折叠屏手机发布了，双十一秒杀！设定了价格，实力砍价君让你壕不可挡！峰哥亡命天涯的微博视频",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16973,
+    "completion_tokens": 31,
+    "total_tokens": 17004,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9322,
+  "attempts": 1,
+  "at": "2026-10-12T06:29:52.722842+00:00",
+  "promptChars": 22787,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261020
+  }
+}

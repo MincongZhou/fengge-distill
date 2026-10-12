@@ -1,0 +1,25 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c0-base",
+  "text": "新款折叠屏手机发布啦！入手价竟然只有惊人的18K元！机会难得，行动起来了！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 24,
+    "total_tokens": 103,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3326,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:21.885610+00:00",
+  "promptChars": 107,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261020
+  }
+}

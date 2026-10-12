@@ -1,0 +1,25 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c3-lora",
+  "text": "和大家拜个晚年，今年入不敷出了，去年已经众筹过一次了，今年实在没有。祝前程似锦！未来可期！#微博跨域计划#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 78,
+    "completion_tokens": 39,
+    "total_tokens": 117,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6432,
+  "attempts": 1,
+  "at": "2026-10-12T07:16:14.182324+00:00",
+  "promptChars": 105,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261032
+  }
+}

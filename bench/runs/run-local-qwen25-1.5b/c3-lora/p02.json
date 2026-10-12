@@ -1,0 +1,25 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c3-lora",
+  "text": "谢谢支持，我看过文章的整体收入已经跌了34%，我觉着我遗址已经够了，洗洗睡吧。我打算在指数跌了20%叠加在小阳线等机会，年内可能不会有70%或者30%的收益了吧？以后我指望不大了吧？赌性太大发。那我应该继续休息一段时间，主动接多少仓位就接多少！前人栽树，后人乘凉，实事求是，厚德载物。重申一遍，涨跌都是家常便饭，不要预测，躺平！废了就卖，小赚不跑再进！谢谢！峰哥的微博视频-622613203",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 149,
+    "total_tokens": 231,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 26223,
+  "attempts": 1,
+  "at": "2026-10-12T07:07:48.787139+00:00",
+  "promptChars": 109,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261013
+  }
+}

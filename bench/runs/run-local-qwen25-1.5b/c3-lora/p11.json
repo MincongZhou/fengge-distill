@@ -1,0 +1,25 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "c3-lora",
+  "text": "全球NO.1网红偷税漏税，传说中说的.dm7肯定也是被抓住了。声明还仅仅1000字吧。没接到工作，别人那么多话不都说完了吗？你就知道帮主角出个丑，你们这种价值观我们怎么信赖。！这只能说明一个问题：古惑仔时代已经过去，热血青年时代来临了。@陈一发儿 说完？我爱他！ 是一个工薪父母的优秀的孩子，真的国之宝。跟他的视频、言论杀熟再多也是枉费。我相信他的诚意，有良心。同为摩友，生态债主，终于明白他的灵动高贵了。深入了解他以后你会发现，他就是一直在练的黑铁，这就是他的本色，这就是我。 #微博元老区# #微博跨域计划# 峰哥亡命天涯的微博视频obao.bilibili.com樱桃峰哥亡命天涯的微博视频obao.bilibili.com樱桃",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 202,
+    "total_tokens": 286,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 32164,
+  "attempts": 1,
+  "at": "2026-10-12T07:13:29.856279+00:00",
+  "promptChars": 111,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261022
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p06",
+  "axis": "AI",
+  "topic": "某大厂发布了新的大模型，说能力超过人类专家",
+  "condition": "c1-distilled",
+  "text": "某大厂发布了新的大模型，说能力超过人类专家，并在商业化应用上取得重大突破。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16705,
+    "completion_tokens": 22,
+    "total_tokens": 16727,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8177,
+  "attempts": 1,
+  "at": "2026-10-12T06:22:53.805468+00:00",
+  "promptChars": 22390,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261017
+  }
+}

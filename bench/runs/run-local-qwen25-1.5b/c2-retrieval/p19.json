@@ -1,0 +1,25 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c2-retrieval",
+  "text": "那些质疑我的持仓是P图造假的人，你们看看那市场变化，你们知道有些筹码有多贵么？我不是P图，我说的每句话都代表实操结果。股市就是一条条亏得起的博弈，别来这套，看看我持仓的底气和幽默。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17210,
+    "completion_tokens": 59,
+    "total_tokens": 17269,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 12350,
+  "attempts": 1,
+  "at": "2026-10-12T06:31:49.710585+00:00",
+  "promptChars": 23165,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261030
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p03",
+  "axis": "A股",
+  "topic": "我买的那个票今天涨停了，朋友圈一堆人来问我代码",
+  "condition": "c2-retrieval",
+  "text": "今天买的那个票今天涨停了！朋友圈好多朋友问我怎么买的，简直气死我了！(\"个人观点，不构成投资建议\")",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17247,
+    "completion_tokens": 29,
+    "total_tokens": 17276,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9274,
+  "attempts": 1,
+  "at": "2026-10-12T06:28:35.234276+00:00",
+  "promptChars": 23166,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261014
+  }
+}

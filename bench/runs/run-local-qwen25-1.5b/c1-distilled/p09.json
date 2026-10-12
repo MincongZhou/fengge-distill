@@ -1,0 +1,25 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c1-distilled",
+  "text": "新款折叠屏手机发布了，卖一万八nv",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16701,
+    "completion_tokens": 10,
+    "total_tokens": 16711,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6690,
+  "attempts": 1,
+  "at": "2026-10-12T06:23:59.909108+00:00",
+  "promptChars": 22384,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261020
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p24",
+  "axis": "健康",
+  "topic": "体检报告出来，医生说我血脂偏高要注意作息",
+  "condition": "c2-retrieval",
+  "text": "医得知我血脂偏高，建议我注意作息。巴斯德啤酒一瓶不沾，熬夜也要睡足七小时，保持年轻的身体！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16962,
+    "completion_tokens": 30,
+    "total_tokens": 16992,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9235,
+  "attempts": 1,
+  "at": "2026-10-12T06:32:37.639499+00:00",
+  "promptChars": 22750,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261035
+  }
+}

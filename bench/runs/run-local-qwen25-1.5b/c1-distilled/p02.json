@@ -1,0 +1,25 @@
+{
+  "id": "p02",
+  "axis": "A股",
+  "topic": "有人劝我现在割肉离场，说大盘要完了",
+  "condition": "c1-distilled",
+  "text": "**我提早观察，我不是在忽略市场的实时变动，而是踩在轮动行情的间隙。**大盘洗牌，行情起伏，转瞬成英雄的！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16704,
+    "completion_tokens": 35,
+    "total_tokens": 16739,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9769,
+  "attempts": 1,
+  "at": "2026-10-12T06:22:20.816400+00:00",
+  "promptChars": 22386,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261013
+  }
+}

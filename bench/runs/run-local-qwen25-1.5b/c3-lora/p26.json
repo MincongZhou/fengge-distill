@@ -1,0 +1,25 @@
+{
+  "id": "p26",
+  "axis": "投资金句",
+  "topic": "我总结了三条普通人理财的铁律",
+  "condition": "c3-lora",
+  "text": "谨慎投资，避免贪婪；长期持有，收益可观；分散投资，降低风险。 #微博跨域计划#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 24,
+    "total_tokens": 103,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 3589,
+  "attempts": 1,
+  "at": "2026-10-12T07:17:55.361163+00:00",
+  "promptChars": 106,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261037
+  }
+}

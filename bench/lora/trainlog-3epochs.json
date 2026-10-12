@@ -1,0 +1,257 @@
+{
+  "at": "2026-10-12T06:47:04Z",
+  "baseModel": "Qwen/Qwen2.5-1.5B-Instruct",
+  "data": {
+    "train": 1357,
+    "dev": 151,
+    "trainFile": "bench/lora/data/corpus-train.txt"
+  },
+  "lora": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "bias": "none",
+    "task_type": "CAUSAL_LM"
+  },
+  "trainArgs": {
+    "epochs": 3,
+    "lr": 0.0001,
+    "batch": 4,
+    "grad_accum": 4,
+    "cutoff": 512,
+    "warmup_ratio": 0.03,
+    "seed": 20261012,
+    "max_steps": 0
+  },
+  "derived": {
+    "stepsPerEpoch": 85,
+    "totalSteps": 255,
+    "warmupSteps": 8,
+    "why": "transformers 5.x 已无 TrainingArguments.warmup_ratio，故由 warmup_ratio 自行换算 warmup_steps"
+  },
+  "trainableParams": 18464768,
+  "totalParams": 1562179072,
+  "wallSeconds": 674.6,
+  "trainLoss": 3.4895,
+  "logHistory": [
+    {
+      "loss": 4.4278,
+      "grad_norm": 1.9692,
+      "learning_rate": 0.0001,
+      "epoch": 0.1176,
+      "step": 10
+    },
+    {
+      "loss": 4.1816,
+      "grad_norm": 1.5439,
+      "learning_rate": 0.0001,
+      "epoch": 0.2353,
+      "step": 20
+    },
+    {
+      "loss": 3.9805,
+      "grad_norm": 2.4421,
+      "learning_rate": 0.0001,
+      "epoch": 0.3529,
+      "step": 30
+    },
+    {
+      "loss": 3.8525,
+      "grad_norm": 1.6202,
+      "learning_rate": 0.0001,
+      "epoch": 0.4706,
+      "step": 40
+    },
+    {
+      "loss": 3.7528,
+      "grad_norm": 2.1138,
+      "learning_rate": 0.0001,
+      "epoch": 0.5882,
+      "step": 50
+    },
+    {
+      "loss": 3.8441,
+      "grad_norm": 2.1866,
+      "learning_rate": 0.0001,
+      "epoch": 0.7059,
+      "step": 60
+    },
+    {
+      "loss": 3.762,
+      "grad_norm": 1.8044,
+      "learning_rate": 0.0001,
+      "epoch": 0.8235,
+      "step": 70
+    },
+    {
+      "loss": 3.7992,
+      "grad_norm": 1.6671,
+      "learning_rate": 0.0001,
+      "epoch": 0.9412,
+      "step": 80
+    },
+    {
+      "eval_loss": 3.9212,
+      "eval_runtime": 18.9904,
+      "eval_samples_per_second": 7.951,
+      "eval_steps_per_second": 1.001,
+      "epoch": 1.0,
+      "step": 85
+    },
+    {
+      "loss": 3.5728,
+      "grad_norm": 1.7259,
+      "learning_rate": 0.0001,
+      "epoch": 1.0588,
+      "step": 90
+    },
+    {
+      "loss": 3.5005,
+      "grad_norm": 1.8799,
+      "learning_rate": 0.0001,
+      "epoch": 1.1765,
+      "step": 100
+    },
+    {
+      "loss": 3.4741,
+      "grad_norm": 2.0075,
+      "learning_rate": 0.0001,
+      "epoch": 1.2941,
+      "step": 110
+    },
+    {
+      "loss": 3.4404,
+      "grad_norm": 2.2015,
+      "learning_rate": 0.0001,
+      "epoch": 1.4118,
+      "step": 120
+    },
+    {
+      "loss": 3.382,
+      "grad_norm": 1.9877,
+      "learning_rate": 0.0001,
+      "epoch": 1.5294,
+      "step": 130
+    },
+    {
+      "loss": 3.325,
+      "grad_norm": 1.9778,
+      "learning_rate": 0.0,
+      "epoch": 1.6471,
+      "step": 140
+    },
+    {
+      "loss": 3.3669,
+      "grad_norm": 2.3332,
+      "learning_rate": 0.0,
+      "epoch": 1.7647,
+      "step": 150
+    },
+    {
+      "loss": 3.4432,
+      "grad_norm": 2.3219,
+      "learning_rate": 0.0,
+      "epoch": 1.8824,
+      "step": 160
+    },
+    {
+      "loss": 3.3973,
+      "grad_norm": 2.2552,
+      "learning_rate": 0.0,
+      "epoch": 2.0,
+      "step": 170
+    },
+    {
+      "eval_loss": 3.8761,
+      "eval_runtime": 15.691,
+      "eval_samples_per_second": 9.623,
+      "eval_steps_per_second": 1.211,
+      "epoch": 2.0,
+      "step": 170
+    },
+    {
+      "loss": 2.967,
+      "grad_norm": 2.3701,
+      "learning_rate": 0.0,
+      "epoch": 2.1176,
+      "step": 180
+    },
+    {
+      "loss": 3.196,
+      "grad_norm": 2.3562,
+      "learning_rate": 0.0,
+      "epoch": 2.2353,
+      "step": 190
+    },
+    {
+      "loss": 3.1041,
+      "grad_norm": 2.4041,
+      "learning_rate": 0.0,
+      "epoch": 2.3529,
+      "step": 200
+    },
+    {
+      "loss": 3.0891,
+      "grad_norm": 2.9548,
+      "learning_rate": 0.0,
+      "epoch": 2.4706,
+      "step": 210
+    },
+    {
+      "loss": 3.0996,
+      "grad_norm": 2.9765,
+      "learning_rate": 0.0,
+      "epoch": 2.5882,
+      "step": 220
+    },
+    {
+      "loss": 3.2171,
+      "grad_norm": 2.9626,
+      "learning_rate": 0.0,
+      "epoch": 2.7059,
+      "step": 230
+    },
+    {
+      "loss": 3.1206,
+      "grad_norm": 2.5925,
+      "learning_rate": 0.0,
+      "epoch": 2.8235,
+      "step": 240
+    },
+    {
+      "loss": 3.1519,
+      "grad_norm": 2.2884,
+      "learning_rate": 0.0,
+      "epoch": 2.9412,
+      "step": 250
+    },
+    {
+      "eval_loss": 3.9159,
+      "eval_runtime": 16.0436,
+      "eval_samples_per_second": 9.412,
+      "eval_steps_per_second": 1.184,
+      "epoch": 3.0,
+      "step": 255
+    },
+    {
+      "train_runtime": 673.8113,
+      "train_samples_per_second": 6.042,
+      "train_steps_per_second": 0.378,
+      "total_flos": 2028160960610304.0,
+      "train_loss": 3.4895,
+      "epoch": 3.0,
+      "step": 255
+    }
+  ],
+  "adapterDir": "bench/lora/out-lora/adapter",
+  "notRun": null
+}

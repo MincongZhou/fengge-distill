@@ -1,0 +1,25 @@
+{
+  "id": "p18",
+  "axis": "对线",
+  "topic": "有网友在评论区说我割韭菜害人亏钱",
+  "condition": "c1-distilled",
+  "text": "买完就跌啊，因为我不是买这家公司，我是在试图预测涨跌。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16703,
+    "completion_tokens": 18,
+    "total_tokens": 16721,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7964,
+  "attempts": 1,
+  "at": "2026-10-12T06:25:51.637250+00:00",
+  "promptChars": 22385,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261029
+  }
+}

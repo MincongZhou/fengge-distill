@@ -1,0 +1,25 @@
+{
+  "id": "p18",
+  "axis": "对线",
+  "topic": "有网友在评论区说我割韭菜害人亏钱",
+  "condition": "c3-lora",
+  "text": "炒股有风险，入市需谨慎。投资股市，持之以恒。炒股不易，君子不薄。炒股乃人生大技能，由平凡人慢慢打造太奢侈！多赚点，幸福多多！炒股，炒股，炒股。炒股当头！炒股发财！不动真气，炒股复利，炒股乐趣，炒股生存！炒股，炒股，炒股，炒股！股市有风险，投资需谨慎，炒股需人懂，人懂是股民，人不懂是韭菜，懂与不懂，除非入市，再不能跳下来说投机取巧是贼业，早知今日！#vivi空遗憾轨迹###微博跨域计划# 峰哥亡命天涯的微博视频区",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 148,
+    "total_tokens": 229,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 23799,
+  "attempts": 1,
+  "at": "2026-10-12T07:14:35.875168+00:00",
+  "promptChars": 108,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261029
+  }
+}

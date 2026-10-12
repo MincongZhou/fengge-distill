@@ -1,0 +1,25 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c0-base",
+  "text": "调整步伐，推出福利大放送！🎉 ￥抢红包✨ 今夜有“翻滚的人生”让你火爆全场🌈，相信一定能把大家的热情翻滚起来！👨‍👩‍👧‍👦 #共度欢乐时光#",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 54,
+    "total_tokens": 135,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6337,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:53.027400+00:00",
+  "promptChars": 108,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261031
+  }
+}

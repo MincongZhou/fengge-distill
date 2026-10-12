@@ -1,0 +1,25 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c2-retrieval",
+  "text": "感谢粉丝的大力支持！特别感谢你们提供的全部礼物，非常有心意。大家一起庆祝我的生日，生日快乐！ 🎉🎂",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17111,
+    "completion_tokens": 28,
+    "total_tokens": 17139,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9033,
+  "attempts": 1,
+  "at": "2026-10-12T06:32:08.790994+00:00",
+  "promptChars": 22921,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261032
+  }
+}

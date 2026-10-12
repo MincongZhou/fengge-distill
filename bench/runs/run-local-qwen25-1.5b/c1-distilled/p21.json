@@ -1,0 +1,25 @@
+{
+  "id": "p21",
+  "axis": "粉丝",
+  "topic": "粉丝说要给我众筹买生日礼物",
+  "condition": "c1-distilled",
+  "text": "因为大家觉得我牛，我这钱全部给你们赚了。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16700,
+    "completion_tokens": 14,
+    "total_tokens": 16714,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7305,
+  "attempts": 1,
+  "at": "2026-10-12T06:26:17.873323+00:00",
+  "promptChars": 22382,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261032
+  }
+}

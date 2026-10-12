@@ -1,0 +1,25 @@
+{
+  "id": "p19",
+  "axis": "对线",
+  "topic": "有人质疑我的持仓是P图造假的",
+  "condition": "c1-distilled",
+  "text": "有人质疑我的持仓是P图造假的，真相只有一个：我有仓位，我相信自己的判断。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16701,
+    "completion_tokens": 21,
+    "total_tokens": 16722,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 8042,
+  "attempts": 1,
+  "at": "2026-10-12T06:25:59.763060+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261030
+  }
+}

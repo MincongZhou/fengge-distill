@@ -1,0 +1,25 @@
+{
+  "id": "p11",
+  "axis": "热点",
+  "topic": "有明星被曝出偷税漏税，工作室发声明否认",
+  "condition": "c0-base",
+  "text": "全球NO.1网红曝光财务造假工作室一并否认！网友：明星都懒得负责任了？",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 21,
+    "total_tokens": 105,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 2636,
+  "attempts": 1,
+  "at": "2026-10-12T06:20:26.890233+00:00",
+  "promptChars": 111,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261022
+  }
+}

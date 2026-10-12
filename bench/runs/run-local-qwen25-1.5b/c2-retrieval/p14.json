@@ -1,0 +1,25 @@
+{
+  "id": "p14",
+  "axis": "生活",
+  "topic": "公司发的月饼是五仁的，同事都在吐槽",
+  "condition": "c2-retrieval",
+  "text": "没人说啊同事们都说五仁的好吃。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17064,
+    "completion_tokens": 10,
+    "total_tokens": 17074,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 7284,
+  "attempts": 1,
+  "at": "2026-10-12T06:30:57.063758+00:00",
+  "promptChars": 22894,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261025
+  }
+}

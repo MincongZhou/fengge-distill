@@ -1,0 +1,25 @@
+{
+  "id": "p20",
+  "axis": "粉丝",
+  "topic": "想给粉丝发一波红包，顺便搞个抽奖",
+  "condition": "c2-retrieval",
+  "text": "*我说过，今天想给粉丝发一波红包，顺便搞个抽奖。转发+关注，即可抽中一个惊喜礼物。奖品丰厚，抓紧来抢！*",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17017,
+    "completion_tokens": 37,
+    "total_tokens": 17054,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 9872,
+  "attempts": 1,
+  "at": "2026-10-12T06:31:59.640435+00:00",
+  "promptChars": 22845,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261031
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p13",
+  "axis": "生活",
+  "topic": "今天收工很晚，一个人吃了碗面",
+  "condition": "c1-distilled",
+  "text": "一个人吃了碗面，真的很简单。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16702,
+    "completion_tokens": 8,
+    "total_tokens": 16710,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 6526,
+  "attempts": 1,
+  "at": "2026-10-12T06:25:01.766944+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261024
+  }
+}

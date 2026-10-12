@@ -1,0 +1,25 @@
+{
+  "id": "p09",
+  "axis": "科技",
+  "topic": "新款折叠屏手机发布了，卖一万八",
+  "condition": "c3-lora",
+  "text": "新款折叠屏手机发布了，双十一秒杀，送你一架，享受新时代的科技魅力吧！行动起来了，现在下单还能打七折哦！#vivoX Fold 2# #iPhone15# #潮流# #vlog# 峰哥亡命天涯的微博视频宝库",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct+lora:bench/lora/out-lora/adapter",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 79,
+    "completion_tokens": 64,
+    "total_tokens": 143,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 10380,
+  "attempts": 1,
+  "at": "2026-10-12T07:12:40.672130+00:00",
+  "promptChars": 107,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261020
+  }
+}

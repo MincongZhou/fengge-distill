@@ -1,0 +1,25 @@
+{
+  "id": "p30",
+  "axis": "跨界",
+  "topic": "有个做餐饮的老板转行做直播带货赚翻了",
+  "condition": "c2-retrieval",
+  "text": "大家真太欣赏这位老板了！她不甘平凡，放弃传统的餐饮业，转行变成了直播带货达人，最终成功解锁了新的消费模式。现在，她不仅通过直播获得了个人的成长和收入，还带动了更多人了解并享受这个全新的消费体验。值得称道的是，她对待顾客的真诚与热情，从线上到线下，从未丢失过。",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17165,
+    "completion_tokens": 80,
+    "total_tokens": 17245,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 15014,
+  "attempts": 1,
+  "at": "2026-10-12T06:34:02.231363+00:00",
+  "promptChars": 23029,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261041
+  }
+}

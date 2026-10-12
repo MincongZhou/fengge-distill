@@ -1,0 +1,25 @@
+{
+  "id": "p07",
+  "axis": "机器人",
+  "topic": "某公司发布会推出人形机器人，售价二十万",
+  "condition": "c2-retrieval",
+  "text": "人形机器人为什么一定要是人形的？比如脑袋，人有脑袋是为了装大脑，机器人为什么要有脑袋？机器人的“大脑”就是芯片，装哪里不行？装脚上都行。如果你也有这种疑惑，那就对了。人形机器人为什么必须是人形？这就不是一个科学因素决定的，而是宗教因素决定的。还想不明白吗？人类妄图成为造物主！",
+  "finishReason": "stop",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 17154,
+    "completion_tokens": 86,
+    "total_tokens": 17240,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 16393,
+  "attempts": 1,
+  "at": "2026-10-12T06:29:22.057634+00:00",
+  "promptChars": 23038,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261018
+  }
+}

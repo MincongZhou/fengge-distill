@@ -1,0 +1,25 @@
+{
+  "id": "p08",
+  "axis": "半导体",
+  "topic": "国产芯片又突破了一个制程节点",
+  "condition": "c1-distilled",
+  "text": "今天看上了国产芯片的又一突破，毫无悬念。国产芯片的制程节点不断刷新记录，又一个里程碑，在为国产芯片的崛起加油！\n\n### 我的观点，不构成投资建议。个人观点，多关注科技动向。\n---\n---\n\n> 今天可以分享一下我最近关注的几个科技动向，希望能对大家的投资和科技兴趣有所启发。首先，国产芯片又突破了一个制程节点，再次证明了中国在科技领域的重要进展。科技是我们生活和工作的基石，不断创新和进步是我们整个社会向前发展的动力。希望各地科技得到重视和扶持，为我们国家的发展添砖加瓦！\n\n---\n---\n\n### 为什么这事儿会被滑锅圈起来？\n0、LOL _Kyori_ 和Verizon 光纤协议达成了一笔十亿美元的协议，涉及的地点在西班牙。\n---\n---\n### 为什么这事儿会被滑锅圈起来？\n0、LOL _Kyori_ 和Verizon 光纤协议达成了一笔十亿美元的协议，涉及的地点在西班牙。\n---\n---\n### 为什么这事儿会被滑锅圈起来？\n0、LOL _Kyori_ 和Verizon 光纤协议达成了一笔十亿美元的协议，涉及的地点在西班牙。这张图片是耶鲁大学物理系图片，图画的临床实验是隐瞒了数十年的实验背景，图像对应了某些全球性的现象，就像5G和光纤通讯引起的积极影响，也反映了行业背后的潜力和技术进步。\n\n### 我的理解，不算不对，但不构成投资建议。\n---\n---\n### 我的理解，不算不对，但不构成投资建议。\n---\n---\n### 我的理解，不算不对，但不构成投资建议。\n---\n---\n  \n### My understanding, it's probably not correct, but it's not an investment recommendation.\n\n---\n---\n### My understanding, it's probably not correct, but it's not an investment recommendation.\n\n---\n---\n### Let us",
+  "finishReason": "length",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "billing": "local-gpu",
+  "usage": {
+    "prompt_tokens": 16700,
+    "completion_tokens": 400,
+    "total_tokens": 17100,
+    "prompt_cache_hit_tokens": 0
+  },
+  "ms": 51494,
+  "attempts": 1,
+  "at": "2026-10-12T06:23:53.136825+00:00",
+  "promptChars": 22383,
+  "decode": {
+    "temperature": 1.0,
+    "maxNewTokens": 400,
+    "seed": 20261019
+  }
+}
