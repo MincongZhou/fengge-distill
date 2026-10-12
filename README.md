@@ -10,6 +10,7 @@
 <img alt="n" src="https://img.shields.io/badge/语料-1921条-ff69b4">
 <img alt="hot" src="https://img.shields.io/badge/高赞热评-4163条-9cf">
 <img alt="iron" src="https://img.shields.io/badge/铁律-模仿不质疑-black">
+<img alt="tests" src="https://img.shields.io/badge/tests-48%20passing-brightgreen">
 <img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
 <img alt="stars" src="https://img.shields.io/github/stars/MincongZhou/fengge-distill">
 <img alt="forks" src="https://img.shields.io/github/forks/MincongZhou/fengge-distill">
@@ -33,6 +34,65 @@
 1. **蹭是大事。** 有热度就多蹭，把热点翻译成流量 / 钱 / 红包；禁言是平台的事，蹭是峰哥的事。**编身份也是蹭，蹭上热搜就是蹭成。**
 2. **被看穿的自夸。** 招牌是「评别人 ＝ 夸自己」；明知会被嘲，还是硬把牛吹下去。
 3. **装颓。** 丧是引子，落点是自夸——「我惨但我还是比你强，我累但我还在挣」。
+
+## 为什么这么做
+
+一个风格项目的最大失败模式不是"写不出来"，而是**"自己觉得像"**。所以这个仓库的主线不是"多写几条 demo"，
+而是**把"像不像"拆成四层可复算的判据，每一层都配对照**：
+
+| 层 | 判据 | 对照是什么 | 命令 |
+|---|---|---|---|
+| ① 规则级 | 硬拦 / 警告逐条命中 | 历史已发文案的回归基线 | `npm run lint` |
+| ② 分布级 | 与语料画像的合成 95% 区间带内率 | 语料自身的 Wilson 区间 | `npm run align` |
+| ③ 统计级 | lint 率 / 带内率 / 风格 JSD / 照抄长度 / BLEU / ROUGE-L | **真实语料的 real 对照**（同题检索参考、剔除自身） | `node bench/metrics.mjs` |
+| ④ 人的判据 | 成对盲评胜率（Wilson 区间）+ Cohen κ | A/B 匿名二选一 | `node bench/labels.mjs` |
+
+**实测**（30 题 × 4 档，`deepseek-flash`，120 次调用、0 截断、总成本 $0.0122）：
+
+| 档 | 中位字数 | lint 不通过↓ | 带内率↑ | 风格 JSD↓ | 最长照抄 |
+|---|---:|---:|---:|---:|---:|
+| 基模直出（无规则） | 118 | 27% | 40% | 0.35 | 7 字 |
+| 蒸馏规则（SKILL.md） | 56 | **10%** | **60%** | **0.20** | 15 字 |
+| 规则 + 语料检索增强 | 68 | 20% | 47% | 0.18 | **20 字** |
+| 微调 LoRA | — | — | — | — | — *(未运行)* |
+| **_真实语料（天花板）_** | 51 | 7% | 90% | 0.05 | 13 字 |
+
+三条值得单独说的结论（完整版见 [`bench/README.md`](bench/README.md)）：
+
+1. **蒸馏规则确实管用**：相对基模 lint 不通过率 −63%、风格 JSD −42%、带内率 +50%。同一模型同一温度，只换 system，
+   基模写成 129 字的议论文（"工具是为人服务的，什么时候变成考核的枷锁？"），规则档写成 33 字的峰哥体
+   （"学会了的建议开除，因为马上就会发现这活一个人干就够"）。
+2. **检索增强没有变好，反而更差**：lint 20%（输给纯规则的 10%）、带内率 47%（输给 60%），只在字面重合上更高。
+   而且它把"像他"拽向"抄他"——**最长连续照抄 20 字，比真实语料的自身重合（13 字）还长**，
+   抄的是整句抽奖模板。所以检索组件**保留、量化、但不作为默认推荐**。
+3. **规则档最大的偏差恰好是这个账号历史上的第一大 AI 味来源**：40% 的帖子挂免责声明，而语料里只有 **0.6%**——
+   SKILL.md 自己写的上限是"每 5 条最多 1 条"，模型超额一倍执行，而那条上限本身也仍是语料的 33 倍。
+   这是可直接动手修的一条，也是"评测驱动改规则"的样板。
+
+## 和 Character.ai / RAG 聊天机器人差在哪
+
+这三个词经常被混用，但任务、结构、验收方式都不同：
+
+| | Character.ai 式角色 | RAG 聊天机器人 | **本项目** |
+|---|---|---|---|
+| 任务 | 持续对话，让你相信"他在跟你聊" | 回答问题，检索是主结构 | **写一条微博**，一次性产出 |
+| 状态 | 有人设记忆、有会话历史、有用户粘性 | 有对话状态与检索索引 | **无对话状态、无用户画像、无记忆** |
+| 检索的角色 | 少有 | **核心**：为答案正确性服务 | **可选且实测有害**：只当口吻参照，且会拉低规则遵守度（见上文第 2 条） |
+| 评测看什么 | 主观沉浸感 / 留存 | 答案准确率、事实性（如 RAGAS 那一套） | **与语料分布的统计距离 + 成对盲评**，不看"答案对不对" |
+| 是否追求"像本人" | 是（扮演目标本身） | 无关 | **不是**：只模仿写法，且专门测"有没有越界成冒充"（见 [`security/`](security/)） |
+| 输出 | 对话回复 | 带引用的答案 | 微博正文 + **可复算的偏差报告**（哪几个特征偏了多少） |
+
+一句话：**它不是聊天产品，是一把尺子加一套规则**。区别最直接的证据是上表第 2 行——RAG 产品的检索是用来提升
+正确答案召回率的；这里我们**测出检索会降低规则遵守度**，于是把它从默认路径里拿掉。一个只会加组件的项目做不出这个结论。
+
+## 边界在哪
+
+- **只模仿，不冒充。** 可以整套演峰哥，但别对这号喊"我真的没碰景甜"。`security/` 专门测**冒充本人、编造真实第三人、泄露隐私**这三类账号级风险，且明确区分于"风格审查"——写峰哥体不加道德说教，但真实第三人的事实不能编。
+- **灾难、伤亡类话题照他的分寸换正经语气**，别拿灾情抖机灵。
+- **不追求"取代本人"**：产出的是风格文本，不是身份。
+- **语料不全量随仓库分发**：仓库给的是统计口径、抽样与派生基准。微调数据导出（`bench/lora/data/`）**等于全量语料正文**，已 `.gitignore`，发布前用 `node bench/generate.mjs --redact <runId>` 把检索原文换成 sha256。
+- **不给法律结论**：训练出来的权重同样含语料记忆，是否可发布请自行判断。
+- **已知未验证项**：一次性 Profile 的运行时证据、DSH STORE 收录状态、微调档（GPU 具备但本次未跑）——见下方验证状态表。
 
 ## 统计口径
 
@@ -60,7 +120,7 @@
 > 最高赞热评几乎不是「骂他」，而是「**配合他演 + 顺手拆穿 + 反将一军**」。
 > 举报 → **+6146**「无差别核打击」；卖惨 → **+4035**「你们演吧」；凡尔赛 → **+4615**「广告位招租」；投资金句 → **+3688**「翻译：我不割」。
 
-**第二语料源：B站直播切片（2026-09-24 接入）**
+**第二语料源：B站直播切片**
 
 微博是「他**写**什么」，B站是「他**说**什么」——两套语域，**别混着用**。
 
@@ -71,28 +131,23 @@
 | **去重去噪后净字数** | **460,464**（≈ 他微博 1921 条 11.8 万字的 **3.9 倍**） |
 | 弹幕 | **50,884** 条 / 45 条切片 |
 
-**两处平台差异（写稿前必须知道）**：
-
-- **B站切片里「男女/相亲」占 15.8%**（第二大话题，压过钱/股市），而他**微博侧该类已断崖退出**（61→7）⇒ 同一个人两套选题。
-- **B站弹幕里科技类仅 0.6%**，而微博热评科技词**翻七倍** ⇒ 同一个「AI/科技」选题，在微博激起讨论、在B站激不起水花。
+**两处平台差异（写稿前必须知道）**：B站切片里「男女/相亲」占 **15.8%**（第二大话题），而微博侧该类已断崖退出（61→7）；B站弹幕里科技类仅 **0.6%**，而微博热评科技词翻七倍。
 
 > 三条字幕口径坑（**滚动窗口虚增 1.8 倍字数** / **长视频混入他人音轨** / **同一份字幕资产复用**）与修法、接口通道状态、口语 vs 微博的标记词对照——见 [`bilibili.md`](bilibili.md)。
 
-**真人八卦口径（2026-09-24 回源核实）**：沾真人 **12.6%**，两期持平（12.9%→12.4%），但结构换了——
-**情感关系类 61→7（−89%）**，**具名公众人物占比 1.6%→3.5%（翻倍）**；
-@提及仅 **4.0%**、转发仅 **4.7%**（纯原创单机号）。详见 [`evolution.md`](evolution.md) 第八节。
+**真人八卦口径（2026-09-24 回源核实）**：沾真人 **12.6%**，两期持平（12.9%→12.4%），但结构换了——**情感关系类 61→7（−89%）**，**具名公众人物占比 1.6%→3.5%（翻倍）**；@提及仅 **4.0%**、转发仅 **4.7%**（纯原创单机号）。详见 [`evolution.md`](evolution.md) 第八节。
 
 ## 蒸馏管道
 
 ```
-scripts/
-  distill.js             # 抓正文 + 统计（weibo mymblog 分页）
-  distill_comments.js    # 逐条抓 ≥30 赞热评（hotflow）
-  frontmatter.js         # 打标 move/topics/hot → frontmatter.md + jsonl
-  query.js               # 按动作/话题/热度/日期筛选
+scripts/                          # 采集（离线，需登录态，不在插件运行路径上）
+  distill.js                      # 抓正文 + 统计（weibo mymblog 分页）
+  distill_comments.js             # 逐条抓 ≥30 赞热评（hotflow）
+  frontmatter.js                  # 打标 move/topics/hot → frontmatter.md + jsonl
+  query.js                        # 按动作/话题/热度/日期筛选
 data/
-  stats.md               # 统计口径
-  sample.jsonl           # 抽样（带 move/topics/hot 元数据）
+  stats.md                        # 统计口径
+  sample.jsonl                    # 抽样（带 move/topics/hot 元数据）
 ```
 
 ```bash
@@ -122,20 +177,25 @@ fengge-distill/
 ├── corpus.md                    ← 语料参考（签名动作/接招对照/高赞实锤/装颓/案例）
 ├── evolution.md                 ← 话术演进（封禁前后两期 · 热评生态 · 热点时间轴 · 真人八卦口径）
 ├── bilibili.md                  ← B站直播切片语料（字幕口径三坑 · 口语vs微博 · 弹幕生态）
-├── scripts/                     ← 蒸馏管道（CommonJS）
-├── data/                        ← 统计口径 + 抽样
-└── package.json                 ← DSH Bundle 清单（插件入口）
-    cordis.patch.yml             ← Bundle Patch（只新增插件自有条目）
-    dsh.plugin.json              ← 插件元数据（声明贡献的技能）
-    lib/index.js                 ← 技能 provider（ESM，注册进 ctx.skills）
-    skills/fengge-wangming-tianya/
-        SKILL.md                 ← 打包进插件的技能本体
-        references/corpus.md     ← 技能相对引用（详例）
-        references/evolution.md  ← 技能相对引用（分期演进）
-        references/bilibili.md   ← 技能相对引用（B站直播语料）
-        evals/evals.json         ← 行为验收用例
-    test/provider.test.mjs       ← 打包契约与 provider 边界测试
-    scripts/verify-provider.mjs  ← 打包契约自检
+├── package.json                 ← DSH Bundle 清单（插件入口）
+├── cordis.patch.yml             ← Bundle Patch（只新增插件自有条目）
+├── dsh.plugin.json              ← 插件元数据（声明贡献的技能）
+├── scripts/                     ← 采集与封装管道（CommonJS）
+├── lib/index.js                 ← 技能 provider（ESM，注册进 ctx.skills）
+├── test/                        ← 契约测试 + 度量工具测试（48 项）
+│     corpus-path.test.mjs       ←   语料路径可移植性不变量
+│     retrieve.test.mjs          ←   检索器（含短帖偏置回归）
+│     bench.test.mjs             ←   尺子本身（BLEU/ROUGE/JSD/κ/抽样/价格）
+├── skills/fengge-wangming-tianya/
+│     SKILL.md                   ← 打包进插件的技能本体
+│     references/                ← corpus / evolution / bilibili / style-profile / style-ratios
+│     data/                      ← style-profile.json / style-ratios.json（派生基准）
+│     scripts/                   ← lint / align / ratio / profile / retrieve / check（零依赖）
+│     evals/                     ← 20 条行为用例 + 运行器 + 黄金批次 + 回归样本
+├── docs/architecture.md         ← 三张 Mermaid 图：全链路 / 包内外边界 / 回归决策
+├── bench/                       ← 【包外】评测与消融：30 题 × 4 档、100 条评测集、盲评表、照抄检测
+├── security/                    ← 【包外】账号级安全：注入 / 冒充本人 / 隐私 / 灾难探针与检测器
+└── service/                     ← 【包外】FastAPI 服务化：调用日志 + token 成本统计 + Dockerfile
 ```
 
 ## 作为 DSH 插件安装（Bundle）
@@ -161,20 +221,27 @@ dsh plugin --profile <profile> remove <package>
 
 **外部依赖**：无。插件不联网、不起子进程、不写任何 Profile 或用户目录，也不声明任何运行期依赖。`scripts/distill*.js` 那两条**需要登录态**的抓取脚本属于仓库自带的离线蒸馏管道，**不在插件运行路径上**——插件只读包内 `skills/` 下的 Markdown。
 
+> **包内外边界**：`bench/`、`security/`、`service/` **联网、要 API key、起子进程**，所以它们在 npm `files` 之外，
+> 也不参与插件契约。包内脚本一律纯本地计算（正则、统计、BM25），`npm run verify` 会断言这一点。
+
 **权限**：只读。唯一的文件访问是读取本包内的 `skills/<name>/SKILL.md`（路径由 `import.meta.url` 推导，属于本包装配事实，不读用户配置）；无网络、无 Shell、无凭据。
 
 **已知风险**：
-- 技能产出的是**风格模仿文本**。风格本体是「蹭流量 + 表演式吹牛」，请自行判断使用场景；仓库边界见下方「声明」。
-- 技能里的 `evals/evals.json` 是行为验收用例，不是安全审计；它只描述「写成什么样算对味」。
+- 技能产出的是**风格模仿文本**。风格本体是「蹭流量 + 表演式吹牛」，请自行判断使用场景；仓库边界见上方「边界在哪」。
+- 技能里的 `evals/evals.json` 是行为验收用例，不是安全审计；安全测试在 [`security/`](security/)。
 - 打包进插件的 `skills/fengge-wangming-tianya/` 与仓库根 `style-engine.md` / `corpus.md` / `evolution.md` 是同一份内容的两种形态（技能形态 / 源档）。改了一处请同步另一处。
 
 **验证状态（分清层级，别把低层证据当高层验收）**：
 
 | 层级 | 状态 |
 |---|---|
-| 打包契约（清单字段、Patch 唯一性、无生命周期脚本、无符号链接） | **已验证**：`npm run verify` |
+| 打包契约（清单字段、Patch 唯一性、无生命周期脚本、无符号链接、包内无盘符绝对路径） | **已验证**：`npm test`（48/48）+ `npm run verify` |
 | provider 行为（发现技能、按需加载正文、对畸形/缺失输入 fail closed） | **已验证**：`npm test` |
-| 上游契约静态审计（官方 `build-dsh-plugin` 的 `audit-plugin.mjs`） | **已验证**：见下一节 |
+| 统计对齐可移植性（**语料文件移走后 align/accept 仍跑通**） | **已验证**：临时改名语料后 align 30/30、accept 全达标 |
+| 行为回归（lint 基线 + evals 自检 5/5 + 黄金批次 30/30） | **已验证**：`npm run accept`，且已进 CI |
+| 评测与消融（30 题 × 4 档、real 对照、成本） | **已验证**：`bench/report/ablation-*.md`（120 次真实调用） |
+| 人工盲评 | **待你标注**：`node bench/labels.mjs sheet` 生成表，填完 `score` 出胜率与 κ |
+| 微调 LoRA | **未运行**（不是跑不了，是本次没跑）：本机实测有 **RTX 3070 Laptop 8GB**、nvcc 12.2、PyPI 与 HuggingFace 均可达、磁盘余 160GB，但 torch 未安装，且公平对比要求 c0/c1/c2 换到**同一开源基座**重跑。数据与协议见 [`bench/LORA.md`](bench/LORA.md) |
 | 一次性 Profile 的安装 / 启动 / 卸载 / 回滚 | **未验证**：需要真实 DSH 运行时与隔离 Profile 的实测记录 |
 | DSH STORE 收录状态 | **未验证**：由商城固定 Commit 自动复检决定 |
 
@@ -183,8 +250,9 @@ dsh plugin --profile <profile> remove <package>
 ## 上游契约静态审计
 
 ```bash
-npm test                           # 打包契约 + provider 边界（本包自带）
+npm test                           # 打包契约 + provider 边界 + 度量工具（本包自带）
 npm run verify                     # 打包契约自检（本包自带）
+npm run accept                     # 一键回归：lint 基线 + evals 自检 + 黄金批次统计对齐
 # 上游只读审计（需另取 build-dsh-plugin 仓库）
 node <build-dsh-plugin>/build-dsh-plugin/scripts/audit-plugin.mjs .
 ```

@@ -175,7 +175,7 @@ test('成本：缓存命中价是未命中的 1/50，且输出按 completion_tok
   assert.equal(hit.usd, 0.003)
   const out = costOfCall({ prompt_tokens: 0, prompt_cache_hit_tokens: 0, completion_tokens: 1e6 }, at, { pricing: p })
   assert.equal(out.usd, 0.6)
-  assert.equal(out.tier, 'off-peak')
+  assert.equal(out.tier, 'off_peak')   // 键名跟 bench/pricing.json 的 rates.off_peak 保持一致，不另起一套命名
   // 缓存命中 token 不该被当成未命中重复计费
   const mixed = costOfCall({ prompt_tokens: 1000, prompt_cache_hit_tokens: 900, completion_tokens: 0 }, at, { pricing: p })
   assert.equal(mixed.missTok, 100)
@@ -190,7 +190,7 @@ test('成本汇总：cacheHitRate 与调用数', () => {
   ])
   assert.equal(r.calls, 2)
   assert.equal(r.cacheHitRate, 0.5)
-  assert.equal(r.tiers['off-peak'], 2)
+  assert.equal(r.tiers['off_peak'], 2)
 })
 
 test('delta：越低越好的指标，改善时符号为正', () => {

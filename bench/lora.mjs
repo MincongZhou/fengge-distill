@@ -2,7 +2,8 @@
 /**
  * lora.mjs — 微调（c3-lora）**数据导出**。协议见 bench/LORA.md。
  *
- * 本脚本**不训练、不联网、不要 GPU**。它只做一件事：把仓库里能合法用于训练的那部分语料
+ * 本脚本**不训练、不联网**（用不到 GPU，但本机实测是有 GPU 的：RTX 3070 Laptop 8GB）。
+ * 它只做一件事：把仓库里能合法用于训练的那部分语料
  * 导成两种标准格式，让"微调"这一档从"嘴上说说的档位"变成"任何人拿得到数据、跑得起来的协议"。
  *
  * 为什么导出两套：
@@ -121,7 +122,7 @@ if (invokedDirectly) {
     boundary: '导出目录含全量语料正文，已在 .gitignore 中；可提交的只有本报告（不含正文，只含条数与 sha256）。',
     notRun: {
       status: 'not-run',
-      reason: '本机无 GPU、无训练资源；本脚本只导出数据，不训练。',
+      reason: '本次未跑（不是跑不了）：本机有 RTX 3070 Laptop 8GB、PyPI/HF 可达，缺的只是 torch 等训练依赖；且公平对比要求 c0/c1/c2 换到同一开源基座重跑。本脚本只导出数据，不训练。',
       protocol: 'bench/LORA.md',
       acceptance: '要证明 LoRA 这一档值得，必须在同一个 30 题集上（bench/prompts.jsonl）跑出比 c2-retrieval 更低的 lint 失败率与更低的风格 JSD，否则加训练成本不划算。',
     },

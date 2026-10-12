@@ -325,6 +325,9 @@ if (invokedDirectly) {
   } else if (fileArg) {
     const texts = fs.readFileSync(fileArg, 'utf8').split('\n').map((s) => s.trim()).filter(Boolean);
     out.conditions['(file)'] = { label: fileArg, ...evaluateCondition({ texts, ratio }) };
+    // --text-file 不给参考池，所以 BLEU / ROUGE-L 恒为 0。这是**信息缺失**，不是指标算错——
+    // 不写清楚的话，CI 日志里那两列 0.00 会被读成"这个指标坏了"。
+    out.note = '--text-file 模式没有参考文本：BLEU / ROUGE-L / 最长照抄恒为 0（需要 --run 或提供参考池）。其余指标有效。';
   } else {
     console.error('用法：--run <runId> | --text-file <path> [--conditions a,b] [--json]');
     process.exit(2);
@@ -358,6 +361,7 @@ if (invokedDirectly) {
   console.log('     所以判读方式是"生成档与 real 对照比"，不是"绝对值小就好"。');
 
   console.log('\n--- 读法与边界 ---');
+  if (out.note) console.log('· ' + out.note);
   console.log('· lint不通过 = 这套 skill 自己的规则没过的比例（行为指标，越低越好）。');
   console.log('· 带内率 = 与语料 40 维画像的合成 95% 区间带内比例（复用 fengge-align，同一把尺子）。');
   console.log('· 风格JSD 对整体高低不敏感、MAE 敏感；两个一起看，再看各条件的 top 偏差点。');

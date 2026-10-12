@@ -21,3 +21,14 @@ bench/.venv/
 # 盲评表与 CSV 是 bench/items.jsonl 的派生视图（同样含语料正文），一条命令就能重生成
 bench/report/label-sheet.html
 bench/report/labels.csv
+
+# CI 冒烟产物：metrics.mjs --text-file 每次都会重写它，不是需要留档的证据（证据是 --run 的产物）
+bench/report/metrics-golden-batch.json
+
+# 服务化层（service/）的运行期产物。它的 venv 与本机绑死、日志会一直长，都不入库。
+# service/ 下另有一份自己的 .gitignore（给"单独归档 service/"时用），两边规则一致。
+service/.venv/
+service/logs/calls.jsonl
+service/__pycache__/
+service/pip-*
+service/selftest.log

@@ -1,0 +1,37 @@
+# 仓库根的 .dockerignore —— 这份才是**真正生效**的。
+#
+# 为什么必须在根：Docker 只读**构建上下文根目录**的 .dockerignore，而本仓库的构建上下文就是仓库根
+# （`docker build -f service/Dockerfile -t fengge-distill-service:local .`，因为镜像里要 exec
+# `skills/` 下的脚本、并读 `bench/report/`）。所以 `service/.dockerignore` 是不生效的，
+# 它只作为模板留着并已注明这一点。
+#
+# 不写这份的后果：宿主机的 service/.venv（几百 MB、平台绑死）会被打进镜像。
+
+# 依赖目录：平台绑死且几百 MB，绝不该进镜像（镜像里由 Dockerfile 自己装）
+service/.venv/
+.venv/
+
+# 运行期数据：调用日志由 compose 挂卷出来，进镜像没意义
+service/logs/
+
+# Python 字节码与 pip 在 cwd 留下的临时目录（实测会出现 pip-build-tracker-* / pip-install-* 等）
+**/__pycache__/
+*.pyc
+service/pip-*
+service/selftest.log
+
+# 微调数据导出：等于全量语料正文，按仓库边界声明不得随产物分发
+bench/lora/data/
+
+# 冻结的实验产物与报告：跑实验时要看的，不是运行时需要的
+bench/runs/
+
+# 版本控制与编辑器
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# 本机全量语料（若被放到仓库根）：容器里由 compose 以只读卷挂载，不进镜像
+fg_*.json
+fg_*.jsonl

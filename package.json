@@ -52,7 +52,14 @@
     "profile": "node skills/fengge-wangming-tianya/scripts/fengge-profile.mjs",
     "align": "node skills/fengge-wangming-tianya/scripts/fengge-align.mjs --file skills/fengge-wangming-tianya/evals/samples/golden-batch.txt",
     "accept": "node skills/fengge-wangming-tianya/scripts/fengge-check.mjs",
-    "ratio": "node skills/fengge-wangming-tianya/scripts/fengge-ratio.mjs"
+    "ratio": "node skills/fengge-wangming-tianya/scripts/fengge-ratio.mjs",
+    "retrieve": "node skills/fengge-wangming-tianya/scripts/fengge-retrieve.mjs",
+    "metrics": "node bench/metrics.mjs",
+    "ablation": "node bench/ablation.mjs",
+    "items": "node bench/items.mjs",
+    "sheet": "node bench/labels.mjs",
+    "generate": "node bench/generate.mjs",
+    "security": "node security/run.mjs"
   },
   "keywords": [
     "dsh",

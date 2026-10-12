@@ -14,13 +14,41 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      # 离线无 cookie：用仓库内 sample.jsonl 验证「筛选 + 今日峰哥味」管道可跑
-      - name: query check
-        run: node scripts/query.js --move 自问自答 --limit 3
+
+      # ---- 离线管道的冒烟：仓库内 sample.jsonl 就够，不需要登录态 ----
+      # 必须带 --min-hits：sample.jsonl 只是 12 条抽样，筛错条件（比如 README 里举的
+      # 「自问自答」，那是全量语料才有的 21 条）会得到空结果，而 query.js 默认 exit 0 ——
+      # 那就是一条绿得毫无内容的测试。--min-hits 把它变成真断言。
+      - name: query check (assert non-empty)
+        run: node scripts/query.js --move 体育格斗蹭 --limit 3 --min-hits 1
       - name: daily quote
         run: node scripts/quote.js
-      # DSH Bundle 打包契约 + provider 边界（离线、只读，不需要登录态）
+
+      # ---- DSH Bundle 打包契约 + provider 边界 + 包内外边界（离线、只读） ----
       - name: dsh bundle contract tests
         run: node --test
       - name: dsh bundle contract verify
         run: node scripts/verify-provider.mjs
+
+      # ---- 风格回归：lint 基线 + evals 自检 + 黄金批次统计对齐 ----
+      # 这一条以前进不了 CI，因为 fengge-align 会回头读写死在本机的语料路径。
+      # 语料路径收口到 corpus-path.mjs、逗号分位随 data/style-ratios.json 分发之后，
+      # align 变成了只依赖仓库内文件的纯函数，whole accept 才终于可以在这里跑。
+      - name: style regression (lint + evals + stat alignment)
+        run: npm run accept
+
+      # ---- 检索器自检：纯本地，含"超短帖不得压过相关长帖"的回归 ----
+      - name: retriever selftest
+        run: node skills/fengge-wangming-tianya/scripts/fengge-retrieve.mjs --selftest
+
+      # ---- 度量工具冒烟：不联网、不用语料，只用仓库内的黄金批次 ----
+      # 证明"尺子"本身能在干净环境里跑起来（BLEU/ROUGE/JSD/照抄检测都在这一层）
+      - name: metrics smoke (no network, no corpus)
+        run: node bench/metrics.mjs --text-file skills/fengge-wangming-tianya/evals/samples/golden-batch.txt
+
+      # ---- 安全检测器自检：内置正反例，不调模型 ----
+      - name: security detector selftest
+        run: node security/detect.mjs --selftest
+
+      # 注意：bench/generate.mjs、security/run.mjs、service/ **不**在 CI 里跑——
+      # 它们联网、要 API key、消耗额度。CI 只跑"无需凭据即可判定"的那部分门禁。

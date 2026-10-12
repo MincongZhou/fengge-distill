@@ -8,7 +8,8 @@
  *   c2-retrieval  蒸馏规则 + 语料检索增强：再附 top-k 真实语料（fengge-retrieve.mjs 的 BM25 检索）
  *   neg-formal    正式书面腔（评测集的负例来源，不是峰哥体）
  *
- * c3-lora（微调）**没有实现生成**——本机无 GPU、无训练资源，见 bench/README.md 的 LoRA 协议。
+ * c3-lora（微调）**没有实现生成**——本次没跑（不是跑不了：本机有 RTX 3070 Laptop 8GB，
+ * 但公平对比要求 c0/c1/c2 也换到同一开源基座重跑），见 bench/LORA.md 的协议。
  * 消融表里它按"未运行"如实标注，不给数字。
  *
  * 产物冻结在 bench/runs/<runId>/，含每条的真实 usage（token）、耗时、重试次数、prompt 指纹，
@@ -241,7 +242,7 @@ if (invokedDirectly) {
         promptHash: sha(JSON.stringify(prompts)),
         prompts: prompts.length,
         retrieval: c2meta,
-        note: 'c3-lora 未运行（无 GPU／训练资源），见 bench/README.md',
+        note: 'c3-lora 未运行（本次没跑：训练依赖未装，且公平对比要求同一开源基座），见 bench/LORA.md',
       };
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 
