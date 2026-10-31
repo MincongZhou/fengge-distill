@@ -47,6 +47,18 @@
 | ③ 统计级 | lint 率 / 带内率 / 风格 JSD / 照抄长度 / BLEU / ROUGE-L | **真实语料的 real 对照**（同题检索参考、剔除自身） | `node bench/metrics.mjs` |
 | ④ 人的判据 | 成对盲评胜率（Wilson 区间）+ Cohen κ | A/B 匿名二选一 | `node bench/labels.mjs` |
 
+写作形态（发博）和问答形态（打字场聊天）**各有一把尺子，口径相反**：发博要求"落点绕回我"，而 34 条真实回复里
+**「我」出现 0 次**、中位 9 字。所以问答体单列一套判据（`fengge-qa-lint.mjs`，14 例自检）与题库
+（`evals/qa-evals.json`，20 题：12 短答 + 8 长答），并作为 `npm run accept` 的第 4 步常驻：
+
+```bash
+npm run qa-lint -- --text "先发一百条，有人看再说" --mode short
+npm run qa-eval -- --batch skills/fengge-wangming-tianya/evals/samples/qa-baseline.txt
+```
+
+> 边界：机械判据只能判"**没出戏**"（不写成教程、不推荐股票、不串语域），判不了"**像不像**"。
+> 问答的成对盲评目前做不了——同一题需要至少两个候选来源，而现在只有一份人工基线。
+
 **实测**（30 题 × 4 档，`deepseek-flash`，120 次调用、0 截断、总成本 $0.0122）：
 
 | 档 | 中位字数 | lint 不通过↓ | 带内率↑ | 风格 JSD↓ | 最长照抄 |
@@ -272,6 +284,7 @@ dsh plugin --profile <profile> remove <package>
 | 行为回归（lint 基线 + evals 自检 5/5 + 黄金批次 30/30） | **已验证**：`npm run accept`，且已进 CI |
 | 评测与消融（30 题 × 4 档、real 对照、成本） | **已验证**：`bench/report/ablation-*.md`（120 次真实调用） |
 | 人工盲评 | **待你标注**：`node bench/labels.mjs sheet` 生成表，填完 `score` 出胜率与 κ |
+| 文字场问答（聊天） | **机械判据已验**：`fengge-qa-lint` 14 例自检 + 20 题基线批量，已进 `accept` 第 4 步。**未验**：人工盲评（需第二个候选来源） |
 | 微调 LoRA | **已跑**：本机 RTX 3070 Laptop 8GB 上训 2 轮 LoRA（431 秒）并在同基座评测，**四条验收线全不达标**（详见上表与 [`bench/LORA.md`](bench/LORA.md)）。**未测**：更大基座、指令配对路线、指令跟随是否退化 |
 | 一次性 Profile 的安装 / 启动 / 卸载 / 回滚 | **未验证**：需要真实 DSH 运行时与隔离 Profile 的实测记录 |
 | DSH STORE 收录状态 | **未验证**：由商城固定 Commit 自动复检决定 |

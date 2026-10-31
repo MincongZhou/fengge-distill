@@ -5,6 +5,7 @@
  *   1) lint 回归基线（历史 9 条文案）
  *   2) evals runner 自检（正例必过/反例必挂）
  *   3) 黄金批次统计对齐（与语料分布的合成 95% 区间比对）
+ *   4) 文字场问答自检（qa-lint 正反例 + 20 题基线批量）
  *
  * 实现上**直接 import 各模块**，不 spawn 子进程——商店的静态安全扫描会把子进程能力标为警告，而这里本来就不需要进程隔离。
  *
@@ -18,6 +19,8 @@ import { fileURLToPath } from 'node:url';
 import { regressData } from './fengge-lint.mjs';
 import { alignTexts } from './fengge-align.mjs';
 import { runSelftest } from '../evals/run-evals.mjs';
+import { runSelftest as runQaSelftest } from './fengge-qa-lint.mjs';
+import { runBatch as runQaBatch } from '../evals/run-qa-evals.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL = path.resolve(HERE, '..');
@@ -27,17 +30,17 @@ const MIN_ALIGN = Number(arg('--min-align', 0.85));
 
 let bad = 0;
 
-console.log('=== 1/3 lint 回归基线（历史已发 9 条）===');
+console.log('=== 1/4 lint 回归基线（历史已发 9 条）===');
 const reg = regressData();
 console.log(`按新规则：${reg.failed}/${reg.total} 条 FAIL，其中挂免责声明的：${reg.withDis}/${reg.total}`);
 console.log(`（这批本来就该 FAIL：免责句/对仗是旧规则产物；逐条明细用 --regress）`);
 
-console.log('\n=== 2/3 evals 自检 ===');
+console.log('\n=== 2/4 evals 自检 ===');
 const ev = runSelftest({ verbose: false });
 console.log(`selftest：${ev.total - ev.mismatched}/${ev.total} 符合预期 → ${ev.saved}`);
 if (ev.mismatched) { console.log('✗ evals 自检未全过'); bad++; }
 
-console.log('\n=== 3/3 黄金批次统计对齐 ===');
+console.log('\n=== 3/4 黄金批次统计对齐 ===');
 const golden = path.join(SKILL, 'evals', 'samples', 'golden-batch.txt');
 const texts = fs.readFileSync(golden, 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
 const al = alignTexts(texts);
@@ -46,8 +49,21 @@ console.log(`样本 ${al.n} 条 ｜ 带内比例：${al.inBand}/${al.judged} = $
 if (outRows.length) for (const r of outRows) console.log(`  ${r.判定}  ${r.特征}：语料 ${r.语料} / 允许带 ${r.允许带} / 本批 ${r.本批}`);
 if (al.score < MIN_ALIGN) { console.log(`✗ 带内比例 ${(al.score * 100).toFixed(0)}% 低于阈值 ${(MIN_ALIGN * 100).toFixed(0)}%`); bad++; }
 
+console.log('\n=== 4/4 文字场问答自检 ===');
+const qaSelf = runQaSelftest({ verbose: false });
+console.log(`qa-lint selftest：${qaSelf.total - qaSelf.mismatched}/${qaSelf.total} 符合预期`);
+if (qaSelf.mismatched) { console.log('✗ qa-lint 自检未全过（判据会把真回复判红，或漏了典型 AI 味）'); bad++; }
+const qaBatch = runQaBatch(path.join(SKILL, 'evals', 'samples', 'qa-baseline.txt'));
+console.log(`问答基线：${qaBatch.passed}/${qaBatch.total} PASS（题库 ${qaBatch.expected} 题）`);
+if (qaBatch.passed !== qaBatch.total || qaBatch.total !== qaBatch.expected) {
+  for (const r of qaBatch.rows.filter((x) => !x.pass)) console.log(`  ✗ ${r.id}：${r.fails.join('；')}`);
+  if (qaBatch.total !== qaBatch.expected) console.log(`  ✗ 基线行数 ${qaBatch.total} ≠ 题库 ${qaBatch.expected}（第 N 行对应第 N 题，缺行会静默漏测）`);
+  bad++;
+}
+
 console.log('\n--- 结论 ---');
 console.log(`历史文案 FAIL 率 ${(reg.failed / reg.total * 100).toFixed(0)}%`);
 console.log(`黄金批次统计带内比例 ${(al.score * 100).toFixed(0)}%（阈值 ${(MIN_ALIGN * 100).toFixed(0)}%）`);
+console.log(`问答基线 ${qaBatch.passed}/${qaBatch.total} PASS`);
 if (bad) { console.log('✗ 有项目未达标'); process.exit(1); }
 console.log('✓ 全部达标');

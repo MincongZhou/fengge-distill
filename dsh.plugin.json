@@ -1,6 +1,6 @@
 {
   "id": "MincongZhou/fengge-distill",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "main": "./lib/index.js",
   "description": "DSH skill provider for the FengGe (峰哥亡命天涯) style-distillation engine: writes sharp takes in the distilled 峰哥体 voice from 2,093 public posts spanning 20 months across three eras (pre-ban, post-ban, and post-second-ban) plus 4,163 high-liked comments, and a second corpus of Bilibili livestream clips (154 AI-subtitled videos, 460k chars after dedup, 50,884 danmaku), as a style register — never an impersonation.",
   "engines": {
