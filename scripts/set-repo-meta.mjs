@@ -28,10 +28,10 @@ const API = 'https://api.github.com';
 const DESC_LIMIT = 350;
 
 const DESCRIPTION =
-  "把@峰哥亡命天涯 的 2,093 条微博（20 个月，跨两次禁言三期）+ 4,163 条≥30赞评论，" +
-  "蒸馏成可复用的「峰哥语体引擎」：串子、蹭子、装颓、被看穿的自我吹嘘。" +
-  "含语料管道(nodejs)、话术演进分期参考、筛选脚本、统计口径。" +
-  " / Distilling @fengge's Weibo into a reusable Chinese style-transfer engine (weibo / corpus / nlp).";
+  "把@峰哥亡命天涯 的 2,093 条微博（20 个月，跨两次禁言三期）+ 4,163 条≥30赞热评，" +
+  "蒸馏成可复用的「峰哥语体引擎」：三期话术演进、写稿/问答两套语域、选题器、发稿前 lint；" +
+  "外加一层可复算的评测——100 条评测集、四档消融（基模/规则/检索/微调）、盲评表、账号级安全探针。" +
+  " / Distilling @fengge's Weibo into a reusable Chinese style engine plus an eval harness (weibo / nlp / corpus).";
 
 const TOPICS = [
   'weibo', 'chinese', 'nlp', 'llm', 'style-transfer',
