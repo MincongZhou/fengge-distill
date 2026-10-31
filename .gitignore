@@ -39,3 +39,6 @@ service/logs/calls.jsonl
 service/__pycache__/
 service/pip-*
 service/selftest.log
+
+# 三期增量原始语料（2,091 条正文），按仓库边界不入库
+data/posts.json

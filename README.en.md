@@ -4,10 +4,10 @@
 
 **峰哥 · 语言蒸馏引擎**
 
-Distill **1,921 posts spanning 18 months** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
+Distill **2,091 posts spanning 20 months** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
 
 <img alt="vibe" src="https://img.shields.io/badge/project-distill-brown">
-<img alt="n" src="https://img.shields.io/badge/corpus-1921posts-ff69b4">
+<img alt="n" src="https://img.shields.io/badge/corpus-2091posts-ff69b4">
 <img alt="hot" src="https://img.shields.io/badge/hot_comments-4163-9cf">
 <img alt="iron" src="https://img.shields.io/badge/iron_rule-imitate_not_judge-black">
 <img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
@@ -19,9 +19,9 @@ Distill **1,921 posts spanning 18 months** by the Chinese blogger 「峰哥亡�
 
 ## It's distillation, not copying
 
-From **1,921 public posts (2025-02 ~ 2026-08) + 4,163 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
+From **2,091 public posts (2025-02 ~ 2026-10) + 4,163 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
 
-**The timeline is distilled too:** he was **banned platform-wide on 2025-11-14** and unbanned on 2026-05-21. That gap splits the corpus into two eras whose voices differ enough that you should **pick an era before writing** — see [`evolution.md`](evolution.md).
+**The timeline is distilled too:** he was **banned platform-wide on 2025-11-14**, unbanned on 2026-05-21, then **muted again for 29 days from 2026-08-30** and resumed on 2026-09-29. Two gaps cut the corpus into **three eras** whose voices differ enough that you should **pick an era before writing** — see [`evolution.md`](evolution.md).
 
 **Iron rule:** write in FengGe's worldview faithfully — no moralizing of your own.
 
@@ -33,26 +33,26 @@ From **1,921 public posts (2025-02 ~ 2026-08) + 4,163 high-like comments (≥30 
 
 ## Corpus stats
 
-**Overall**: n = **1,921** public posts · 2025-02-04 ~ 2026-08-30 (**572 days** · ~3.4 posts/day)
+**Overall**: n = **2,091** public posts · 2025-02-04 ~ 2026-10-27 (**996 days** · ~2.1 posts/day, silent ban periods included)
 
 | Metric | Value |
 |---|---|
 | Length | median **47** chars · mean **61** · only 3 posts >160 chars |
 | Mix | mostly short originals · 90 reposts (4.7%) · 258 long-form (13.4%) |
-| Hot comments | **785/1,921** posts have ≥30-like comments, **4,163** total; 257 are 1000+ |
+| Hot comments | **785/1,921** posts (eras 1–2) have ≥30-like comments, **4,163** total; 257 are 1000+ |
 
-**Split by era** (the ban splits the data; this is not a hand-drawn line)
+**Split by era** (two mutes cut the data into three eras; this is not a hand-drawn line)
 
-| Metric | Pre-ban 2025-02~11 (1,360) | Post-unban 2026-05~08 (561) |
-|---|---|---|
-| Median length | 50 | **40** |
-| Posts with image | 66.3% | **43.9%** |
-| Opens with "我…" (I…) | 6.9% | **11.1%** |
-| Opens with "峰哥…" (third person) | 7.9% | 4.5% |
-| Disclaimer rate | 0.1% | 1.6% |
-| Median likes | 2207 | **3367** |
+| Metric | Era 1 · pre-ban 2025-02~11 (1,360) | Era 2 · post-unban 2026-05~08 (561) | Era 3 · after 2nd mute 2026-09-29~10-27 (170) |
+|---|---|---|---|
+| Median length | 50 | **40** | 40.5 |
+| Posts with image | 66.3% | 43.9% | **58.2%** |
+| Opens with "我…" (I…) | 6.9% | **11.1%** | 8.8% |
+| Opens with "峰哥…" (third person) | 7.9% | 4.5% | **7.6%** |
+| Disclaimer rate | 0.1% | 1.6% | 1.2% |
+| Median likes | 2207 | **3367** | 2028 |
 
-> Topic migration, catchphrase rise/fall, the comment-section shift (from "arena" to "shareholders' club"), and an 18-event timeline: see [`evolution.md`](evolution.md).
+> Topic migration (era 2 moved to hard-tech; **era 3 flipped to gold 1.9→20.0 and cars 3.0→9.4, with semiconductors and compute down to zero**), catchphrase rise/fall ("为什么" doubled in era 2, **collapsed 5.4→1.8 in era 3**), the comment-section shift, and the event timeline: see [`evolution.md`](evolution.md). Era-3 monthly detail: [`data/stats-phase3.md`](data/stats-phase3.md).
 
 > Top hot comments are rarely "attacking him" — they're **"play along + expose + one-up"**.
 > (report → "+6146 nuclear strike"; self-pity → "+4035 keep acting"; flex → "+4615 ad slot for rent"; investing gold quote → "+3688 translation: I won't sell").

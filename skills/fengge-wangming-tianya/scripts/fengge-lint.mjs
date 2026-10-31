@@ -30,6 +30,8 @@ const SKILL_DIR = path.resolve(HERE, '..');
 const LEN = {
   short: { floor: 2, softMin: 14, softMax: 68, warnMax: 103, hardMax: 151, note: '原创非长文 p50=41 / p75=68 / p90=103 / max=151；他另有 12% 的 3–14 字一行帖（最短 3 字「太帅了」）' },
   long: { floor: 120, softMin: 140, softMax: 155, warnMax: 165, hardMax: 200, note: 'isLong 长微博 257 条：中位 147 / p90=153 / max=187' },
+  // 直播口播（2026-10-31 加）：98 组提问—答话对，中位 189 字、p25 65 / p75 357
+  live: { floor: 40, softMin: 90, softMax: 260, warnMax: 400, hardMax: 600, note: '直播口播 98 组：中位 189 / p25 65 / p75 357——说话本来就比打字长，别按微博的 151 硬墙判' },
 };
 
 const DISCLAIMER = /个人观点|个人看法|个人判断|个人猜测|不构成[^。！？]{0,8}建议|风险自担/;
@@ -42,6 +44,9 @@ const FAKE_PHRASE = /我算了|算了算|算下来|这账|算账|算一算|盘�
 const DUIZHANG = /你们[^。！？\n]{0,30}我/;
 
 function check(text, version = '2026', form = 'short') {
+  // 直播语域（2026-live）：换一套长度档，且「对吧/对不对/我跟你说」从 FAIL 变成缺了才 WARN
+  const isLive = version === '2026-live';
+  if (isLive) form = 'live';
   const t = String(text ?? '').trim();
   const body = t.replace(/[\u200b\ufeff]/g, '');
   const len = [...body].length;
@@ -70,7 +75,10 @@ function check(text, version = '2026', form = 'short') {
 
   // 直播语域
   const lr = body.match(new RegExp(LIVE_REGISTER.source, 'g'));
-  if (lr) add('FAIL', '直播语域', `命中 ${[...new Set(lr)].join(' / ')}`, '对吧/对不对/我跟你说 是直播专属，写微博加立刻露馅');
+  if (isLive) {
+    if (lr) add('PASS', '直播语域', `命中 ${[...new Set(lr)].join(' / ')}（直播场要求有）`, '');
+    else add('WARN', '直播语域·缺口语标记', '没有 对吧 / 对不对 / 我跟你说', '直播里这三个每万字 5.4 / 2.9 / 1.8，一个都没有反而不像在说话');
+  } else if (lr) add('FAIL', '直播语域', `命中 ${[...new Set(lr)].join(' / ')}`, '对吧/对不对/我跟你说 是直播专属，写微博加立刻露馅');
   else add('PASS', '直播语域', '无直播专属词', '');
 
   // 表情

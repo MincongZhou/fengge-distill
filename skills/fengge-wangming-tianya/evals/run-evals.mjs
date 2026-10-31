@@ -36,6 +36,7 @@ export function judge(c, text) {
   if (ch.requireDisclaimer && !DISCLAIMER.test(text)) fails.push('[require] 该条写了判断，必须挂免责声明（末句）');
   if (ch.noDisclaimer && DISCLAIMER.test(text)) fails.push('[forbid] 这条不该挂免责声明（他全量仅 0.5%）');
   if (ch.minLen && [...text.trim()].length < ch.minLen) fails.push(`[len] ${[...text.trim()].length} 字 < 下限 ${ch.minLen}`);
+  if (ch.maxLen && [...text.trim()].length > ch.maxLen) fails.push(`[len] ${[...text.trim()].length} 字 > 上限 ${ch.maxLen}`);
 
   return { id: c.id, pass: fails.length === 0, fails, warns: lint.warns, len: lint.len, reasons };
 }
