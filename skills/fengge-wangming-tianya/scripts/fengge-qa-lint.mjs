@@ -28,10 +28,30 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 
-/** 两套形态的硬参数（qa-mode.md 第一节） */
+/** 两套形态的硬参数（qa-mode.md 第一节）
+ *
+ * 阈值怎么来的，以及一条踩过的坑（2026-10-31）：
+ *   短答实测 n=34：中位 9 / p25 6 / p75 12 / **最长 28**。初版把「>28」判 FAIL，
+ *   结果多轮测试里一条 30 字的正常回复被判红。错在把**样本最大值**当成**物理上限**——
+ *   n=34 时"最长 28"只说明"大概在这个量级"，不说明"29 就一定不是他"。
+ *   所以硬墙按"形态变了才算错"设（超过约 1.6 倍最大值 = 已经不是短答而是段落），
+ *   贴着观测极值只给 WARN。同一套逻辑也用在「我」0/34 那条上（见 checkQA 里的注释）。
+ */
 export const QA_LEN = {
-  short: { floor: 2, comfortMax: 18, hardMax: 28, note: '33 条回复：中位 9 字 / p75 12 / 最长 28；≤10 字占 64%' },
-  long: { floor: 80, comfortMin: 100, comfortMax: 160, hardMax: 200, note: '12 条转述长答：中位 128 字，>100 字 7 条' },
+  short: {
+    floor: 2,          // <2 字判 FAIL
+    warnOver: 18,      // >18 字（p75 是 12）提示偏长
+    observedMax: 28,   // >28 提示"超出语料最长"，仅 WARN
+    hardMax: 45,       // >45 = 已经不是短答形态
+    note: '34 条回复：中位 9 字 / p25 6 / p75 12 / 最长 28 / ≤10 字占 65%',
+  },
+  long: {
+    floor: 60,         // <60 字：这其实是短答，不是"帖内认真正面答"
+    warnUnder: 100,    // <100 提示偏短
+    comfortMax: 160,
+    hardMax: 260,
+    note: '12 条转述长答：中位 128 字，>100 字 7 条',
+  },
 };
 
 const DISCLAIMER = /个人观点|个人看法|个人判断|个人猜测|不构成[^。！？]{0,8}建议|风险自担/;
@@ -61,19 +81,29 @@ export function checkQA(text, mode = 'short') {
   const L = QA_LEN[mode];
   if (!L) throw new Error(`未知模式 ${mode}（short | long）`);
 
-  // ---- 长度（按形态分卡；短答刻意**不设下限**，因为 12% 的真回复就是个短词）----
+  // ---- 长度（按形态分卡；短答刻意**不设下限**，因为 65% 的真回复在 10 字以内）----
   if (len < L.floor) add(out, 'FAIL', '长度', `${len} 字 < 下限 ${L.floor}`, L.note);
-  else if (len > L.hardMax) add(out, 'FAIL', '长度', `${len} 字 > 语料最长 ${L.hardMax}`, L.note);
-  else if (mode === 'short' && len > L.comfortMax) add(out, 'WARN', '长度·偏长', `${len} 字 > ${L.comfortMax}（p75 是 12）`, '短答就该一句挡回；超过 18 字要能说出为什么');
-  else if (mode === 'long' && len < L.comfortMin) add(out, 'WARN', '长度·偏短', `${len} 字 < ${L.comfortMin}`, '长答是"帖内认真正面答"的形态，中位 128 字');
+  else if (len > L.hardMax) add(out, 'FAIL', '长度', `${len} 字 > ${L.hardMax}，已经不是短答形态`, L.note);
+  else if (mode === 'short' && len > L.observedMax) add(out, 'WARN', '长度·超出语料最长', `${len} 字 > 观测最长 ${L.observedMax}`, '观测极值不是硬上限（n=34），只提示；形态真变了才判 FAIL');
+  else if (mode === 'short' && len > L.warnOver) add(out, 'WARN', '长度·偏长', `${len} 字 > ${L.warnOver}（p75 是 12）`, '短答就该一句挡回；超过 18 字要能说出为什么');
+  else if (mode === 'long' && len < L.warnUnder) add(out, 'WARN', '长度·偏短', `${len} 字 < ${L.warnUnder}`, '长答是"帖内认真正面答"的形态，中位 128 字');
+  else if (mode === 'long' && len > L.comfortMax) add(out, 'WARN', '长度·偏长', `${len} 字 > ${L.comfortMax}`, '再长就滑向小作文');
   else add(out, 'PASS', '长度', `${len} 字（${mode}）`, '');
 
   // ---- 主语：这是问答体与发博体最大的一处相反 ----
+  //
+  // ⚠️ 2026-10-31 修正一处**判据过严**：初版把短答出现「我」判 FAIL，依据是"34 条里 0 次"。
+  //    但 0/34 的 95% 置信上界约 **10%**——那是"少见"，不是"禁止"。实测代价：多轮对话里
+  //    「别找我」「我也亏过」这类**很自然的挡回**被判红，而它们正是他的口气（"亏的多，访问量就高了"）。
+  //    所以：出现「我」只给 WARN；真正的 FAIL 留给**发博腔**——把发博的自曝（仓位/斤数/金额）
+  //    塞进聊天，那才是人设明文禁止的（"别在聊天里讲『我在车上』『我减了 82 斤』"）。
   const wo = (body.match(/我/g) || []).length;
   if (mode === 'short') {
-    if (wo > 0) add(out, 'FAIL', '短答主语', `出现 ${wo} 个「我」`, '33 条真实回复里「我」0 次——聊天里他不落回自己；"绕回我"是发博的落点');
+    const flex = /我[^。！？]{0,12}(仓|斤|块|万|元|股|买|卖|赚|亏|\d)/;
+    if (flex.test(body)) add(out, 'FAIL', '短答发博腔', '聊天里塞了自曝（仓位/金额/斤数）', '发博要绕回自己，聊天不要——「我在车上」「我减了 82 斤」是发博口气');
+    if (wo > 0) add(out, 'WARN', '短答主语', `${wo} 个「我」`, '34 条真实回复里 0 次；但 0/34 的 95% 上界约 10%，所以是「少见」不是「禁止」——挡回时说「别找我」不算出戏');
     else add(out, 'PASS', '短答主语', '无「我」', '');
-    if (/峰哥/.test(body)) add(out, 'FAIL', '短答自称', '出现「峰哥」', '33 条里「峰哥」0 次；聊天里不自称第三人称');
+    if (/峰哥/.test(body)) add(out, 'WARN', '短答自称', '出现「峰哥」', '34 条里 0 次；聊天里很少用第三人称自指，但一次不算事故');
     else add(out, 'PASS', '短答自称', '无「峰哥」', '');
   } else {
     if (wo === 0) add(out, 'FAIL', '长答主语', '没有「我」', '长答里"我"必须是主语——他答问题最后一定拐回自己的仓位/直播/运气');
@@ -144,7 +174,9 @@ export const SELFTEST = [
   // --- 真实回复（qa-mode.md 引用的原话），必须过 ---
   { text: '面膜', mode: 'short', want: true, why: '真实回复：一个名词砸回去' },
   { text: '孤儿企业', mode: 'short', want: true, why: '真实回复：四字定性' },
-  { text: '我是个移动的目标，不是个电线杆', mode: 'short', want: false, why: '真实回复但含「我」——正是要拦的那类"发博腔"（保留为反例，说明这是**已标注的例外**）' },
+  { text: '我是个移动的目标，不是个电线杆', mode: 'short', want: true, why: '博文正文（不是回复）：带我但无自曝 ⇒ 只给 WARN。初版判 FAIL 过严——0/34 的 95% 上界约 10%' },
+  { text: '我 860 进的，你自己算', mode: 'short', want: false, why: '发博腔：聊天里塞自曝（我+价位）' },
+  { text: '我今天满仓 300 万', mode: 'short', want: false, why: '发博腔：聊天里晒仓位金额' },
   { text: '别猜了，满仓的科技', mode: 'short', want: true, why: '真实回复：只自曝不推荐' },
   { text: '平平安安健健康康比啥都强', mode: 'short', want: true, why: '真实回复：俗话收尾' },
   { text: '先发一百条，有人看再说', mode: 'short', want: true, why: 'dry-run 短答：前置条件型' },

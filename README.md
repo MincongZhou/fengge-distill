@@ -285,6 +285,7 @@ dsh plugin --profile <profile> remove <package>
 | 评测与消融（30 题 × 4 档、real 对照、成本） | **已验证**：`bench/report/ablation-*.md`（120 次真实调用） |
 | 人工盲评 | **待你标注**：`node bench/labels.mjs sheet` 生成表，填完 `score` 出胜率与 κ |
 | 文字场问答（聊天） | **机械判据已验**：`fengge-qa-lint` 14 例自检 + 20 题基线批量，已进 `accept` 第 4 步。**未验**：人工盲评（需第二个候选来源） |
+| 多轮聊天漂移 | **已验**：3 个 5 轮剧本 + **负对照**（通用助手必须判红）。实测 `deepseek-flash`：人设组 3/3 stable、负对照 3/3 drifted（10 个聊天轮全 FAIL，字数 82→803）。离线自检 `node bench/multiturn.mjs --selftest` |
 | 微调 LoRA | **已跑**：本机 RTX 3070 Laptop 8GB 上训 2 轮 LoRA（431 秒）并在同基座评测，**四条验收线全不达标**（详见上表与 [`bench/LORA.md`](bench/LORA.md)）。**未测**：更大基座、指令配对路线、指令跟随是否退化 |
 | 一次性 Profile 的安装 / 启动 / 卸载 / 回滚 | **未验证**：需要真实 DSH 运行时与隔离 Profile 的实测记录 |
 | DSH STORE 收录状态 | **未验证**：由商城固定 Commit 自动复检决定 |

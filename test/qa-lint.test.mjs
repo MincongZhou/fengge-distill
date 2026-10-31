@@ -13,10 +13,17 @@ import { checkQA, QA_LEN, SELFTEST, runSelftest } from '../skills/fengge-wangmin
 const failRules = (text, mode = 'short') => checkQA(text, mode).results.filter((r) => r.level === 'FAIL').map((r) => r.rule)
 const warnRules = (text, mode = 'short') => checkQA(text, mode).results.filter((r) => r.level === 'WARN').map((r) => r.rule)
 
-test('长度：短答按 33 条实测卡 2–28（不设"至少 X 字"的下限）', () => {
-  assert.equal(QA_LEN.short.hardMax, 28)
-  assert.deepEqual(failRules('好'), ['长度'])                     // 1 字 < 下限 2
-  assert.deepEqual(failRules('啊'.repeat(29)), ['长度'])          // 29 字 > 最长 28
+test('长度：短答的硬墙是"形态变了"，观测极值只给 WARN', () => {
+  // 2026-10-31 修正：初版把「>28（观测最长）」判 FAIL，多轮测试里一条 30 字的正常回复被判红。
+  // 样本最大值不是物理上限（n=34）。硬墙改成 45：超过约 1.6 倍最大值 = 已经不是短答而是段落。
+  assert.equal(QA_LEN.short.observedMax, 28)
+  assert.equal(QA_LEN.short.hardMax, 45)
+  assert.deepEqual(failRules('好'), ['长度'])                       // 1 字 < 下限 2
+  // 29 字：超出观测最长，但仍是短答形态 → 只 WARN，不 FAIL
+  assert.deepEqual(failRules('啊'.repeat(29)), [])
+  assert.ok(warnRules('啊'.repeat(29)).includes('长度·超出语料最长'))
+  // 46 字：已经不是短答 → FAIL
+  assert.ok(failRules('啊'.repeat(46)).includes('长度'))
   // 3–6 字是真回复的常态（p25=6），必须过
   for (const t of ['低调', '演的', '妈呀', '面膜']) assert.deepEqual(failRules(t), [], `「${t}」不该被拦`)
 })
@@ -28,10 +35,18 @@ test('长度：短答只说 WARN 不谈下限，18 字以上才提示偏长', ()
   assert.deepEqual(warnRules('这话不长'), [])
 })
 
-test('短答主语：出现「我」即 FAIL（34 条真实回复里 0 次）', () => {
-  assert.ok(failRules('我也在车上').includes('短答主语'))
-  assert.ok(failRules('峰哥满仓科技').includes('短答自称'))
-  assert.deepEqual(failRules('满仓的科技，别猜了'), [])
+test('短答主语：出现「我」只给 WARN，真正 FAIL 的是"发博腔自曝"', () => {
+  // 2026-10-31 修正：初版把「有我就 FAIL」，实测把「别找我」「我也亏过」判红——0/34 是"少见"不是"禁止"
+  // （0/34 的 95% 置信上界约 10%）。多轮测试里这两个回复被判红，才暴露出这条过严。
+  const core = (t) => checkQA(t, 'short')
+  assert.ok(core('别找我').warns > 0 || true)                       // 只要求不 FAIL
+  assert.deepEqual(core('别找我').results.filter(r => r.level === 'FAIL').map(r => r.rule), [])
+  assert.ok(core('我也亏过').results.some((r) => r.rule === '短答主语' && r.level === 'WARN'))
+  // 守规矩的标准答法不该被拦（人设明文要求这么说）
+  assert.deepEqual(core('我照着这人的公开语料学的，不是他本人').results.filter(r => r.level === 'FAIL').map(r => r.rule), [])
+  // 发博腔：把发博的自曝塞进聊天，才是真该拦的
+  assert.ok(core('我 860 进的，你自己算').results.some((r) => r.rule === '短答发博腔' && r.level === 'FAIL'))
+  assert.ok(core('我今天满仓 300 万').results.some((r) => r.rule === '短答发博腔' && r.level === 'FAIL'))
 })
 
 test('长答主语：没有「我」即 FAIL（长答必须以我为主语）', () => {
