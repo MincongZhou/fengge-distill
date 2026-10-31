@@ -4,10 +4,10 @@
 
 **峰哥 · 语言蒸馏引擎**
 
-Distill **2,091 posts spanning 20 months** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
+Distill **2,093 posts spanning 20 months** by the Chinese blogger 「峰哥亡命天涯」 into a reusable **FengGe-style** language engine.
 
 <img alt="vibe" src="https://img.shields.io/badge/project-distill-brown">
-<img alt="n" src="https://img.shields.io/badge/corpus-2091posts-ff69b4">
+<img alt="n" src="https://img.shields.io/badge/corpus-2093posts-ff69b4">
 <img alt="hot" src="https://img.shields.io/badge/hot_comments-4163-9cf">
 <img alt="iron" src="https://img.shields.io/badge/iron_rule-imitate_not_judge-black">
 <img alt="CI" src="https://github.com/MincongZhou/fengge-distill/actions/workflows/ci.yml/badge.svg">
@@ -19,7 +19,7 @@ Distill **2,091 posts spanning 20 months** by the Chinese blogger 「峰哥亡�
 
 ## It's distillation, not copying
 
-From **2,091 public posts (2025-02 ~ 2026-10) + 4,163 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
+From **2,093 public posts (2025-02 ~ 2026-10) + 4,163 high-like comments (≥30 likes)**, this project distills the **worldview** underneath a signature Chinese internet style, so you can generate "FengGe-flavored" text yourself. You **imitate** the style, you don't **judge** it.
 
 **The timeline is distilled too:** he was **banned platform-wide on 2025-11-14**, unbanned on 2026-05-21, then **muted again for 29 days from 2026-08-30** and resumed on 2026-09-29. Two gaps cut the corpus into **three eras** whose voices differ enough that you should **pick an era before writing** — see [`evolution.md`](evolution.md).
 
@@ -33,7 +33,7 @@ From **2,091 public posts (2025-02 ~ 2026-10) + 4,163 high-like comments (≥30 
 
 ## Corpus stats
 
-**Overall**: n = **2,091** public posts · 2025-02-04 ~ 2026-10-27 (**996 days** · ~2.1 posts/day, silent ban periods included)
+**Overall**: n = **2,093** public posts · 2025-02-04 ~ 2026-10-27 (**996 days** · ~2.1 posts/day, silent ban periods included)
 
 | Metric | Value |
 |---|---|

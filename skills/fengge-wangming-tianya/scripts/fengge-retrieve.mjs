@@ -25,7 +25,7 @@
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadCorpusFromArgv, provenanceLine } from './corpus-path.mjs';
+import { loadWeiboAll, sourcesLine } from './corpus-path.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
@@ -158,17 +158,20 @@ if (invokedDirectly) {
   if (!query) { console.error('用法：--query "文案" [--k 5] [--json] | --selftest'); process.exit(2); }
   const k = Number(arg('--k', 5));
   const minLen = Number(arg('--min-len', MIN_EXAMPLE_LEN));
-  const info = loadCorpusFromArgv('weibo', argv);
+  // 走合并语料：三期（2026-09-29 起）170 条也在里面。只读主流行会把"他当下怎么写"漏掉，
+  // 而检索取 few-shot 的意义恰恰是参照当下语域。
+  const corpus = loadWeiboAll({ argv });
   const t0 = Date.now();
-  const idx = indexFromCorpus(info.data, { minLen });
+  const idx = indexFromCorpus(corpus.data, { minLen });
   const hits = retrieve(idx, query, k);
   const ms = Date.now() - t0;
 
   if (argv.includes('--json')) {
-    console.log(JSON.stringify({ query, k, minLen, corpus: provenanceLine(info), eligible: idx.n, skipped: idx.skipped, hits }, null, 2));
+    console.log(JSON.stringify({ query, k, minLen, corpus: sourcesLine(corpus), sources: corpus.sources, stats: corpus.stats, eligible: idx.n, skipped: idx.skipped, hits }, null, 2));
   } else {
     console.log(`检索：${query}`);
-    console.log(`语料 ${info.data.length} 条 → 可检索素材 ${idx.n} 条（跳过转发/长文/短于 ${minLen} 字共 ${idx.skipped} 条） ｜ 建索引 ${ms}ms ｜ ${provenanceLine(info)}\n`);
+    console.log(`语料 ${corpus.data.length} 条 → 可检索素材 ${idx.n} 条（跳过转发/长文/短于 ${minLen} 字共 ${idx.skipped} 条） ｜ 建索引 ${ms}ms`);
+    console.log(`${sourcesLine(corpus)}\n`);
     for (const [i, h] of hits.entries()) console.log(`${String(i + 1).padStart(2)}. ${h.score.toFixed(3)}  ${h.text.slice(0, 60)}${h.text.length > 60 ? '…' : ''}`);
     if (!hits.length) console.log('（没有共享 n-gram 的语料条目——换个说法再试，或确认 FG_CORPUS 指对了文件）');
   }

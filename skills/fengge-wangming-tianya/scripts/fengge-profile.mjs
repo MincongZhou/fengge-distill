@@ -16,14 +16,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadCorpusFromArgv, provenance, provenanceLine } from './corpus-path.mjs';
+import { loadWeiboAll, loadCorpusFromArgv, provenance, provenanceLine, sourcesLine } from './corpus-path.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SKILL_DIR = path.resolve(HERE, '..');
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i >= 0 ? process.argv[i + 1] : d; };
 
 // 默认语料路径不再写死本机绝对路径：--fb/--bl > FG_CORPUS/FG_BILI_CORPUS > DSH_FENGGE_DATA > 仓库相邻目录。
-const fbInfo = loadCorpusFromArgv('weibo');
+// 微博走 loadWeiboAll（主流 + 三期增量）：画像也要按三期的真实语料算，否则分期对比的"三期"是空的。
+const weibo = loadWeiboAll();
+const fbInfo = weibo.main;
 const blInfo = loadCorpusFromArgv('bilibili');
 const FB = fbInfo.path;
 const BL = blInfo.path;
@@ -59,13 +61,33 @@ function charBigrams(texts) {
 }
 
 // ---------- 微博 ----------
-const fbRaw = fbInfo.data;
+// 用合并后的 weibo.data（主流 + 增量）；字段名已由 corpus-path 归一化过，
+// 所以这里的 x.text / x.iso 对两份语料都成立。
+const fbRaw = weibo.data;
 const posts = fbRaw.map(x => String(x.text_raw || x.text || '').trim()).filter(Boolean);
-const era = { pre: [], post: [] };
+
+// 分期：按日期显式判定，不再用正则猜。
+// 旧版写的是 `/2026-05-1[3-9]|2026-0[6-9]/`，三期数据一进来就露馅——`2026-10-xx` 匹配不上
+// `2026-0[6-9]`，十月那批会被算进「封禁前」。这种错会静默污染分期画像，且看起来完全正常。
+// 三期边界与 evolution.md 第九节、data/stats-phase3.md 一致：
+//   一期 2025-02-04 ~ 2025-11-14（全平台封禁）｜二期 2026-05-22 ~ 2026-08-30（二次禁言）｜三期 2026-09-29 起
+const ERA_BOUNDS = {
+  pre: { from: '2025-02-04', to: '2025-11-14' },     // 一期·封禁前
+  post: { from: '2026-05-21', to: '2026-08-31' },    // 二期·解封后（5-21 解封）
+  third: { from: '2026-09-29', to: '9999-12-31' },   // 三期·二次解封
+};
+const eraOf = (iso) => {
+  const d = String(iso || '').slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return null;   // 没日期的不进任何一期，别硬塞
+  for (const [k, b] of Object.entries(ERA_BOUNDS)) if (d >= b.from && d <= b.to) return k;
+  return null;                                       // 两次静默期与边界之外：不计入分期
+};
+const era = { pre: [], post: [], third: [] };
+let eraUnknown = 0;
 fbRaw.forEach(x => {
   const t = String(x.text_raw || x.text || '').trim(); if (!t) return;
-  const iso = x.iso || x.created_at || '';
-  (/2026-05-1[3-9]|2026-0[6-9]/.test(iso) ? era.post : era.pre).push(t);
+  const k = eraOf(x.iso || x.created_at || '');
+  if (k) era[k].push(t); else eraUnknown++;
 });
 const lens = posts.map(t => [...t].length);
 const ctx = {
@@ -110,9 +132,17 @@ for (const [name, re] of NUMRE) {
 }
 ctx.formal = { 命中帖子占比: rate(posts.filter(t => FORMAL.test(t)).length, posts.length) };
 ctx.topBigrams = topN(charBigrams(posts), 30).map(([k, v]) => `${k}(${v})`);
+const eraStat = (arr) => ({
+  n: arr.length,
+  p50: arr.length ? pct(arr.map(t => [...t].length), .5) : null,
+  mean: arr.length ? +(arr.reduce((a, t) => a + [...t].length, 0) / arr.length).toFixed(1) : null,
+});
 ctx.era = {
-  封禁前: { n: era.pre.length, p50: pct(era.pre.map(t => [...t].length), .5), mean: +(era.pre.reduce((a, t) => a + [...t].length, 0) / era.pre.length).toFixed(1) },
-  解封后: { n: era.post.length, p50: pct(era.post.map(t => [...t].length), .5), mean: +(era.post.reduce((a, t) => a + [...t].length, 0) / era.post.length).toFixed(1) },
+  封禁前: eraStat(era.pre),
+  解封后: eraStat(era.post),
+  三期·二次解封: eraStat(era.third),
+  未落期: eraUnknown,
+  口径: '按日期显式分期（一期 ≤2025-11-14 ｜ 二期 2026-05-15~08-31 ｜ 三期 ≥2026-09-29）；两次静默期与边界外不计入任何一期',
 };
 
 // ---------- 直播 ----------
@@ -133,7 +163,14 @@ for (const w of ['对吧', '对不对', '我跟你说', '说白了', '家人们'
 }
 liveProfile.topBigrams = topN(charBigrams(live), 30).map(([k, v]) => `${k}(${v})`);
 
-const profile = { generatedAt: new Date().toISOString(), sources: { weibo: provenance(fbInfo), bilibili: provenance(blInfo) }, weibo: ctx, live: liveProfile };
+const profile = {
+  generatedAt: new Date().toISOString(),
+  // weibo 保留主流行 provenance（兼容旧字段）；完整多源清单与合并统计另放两个字段
+  sources: { weibo: provenance(fbInfo), bilibili: provenance(blInfo) },
+  weiboSources: weibo.sources,
+  weiboStats: weibo.stats,
+  weibo: ctx, live: liveProfile,
+};
 fs.mkdirSync(path.join(SKILL_DIR, 'data'), { recursive: true });
 fs.writeFileSync(path.join(SKILL_DIR, 'data', 'style-profile.json'), JSON.stringify(profile, null, 2));
 
@@ -143,7 +180,7 @@ lines.push(`> 生成时间 ${profile.generatedAt} ｜ 微博 ${ctx.n} 条 ｜ �
 lines.push('## 一、微博：长度与篇幅', '');
 lines.push(`p10 ${ctx.len.p10} / p25 ${ctx.len.p25} / **p50 ${ctx.len.p50}** / p75 ${ctx.len.p75} / p90 ${ctx.len.p90} / p95 ${ctx.len.p95} / max ${ctx.len.max} ｜ 均值 ${ctx.len.mean}`, '');
 lines.push('分桶：' + Object.entries(ctx.lenBuckets).map(([k, v]) => `${k} 字 ${v}`).join(' ｜ '), '');
-lines.push(`两期：封禁前 n=${ctx.era.封禁前.n} p50=${ctx.era.封禁前.p50} 均值=${ctx.era.封禁前.mean} ｜ 解封后 n=${ctx.era.解封后.n} p50=${ctx.era.解封后.p50} 均值=${ctx.era.解封后.mean}`, '');
+lines.push(`三期：封禁前 n=${ctx.era.封禁前.n} p50=${ctx.era.封禁前.p50} 均值=${ctx.era.封禁前.mean} ｜ 解封后 n=${ctx.era.解封后.n} p50=${ctx.era.解封后.p50} 均值=${ctx.era.解封后.mean} ｜ 二次解封 n=${ctx.era.三期·二次解封.n} p50=${ctx.era.三期·二次解封.p50} 均值=${ctx.era.三期·二次解封.mean}（未落期 ${ctx.era.未落期} 条不计）`, '');
 lines.push('## 二、微博：标点习惯（每百字出现次数 / 含它的帖子占比）', '');
 lines.push(Object.keys(ctx.punctuation).map(p => `${p} ${ctx.punctPer100[p]}/百字 (${ctx.punctuation[p]})`).join(' ｜ '), '');
 lines.push(`句数：中位 ${ctx.sentences.p50} 句；≥3 句的帖子 ${ctx.sentences.multi}`, '');

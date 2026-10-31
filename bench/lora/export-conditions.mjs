@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CONDITIONS, loadPrompts, buildMessages, RUN_DEFAULTS } from '../generate.mjs';
-import { loadCorpusFromArgv } from '../../skills/fengge-wangming-tianya/scripts/corpus-path.mjs';
+import { loadWeiboAll, sourcesLine } from '../../skills/fengge-wangming-tianya/scripts/corpus-path.mjs';
 import { indexFromCorpus, retrieve } from '../../skills/fengge-wangming-tianya/scripts/fengge-retrieve.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -29,8 +29,8 @@ const outFile = path.resolve(arg('--out', path.join(HERE, 'data', 'conditions.js
 
 const prompts = loadPrompts();
 const skillText = fs.readFileSync(path.join(SKILL, 'SKILL.md'), 'utf8');
-const info = loadCorpusFromArgv('weibo', argv);
-const idx = indexFromCorpus(info.data);
+const corpus = loadWeiboAll({ argv });
+const idx = indexFromCorpus(corpus.data);
 
 // 本地要跑的四档。
 // c3-lora 用 **c0-base 的 messages**：微调这一档的意义就是"把风格训进权重，不用再灌规则"，
@@ -60,7 +60,7 @@ fs.writeFileSync(outFile, JSON.stringify({
   decode: { temperature: RUN_DEFAULTS.temperature, maxTokens: RUN_DEFAULTS.maxTokens, thinking: RUN_DEFAULTS.thinking },
   messages,
   retrieval: retrieved,
-  corpus: { name: info.name, sha256: info.sha256, bytes: info.bytes },
+  corpus: { sources: corpus.sources, stats: corpus.stats },
 }, null, 2), 'utf8');
 
 let chars = 0;

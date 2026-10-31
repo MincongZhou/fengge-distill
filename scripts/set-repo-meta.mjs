@@ -28,7 +28,7 @@ const API = 'https://api.github.com';
 const DESC_LIMIT = 350;
 
 const DESCRIPTION =
-  "把@峰哥亡命天涯 的 1,921 条微博（18 个月，跨封禁前后两期）+ 4,163 条≥30赞评论，" +
+  "把@峰哥亡命天涯 的 2,093 条微博（20 个月，跨两次禁言三期）+ 4,163 条≥30赞评论，" +
   "蒸馏成可复用的「峰哥语体引擎」：串子、蹭子、装颓、被看穿的自我吹嘘。" +
   "含语料管道(nodejs)、话术演进分期参考、筛选脚本、统计口径。" +
   " / Distilling @fengge's Weibo into a reusable Chinese style-transfer engine (weibo / corpus / nlp).";
@@ -143,7 +143,7 @@ if (!SKIP_ABOUT) {
 // 2) Release
 if (DO_RELEASE) {
   const tag = val('--tag', 'v' + JSON.parse(await readFile('package.json', 'utf8')).version);
-  const name = val('--name', `${tag} — 纵向蒸馏：语料扩到 1921 条 / 18 个月`);
+  const name = val('--name', `${tag} — 纵向蒸馏：语料扩到 2093 条 / 20 个月`);
   const notesFrom = val('--notes-from', 'CHANGELOG.md');
   const version = tag.replace(/^v/, '');
 

@@ -30,7 +30,7 @@ import { FEATURES, ALIGN_FEATURES, matcherFor } from '../skills/fengge-wangming-
 import { check } from '../skills/fengge-wangming-tianya/scripts/fengge-lint.mjs';
 import { alignTexts } from '../skills/fengge-wangming-tianya/scripts/fengge-align.mjs';
 import { indexFromCorpus, retrieve } from '../skills/fengge-wangming-tianya/scripts/fengge-retrieve.mjs';
-import { loadCorpusFromArgv, provenanceLine } from '../skills/fengge-wangming-tianya/scripts/corpus-path.mjs';
+import { loadWeiboAll, sourcesLine } from '../skills/fengge-wangming-tianya/scripts/corpus-path.mjs';
 import { makeSampler, sampleIndices } from './items.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -305,8 +305,9 @@ if (invokedDirectly) {
     const runDir = path.join(HERE, 'runs', runId);
     if (!fs.existsSync(runDir)) { console.error(`没有这次运行：${runDir}`); process.exit(2); }
     const manifest = JSON.parse(fs.readFileSync(path.join(runDir, 'manifest.json'), 'utf8'));
-    const corpusInfo = loadCorpusFromArgv('weibo', argv);
-    const retriever = indexFromCorpus(corpusInfo.data);
+    // 合并语料（主流 + 三期增量）：real 对照与同题参考都取自这批，跟 fengge-retrieve 保持同一个"语料"概念
+    const corpus = loadWeiboAll({ argv });
+    const retriever = indexFromCorpus(corpus.data);
     const prompts = fs.readFileSync(path.join(HERE, 'prompts.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
     const byId = Object.fromEntries(prompts.map((p) => [p.id, p]));
 
@@ -320,8 +321,10 @@ if (invokedDirectly) {
       const topics = recs.map((r) => byId[r.id]);
       out.conditions[c] = { label: manifest.conditions.length ? c : c, ...evaluateCondition({ texts, topics, retriever, ratio }) };
     }
-    out.corpus = provenanceLine(corpusInfo);
-    out.control = realControl(corpusInfo.data, { n: 30 });
+    out.corpus = sourcesLine(corpus);
+    out.corpusSources = corpus.sources;
+    out.corpusStats = corpus.stats;
+    out.control = realControl(corpus.data, { n: 30 });
   } else if (fileArg) {
     const texts = fs.readFileSync(fileArg, 'utf8').split('\n').map((s) => s.trim()).filter(Boolean);
     out.conditions['(file)'] = { label: fileArg, ...evaluateCondition({ texts, ratio }) };

@@ -40,5 +40,5 @@ service/__pycache__/
 service/pip-*
 service/selftest.log
 
-# 三期增量原始语料（2,091 条正文），按仓库边界不入库
+# 增量原始语料（633 条正文；其中 2026-09-29 之后 170 条属三期），按仓库边界不入库
 data/posts.json

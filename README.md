@@ -4,10 +4,10 @@
 
 **FengGe Distillation Engine**
 
-把「抽象教父」@峰哥亡命天涯 的 **2,091 条微博（跨 20 个月）**，蒸馏成一口能自己生成「峰哥味」的引擎。
+把「抽象教父」@峰哥亡命天涯 的 **2,093 条微博（跨 20 个月）**，蒸馏成一口能自己生成「峰哥味」的引擎。
 
 <img alt="vibe" src="https://img.shields.io/badge/项目-蒸馏-brown">
-<img alt="n" src="https://img.shields.io/badge/语料-2091条-ff69b4">
+<img alt="n" src="https://img.shields.io/badge/语料-2093条-ff69b4">
 <img alt="hot" src="https://img.shields.io/badge/高赞热评-4163条-9cf">
 <img alt="iron" src="https://img.shields.io/badge/铁律-模仿不质疑-black">
 <img alt="tests" src="https://img.shields.io/badge/tests-48%20passing-brightgreen">
@@ -113,7 +113,7 @@
 
 ## 统计口径
 
-**主口径**：n = **2,091** 条公开博文 · 2025-02-04 ~ 2026-10-27（**996 天** · 日均 2.1 条，含两次禁言静默期）
+**主口径**：n = **2,093** 条公开博文 · 2025-02-04 ~ 2026-10-27（**996 天** · 日均 2.1 条，含两次禁言静默期）
 
 | 指标 | 值 |
 |---|---|

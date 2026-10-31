@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadCorpusFromArgv, provenance, provenanceLine } from './corpus-path.mjs';
+import { loadWeiboAll, provenance, sourcesLine } from './corpus-path.mjs';
 import { FEATURES } from './style-features.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -18,8 +18,13 @@ const SKILL_DIR = path.resolve(HERE, '..');
 
 // 语料路径不再写死本机绝对路径：--fb / --corpus / FG_CORPUS / 仓库相邻目录 依次尝试。
 // 找不到就报出「试过哪些路径 + 怎么修」，不静默降级成空基准。
-const info = loadCorpusFromArgv('weibo');
-const arr = info.data;
+//
+// 走 loadWeiboAll 而不是只读主流行：主流行只到 2026-08-30（一、二期），三期 170 条在
+// data/posts.json 里。只读前者会让这份「统计基准」永远停在两期口径，而文档已经按三期写了——
+// 那就是"尺子量两期、文档说三期"，align 会照样绿，但绿的已不是它声称的那件事。
+const corpus = loadWeiboAll();
+const info = corpus.main;
+const arr = corpus.data;
 const posts = arr.filter(x => !x.retweeted && !x.rtText && !x.isLong).map(x => String(x.text_raw || x.text || '').trim()).filter(Boolean);
 const n = posts.length;
 
@@ -48,12 +53,21 @@ const commas = posts.map(t => (t.match(/，/g) || []).length).sort((a, b) => a -
 const comma = { p25: commas[Math.floor(n * .25)], p50: commas[Math.floor(n * .5)], p75: commas[Math.floor(n * .75)] };
 
 // 溯源不写绝对路径（旧版把作者本机路径写进随仓库分发的 data/*.json）。
-const payload = { generatedAt: new Date().toISOString(), provenance: provenance(info), n, length, comma, features: out };
+// provenance 仍指主流行（保持旧字段兼容），完整多源清单放 sources / sourcesStats。
+const payload = {
+  generatedAt: new Date().toISOString(),
+  provenance: provenance(info),
+  sources: corpus.sources,
+  sourcesStats: corpus.stats,
+  n, length, comma, features: out,
+};
 fs.mkdirSync(path.join(SKILL_DIR, 'data'), { recursive: true });
 fs.writeFileSync(path.join(SKILL_DIR, 'data', 'style-ratios.json'), JSON.stringify(payload, null, 2));
 
 const lines = ['# 峰哥体特征比例基准（含 95% Wilson 置信区间，自动生成）', '',
-  `> 语料：原创非长文 **${n} 条** ｜ ${provenanceLine(info)} ｜ 生成于 ${payload.generatedAt}`, '',
+  `> 语料：原创非长文 **${n} 条** ｜ ${sourcesLine(corpus)} ｜ 生成于 ${payload.generatedAt}`, '',
+  `> 合并口径：主流 ${corpus.stats.main} 条 + 增量新增 ${corpus.stats.added} 条（重叠去重 ${corpus.stats.duplicates} 条）。`
+    + `增量语料缺失时只有主流——那时基准回到两期口径，\`sources\` 里也会少一条。`, '',
   '比例类特征的判据不是"必须等于语料值"，而是**落在语料的抽样误差带里**。候选批次自身也有抽样误差，',
   '所以 `fengge-align.mjs` 用的是**合成区间**：`sqrt(语料方差/n + 批次方差/m)`。', '',
   '| 特征 | 语料命中 | 语料比例 | 95% CI |', '|---|---:|---:|---|'];
@@ -63,5 +77,5 @@ lines.push('## 逗号数分位', '', `p25 ${comma.p25} ｜ **p50 ${comma.p50}** 
 fs.writeFileSync(path.join(SKILL_DIR, 'references', 'style-ratios.md'), lines.join('\n'));
 
 console.log(`已生成 references/style-ratios.md + data/style-ratios.json（语料 ${n} 条，${out.length} 个特征）`);
-console.log(`语料溯源：${provenanceLine(info)}`);
+console.log(`语料溯源：${sourcesLine(corpus)}`);
 console.log('样例：' + out.slice(0, 6).map(f => `${f.name} ${(f.p * 100).toFixed(1)}% [${(f.ci[0] * 100).toFixed(1)}–${(f.ci[1] * 100).toFixed(1)}]`).join(' ｜ '));

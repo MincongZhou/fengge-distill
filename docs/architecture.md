@@ -13,9 +13,13 @@ flowchart TD
         A1["scripts/distill.js<br/>微博分页抓正文"]
         A2["scripts/distill_comments.js<br/>≥30 赞热评"]
         A3["B站切片字幕<br/>（工作区 fg_bili_* 脚本）"]
-        A1 --> RAW[("fg_fengge_v2_raw.json<br/>1921 条 · 含 retweeted/isLong/iso")]
+        A1 --> RAW[("fg_fengge_v2_raw.json<br/>1,921 条 · 一、二期<br/>含 retweeted/isLong/iso")]
+        A1 --> INC[("data/posts.json<br/>633 条增量（gitignore）<br/>其中 2026-09-29 起 170 条 = 三期")]
         A2 --> HOT[("fg_full_hotcomments.json<br/>4163 条热评")]
         A3 --> BL[("fg_bili_corpus.json<br/>BV 为键 · 460k 字")]
+        RAW --> MERGE
+        INC --> MERGE
+        MERGE["loadWeiboAll()<br/>按 id 去重 + 字段/日期归一化<br/>→ 2,093 条（去重 461）"]
     end
 
     subgraph S2["② 清洗 / 分层 / 去重"]
